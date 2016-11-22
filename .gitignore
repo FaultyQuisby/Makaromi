@@ -1,6 +1,6 @@
-nbproject/private/
-build/
-nbbuild/
-dist/
-nbdist/
-.nb-gradle/
+Makaromi/nbproject/private/
+Makaromi/build/
+Makaromi/nbbuild/
+Makaromi/dist/
+Makaromi/nbdist/
+Makaromi/.nb-gradle/
