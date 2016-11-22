@@ -1,6 +1,15 @@
-Makaromi/nbproject/private/
+Makaromi-ejb/nbproject/
+Makaromi/nbproject/
 Makaromi/build/
 Makaromi/nbbuild/
 Makaromi/dist/
 Makaromi/nbdist/
 Makaromi/.nb-gradle/
+Makaromi-ejb/build.xml
+build.xml
+nbproject/ant-deploy.xml
+nbproject/genfiles.properties
+nbproject/project.properties
+nbproject/build-impl.xml
+nbproject/project.xml
+nbproject/private/private.properties
