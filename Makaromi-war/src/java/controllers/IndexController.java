@@ -11,9 +11,6 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "IndexController", urlPatterns = {""})
 public class IndexController extends HttpServlet {
-    
-    private final String INDEX_ROUTE        = "/WEB-INF/jsp/index.jsp";
-
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
