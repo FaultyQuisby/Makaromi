@@ -13,3 +13,8 @@ nbproject/project.properties
 nbproject/build-impl.xml
 nbproject/project.xml
 nbproject/private/private.properties
+/Makaromi-ejb/build/
+/Makaromi-ejb/dist/
+/Makaromi-war/build/
+/build/
+/Makaromi-war/dist/

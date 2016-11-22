@@ -1,9 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : 22 nov. 2016, 11:52:10
-    Author     : cdi306
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
