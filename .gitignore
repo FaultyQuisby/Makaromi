@@ -4,3 +4,8 @@ dist/*
 dist/gfdeploy/Makaromi/Makaromi-war_war/WEB-INF/web.xml
 Makaromi-war/build/web/WEB-INF/sun-web.xml
 *.dpf
+dist/gfdeploy/Makaromi/Makaromi-war_war/WEB-INF/classes/controllers/sub/OrderController.class
+dist/gfdeploy/Makaromi/Makaromi-war_war/WEB-INF/web.xml
+dist/gfdeploy/Makaromi/Makaromi-war_war/WEB-INF/jsp/order.jsp
+Makaromi-war/build/web/WEB-INF/classes/controllers/sub/OrderController.class
+Makaromi-war/build/web/WEB-INF/jsp/order.jsp
