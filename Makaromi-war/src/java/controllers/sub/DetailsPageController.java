@@ -84,5 +84,48 @@ public class DetailsPageController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+ if ("event".equals(request.getParameter("section")) || nav.equals("event")) {
 
+                if (request.getParameter("nameEvent") != null) {
+                    Event event1 = mySection.getEvent(request.getParameter("nameEvent"));
+                    request.setAttribute("nameEvent", request.getParameter("nameEvent"));
+                    request.setAttribute("imgEvent", event1.getImage());
+                    request.setAttribute("nameArtist", request.getParameter("nameEvent"));
+                    request.setAttribute("firstNameArtist", request.getParameter("firstNameArtist"));
+                    request.setAttribute("typeArtist", request.getParameter("typeArtist"));
+                    request.setAttribute("commentArtist", request.getParameter("commentArtist"));
+                    request.setAttribute("priceEvent", event1.getpriceEvent() + " euros");
+                    request.setAttribute("synopsisEvent", event1.getsynopsisEvent());
+                    request.setAttribute("commentEvent", event1.getcommentEvent());
+                    request.setAttribute("dateStart", event1.getdateStart());
+                    request.setAttribute("dateEnd", event1.getdateEnd());
+                    request.setAttribute("nameVenue", event1.getnameVenue());
+                    request.setAttribute("typeVenue", event1.gettypeVenue());
+                    request.setAttribute("mapVenue", event1.getmapVenue());
+                    mySection.setLastevent(event1);
+                }
+
+                if (nav.equals("event")) {
+                    Event event1 = mySection.getLastevent();
+                    request.setAttribute("nameEvent", event1.getnameEvent());
+                    request.setAttribute("imgEvent", event1.getimgEvent());
+                    request.setAttribute("nameArtist", event1.getnameArtist());
+                    request.setAttribute("firstNameArtist", event1.getfirstNameArtist());
+                    request.setAttribute("typeArtist", event1.gettypeArtist());
+                    request.setAttribute("commentArtist", event1.getcommentArtist());
+                    request.setAttribute("priceEvent", event1.getpriceEvent() + " euros");
+                    request.setAttribute("synopsisEvent", event1.getsynopsisEvent());
+                    request.setAttribute("commentEvent", event1.getcommentEvent());                    
+                    request.setAttribute("dateEnd", event1.getdateEnd());
+                    request.setAttribute("dateStart", event1.getdateStart());
+                    request.setAttribute("nameVenue", event1.getnameVenue());
+                    request.setAttribute("typeVenue", event1.gettypeVenue());
+                    request.setAttribute("mapVenue", event1.getmapVenue());
+                    mySection.setLastevent(event1);
+                }
+
+                mySection.setLastnav("event");
+                url = "/WEB-INF/detailsPage.jsp";
+
+            }
 }

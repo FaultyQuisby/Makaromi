@@ -7,6 +7,7 @@ package controllers.sub;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -89,5 +90,20 @@ public class SectionController extends HttpServlet implements sousControleur {
     public String executer(HttpServletRequest request, HttpServletResponse response) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+         if ("thematicBrowsing".equals(request.getParameter("section")) || nav.equals("thematicBrowsing")) {
 
+                //////////////////////////////////////affichage de rub demander  
+                if (request.getParameter("thematicBrowsing") != null) {
+                    ArrayList<Event> listEvent = new ArrayList();
+
+                    int rub = Integer.valueOf(request.getParameter("thematicBrowsing").trim());
+                    if (mySection != null) {
+
+                        listEvent = mySection.getSectionEvent(section);
+                        mySection.setLastrub(request.getParameter("nameSection"));
+                        request.setAttribute("nameSection", request.getParameter("nameSection").toUpperCase());
+                        request.setAttribute("listEvent", listEvent);
+                    }
+
+                }
 }
