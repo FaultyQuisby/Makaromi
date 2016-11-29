@@ -33,7 +33,7 @@ public class SectionController extends HttpServlet implements sousControleur {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
+           String url= "/WEB-INF/jsp/thematicBrowsing.jsp";
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
