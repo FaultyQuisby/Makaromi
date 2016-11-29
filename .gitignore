@@ -9,3 +9,6 @@ dist/gfdeploy/Makaromi/Makaromi-war_war/WEB-INF/web.xml
 dist/gfdeploy/Makaromi/Makaromi-war_war/WEB-INF/jsp/order.jsp
 Makaromi-war/build/web/WEB-INF/classes/controllers/sub/OrderController.class
 Makaromi-war/build/web/WEB-INF/jsp/order.jsp
+Makaromi-ejb/nbproject/private/private.properties
+Makaromi-war/build/web/WEB-INF/classes/controllers/sub/OrderController.class
+nbproject/private/private.properties
