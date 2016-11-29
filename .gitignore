@@ -30,3 +30,15 @@ dist/
 nbdist/
 .nb-gradle/
 Makaromi-ejb/dist/*
+Makaromi-ejb/nbproject/private/
+Makaromi-ejb/build/
+Makaromi-ejb/nbbuild/
+Makaromi-ejb/dist/
+Makaromi-ejb/nbdist/
+Makaromi-ejb/.nb-gradle/
+Makaromi-war/nbproject/private/
+Makaromi-war/build/
+Makaromi-war/nbbuild/
+Makaromi-war/dist/
+Makaromi-war/nbdist/
+Makaromi-war/.nb-gradle/
