@@ -1,12 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-	 version="3.1">
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee">
+<servlet>
+        <servlet-name>IndexController</servlet-name>
+        <servlet-class>controllers.IndexController</servlet-class>
+        <init-param>
+            <param-name>DetailsPageController</param-name>
+            <param-value>controllers.sub.DetailsPageController</param-value>
+        </init-param>
+        <init-param>
+            <param-name>MenuController</param-name>
+            <param-value>controllers.sub.MenuController</param-value>
+        </init-param>
+         <init-param>
+            <param-name>OrderController</param-name>
+            <param-value>controllers.sub.OrderController</param-value>
+        </init-param>
+        <init-param>
+            <param-name>SectionController</param-name>
+            <param-value>controllers.sub.SectionController</param-value>
+        </init-param>
+        <init-param>
+            <param-name>ShoppingCartController</param-name>
+            <param-value>controllers.sub.ShoppingCartControllerController</param-value>
+        </init-param>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>IndexController</servlet-name>
+        <url-pattern>/IndexController</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/page404.html</location>
+    </error-page>
 </web-app>

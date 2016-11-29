@@ -3,22 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/index.jsp</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/src/java/controllers/IndexController.java</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/WEB-INF/jsp/home.jsp</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/css/home.css</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/css/bootstrap.css</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/WEB-INF/beans.xml</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/WEB-INF/glassfish-web.xml</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/css/animate.css</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/src/java/controllers/sub/MenuController.java</file>
             <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/src/java/controllers/sub/ShoppingCartController.java</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/src/java/controllers/sub/SectionController.java</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/WEB-INF/jsp/detailsPage.jsp</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/WEB-INF/jsp/order.jsp</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/WEB-INF/jsp/payment.jsp</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/WEB-INF/jsp/manageAccount.jsp</file>
-            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/WEB-INF/jsp/menu.jsp</file>
+            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/index.jsp</file>
+            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/WEB-INF/jsp/home.jsp</file>
+            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/WEB-INF/jsp/shoppingCart.jsp</file>
+            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/web/WEB-INF/web.xml</file>
+            <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-war/src/java/controllers/IndexController.java</file>
         </group>
     </open-files>
 </project-private>
