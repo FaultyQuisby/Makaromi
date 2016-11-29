@@ -13,5 +13,39 @@
     </head>
     <body>
         <h1>Recherche par rubrique</h1>
+        <nav>
+            <jsp:include page ="thematicBrowsing.jsp" flush="true" />
+        </nav>
+        <section>
+            <table>
+                <thead>
+                    <tr >
+                        <th>${nameSection}</th>
+                    </tr>
+                </thead>
+         
+                <tbody>
+                 
+                  <c:forEach var="i" items="${listSection}">
+                        <tr>
+                           
+                            <td>
+                                <a href="SectionController?detailsPage=nameEvent"><p> ${nameEvent}</p></a>        
+                            </td>
+                            <td>
+                                <img src="${imgEvent}"/>    
+                            </td>
+                           
+                        </tr>
+                    <br>        
+                </c:forEach>
+                </tbody>
+            </table>
+
+            <section>
+
+                </body>
+                </html>
+
     </body>
 </html>
