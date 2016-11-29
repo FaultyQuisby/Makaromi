@@ -2,3 +2,5 @@ Makaromi-ejb/nbproject/private/private.properties
 nbproject/private/private.properties
 dist/*
 dist/gfdeploy/Makaromi/Makaromi-war_war/WEB-INF/web.xml
+Makaromi-war/build/web/WEB-INF/sun-web.xml
+*.dpf
