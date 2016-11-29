@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author cdi306
  */
 @WebServlet(name = "MenuController", urlPatterns = {"/MenuController"})
-public class MenuController extends HttpServlet {
+public class MenuController extends HttpServlet implements sousControleur {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -84,5 +84,10 @@ public class MenuController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
+
+    @Override
+    public String executer(HttpServletRequest request, HttpServletResponse response) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

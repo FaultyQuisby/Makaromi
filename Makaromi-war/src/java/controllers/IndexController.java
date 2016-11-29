@@ -1,16 +1,56 @@
 package controllers;
 
-import beans.ConnectionBean;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+
+import controllers.sub.sousControleur;
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "IndexController", urlPatterns = {""})
+
+/**
+ *
+ * @author cdi310
+ */
 public class IndexController extends HttpServlet {
+
+  private HashMap<String, sousControleur> mp;
+
+    @Override
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config); //To change body of generated methods, choose Tools | Templates.
+        mp = new HashMap<>();        
+//        mp.put("page01", new Page01Ctrl());
+//        mp.put("page02", new Page02Ctrl());
+        // remplacer les instanciations en dur au-dessus
+        sousControleur sci = null;
+        Enumeration<String> lesNoms = config.getInitParameterNames();        
+        while(lesNoms.hasMoreElements()){
+            String nomSection = lesNoms.nextElement();
+            String valeur = config.getInitParameter(nomSection);            
+            try {
+                sci = (sousControleur) Class.forName(valeur).newInstance();
+                mp.put(nomSection, sci);
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+                System.out.println("------->>> ");
+            }
+        }
+    
+    }
+
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -25,39 +65,19 @@ public class IndexController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
-        
-        String prefix = "/WEB-INF/jsp/";
-        String sufix = ".jsp";
-        String url = "home";
+        // .....
+        String url = "/WEB-INF/jsp1.jsp";
         String section = request.getParameter("section");
-        String action = request.getParameter("action");
         
-        // vérifié si un beanConnexion est enregistre ds la session; si non, le cree           
-        ConnectionBean bc = (ConnectionBean) session.getAttribute("sessionConnexion");
-        if (bc == null) {
-            bc = new ConnectionBean();
-            session.setAttribute("sessionConnexion", bc);
+        
+        //sections 
+        if(mp.containsKey(section)){
+            sousControleur monCtrl = mp.get(section);
+            url = monCtrl.executer(request,response);
         }
-        
-        /* exemple d'utilisation du messageBean.
-        MessageBean mb = (MessageBean) session.getAttribute("messages");
-        if (mb == null) {
-            mb = new MessageBean();
-            session.setAttribute("messages", mb);
-        }
-        
-        mb.info("Salut");
-        mb.danger("Salut c'est une error");
-        */
-        
-        
-        url= response.encodeURL(prefix+url+sufix);
-        //System.out.println("------------------>>> "+url);
-        
-        // on fait suivre à la jsp de l'index.
-        getServletContext()
-                .getRequestDispatcher(url)
-                .include(request, response);
+     
+       url = response.encodeURL(url);
+       getServletContext().getRequestDispatcher(url).include(request,response);
         
     }
 
