@@ -17,3 +17,7 @@ Makaromi-ejb/nbproject/private/private.properties
 Makaromi-war/nbproject/private/private.properties
 *.class
 *.class
+*.class
+Makaromi-war/nbproject/private/private.properties
+Makaromi-war/nbproject/private/private.xml
+*.class
