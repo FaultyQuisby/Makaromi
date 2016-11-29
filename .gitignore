@@ -15,3 +15,4 @@ nbproject/private/private.properties
 Makaromi-ejb/nbproject/private/private.properties
 Makaromi-ejb/nbproject/private/private.properties
 Makaromi-war/nbproject/private/private.properties
+*.class

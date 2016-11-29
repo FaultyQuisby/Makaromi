@@ -16,6 +16,6 @@ public class MenuController implements Serializable,sousControleur {
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
         return "/WEB-INF/menu.jsp";
-    }
+    } 
 
 }
