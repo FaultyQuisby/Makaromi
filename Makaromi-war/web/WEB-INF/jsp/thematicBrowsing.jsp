@@ -19,7 +19,7 @@
         <section>
             <table>
                 <thead>
-                    <tr >
+                    <tr>
                         <th>${nameSection}</th>
                     </tr>
                 </thead>
