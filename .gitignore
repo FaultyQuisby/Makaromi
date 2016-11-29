@@ -1,4 +1,4 @@
 Makaromi-ejb/nbproject/private/private.properties
-Makaromi-ejb/nbproject/private/private.properties
-Makaromi-ejb/nbproject/private/private.properties
 nbproject/private/private.properties
+dist/*
+dist/gfdeploy/Makaromi/Makaromi-war_war/WEB-INF/web.xml
