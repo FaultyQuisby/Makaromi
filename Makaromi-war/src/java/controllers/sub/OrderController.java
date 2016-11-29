@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author cdi306
  */
 @WebServlet(name = "OrderController", urlPatterns = {"/OrderController"})
-public class OrderController extends HttpServlet implements sousControleur {
+public class OrderController extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,6 +34,7 @@ public class OrderController extends HttpServlet implements sousControleur {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
+/*
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -43,6 +44,8 @@ public class OrderController extends HttpServlet implements sousControleur {
             out.println("<h1>Servlet OrderController at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
+*/
+            getServletContext().getRequestDispatcher("/WEB-INF/jsp/order.jsp").include(request, response);
         }
     }
 
@@ -84,10 +87,5 @@ public class OrderController extends HttpServlet implements sousControleur {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    @Override
-    public String executer(HttpServletRequest request, HttpServletResponse response) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
 }
