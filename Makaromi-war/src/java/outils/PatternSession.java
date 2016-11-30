@@ -1,6 +1,7 @@
 package outils;
 
 
+import entites.User;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.logging.Level;
@@ -12,15 +13,15 @@ import javax.naming.NamingException;
 
 public class PatternSession implements Serializable {
     
-    private GestionPanierLocal gestionPanier; 
-    private Collection<> maListe;    
-    private Client user;
+    
+    private User user;
+    private boolean isconnect;
     private String ipClient;
     private int nbConnexion;
 
-    public PatternSession() {
-        gestionPanier = lookupGestionPanierLocal();
-    }
+   // public PatternSession() {
+   //     gestionPanier = lookupGestionPanierLocal();
+   // }
 
     public String getIpClient() {
         return ipClient;
@@ -38,15 +39,15 @@ public class PatternSession implements Serializable {
         this.nbConnexion = nbConnexion;
     }
 
-    public Client getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(Client user) {
+    public void setUser(User user) {
         this.user = user;
     }
 
-    public GestionPanierLocal getGestionPanier() {
+ /*   public GestionPanierLocal getGestionPanier() {
         return gestionPanier;
     }
 
@@ -67,5 +68,5 @@ public class PatternSession implements Serializable {
             throw new RuntimeException(ne);
         }
     }
-   
+   */
 }

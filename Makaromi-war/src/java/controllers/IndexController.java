@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import outils.PatternSession;
 
 
 /**
@@ -64,7 +65,13 @@ public class IndexController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
-        // .....
+        
+        if(session.getAttribute("patternSession") == null){
+            session.setAttribute("patternSession", new PatternSession());
+        }
+        PatternSession patternSession = (PatternSession) session.getAttribute("patternSession");
+        
+        
         String url = "/WEB-INF/jsp/home.jsp";
         String section = request.getParameter("section");
         
