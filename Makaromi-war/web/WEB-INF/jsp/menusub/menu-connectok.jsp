@@ -9,6 +9,6 @@
 <li>&nbsp;&nbsp;&nbsp;Welcome !</li>
 <li class="divider"></li>
 <!--<li class="dropdown-header">Nav header</li>-->
-<li><a href="href=Maestro?section=login&action=moncompte">Settings</a></li>
-<li><a href="href=Maestro?section=login&action=deconnect">Disconnect</a></li>
+<li><a href="href=IndexController?section=MenuConnect&action=moncompte">Settings</a></li>
+<li><a href="href=IndexController?section=MenuConnect&action=deconnect">Disconnect</a></li>
 
