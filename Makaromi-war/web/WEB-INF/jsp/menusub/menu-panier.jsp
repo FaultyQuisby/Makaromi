@@ -2,10 +2,13 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <c:if test="${testquantite}">
-    <p><a href="Maestro?section=panier"><img src="images/iconPanier.jpg"  width="70"/></a></p>
-        </c:if>
-        <c:if test="${!testquantite}">
-    <img src="images/iconPanier.jpg"  width="70"/>
-</c:if></br>
-<br/>Nombre d'articles: ${quantite}
+    <a href="Maestro?section=panier">
+        <span class="glyphicon glyphicon-shopping-cart"></span>(${quantite})
+    </a>
+</c:if>
+<c:if test="${!testquantite}">
+    <a href="#">
+        <span class="glyphicon glyphicon-shopping-cart"></span>(0)
+    </a>
+</c:if>
 

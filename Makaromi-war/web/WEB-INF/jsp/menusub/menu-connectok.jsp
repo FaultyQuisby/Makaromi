@@ -6,31 +6,9 @@
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
- <table border="0" width="250px">
-            <thead>
-            </thead>
-            <tbody>
-                <tr>
-                    <td colspan="7"> 
-                        <strong><img src="images/iconConnexion.jpg"  width="30"/>
-                        Mon Compte 
-                        </strong>
-                    </td> 
-                </tr>
-                <tr>
-                    <td align="center">Welcome</td>
-                </tr>
-                <tr>
-                    <td align="center">${welcom}</td>
-                </tr>
-                <tr>
-                    <td colspan="7" align="center" class="menuLogin"><a href="Maestro?section=login&action=moncompte"><em><strong>Mon compte</strong></em></a></td>
-                </tr>
+<li>&nbsp;&nbsp;&nbsp;Welcome !</li>
+<li class="divider"></li>
+<!--<li class="dropdown-header">Nav header</li>-->
+<li><a href="href=Maestro?section=login&action=moncompte">Settings</a></li>
+<li><a href="href=Maestro?section=login&action=deconnect">Disconnect</a></li>
 
-                <tr>  
-                    <td colspan="7" align="center" class="menuLogin"> 
-                        <a href="Maestro?section=login&action=deconnect"><em><strong>Déconnexion du compte</strong></em></a><br>
-                    </td>   
-                <tr>  
-            </tbody>
-        </table>

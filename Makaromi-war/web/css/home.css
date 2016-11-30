@@ -1,7 +1,76 @@
 html { 
-  background: url("../images/underConstruction.jpg") no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+    background: url("#") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+
+@media only screen and (max-width : 768px){
+    .example-8 .navbar-brand {
+        padding: 0px;
+        transform: translateX(-50%);
+        left: 50%;
+        position: absolute;
+    }
+    .example-8 .navbar-brand>img {
+        height: 100%;
+        width: auto;
+        padding: 7px 14px; 
+    }
+}
+
+
+/* EXAMPLE 8 - Center Background */
+.example-8 .navbar-brand {
+    background: url(http://image.noelshack.com/fichiers/2016/48/1480507467-logomakr-2q6gaj.png) center / contain no-repeat;
+    width: 200px;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+}
+
+.navbar-alignit .navbar-header {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    height: 50px;
+}
+.navbar-alignit .navbar-brand {
+    top: 50%;
+    display: block;
+    position: relative;
+    height: auto;
+    transform: translate(0,-50%);
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+
+
+
+
+.navbar-nav>li>.dropdown-menu {
+    z-index: 9999;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color : #1B96FE;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #1B96FE;
+}
+
+body {
+    font-family: 'Archivo Narrow', sans-serif;
 }
