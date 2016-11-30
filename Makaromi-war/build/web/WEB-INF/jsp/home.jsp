@@ -7,6 +7,9 @@
         <link rel="stylesheet" href="css/home.css" type="text/css">
     </head>
     <body>
+        <nav>
+             <jsp:include page ="jsp/menu.jsp" flush="true" />
+        </nav>
         <h1>Hello World!</h1>
     </body>
 </html>

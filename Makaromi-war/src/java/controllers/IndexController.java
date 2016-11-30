@@ -31,11 +31,9 @@ public class IndexController extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        super.init(config); //To change body of generated methods, choose Tools | Templates.
+        super.init(config);
         mp = new HashMap<>();        
-//        mp.put("page01", new Page01Ctrl());
-//        mp.put("page02", new Page02Ctrl());
-        // remplacer les instanciations en dur au-dessus
+
         sousControleur sci = null;
         Enumeration<String> lesNoms = config.getInitParameterNames();        
         while(lesNoms.hasMoreElements()){
@@ -66,7 +64,7 @@ public class IndexController extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         // .....
-        String url = "/WEB-INF/jsp1.jsp";
+        String url = "/WEB-INF/jsp/home.jsp";
         String section = request.getParameter("section");
         
         

@@ -1,7 +1,6 @@
 package outils;
 
-import entites.Client;
-import entites.LigneCommande;
+
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.logging.Level;
@@ -9,13 +8,12 @@ import java.util.logging.Logger;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import metiers.GestionPanierLocal;
+
 
 public class PatternSession implements Serializable {
     
-    private GestionPanierLocal gestionPanier;
-    
-    private Collection<LigneCommande> maListe;    
+    private GestionPanierLocal gestionPanier; 
+    private Collection<> maListe;    
     private Client user;
     private String ipClient;
     private int nbConnexion;
