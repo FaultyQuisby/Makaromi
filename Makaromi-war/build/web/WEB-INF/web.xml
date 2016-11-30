@@ -7,8 +7,12 @@
             <param-value>controllers.sub.DetailsPageController</param-value>
         </init-param>
         <init-param>
-            <param-name>MenuController</param-name>
-            <param-value>controllers.sub.MenuController</param-value>
+            <param-name>MenuConnect</param-name>
+            <param-value>controllers.sub.MenuConnect</param-value>
+        </init-param>
+        <init-param>
+            <param-name>MenuPanier</param-name>
+            <param-value>controllers.sub.MenuPanier</param-value>
         </init-param>
          <init-param>
             <param-name>OrderController</param-name>
@@ -20,7 +24,7 @@
         </init-param>
         <init-param>
             <param-name>ShoppingCartController</param-name>
-            <param-value>controllers.sub.ShoppingCartControllerController</param-value>
+            <param-value>controllers.sub.ShoppingCartController</param-value>
         </init-param>
 </servlet>
     <servlet-mapping>

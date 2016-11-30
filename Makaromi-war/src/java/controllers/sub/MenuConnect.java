@@ -9,13 +9,16 @@ import java.io.Serializable;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
-public class MenuController implements Serializable,sousControleur {
+/**
+ *
+ * @author cdi310
+ */
+public class MenuConnect implements Serializable,sousControleur {
   
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
-        return "/WEB-INF/menu.jsp";
+        System.out.println("retour de menu connect--------------------------->");
+        return "/WEB-INF/jsp/menusub/menu-connectok.jsp";
+        
     } 
-
 }

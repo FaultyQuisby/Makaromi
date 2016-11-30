@@ -43,8 +43,9 @@ public class IndexController extends HttpServlet {
                 sci = (sousControleur) Class.forName(valeur).newInstance();
                 mp.put(nomSection, sci);
             } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
-                System.out.println("------->>> ");
+                System.out.println("classe not found------->>> "+nomSection);
             }
+            System.out.println(nomSection);
         }
     
     }
@@ -72,6 +73,7 @@ public class IndexController extends HttpServlet {
         if(mp.containsKey(section)){
             sousControleur monCtrl = mp.get(section);
             url = monCtrl.executer(request,response);
+            System.out.println("url demander------------------------>"+url);
         }
      
        url = response.encodeURL(url);

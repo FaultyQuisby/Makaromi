@@ -1,17 +1,9 @@
-<%-- 
-    Document   : menu
-    Created on : 29 nov. 2016, 11:47:05
-    Author     : cdi306
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
-    <body>
-        <h1>Hello World!</h1>
-    </body>
-</html>
+
+<li><c:url var="url01" value="Controleur">
+    <c:param name="section" value="catalogue" />
+    </c:url>
+    <a href="${url01}">catalogue</a> | 
+</li>
