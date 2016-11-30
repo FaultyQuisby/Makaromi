@@ -19,9 +19,13 @@ public class PatternSession implements Serializable {
     private String ipClient;
     private int nbConnexion;
 
-   // public PatternSession() {
-   //     gestionPanier = lookupGestionPanierLocal();
-   // }
+    public PatternSession() {
+    init();   
+    //gestionPanier = lookupGestionPanierLocal();
+    }
+    private void init(){
+        isconnect=false;
+    }
 
     public String getIpClient() {
         return ipClient;
@@ -69,4 +73,12 @@ public class PatternSession implements Serializable {
         }
     }
    */
+
+    public boolean isIsconnect() {
+        return isconnect;
+    }
+
+    public void setIsconnect(boolean isconnect) {
+        this.isconnect = isconnect;
+    }
 }

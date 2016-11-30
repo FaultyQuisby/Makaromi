@@ -8,6 +8,8 @@ package controllers.sub;
 import java.io.Serializable;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import outils.PatternSession;
 
 /**
  *
@@ -17,8 +19,15 @@ public class MenuConnect implements Serializable,sousControleur {
   
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("retour de menu connect--------------------------->");
-        return "/WEB-INF/jsp/menusub/menu-connectok.jsp";
-        
+        HttpSession session = request.getSession();
+        PatternSession patternSession = (PatternSession) session.getAttribute("patternSession");
+        boolean test = patternSession.isIsconnect();
+        String url="";
+        if (test){
+        url="/WEB-INF/jsp/menusub/menu-connectok.jsp";
+        }else{
+        url="/WEB-INF/jsp/menusub/menu-connectnok.jsp";
+        }
+    return url;
     } 
 }
