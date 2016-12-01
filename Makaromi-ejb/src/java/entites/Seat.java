@@ -18,15 +18,19 @@ public class Seat implements Serializable {
     @ManyToOne
     private Representation representation;
     
+    @ManyToOne
+    private Category category;
+    
     private int number;
     private String seatMapUrl;
     
     public Seat() {
     }
 
-    public Seat(Long id, Representation representation, int number, String seatMapUrl) {
+    public Seat(Long id, Representation representation, Category category, int number, String seatMapUrl) {
         this.id = id;
         this.representation = representation;
+        this.category = category;
         this.number = number;
         this.seatMapUrl = seatMapUrl;
     }
@@ -61,6 +65,14 @@ public class Seat implements Serializable {
 
     public void setSeatMapUrl(String seatMapUrl) {
         this.seatMapUrl = seatMapUrl;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
     
     @Override
