@@ -14,6 +14,10 @@
             <param-name>MenuConnectAff</param-name>
             <param-value>controllers.sub.MenuConnectAff</param-value>
         </init-param>
+         <init-param>
+            <param-name>MenuConnectGest</param-name>
+            <param-value>controllers.sub.MenuConnectGest</param-value>
+        </init-param>
         <init-param>
             <param-name>MenuPanierAff</param-name>
             <param-value>controllers.sub.MenuPanierAff</param-value>

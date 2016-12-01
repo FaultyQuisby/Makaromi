@@ -21,7 +21,7 @@
                         </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> My Account <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
+                            <ul id="menuConnect" class="dropdown-menu" role="menu">
                                 <c:url var="url" value="IndexController?section=MenuConnectAff" />
                                 <c:import url="${url}"  />
                             </ul>
@@ -32,4 +32,4 @@
             </div>
             <!--/.container-fluid -->
         </nav>
-
+<script src="js/menuajx.js" type="text/javascript"></script>

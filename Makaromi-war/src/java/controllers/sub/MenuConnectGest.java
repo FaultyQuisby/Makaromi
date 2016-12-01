@@ -11,6 +11,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import outils.PatternSession;
 
 /**
  *
@@ -20,6 +22,16 @@ public class MenuConnectGest implements Serializable,sousControleur {
   
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
-        return "";
+          
+        HttpSession session = request.getSession();
+//        if(session.getAttribute("patternSession") == null){
+//            session.setAttribute("patternSession", new PatternSession());
+//        }
+        PatternSession patternSession = (PatternSession) session.getAttribute("patternSession");
+        
+        patternSession.setIsconnect(true);
+        System.out.println(">>>>>>>>>>>>>>>>>>>>>patternSession.setIsconnect(true);"+ patternSession.isIsconnect());
+        // return "/WEB-INF/vide.jsp";
+        return "/IndexController?section=MenuConnectAff";
     } 
 }

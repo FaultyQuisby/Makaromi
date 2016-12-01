@@ -5,7 +5,6 @@ package controllers;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import controllers.sub.sousControleur;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,34 +20,33 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import outils.PatternSession;
 
-
 /**
  *
  * @author cdi310
  */
 public class IndexController extends HttpServlet {
 
-  private HashMap<String, sousControleur> mp;
+    private HashMap<String, sousControleur> mp;
 
     @Override
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        mp = new HashMap<>();        
+        mp = new HashMap<>();
 
         sousControleur sci = null;
-        Enumeration<String> lesNoms = config.getInitParameterNames();        
-        while(lesNoms.hasMoreElements()){
+        Enumeration<String> lesNoms = config.getInitParameterNames();
+        while (lesNoms.hasMoreElements()) {
             String nomSection = lesNoms.nextElement();
-            String valeur = config.getInitParameter(nomSection);            
+            String valeur = config.getInitParameter(nomSection);
             try {
                 sci = (sousControleur) Class.forName(valeur).newInstance();
                 mp.put(nomSection, sci);
             } catch (ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
-                System.out.println("classe not found------->>> "+nomSection);
+                System.out.println("classe not found------->>> " + nomSection);
             }
             System.out.println(nomSection);
         }
-    
+
     }
 
     /**
@@ -65,27 +63,27 @@ public class IndexController extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
-        
-        if(session.getAttribute("patternSession") == null){
+
+        if (session.getAttribute("patternSession") == null) {
             session.setAttribute("patternSession", new PatternSession());
         }
         PatternSession patternSession = (PatternSession) session.getAttribute("patternSession");
-        
-        
+
         String url = "/WEB-INF/jsp/home.jsp";
         String section = request.getParameter("section");
-        
-        
+
         //sections 
-        if(mp.containsKey(section)){
+        if (mp.containsKey(section)) {
             sousControleur monCtrl = mp.get(section);
-            url = monCtrl.executer(request,response);
-            System.out.println("url demander------------------------>"+url);
+            url = monCtrl.executer(request, response);
+            System.out.println("url demander------------------------>" + url);
         }
-     
-       url = response.encodeURL(url);
-       getServletContext().getRequestDispatcher(url).include(request,response);
-        
+
+        url = response.encodeURL(url);
+        if (url != null) {
+            getServletContext().getRequestDispatcher(url).include(request, response);
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
