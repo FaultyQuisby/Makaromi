@@ -1,12 +1,14 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
 
 @Entity
@@ -18,6 +20,9 @@ public class Event implements Serializable {
     
     @ManyToOne
     private Status status;
+    
+    @OneToMany
+    private ArrayList<Representation> representations;
     
     
     private String name;
@@ -33,10 +38,11 @@ public class Event implements Serializable {
     public Event() {
     }
 
-    public Event(Long id, Status status, String name, String imgURL, float price, 
-                 Date startDate, Date endDate, String synopsis, String comment) {
+    
+    public Event(Long id, Status status, ArrayList<Representation> representations, String name, String imgURL, float price, Date startDate, Date endDate, String synopsis, String comment) {
         this.id = id;
         this.status = status;
+        this.representations = representations;
         this.name = name;
         this.imgURL = imgURL;
         this.price = price;
@@ -45,10 +51,6 @@ public class Event implements Serializable {
         this.synopsis = synopsis;
         this.comment = comment;
     }
-    
-    
-    
-    
     
     public Long getId() {
         return id;
@@ -121,6 +123,15 @@ public class Event implements Serializable {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
+    public ArrayList<Representation> getRepresentations() {
+        return representations;
+    }
+
+    public void setRepresentations(ArrayList<Representation> representations) {
+        this.representations = representations;
+    }
+    
 
     @Override
     public int hashCode() {

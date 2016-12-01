@@ -13,11 +13,11 @@ import javax.ejb.Local;
  */
 @Local
 public interface ShoppingCartBeanLocal {
-    public void initialize(String person) throws TicketException;
-    public void initialize(String person, String id)
-         throws TicketException;
-    public void addBook(String title);
-    public void removeBook(String title) throws TicketException;
-    public List<String> getContents();
-    public void remove();
+//    public void initialize(String person) throws TicketException;
+//    public void initialize(String person, String id)
+//         throws TicketException;
+//    public void addBook(String title);
+//    public void removeBook(String title) throws TicketException;
+//    public List<String> getContents();
+//    public void remove();
 }

@@ -21,9 +21,6 @@ public class Seat implements Serializable {
     private int number;
     private String seatMapUrl;
     
-    
-    
-
     public Seat() {
     }
 

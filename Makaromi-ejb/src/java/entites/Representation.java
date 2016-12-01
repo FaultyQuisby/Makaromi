@@ -26,9 +26,17 @@ public class Representation implements Serializable {
     private Date date;
     @Temporal(javax.persistence.TemporalType.TIME)
     private Date time;
-    
-    
-    
+
+    public Representation() {
+    }
+
+    public Representation(Long id, ArrayList<Seat> seats, int maxCapacity, Date date, Date time) {
+        this.id = id;
+        this.seats = seats;
+        this.maxCapacity = maxCapacity;
+        this.date = date;
+        this.time = time;
+    }
     
     public Long getId() {
         return id;
@@ -38,6 +46,38 @@ public class Representation implements Serializable {
         this.id = id;
     }
 
+    public ArrayList<Seat> getSeats() {
+        return seats;
+    }
+
+    public void setSeats(ArrayList<Seat> seats) {
+        this.seats = seats;
+    }
+
+    public int getMaxCapacity() {
+        return maxCapacity;
+    }
+
+    public void setMaxCapacity(int maxCapacity) {
+        this.maxCapacity = maxCapacity;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+    
     @Override
     public int hashCode() {
         int hash = 0;
