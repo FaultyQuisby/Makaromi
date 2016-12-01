@@ -10,7 +10,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
 /**
@@ -23,26 +22,31 @@ public class Ticket implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long numberTicket;
-    @ManyToOne
-    private int princingId;
-    @ManyToOne
-    private int orderId;
-    private Float priceSell;
-    private Float taxe;
-    private String nameTicketHolder;
-    private String firstNameTicketHolder;
-    private String emailAdressTicketHolder;
+    
     @OneToOne
-    private int seatId;
+    private Pricing pricing;
+    
+    @OneToOne
+    private Seat seat;
+    
+    private Float sellPrice;
+    private Float tax;
+    private String ticketHolderLastName;
+    private String ticketHolderFirstName;
+    private String ticketHolderMail;
 
-    public Ticket(int princingId, int orderId, Float priceSell, String nameTicketHolder, String firstNameTicketHolder, String emailAdressTicketHolder, int seatId) {
-        this.princingId = princingId;
-        this.orderId = orderId;
-        this.priceSell = priceSell;
-        this.nameTicketHolder = nameTicketHolder;
-        this.firstNameTicketHolder = firstNameTicketHolder;
-        this.emailAdressTicketHolder = emailAdressTicketHolder;
-        this.seatId = seatId;
+    public Ticket() {
+    }
+
+    public Ticket(Long numberTicket, Pricing pricing, Seat seat, Float sellPrice, Float tax, String ticketHolderLastName, String ticketHolderFirstName, String ticketHolderMail) {
+        this.numberTicket = numberTicket;
+        this.pricing = pricing;
+        this.seat = seat;
+        this.sellPrice = sellPrice;
+        this.tax = tax;
+        this.ticketHolderLastName = ticketHolderLastName;
+        this.ticketHolderFirstName = ticketHolderFirstName;
+        this.ticketHolderMail = ticketHolderMail;
     }
 
     public Long getNumberTicket() {
@@ -53,69 +57,65 @@ public class Ticket implements Serializable {
         this.numberTicket = numberTicket;
     }
 
-    public int getPrincingId() {
-        return princingId;
+    public Pricing getPricing() {
+        return pricing;
     }
 
-    public void setPrincingId(int princingId) {
-        this.princingId = princingId;
+    public void setPricing(Pricing pricing) {
+        this.pricing = pricing;
     }
 
-    public int getOrderId() {
-        return orderId;
+    public Seat getSeat() {
+        return seat;
     }
 
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
+    public void setSeat(Seat seat) {
+        this.seat = seat;
     }
 
-    public Float getPriceSell() {
-        return priceSell;
+    public Float getSellPrice() {
+        return sellPrice;
     }
 
-    public void setPriceSell(Float priceSell) {
-        this.priceSell = priceSell;
+    public void setSellPrice(Float sellPrice) {
+        this.sellPrice = sellPrice;
     }
 
-    public Float getTaxe() {
-        return taxe;
+    public Float getTax() {
+        return tax;
     }
 
-    public void setTaxe(Float taxe) {
-        this.taxe = taxe;
+    public void setTax(Float tax) {
+        this.tax = tax;
     }
 
-    public String getNameTicketHolder() {
-        return nameTicketHolder;
+    public String getTicketHolderLastName() {
+        return ticketHolderLastName;
     }
 
-    public void setNameTicketHolder(String nameTicketHolder) {
-        this.nameTicketHolder = nameTicketHolder;
+    public void setTicketHolderLastName(String ticketHolderLastName) {
+        this.ticketHolderLastName = ticketHolderLastName;
     }
 
-    public String getFirstNameTicketHolder() {
-        return firstNameTicketHolder;
+    public String getTicketHolderFirstName() {
+        return ticketHolderFirstName;
     }
 
-    public void setFirstNameTicketHolder(String firstNameTicketHolder) {
-        this.firstNameTicketHolder = firstNameTicketHolder;
+    public void setTicketHolderFirstName(String ticketHolderFirstName) {
+        this.ticketHolderFirstName = ticketHolderFirstName;
     }
 
-    public String getEmailAdressTicketHolder() {
-        return emailAdressTicketHolder;
+    public String getTicketHolderMail() {
+        return ticketHolderMail;
     }
 
-    public void setEmailAdressTicketHolder(String emailAdressTicketHolder) {
-        this.emailAdressTicketHolder = emailAdressTicketHolder;
+    public void setTicketHolderMail(String ticketHolderMail) {
+        this.ticketHolderMail = ticketHolderMail;
     }
-
-    public int getSeatId() {
-        return seatId;
-    }
-
-    public void setSeatId(int seatId) {
-        this.seatId = seatId;
-    }
+    
+    
+    
+    
 
     @Override
     public int hashCode() {

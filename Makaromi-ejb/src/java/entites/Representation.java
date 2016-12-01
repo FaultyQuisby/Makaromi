@@ -1,27 +1,34 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+
 
 @Entity
-public class Status implements Serializable {
+public class Representation implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @OneToMany(mappedBy = "representation")
+    private ArrayList<Seat> seats;
     
-    private String name;
-
-    public Status() {
-    }
-
-    public Status(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
+    private int maxCapacity;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date date;
+    @Temporal(javax.persistence.TemporalType.TIME)
+    private Date time;
+    
+    
+    
     
     public Long getId() {
         return id;
@@ -31,14 +38,6 @@ public class Status implements Serializable {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-    
     @Override
     public int hashCode() {
         int hash = 0;
@@ -49,10 +48,10 @@ public class Status implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Status)) {
+        if (!(object instanceof Representation)) {
             return false;
         }
-        Status other = (Status) object;
+        Representation other = (Representation) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -61,7 +60,7 @@ public class Status implements Serializable {
 
     @Override
     public String toString() {
-        return "entites.Status[ id=" + id + " ]";
+        return "entites.Representation[ id=" + id + " ]";
     }
 
 }
