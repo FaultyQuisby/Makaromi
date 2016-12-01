@@ -25,27 +25,27 @@ public class Order implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne
     @NotNull
-    private int statusID;
     @ManyToOne
+    private Status status;
     @NotNull
-    private int adressBil;
     @ManyToOne
+    private Address addressBil;
     @NotNull
-    private int adressDel;
     @ManyToOne
+    private Address addressDel;
     @NotNull
-    private int registredUserId;
-    private int ipAdressRegistredUser;
+    @ManyToOne
+    private User user;
+    private int ipAddressRegistredUser;
     @OneToOne
-    private int paymentId;
+    private Payment payment;
 
-    public Order(int statusID, int adressBil, int adressDel, int registredUserId) {
-        this.statusID = statusID;
-        this.adressBil = adressBil;
-        this.adressDel = adressDel;
-        this.registredUserId = registredUserId;
+    public Order(Status status, Address addressBil, Address addressDel, User registredUser) {
+        this.status = status;
+        this.addressBil = addressBil;
+        this.addressDel = addressDel;
+        this.user = user;
     }
 
     public Long getId() {
@@ -56,52 +56,52 @@ public class Order implements Serializable {
         this.id = id;
     }
 
-    public int getStatusID() {
-        return statusID;
+    public Status getStatus() {
+        return status;
     }
 
-    public void setStatusID(int statusID) {
-        this.statusID = statusID;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
-    public int getAdressBil() {
-        return adressBil;
+    public Address getAddressBil() {
+        return addressBil;
     }
 
-    public void setAdressBil(int adressBil) {
-        this.adressBil = adressBil;
+    public void setAddressBil(Address addressBil) {
+        this.addressBil = addressBil;
     }
 
-    public int getAdressDel() {
-        return adressDel;
+    public Address getAddressDel() {
+        return addressDel;
     }
 
-    public void setAdressDel(int adressDel) {
-        this.adressDel = adressDel;
+    public void setAddressDel(Address addressDel) {
+        this.addressDel = addressDel;
     }
 
-    public int getRegistredUserId() {
-        return registredUserId;
+    public User getUser() {
+        return user;
     }
 
-    public void setRegistredUserId(int registredUserId) {
-        this.registredUserId = registredUserId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
-    public int getIpAdressRegistredUser() {
-        return ipAdressRegistredUser;
+    public int getIpAddressRegistredUser() {
+        return ipAddressRegistredUser;
     }
 
-    public void setIpAdressRegistredUser(int ipAdressRegistredUser) {
-        this.ipAdressRegistredUser = ipAdressRegistredUser;
+    public void setIpAddressRegistredUser(int ipAddressRegistredUser) {
+        this.ipAddressRegistredUser = ipAddressRegistredUser;
     }
 
-    public int getPaymentId() {
-        return paymentId;
+    public Payment getPayment() {
+        return payment;
     }
 
-    public void setPaymentId(int paymentId) {
-        this.paymentId = paymentId;
+    public void setPayment(Payment payment) {
+        this.payment = payment;
     }
 
     @Override

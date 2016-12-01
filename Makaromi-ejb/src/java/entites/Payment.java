@@ -26,21 +26,20 @@ public class Payment implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @NotNull
     @ManyToOne
+    private Status status;
     @NotNull
-    private int statusID;
     @OneToOne
-    @NotNull
-    private int orderID;
+    private Order order;
     private String typePayment;
-    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date datePayment;
     private Boolean validationPayment;
 
-    public Payment(int statusID, int orderID, String typePayment) {
-        this.statusID = statusID;
-        this.orderID = orderID;
+    public Payment(Status status, Order order, String typePayment) {
+        this.status = status;
+        this.order = order;
         this.typePayment = typePayment;
     }
     
@@ -52,20 +51,20 @@ public class Payment implements Serializable {
         this.id = id;
     }
 
-    public int getStatusID() {
-        return statusID;
+    public Status getStatus() {
+        return status;
     }
 
-    public void setStatusID(int statusID) {
-        this.statusID = statusID;
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
-    public int getOrderID() {
-        return orderID;
+    public Order getOrder() {
+        return order;
     }
 
-    public void setOrderID(int orderID) {
-        this.orderID = orderID;
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     public String getTypePayment() {
