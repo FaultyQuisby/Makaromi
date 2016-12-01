@@ -13,6 +13,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -32,6 +33,8 @@ public class Payment implements Serializable {
     @NotNull
     private int orderID;
     private String typePayment;
+    
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date datePayment;
     private Boolean validationPayment;
 
