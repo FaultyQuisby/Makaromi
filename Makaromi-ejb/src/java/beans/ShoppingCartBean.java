@@ -5,162 +5,70 @@
  */
 package beans;
 
-import javax.ejb.Singleton;
-import javax.ejb.LocalBean;
-import java.io.Serializable;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
-import java.text.DecimalFormatSymbols;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Locale;
-import java.util.Map;
-//import model.classes.Edition; remplacer par l'import de l'evenement.
+import java.util.ArrayList;
+import java.util.List;
+import javax.ejb.Remove;
+import javax.ejb.Stateful;
 
 /**
  *
  * @author cdi306
  */
-@Singleton
-@LocalBean
-public class ShoppingCartBean implements Serializable{
-    //ConnexionBean bc;
-    //Map<String, Edition> map;
+@Stateful
+public class ShoppingCartBean implements ShoppingCartBeanLocal {
 
-    public ShoppingCartBean() {
-        //this.map = new HashMap();
+    String customerName;
+    String customerId;
+    List<String> contents;
+
+    public void initialize(String person) throws TicketException {
+        if (person == null) {
+            throw new TicketException("Null person not allowed.");
+        } else {
+            customerName = person;
+        }
+
+        customerId = "0";
+        contents = new ArrayList<String>();
     }
 
-    //public ShoppingCartBean(ConnexionBean bc, Map<String, Edition> map) {
-    //    this.map = map;
-    //    this.bc = bc;
-    //}
+    public void initialize(String person, String id)
+                 throws TicketException {
+        if (person == null) {
+            throw new TicketException("Null person not allowed.");
+        } else {
 
-    //public void create(String isbn, Edition e) {
-    //    create(isbn, e, +1);
-    //}
+            customerName = person;
+        }
 
-    //public void create(String isbn, Edition e, int qty) {
-    //    add(isbn, e, qty);
-    //}
+        IdVerifier idChecker = new IdVerifier();
 
-//    public void add(String isbn, Edition e, int qty) {
-//        if (map.containsKey(isbn)) {
-//            e.change(qty);
-//           if (e.getCartQty() < 1) {
-//               del(isbn);
-//            }
-//        } else {
-//            e.change(qty);
-//            map.put(isbn, e);
-//        }
-//    }
-    // faire la modification du stock à la commande
-    // la methode add ne fonctionne pas correctement, à voir.
-    //public void add(String isbn, Edition e, int qty) {
-//        if (map.containsKey(isbn)) {
-//            map.get(isbn).change(qty);
-//            if (map.get(isbn).getCartQty() < 1) {
-//                del(isbn);
-//            }
-//        } else {
-//            e.change(qty);
-//            map.put(isbn, e);
-//        }
-//    }
+        if (idChecker.validate(id)) {
+            customerId = id;
+        } else {
+            throw new TicketException("Invalid id: " + id);
+        }
 
-//    public void inc(String isbn, Edition e) {
-//        add(isbn, e, +1);
-//    }
-//
-//    public void dec(String isbn, Edition e) {
-//        dec(isbn, e, 1);
-//    }
-//
-//    public void dec(String isbn, Edition e, int qty) {
-//        add(isbn, e, -qty);
-//    }
-//
-//    public void del(String isbn) {
-//        map.remove(isbn);
-//    }
-//    
-//    public void set(String isbn, int qty){
-//        map.get(isbn).setCartQty(qty);
-//    }
-//
-//    public Collection<Edition> list() {
-//        return map.values();
-//    }
-//
-//    public int size() {
-//        return map.size();
-//    }
-//
-//    public boolean isEmpty() {
-//        return map.isEmpty();
-//    }
-//
-//    public void clean() {
-//        map.clear();
-//    }
-//
-//    public void save() {
-//    }
-//
-//    public void load() {
-//    }
-//
-//    public void checkout() {
-//        // validation du panier...
-//    }
-//
-//    public void setBc(ConnexionBean bc) {
-//        this.bc = bc;
-//    }
-//
-//    public Edition getInMap(String isbn) {
-//        if (map.containsKey(isbn)) {
-//            return map.get(isbn);
-//        } else {
-//            System.out.println("Bonjour !");
-//            return null;
-//        }
-//    }
-//    public Map<String, Edition> getMap() {
-//        return map;
-//    }
-//
-//    public void setMap(Map<String, Edition> map) {
-//        this.map = map;
-//    }
-//
-//    public String getCartPrice() {
-//        Float prixTotal = 0F;
-//        if (!(this.list().isEmpty())) {
-//            for (Edition e : this.list()) {
-//                if (e.getPrixHt() != null) {
-//                    e.initPrix();
-//                    prixTotal += (Float.parseFloat(e.getPrix())) * (e.getCartQty());
-//                }
-//            }
-//        }
-//
-//        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.FRENCH);
-//        otherSymbols.setDecimalSeparator('.');
-//        otherSymbols.setGroupingSeparator(',');
-//        DecimalFormat df = new DecimalFormat("0.00", otherSymbols);
-//        df.setRoundingMode(RoundingMode.HALF_UP);
-//
-//        //System.out.println(df.format(prixTotal));
-//        return df.format(prixTotal);
-//    }
-//    
-//   
-//    
-//    
-//    
-    
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+        contents = new ArrayList<String>();
+    }
+
+    public void addTicket(String title) {
+        contents.add(title);
+    }
+
+    public void removeTicket(String title) throws TicketException {
+        boolean result = contents.remove(title);
+        if (result == false) {
+            throw new TicketException(title + " not in cart.");
+        }
+    }
+
+    public List<String> getContents() {
+        return contents;
+    }
+
+    @Remove
+    public void remove() {
+        contents = null;
+    }
 }
