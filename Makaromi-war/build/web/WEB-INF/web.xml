@@ -6,13 +6,17 @@
             <param-name>DetailsPageController</param-name>
             <param-value>controllers.sub.DetailsPageController</param-value>
         </init-param>
-        <init-param>
-            <param-name>MenuConnect</param-name>
-            <param-value>controllers.sub.MenuConnect</param-value>
+         <init-param>
+            <param-name>MenuMainController</param-name>
+            <param-value>controllers.sub.MenuMainController</param-value>
         </init-param>
         <init-param>
-            <param-name>MenuPanier</param-name>
-            <param-value>controllers.sub.MenuPanier</param-value>
+            <param-name>MenuConnectAff</param-name>
+            <param-value>controllers.sub.MenuConnectAff</param-value>
+        </init-param>
+        <init-param>
+            <param-name>MenuPanierAff</param-name>
+            <param-value>controllers.sub.MenuPanierAff</param-value>
         </init-param>
          <init-param>
             <param-name>OrderController</param-name>

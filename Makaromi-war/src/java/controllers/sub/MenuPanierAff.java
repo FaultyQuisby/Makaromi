@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author cdi310
  */
-public class MenuPanier implements Serializable,sousControleur {
+public class MenuPanierAff implements Serializable,sousControleur {
   
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {

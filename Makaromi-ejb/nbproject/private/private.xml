@@ -5,5 +5,9 @@
         <group>
             <file>file:/D:/Plan_de_travail/Fil%20Rouge%20x-tiers/Makaromi/Makaromi-ejb/src/java/beans/ConnectionBean.java</file>
         </group>
+        <group name="cours">
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-ejb/src/java/beans/ManageUser.java</file>
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-ejb/src/java/entites/User.java</file>
+        </group>
     </open-files>
 </project-private>
