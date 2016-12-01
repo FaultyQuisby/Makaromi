@@ -30,8 +30,6 @@ public class MenuConnectGest implements Serializable,sousControleur {
         PatternSession patternSession = (PatternSession) session.getAttribute("patternSession");
         
         patternSession.setIsconnect(true);
-        System.out.println(">>>>>>>>>>>>>>>>>>>>>patternSession.setIsconnect(true);"+ patternSession.isIsconnect());
-        // return "/WEB-INF/vide.jsp";
         return "/IndexController?section=MenuConnectAff";
     } 
 }

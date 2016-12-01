@@ -5,14 +5,7 @@
 --%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<script type="text/javascript">
-    function go() {
-        // alert( "go 1");
-        modifierDiv01('IndexController?section=MenuConnectGest');
-        // modifierDiv01('IndexController?section=MenuConnectAff');
-        //alert( "go 2");
-    }
-</script>
+
 
 
 <form method="POST" action="IndexController">
@@ -38,7 +31,7 @@
                     <tr>
                         <td colspan="7" align="center"> 
                             <input type="submit" name="DConnect" value="Ok" />
-                            <a href="" onclick="go();return false;">connecter</a>
+                            <a href="IndexController" onclick="modifierDiv01();return false">connecter</a>
                         </td>
 
                     </tr>

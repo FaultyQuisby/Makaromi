@@ -16,8 +16,8 @@ function getXhr() {
     return xhr;
 }
 
-function modifierDiv01(url) {
-    // var url = "IndexController?section=MenuConnectAff";
+function modifierDiv01() {
+    var url = "IndexController?section=MenuConnectGest";
     var xhr = getXhr();
 // On défini ce qu'on va faire quand on aura la réponse
     xhr.onreadystatechange = function () {        
@@ -25,14 +25,12 @@ function modifierDiv01(url) {
 // alert( xhr.readyState +"/"+xhr.status);
         if (xhr.readyState == 4 && xhr.status == 200) {
             var texte = xhr.responseText;
-            alert(texte);
             var elem = document.getElementById("menuConnect");
             elem.innerHTML = texte;
         }
     }
     xhr.open("GET", url , true);
     xhr.send(null);
-    alert(url);
 }
 
 
