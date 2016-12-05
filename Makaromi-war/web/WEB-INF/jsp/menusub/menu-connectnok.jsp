@@ -20,11 +20,11 @@
                      </tr>
                     <tr>
                         <td class="SousTitre"> Login :</td>
-                        <td><input type="text" name="login" value="" required/></td>
+                        <td><input type="text" id="login" name="login" value="" required/></td>
                     </tr>
                     <tr>
                         <td class="SousTitre"> Mot de passe :</td>
-                        <td><input type="password" name="password" required /></td>
+                        <td><input type="password" id="password" name="password" required /></td>
                     </tr>
                     <tr>
                         <td colspan="7" align="center">

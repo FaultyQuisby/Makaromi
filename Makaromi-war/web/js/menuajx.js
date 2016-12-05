@@ -17,7 +17,13 @@ function getXhr() {
 }
 
 function modifierDiv01() {
-    var url = "IndexController?section=MenuConnectGest&action=action&login&password";
+   
+    var monlogin = document.getElementById("login");
+    var monpassword = document.getElementById("password");
+    
+    alert(monlogin.value+"/n"+monpassword.value);
+    var url = "IndexController?section=MenuConnectGest&action=connect&login="+monlogin.value+"&password="+monpassword.value;
+    
     var xhr = getXhr();
 // On défini ce qu'on va faire quand on aura la réponse
     xhr.onreadystatechange = function () {        

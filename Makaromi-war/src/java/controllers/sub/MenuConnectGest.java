@@ -32,9 +32,15 @@ public class MenuConnectGest implements Serializable,sousControleur {
         HttpSession session = request.getSession();
         PatternSession patternSession = (PatternSession) session.getAttribute("patternSession");
          if (request.getParameter("action").equalsIgnoreCase("connect")){
-             if(monUser.ConnectUser(request.getParameter("login"),request.getParameter("password"))!= null){
+             
+             String login = request.getParameter("login");
+             String password = request.getParameter("password");
+             
+             System.out.println("test login et pass recu par jsp-------------------------> "+login+password);
+             
+             if(monUser.ConnectUser(login,password)!= null){
                  patternSession.setIsconnect(true);
-                 patternSession.setUser(monUser.ConnectUser(request.getParameter("login"),request.getParameter("password")));
+                 patternSession.setUser(monUser.ConnectUser(login,password));
              }else{
                  request.setAttribute("msgcnx","erreur de login et mot de passe");
              }
