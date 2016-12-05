@@ -8,8 +8,7 @@
 
 
 
-<form method="POST" action="IndexController">
-            <input type="hidden" name="section" value="MenuConnect" />
+
             <table border="0"  width="250px">
                 <thead>
                 </thead>
@@ -46,4 +45,4 @@
                 </tbody>
             </table>
 
-        </form>
+      

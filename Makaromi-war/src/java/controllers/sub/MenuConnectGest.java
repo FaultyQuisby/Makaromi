@@ -41,7 +41,10 @@ public class MenuConnectGest implements Serializable,sousControleur {
              
          };
         
-        
+        if (request.getParameter("action").equalsIgnoreCase("dconnect")){
+             patternSession.setIsconnect(false);
+             patternSession.setUser(null);
+        }
         
         
         patternSession.setIsconnect(true);

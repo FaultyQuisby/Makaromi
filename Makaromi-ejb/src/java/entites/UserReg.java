@@ -19,8 +19,7 @@ import javax.persistence.NamedQuery;
  */
 @Entity
 @NamedQueries({
-    @NamedQuery(name ="entites.UserReg.findAll" , query ="select p from UserREg p"),
-    @NamedQuery(name = "entites.UserReg.findBylogin",  query = "select p from UserReg p where p.login= :paramlogin")
+    
 })
 public class UserReg implements Serializable {
    
