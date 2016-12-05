@@ -1,0 +1,51 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 déc. 2016, 10:47:42
+    Author     : cdi306
+*/
+
+
+#top-row{
+    padding-top: 10px;
+}
+
+#menuConnect {
+    background-color: black;
+    color : white;
+}
+    
+#menuConnect a {
+    text-decoration: none;
+    color : white;
+}
+
+#menuConnect #leBouttonOK {
+    background-color: #1B96FE !important;
+    border-color: #1B96FE !important;
+    margin-left: 40% !important;
+    margin-bottom: 10px;
+}
+
+.sous_titre {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+input {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: black;
+}
+
+a#seConnecter { 
+    margin-top: 30px;
+    margin-left: 65px;
+}
+a#creationCompte { 
+    margin-top: 20px;
+    margin-left: 40px;
+}

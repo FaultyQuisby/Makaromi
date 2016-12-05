@@ -10,7 +10,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand text-hide" href="#">Makaromi
+                    <a class="navbar-brand text-hide" href="localhost:8080/Makaromi-war/">Makaromi
                     </a>
                 </div>
                 <div id="navbar8" class="navbar-collapse collapse">

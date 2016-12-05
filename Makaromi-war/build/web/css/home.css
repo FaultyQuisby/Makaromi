@@ -15,6 +15,35 @@ html {
   width: auto;
 }
 
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+        height: 70px;
+    }
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        height: 70px;
+    }
+}
+
+
+@media (min-width: 768px){
+    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+        margin-right: -15px;
+        margin-left: -15px;
+        margin-top: 10px;
+    }
+}
+
+
 @media only screen and (max-width : 768px){
     .example-8 .navbar-brand {
         padding: 0px;
@@ -69,6 +98,7 @@ html {
 
 .navbar-inverse .navbar-nav > li > a {
     color: #1B96FE;
+    font-size: larger;
 }
 
 body {

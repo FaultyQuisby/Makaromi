@@ -8,6 +8,7 @@
         <script src="js/vendor/bootstrap.min.js" type="text/javascript"></script>
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
+        <link rel="stylesheet" href="css/menu-connectnok.css" type="text/css"/>
     </head>
 <body>
        

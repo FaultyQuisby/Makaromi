@@ -22,17 +22,14 @@
     </head>
 
     <body>
-       <jsp:useBean class="beans.ShoppingCartBean" id="cart" scope="session" />
-        <%--<c:if test="${modalOpen}">
-            <script src="js/vendor/jquery-1.11.2.min.js"></script>
-            <script>
-                $(document).ready(function () {
-                    $('.row').removeClass('fade');
-                    $('#cartModal').modal('toggle');
-                });
-            </script>
-        </c:if>--%>
-        <!--fade modal--><div class="row  " id="cartModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <script>
+            $("#myModal").on("show.bs.modal", function (e) {
+                var link = $(e.relatedTarget);
+                $(this).find(".modal-body").load(link.attr("href"));
+            });
+        </script>
+        <jsp:useBean class="beans.ShoppingCartBean" id="cart" scope="session" />
+        <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="panel panel-info modal-content">
                     <div class="panel-heading modal-header">
@@ -42,7 +39,7 @@
                                     <h5 class="modal-title"><span class="glyphicon glyphicon-shopping-cart"></span> Panier d'achats</h5>
                                 </div>
                                 <div class="col-xs-6">
-                                    <button type="button" class="btn btn-primary btn-sm btn-block" onclick="window.location.href='/Hiboukili'" type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    <button type="button" class="btn btn-primary btn-sm btn-block" onclick="window.location.href = '/Hiboukili'" type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                         <span class="glyphicon glyphicon-share-alt"></span> Continuer les achats
                                     </button>
                                 </div>
@@ -129,17 +126,17 @@
                             <div class="col-xs-3">
                                 <c:url value="order" var="url">
                                 </c:url>
-                                
+
                                 <c:choose>
                                     <c:when test="${cart.list().size() == 0}">
-                                    <button type="button" disabled class="btn btn-success btn-block" href="#" style="margin-bottom:4px; white-space: normal;">
-                                        Valider
-                                    </button>
+                                        <button type="button" disabled class="btn btn-success btn-block" href="#" style="margin-bottom:4px; white-space: normal;">
+                                            Valider
+                                        </button>
                                     </c:when>
                                     <c:otherwise>
-                                    <a type="button" class="btn btn-success btn-block" href="${ url }" style="margin-bottom:4px; white-space: normal;">
-                                        Valider
-                                    </a>
+                                        <a type="button" class="btn btn-success btn-block" href="${ url }" style="margin-bottom:4px; white-space: normal;">
+                                            Valider
+                                        </a>
                                     </c:otherwise>
                                 </c:choose>
                             </div>
