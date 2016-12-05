@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
 
 @Entity
 public class Address implements Serializable {
@@ -18,11 +20,12 @@ public class Address implements Serializable {
     private String postalCode;
     private String city;
 
+  
     public Address() {
     }
 
     public Address(String number, String street, String postalCode, String city) {
-        this.id = id;
+
         this.number = number;
         this.street = street;
         this.postalCode = postalCode;
@@ -33,9 +36,7 @@ public class Address implements Serializable {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    
 
     public String getNumber() {
         return number;

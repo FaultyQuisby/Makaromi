@@ -6,44 +6,54 @@
 package entites;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToOne;
 
 /**
  *
  * @author cdi310
  */
 @Entity
-@NamedQueries({
-    
-})
+@NamedQueries({})
 public class UserReg implements Serializable {
-   
+
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     private String login;
-    
+
     private String password;
     private String civillite;
     private String firstName;
     private String lastName;
-    
-    
 
+   
+    @OneToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Address addFacturation;
+    
+    @OneToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Address addLivraison;
+
+    
+    
     public UserReg() {
     }
 
-    public UserReg(String login, String password,String civillite,String firstName,String lastName) {
+    public UserReg(Address addLiv,Address addFact, String login, String password, String civillite, String firstName, String lastName) {
+        this.addLivraison = addLiv;
+        this.addFacturation= addFact;
         this.login = login;
         this.password = password;
-        this.civillite=civillite;
+        this.civillite = civillite;
         this.firstName = firstName;
-        this.lastName = lastName; 
+        this.lastName = lastName;
     }
 
     public String getFirstName() {
@@ -62,7 +72,6 @@ public class UserReg implements Serializable {
         this.lastName = lastName;
     }
 
- 
     public String getLogin() {
         return login;
     }
@@ -86,5 +95,5 @@ public class UserReg implements Serializable {
     public void setCivillite(String civillite) {
         this.civillite = civillite;
     }
-    
+
 }

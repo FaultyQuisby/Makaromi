@@ -33,7 +33,8 @@ public class CreateAccountController implements Serializable, sousControleur {
 
         if (request.getParameter("DCreate") != null) {
             monUser.createUser(request.getParameter("login"), request.getParameter("pwd"),
-                    request.getParameter("civilite"), request.getParameter("nom"), request.getParameter("prenom"));
+                    request.getParameter("civilite"), request.getParameter("nom"), request.getParameter("prenom"),
+                    request.getParameter("adresseRue"));
             patternSession.setIsconnect(true);
             if (patternSession.isIsconnect()) {
 

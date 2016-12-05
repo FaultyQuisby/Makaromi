@@ -3,6 +3,7 @@
   <persistence-unit name="Makaromi-ejbPU" transaction-type="JTA">
     <jta-data-source>jdbc/magasin</jta-data-source>
     <class>entites.UserReg</class>
+    <class>entites.Address</class>
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="create"/>
