@@ -59,5 +59,11 @@
         <local>beans.ManageUserLocal</local>
         <ejb-link>Makaromi-ejb.jar#ManageUser</ejb-link>
     </ejb-local-ref>
+    <ejb-local-ref>
+        <ejb-ref-name>ManageUser1</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>beans.ManageUserLocal</local>
+        <ejb-link>Makaromi-ejb.jar#ManageUser</ejb-link>
+    </ejb-local-ref>
 </web-app>
 <!--<?xml version="2.4" encoding="UTF-8">-->

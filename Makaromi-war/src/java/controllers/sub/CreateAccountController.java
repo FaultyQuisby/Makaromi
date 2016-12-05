@@ -22,38 +22,29 @@ import outils.PatternSession;
  *
  * @author cdi310
  */
-public class CreateAccountController implements Serializable,sousControleur {
+public class CreateAccountController implements Serializable, sousControleur {
+
     ManageUserLocal monUser = lookupManageUserLocal();
-  
+
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         PatternSession patternSession = (PatternSession) session.getAttribute("patternSession");
-        
-        
-        
-        
-        
-        if(request.getParameter("DCreate")!= null){
-           monUser.createUser(request.getParameter("login"),request.getParameter("pwd"),
-                  request.getParameter("civilite"),request.getParameter("nom"),request.getParameter("prenom"));
-           patternSession.setIsconnect(true);
-            
+
+        if (request.getParameter("DCreate") != null) {
+            monUser.createUser(request.getParameter("login"), request.getParameter("pwd"),
+                    request.getParameter("civilite"), request.getParameter("nom"), request.getParameter("prenom"));
+            patternSession.setIsconnect(true);
+            if (patternSession.isIsconnect()) {
+
+                request.setAttribute("message", "creation ok");
+            } else {
+                request.setAttribute("message", "creation nok");
+            }
         }
-        if(patternSession.isIsconnect()){
-            
-            request.setAttribute("message","creation ok");
-        }else{
-            request.setAttribute("message","creation nok");
-        }
-        
-        
-        
-        
-        
-        
+
         return "/WEB-INF/jsp/createAccount.jsp";
-    } 
+    }
 
     private ManageUserLocal lookupManageUserLocal() {
         try {

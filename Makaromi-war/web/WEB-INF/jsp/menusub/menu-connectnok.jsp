@@ -28,8 +28,7 @@
                         <td><input type="password" name="password" required /></td>
                     </tr>
                     <tr>
-                        <td colspan="7" align="center"> 
-                            <input type="submit" name="DConnect" value="Ok" />
+                        <td colspan="7" align="center">
                             <a href="IndexController" onclick="modifierDiv01();return false">connecter</a>
                         </td>
 

@@ -17,7 +17,7 @@ function getXhr() {
 }
 
 function modifierDiv01() {
-    var url = "IndexController?section=MenuConnectGest";
+    var url = "IndexController?section=MenuConnectGest&&action=connect";
     var xhr = getXhr();
 // On défini ce qu'on va faire quand on aura la réponse
     xhr.onreadystatechange = function () {        

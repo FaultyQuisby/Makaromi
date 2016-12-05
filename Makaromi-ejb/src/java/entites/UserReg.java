@@ -10,12 +10,18 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 /**
  *
  * @author cdi310
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(name ="entites.UserReg.findAll" , query ="select p from UserREg p"),
+    @NamedQuery(name = "entites.UserReg.findBylogin",  query = "select p from UserReg p where p.login= :paramlogin")
+})
 public class UserReg implements Serializable {
    
     private static final long serialVersionUID = 1L;
