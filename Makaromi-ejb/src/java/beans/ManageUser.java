@@ -16,7 +16,7 @@ import javax.persistence.PersistenceContext;
  */
 @Stateless
 public class ManageUser implements ManageUserLocal {
- @PersistenceContext(unitName = "magasin-v02-ejbPU")
+ @PersistenceContext(unitName = "Makaromi-ejbPU")
     private EntityManager em;
  
  @Override

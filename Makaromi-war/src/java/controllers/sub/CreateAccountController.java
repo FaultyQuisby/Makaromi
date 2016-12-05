@@ -6,7 +6,13 @@
 package controllers.sub;
 
 import beans.ManageUser;
+import beans.ManageUserLocal;
 import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -17,6 +23,7 @@ import outils.PatternSession;
  * @author cdi310
  */
 public class CreateAccountController implements Serializable,sousControleur {
+    ManageUserLocal monUser = lookupManageUserLocal();
   
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
@@ -28,8 +35,6 @@ public class CreateAccountController implements Serializable,sousControleur {
         
         
         if(request.getParameter("DCreate")!= null){
-            ManageUser monUser = new ManageUser();
-            
            monUser.createUser(request.getParameter("login"),request.getParameter("pwd"),
                   request.getParameter("civilite"),request.getParameter("nom"),request.getParameter("prenom"));
            patternSession.setIsconnect(true);
@@ -49,4 +54,14 @@ public class CreateAccountController implements Serializable,sousControleur {
         
         return "/WEB-INF/jsp/createAccount.jsp";
     } 
+
+    private ManageUserLocal lookupManageUserLocal() {
+        try {
+            Context c = new InitialContext();
+            return (ManageUserLocal) c.lookup("java:global/Makaromi/Makaromi-ejb/ManageUser!beans.ManageUserLocal");
+        } catch (NamingException ne) {
+            Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
+            throw new RuntimeException(ne);
+        }
+    }
 }

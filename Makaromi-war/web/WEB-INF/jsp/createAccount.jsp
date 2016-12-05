@@ -35,7 +35,7 @@
                         </tr>
                         <tr ALIGN=right>
                             <td> Mot de passe : <input type="password" name="pwd" value="" required /><br></td>
-                            <td> ville: <input type="text" name="ville" value="${cpt.ville}" required /><br></td>
+                            <td> ville: <input type="text" name="ville" value="" required /><br></td>
                             <td width="60"><br/></td>
                         </tr>
                         <tr ALIGN=right>
