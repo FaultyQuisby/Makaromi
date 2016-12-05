@@ -18,9 +18,7 @@
             <span>Password :</span> <input type="password" id="password" name="password" required />
         </div>
         <div class="row connect_button">
-            <input class="btn btn-primary" id="leBouttonOK" type="submit" name="DConnect" value="Ok" /><br>
-                Se connecter
-            </a>
+            <input class="btn btn-primary" id="leBouttonOK" type="submit" name="DConnect" value="Ok" />
         </div>
         <div class="row error_msg">
             <font color="red">${msg}<br> </font>
