@@ -5,7 +5,10 @@
  */
 package beans;
 
+import entites.UserReg;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
@@ -13,7 +16,13 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class ManageUser implements ManageUserLocal {
-
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+ @PersistenceContext(unitName = "magasin-v02-ejbPU")
+    private EntityManager em;
+ 
+ @Override
+    public void createUser(String login, String password,String civillite,String firstName,String lastName){
+       UserReg user1= new UserReg(login,password,civillite,firstName,lastName);
+       em.persist(user1);
+       
+   }
 }

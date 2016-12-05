@@ -13,5 +13,7 @@ import javax.ejb.Local;
  */
 @Local
 public interface ManageUserLocal {
+
+    public void createUser(String login, String password, String civillite, String firstName, String lastName);
     
 }

@@ -1,12 +1,13 @@
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" version="3.1">
-<servlet>
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee">
+    <servlet>
         <servlet-name>IndexController</servlet-name>
         <servlet-class>controllers.IndexController</servlet-class>
         <init-param>
             <param-name>DetailsPageController</param-name>
             <param-value>controllers.sub.DetailsPageController</param-value>
         </init-param>
-         <init-param>
+        <init-param>
             <param-name>MenuMainController</param-name>
             <param-value>controllers.sub.MenuMainController</param-value>
         </init-param>
@@ -18,7 +19,7 @@
             <param-name>CreateAccountController</param-name>
             <param-value>controllers.sub.CreateAccountController</param-value>
         </init-param>
-         <init-param>
+        <init-param>
             <param-name>MenuConnectGest</param-name>
             <param-value>controllers.sub.MenuConnectGest</param-value>
         </init-param>
@@ -26,7 +27,7 @@
             <param-name>MenuPanierAff</param-name>
             <param-value>controllers.sub.MenuPanierAff</param-value>
         </init-param>
-         <init-param>
+        <init-param>
             <param-name>OrderController</param-name>
             <param-value>controllers.sub.OrderController</param-value>
         </init-param>
@@ -38,7 +39,7 @@
             <param-name>ShoppingCartController</param-name>
             <param-value>controllers.sub.ShoppingCartController</param-value>
         </init-param>
-</servlet>
+    </servlet>
     <servlet-mapping>
         <servlet-name>IndexController</servlet-name>
         <url-pattern>/IndexController</url-pattern>
@@ -52,7 +53,11 @@
         <error-code>404</error-code>
         <location>/page404.html</location>
     </error-page>
+    <ejb-local-ref>
+        <ejb-ref-name>ManageUser</ejb-ref-name>
+        <ejb-ref-type>Session</ejb-ref-type>
+        <local>beans.ManageUserLocal</local>
+        <ejb-link>Makaromi-ejb.jar#ManageUser</ejb-link>
+    </ejb-local-ref>
 </web-app>
-
-
 <!--<?xml version="2.4" encoding="UTF-8">-->
