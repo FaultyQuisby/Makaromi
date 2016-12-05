@@ -21,7 +21,7 @@ function modifierDiv01() {
     var monlogin = document.getElementById("login");
     var monpassword = document.getElementById("password");
     
-    alert(monlogin.value+"/n"+monpassword.value);
+    alert(monlogin.value+"/"+monpassword.value);
     var url = "IndexController?section=MenuConnectGest&action=connect&login="+monlogin.value+"&password="+monpassword.value;
     
     var xhr = getXhr();
