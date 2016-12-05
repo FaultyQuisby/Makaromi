@@ -50,7 +50,7 @@ public class MenuConnectGest implements Serializable,sousControleur {
         if (request.getParameter("action").equalsIgnoreCase("deconnect")){
              patternSession.setIsconnect(false);
              patternSession.setUser(null);
-             System.out.println("deconnexion-------------------------------->");
+             System.out.println("deconnexion----------------------------------------->");
         }
         
        
