@@ -32,7 +32,7 @@ public class MenuConnectGest implements Serializable,sousControleur {
         HttpSession session = request.getSession();
         PatternSession patternSession = (PatternSession) session.getAttribute("patternSession");
          if (request.getParameter("action").equalsIgnoreCase("connect")){
-             if(monUser.ConnectUser(request.getParameter("login"),request.getParameter("password"))!=null){
+             if(monUser.ConnectUser(request.getParameter("login"),request.getParameter("password"))!= null){
                  patternSession.setIsconnect(true);
                  patternSession.setUser(monUser.ConnectUser(request.getParameter("login"),request.getParameter("password")));
              }else{
@@ -41,13 +41,13 @@ public class MenuConnectGest implements Serializable,sousControleur {
              
          };
         
-        if (request.getParameter("action").equalsIgnoreCase("dconnect")){
+        if (request.getParameter("action").equalsIgnoreCase("deconnect")){
              patternSession.setIsconnect(false);
              patternSession.setUser(null);
+             System.out.println("deconnexion-------------------------------->");
         }
         
-        
-        patternSession.setIsconnect(true);
+       
         return "/IndexController?section=MenuConnectAff";
     } 
 

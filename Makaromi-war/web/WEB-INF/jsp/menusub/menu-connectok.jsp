@@ -10,5 +10,5 @@
 <li class="divider"></li>
 <!--<li class="dropdown-header">Nav header</li>-->
 <li><a href="href=IndexController?section=MenuConnectgest&action=moncompte">Settings</a></li>
-<li><a href="href=IndexController?section=MenuConnectGest&action=deconnect">Disconnect</a></li>
+<li><a href="href=IndexController" onclick="decoDiv01();return false">Disconnect</a></li>
 

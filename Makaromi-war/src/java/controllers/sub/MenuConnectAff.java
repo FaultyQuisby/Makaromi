@@ -25,6 +25,8 @@ public class MenuConnectAff implements Serializable,sousControleur {
         HttpSession session = request.getSession();
         PatternSession patternSession = (PatternSession) session.getAttribute("patternSession");
         boolean test = patternSession.isIsconnect();
+        
+        System.out.println("le test connection "+test);
         String url="";
         if (test){
         url="/WEB-INF/jsp/menusub/menu-connectok.jsp";
