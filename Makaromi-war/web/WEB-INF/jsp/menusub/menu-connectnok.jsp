@@ -10,7 +10,6 @@
 
 <form method="POST" action="IndexController">
             <input type="hidden" name="section" value="MenuConnect" />
-
             <table border="0"  width="250px">
                 <thead>
                 </thead>
@@ -42,7 +41,7 @@
                     <tr>
                        <tr>  
                         <td colspan="7" align="center" class="menuTitre"> 
-                            <img src="images/iconNouvelleConnexion.jpg"  width="30"/><a href="Maestro?section=login&action=create"><strong>Création de compte</strong></a>
+                           <a href="IndexController?section=CreateAccountController"><strong>Création de compte</strong></a>
                         </td>   
                     <tr>  
                 </tbody>

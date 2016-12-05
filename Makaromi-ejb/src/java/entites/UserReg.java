@@ -16,30 +16,29 @@ import javax.persistence.Id;
  * @author cdi310
  */
 @Entity
-public class User implements Serializable {
-    private static final long serialVersionUID = -6414370466194026889L;
+public class UserReg implements Serializable {
+   
+    private static final long serialVersionUID = 1L;
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private String login;
+    
+    private String password;
+    private String civillite;
     private String firstName;
     private String lastName;
-    private String birthDate;
-    private String mail;
-    private String login;
-    private String password;
+    
+    
 
-    public User() {
+    public UserReg() {
     }
 
-    public User(Long id, String firstName, String lastName, String birthDate, String mail, String login, String password) {
-        this.id = id;
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.birthDate = birthDate;
-        this.mail = mail;
+    public UserReg(String login, String password,String civillite,String firstName,String lastName) {
         this.login = login;
         this.password = password;
+        this.civillite=civillite;
+        this.firstName = firstName;
+        this.lastName = lastName; 
     }
 
     public String getFirstName() {
@@ -58,22 +57,7 @@ public class User implements Serializable {
         this.lastName = lastName;
     }
 
-    public String getBirthDate() {
-        return birthDate;
-    }
-
-    public void setBirthDate(String birthDate) {
-        this.birthDate = birthDate;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public void setMail(String mail) {
-        this.mail = mail;
-    }
-
+ 
     public String getLogin() {
         return login;
     }
@@ -89,14 +73,13 @@ public class User implements Serializable {
     public void setPassword(String password) {
         this.password = password;
     }
-    
-    public Long getId() {
-        return id;
+
+    public String getCivillite() {
+        return civillite;
     }
 
-    @Override
-    public String toString() {
-        return ""+id;
+    public void setCivillite(String civillite) {
+        this.civillite = civillite;
     }
     
 }

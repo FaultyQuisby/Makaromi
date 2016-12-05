@@ -10,14 +10,9 @@
             <file>file:/C:/Users/cdi316/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/thematicBrowsing.jsp</file>
         </group>
         <group name="cours">
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/menusub/menu-connectnok.jsp</file>
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/src/java/controllers/sub/MenuPanier.java</file>
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/home.jsp</file>
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/menusub/menu-connectok.jsp</file>
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/src/java/controllers/sub/DetailsPageController.java</file>
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/src/java/controllers/sub/MenuConnect.java</file>
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/src/java/controllers/IndexController.java</file>
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/src/java/outils/PatternSession.java</file>
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/createAccount.jsp</file>
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/src/java/controllers/sub/CreateAccountController.java</file>
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/manageAccount.jsp</file>
         </group>
     </open-files>
 </project-private>
