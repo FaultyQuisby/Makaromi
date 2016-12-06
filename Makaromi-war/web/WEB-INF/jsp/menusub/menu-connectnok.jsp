@@ -12,10 +12,10 @@
 
         </div>
         <div class="row sous_titre">
-            <span>Login :</span> <input type="text" id="login" name="login" value="" required/>
+            <span class="login">Login :</span> <input type="text" id="login" name="login" value="" required/>
         </div>
         <div class="row sous_titre">
-            <span>Password :</span> <input type="password" id="password" name="password" required />
+            <span class="password">Password :</span> <input type="password" id="password" name="password" required />
         </div>
         <div class="row connect_button">
             <input class="btn btn-primary" id="leBouttonOK" type="submit" name="DConnect" value="Ok" />

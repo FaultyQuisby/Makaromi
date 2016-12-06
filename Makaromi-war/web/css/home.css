@@ -61,7 +61,7 @@ html {
 
 /* EXAMPLE 8 - Center Background */
 .example-8 .navbar-brand {
-    background: url(http://image.noelshack.com/fichiers/2016/48/1480507467-logomakr-2q6gaj.png) center / contain no-repeat;
+    background: url(http://image.noelshack.com/fichiers/2016/48/1480507467-logomakr-2q6gaj.png) center / contain no-repeat !important;
     width: 200px;
     transform: translateX(-50%);
     left: 50%;

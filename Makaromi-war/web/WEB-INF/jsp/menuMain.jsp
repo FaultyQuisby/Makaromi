@@ -20,7 +20,7 @@
                             <c:import url="${url03}"  />
                         </li>
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> My Account <span class="caret"></span></a>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><span class="glyphicon glyphicon-user monPetitBonhomme"></span> My Account <span class="caret carotte"></span></a>
                             <ul id="menuConnect" class="dropdown-menu" role="menu">
                                 <c:url var="url" value="IndexController?section=MenuConnectAff" />
                                 <c:import url="${url}"  />

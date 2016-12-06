@@ -1,22 +1,27 @@
-<%-- 
-    Document   : createAccountBis
-    Created on : 5 déc. 2016, 14:29:18
-    Author     : CDI316
+<%--
+Document   : createAccountBis
+Created on : 5 déc. 2016, 14:29:18
+Author     : CDI316
 --%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-    <c:url var="url" value="IndexController?section=MenuMainController" />
-    <c:import url="${url}"  /> 
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Création de compte</title>
-    <script src="js/vendor/jquery-1.11.2.min.js" type="text/javascript"></script>
-    <script src="js/vendor/bootstrap.min.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="css/createAccount.css" type="text/css">
-    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="css/home.css" type="text/css">
+<head>
+<c:url var="url" value="IndexController?section=MenuMainController" />
+<c:import url="${url}"  />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Création de compte</title>
+<link rel="stylesheet" href="css/createAccount.css" type="text/css"/>
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+<!--<link rel="stylesheet" href="css/home.css" type="text/css"/>-->
+<link href="css/menu-connectnok.css" rel="stylesheet" type="text/css"/>
+<link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
+<script src="js/vendor/jquery-1.11.2.min.js" type="text/javascript"></script>
+<script src="js/vendor/bootstrap.min.js" type="text/javascript"></script>
+<script src="js/vendor/collapse.js" type="text/javascript"></script>
+<script src="js/vendor/transition.js" type="text/javascript"></script>
+<script src="js/vendor/moment-with-locales.js" type="text/javascript"></script>
+<script src="js/vendor/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -54,19 +59,29 @@
             <!-- Text input-->
 
             <div class="form-group">
-                <label class="col-md-4 control-label" >Date de Naissance</label>   
+                <label class="col-md-4 control-label" >Date de Naissance</label>
                 <div class="col-md-6  inputGroupContainer">
-                    <div class="input-group">                                           
+                    <div class="input-group">
                         <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                        <div class="well">
-                            <div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
-                                <input class="span2" size="16" type="text" value="12-02-2012" readonly="">
-                                <span class="add-on"><i class="glyphicon glyphicon-th"></i></span>
-                            </div>                         
+                        <div class='input-group date' id='datetimepicker2'>
+                            <input type='text' class="form-control" />
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
+            <script type="text/javascript">
+                $(function () {
+                    $('#datetimepicker2').datetimepicker({
+                        format: 'L',
+                        locale: 'fr'
+                    });
+                });
+            </script>
+
+
 
 
             <!-- Text input-->
@@ -147,12 +162,12 @@
                 </label>
                 <div class="col-md-6  inputGroupContainer">
                     <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input class="form-control" id="userPw" type="motdepasse" placeholder="Mot de passe" 
+                        <input class="form-control" id="userPw" type="motdepasse" placeholder="Mot de passe"
                                name="pwd" data-minLength="5"
                                data-error="Erreur"
                                required/>
-                        <span class="glyphicon form-control-feedback"></span>
-                        <span class="help-block with-errors"></span>
+                        <!--<span class="glyphicon form-control-feedback"></span>-->
+                        <!--<span class="help-block with-errors"></span>-->
                     </div>
                 </div>
             </div>
@@ -163,40 +178,44 @@
                 </label>
                 <div class="col-md-6  inputGroupContainer">
                     <div class="input-group"> <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
-                        <input class="form-control {$borderColor}" id="userPw2" type="password" placeholder="Confirmez le mot de passe" 
+                        <input class="form-control {$borderColor}" id="userPw2" type="password" placeholder="Confirmez le mot de passe"
                                name="confirmPassword" data-match="#confirmPassword" data-minLength="5"
                                data-match-error="Erreur de correspondance"
                                required/>
-                        <span class="glyphicon form-control-feedback"></span>
-                        <span class="help-block with-errors"></span>
+                        <!--<span class="glyphicon form-control-feedback"></span>-->
+                        <!--<span class="help-block with-errors"></span>-->
                     </div>
                 </div>
             </div>
 
 
             <!-- Button -->
+            <div class="form-group" >
+                <label class="col-md-4 control-label"></label>
+                <div class="col-md-4">
+                    <button id="validateButton" type="submit" name="DCreate" class="btn btn-warning" >
+                        Envoyer <span class="glyphicon glyphicon-send">
+                    </button>
+                </div>
+            </div>
+
+
             <div class="form-group">
                 <label class="col-md-4 control-label"></label>
                 <div class="col-md-4">
-                    <button type="submit" name="DCreate" class="btn btn-warning" >Envoyer <span class="glyphicon glyphicon-send">
-                            </div>
-                            </div>
+                    <button id="returnButton" type="submit" name="retour" class="btn btn-warning" href="IndexController?section=home.jsp">
+                        Retour <span class="glyphicon glyphicon-arrow-left"></span>
+                    </button>
+                </div>
+
+            </div>
 
 
-                            <div class="form-group">
-                                <label class="col-md-4 control-label"></label>
-                                <div class="col-md-4">
-                                    <button type="submit" name="retour" class="btn btn-warning" href="IndexController?section=home.jsp">
-                                        Retour 
-                                        <span class="glyphicon glyphicon-arrow-left"></span></button>
-                                </div>
+            <div>
+                <!-- ajout rox --><h4 align="center"><font color="red">${message}</font></h4>
+            </div>
 
+        </fieldset>
+    </form>
+</body>
 
-                                <div>
-                                    <!-- ajout rox --><h4 align="center"><font color="red">${message}</font></h4>
-                                </div>
-
-                                </fieldset>
-                                </form>
-                                </body>
-                                </html>
