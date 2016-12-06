@@ -43,6 +43,3 @@ Makaromi-war/dist/
 Makaromi-war/nbdist/
 Makaromi-war/.nb-gradle/
 Makaromi-ejb/dist/Makaromi-ejb.jar
-Makaromi-war/src/java/controllers/sub/ModalController.java
-*.js
-Makaromi-war/web/WEB-INF/jsp/modal.jsp
