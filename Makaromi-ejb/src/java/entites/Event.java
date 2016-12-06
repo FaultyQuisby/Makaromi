@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Temporal;
@@ -19,14 +18,8 @@ public class Event implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @ManyToOne
-    private Status status;
-    
     @OneToMany
     private ArrayList<Representation> representations;
-    
-    @ManyToMany
-    private ArrayList<Artist> artists;
     
     @ManyToOne
     private Section section;
@@ -45,11 +38,9 @@ public class Event implements Serializable {
     public Event() {
     }
 
-    public Event(Long id, Status status, ArrayList<Representation> representations, ArrayList<Artist> artists, Section section, String name, String imgURL, float price, Date startDate, Date endDate, String synopsis, String comment) {
-        this.id = id;
-        this.status = status;
+    public Event(ArrayList<Representation> representations, Section section, String name, String imgURL, float price, Date startDate, Date endDate, String synopsis, String comment) {
+       
         this.representations = representations;
-        this.artists = artists;
         this.section = section;
         this.name = name;
         this.imgURL = imgURL;
@@ -63,19 +54,6 @@ public class Event implements Serializable {
     public Long getId() {
         return id;
     }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
     public String getName() {
         return name;
     }
@@ -140,14 +118,7 @@ public class Event implements Serializable {
         this.representations = representations;
     }
 
-    public ArrayList<Artist> getArtists() {
-        return artists;
-    }
-
-    public void setArtists(ArrayList<Artist> artists) {
-        this.artists = artists;
-    }
-
+   
     public Section getSection() {
         return section;
     }

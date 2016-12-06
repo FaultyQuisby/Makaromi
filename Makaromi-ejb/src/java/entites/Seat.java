@@ -18,8 +18,7 @@ public class Seat implements Serializable {
     @ManyToOne
     private Representation representation;
     
-    @ManyToOne
-    private Category category;
+    
     
     private int number;
     private String seatMapUrl;
@@ -27,10 +26,10 @@ public class Seat implements Serializable {
     public Seat() {
     }
 
-    public Seat(Long id, Representation representation, Category category, int number, String seatMapUrl) {
-        this.id = id;
+    public Seat(Representation representation,  int number, String seatMapUrl) {
+       
         this.representation = representation;
-        this.category = category;
+       
         this.number = number;
         this.seatMapUrl = seatMapUrl;
     }
@@ -39,9 +38,7 @@ public class Seat implements Serializable {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+   
 
     public Representation getRepresentation() {
         return representation;
@@ -67,33 +64,9 @@ public class Seat implements Serializable {
         this.seatMapUrl = seatMapUrl;
     }
 
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
+   
     
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Seat)) {
-            return false;
-        }
-        Seat other = (Seat) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+  
 
     @Override
     public String toString() {

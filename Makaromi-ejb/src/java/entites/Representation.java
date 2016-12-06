@@ -8,7 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 
@@ -16,14 +15,13 @@ import javax.persistence.Temporal;
 public class Representation implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "representation")
+    @OneToMany(mappedBy ="representation")
     private ArrayList<Seat> seats;
     
-    @OneToOne
-    private Venue venue;
+   
     
     private int maxCapacity;
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -34,10 +32,10 @@ public class Representation implements Serializable {
     public Representation() {
     }
 
-    public Representation(Long id, ArrayList<Seat> seats, Venue venue, int maxCapacity, Date rDate, Date rTime) {
-        this.id = id;
+    public Representation(ArrayList<Seat> seats, int maxCapacity, Date rDate, Date rTime) {
+     
         this.seats = seats;
-        this.venue = venue;
+       
         this.maxCapacity = maxCapacity;
         this.rDate = rDate;
         this.rTime = rTime;
@@ -47,9 +45,7 @@ public class Representation implements Serializable {
         return id;
     }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+ 
 
     public ArrayList<Seat> getSeats() {
         return seats;
@@ -83,33 +79,9 @@ public class Representation implements Serializable {
         this.rTime = rTime;
     }
 
-    public Venue getVenue() {
-        return venue;
-    }
-
-    public void setVenue(Venue venue) {
-        this.venue = venue;
-    }
+   
     
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Representation)) {
-            return false;
-        }
-        Representation other = (Representation) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
+  
 
     @Override
     public String toString() {
