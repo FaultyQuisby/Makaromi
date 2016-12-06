@@ -96,4 +96,20 @@ public class UserReg implements Serializable {
         this.civillite = civillite;
     }
 
+    public Address getAddFacturation() {
+        return addFacturation;
+    }
+
+    public void setAddFacturation(Address addFacturation) {
+        this.addFacturation = addFacturation;
+    }
+
+    public Address getAddLivraison() {
+        return addLivraison;
+    }
+
+    public void setAddLivraison(Address addLivraison) {
+        this.addLivraison = addLivraison;
+    }
+
 }
