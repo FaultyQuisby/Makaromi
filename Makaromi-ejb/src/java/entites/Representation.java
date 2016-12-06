@@ -2,11 +2,14 @@ package entites;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -15,29 +18,34 @@ import javax.persistence.Temporal;
 @Entity
 public class Representation implements Serializable {
     private static final long serialVersionUID = 1L;
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy = "representation")
-    private ArrayList<Seat> seats;
-    
-    @OneToOne
-    private Venue venue;
-    
+ 
     private int maxCapacity;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date rDate;
     @Temporal(javax.persistence.TemporalType.TIME)
     private Date rTime;
-
+    
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Venue myvenue;
+    
+    @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Collection<Seat> messeat;
+    
+    
     public Representation() {
     }
+   
+    public Representation(Venue myvenue) {
+        this.myvenue = myvenue;
+    }
 
-    public Representation(Long id, ArrayList<Seat> seats, Venue venue, int maxCapacity, Date rDate, Date rTime) {
-        this.id = id;
-        this.seats = seats;
-        this.venue = venue;
+    public Representation( int maxCapacity, Date rDate, Date rTime) {
+        
         this.maxCapacity = maxCapacity;
         this.rDate = rDate;
         this.rTime = rTime;
@@ -45,18 +53,6 @@ public class Representation implements Serializable {
     
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public ArrayList<Seat> getSeats() {
-        return seats;
-    }
-
-    public void setSeats(ArrayList<Seat> seats) {
-        this.seats = seats;
     }
 
     public int getMaxCapacity() {
@@ -83,13 +79,7 @@ public class Representation implements Serializable {
         this.rTime = rTime;
     }
 
-    public Venue getVenue() {
-        return venue;
-    }
-
-    public void setVenue(Venue venue) {
-        this.venue = venue;
-    }
+   
     
     @Override
     public int hashCode() {
@@ -114,6 +104,38 @@ public class Representation implements Serializable {
     @Override
     public String toString() {
         return "entites.Representation[ id=" + id + " ]";
+    }
+
+    public Date getrDate() {
+        return rDate;
+    }
+
+    public void setrDate(Date rDate) {
+        this.rDate = rDate;
+    }
+
+    public Date getrTime() {
+        return rTime;
+    }
+
+    public void setrTime(Date rTime) {
+        this.rTime = rTime;
+    }
+
+    public Venue getMyvenue() {
+        return myvenue;
+    }
+
+    public void setMyvenue(Venue myvenue) {
+        this.myvenue = myvenue;
+    }
+
+    public Collection<Seat> getMesseat() {
+        return messeat;
+    }
+
+    public void setMesseat(Collection<Seat> messeat) {
+        this.messeat = messeat;
     }
 
 }

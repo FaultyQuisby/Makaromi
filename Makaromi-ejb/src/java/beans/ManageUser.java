@@ -23,6 +23,7 @@ public class ManageUser implements ManageUserLocal {
     @PersistenceContext(unitName = "Makaromi-ejbPU")
     private EntityManager em;
 
+    @Override
     public void createUser(String login, String password, String civillite, String firstName, String lastName,String addLivrue) {
         Address addLiv = new Address();
         Address addFact = new Address();

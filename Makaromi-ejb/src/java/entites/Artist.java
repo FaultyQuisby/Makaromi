@@ -1,7 +1,10 @@
 package entites;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +21,7 @@ public class Artist implements Serializable {
     private Long id;
     
     @ManyToMany(mappedBy = "artists")
-    private List<Event> events;
+    private Collection<Event> events;
     
     
     private String lastName;
@@ -27,10 +30,17 @@ public class Artist implements Serializable {
     private String comment;
 
     public Artist() {
+        events = new ArrayList(); 
     }
 
-    public Artist(Long id, List<Event> events, String lastName, String firstName, String type, String comment) {
-        this.id = id;
+    public Artist(String lastName, String firstName) {
+        events = new ArrayList(); 
+        this.lastName = lastName;
+        this.firstName = firstName;
+    }
+
+    public Artist(List<Event> events, String lastName, String firstName, String type, String comment) {
+        events = new ArrayList(); 
         this.events = events;
         this.lastName = lastName;
         this.firstName = firstName;
@@ -40,14 +50,6 @@ public class Artist implements Serializable {
     
     public Long getId() {
         return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public List<Event> getEvents() {
-        return events;
     }
 
     public void setEvents(List<Event> events) {
@@ -109,6 +111,14 @@ public class Artist implements Serializable {
     @Override
     public String toString() {
         return "entites.Artist[ id=" + id + " ]";
+    }
+
+    public Collection<Event> getEvents() {
+        return events;
+    }
+
+    public void setEvents(Collection<Event> events) {
+        this.events = events;
     }
 
 }

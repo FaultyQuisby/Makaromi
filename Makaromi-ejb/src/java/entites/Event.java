@@ -2,7 +2,9 @@ package entites;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,24 +17,20 @@ import javax.persistence.Temporal;
 @Entity
 public class Event implements Serializable {
     private static final long serialVersionUID = 1L;
+
+    
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-    
-    @ManyToOne
-    private Status status;
-    
-    @OneToMany
-    private ArrayList<Representation> representations;
-    
-    @ManyToMany
-    private ArrayList<Artist> artists;
-    
-    @ManyToOne
+    private String name;
+   
+    @ManyToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Section section;
     
+    @ManyToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Collection <Artist> artists;
     
-    private String name;
+    @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Collection <Representation> representationsev;
+    
     private String imgURL;
     private float price;
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -43,13 +41,21 @@ public class Event implements Serializable {
     private String comment;
 
     public Event() {
+        this.artists = new ArrayList();
+        this.representationsev = new ArrayList();
     }
 
-    public Event(Long id, Status status, ArrayList<Representation> representations, ArrayList<Artist> artists, Section section, String name, String imgURL, float price, Date startDate, Date endDate, String synopsis, String comment) {
-        this.id = id;
-        this.status = status;
-        this.representations = representations;
-        this.artists = artists;
+    public Event(Section section, String name) {
+        this.representationsev = new ArrayList();
+        this.artists = new ArrayList();
+        this.section = section;
+        this.name = name;
+    }
+    
+ 
+    public Event( ArrayList<Representation> representations, Section section, String name, String imgURL, float price, Date startDate, Date endDate, String synopsis, String comment) {
+        this.representationsev = new ArrayList();
+        this.artists = new ArrayList();
         this.section = section;
         this.name = name;
         this.imgURL = imgURL;
@@ -60,22 +66,7 @@ public class Event implements Serializable {
         this.comment = comment;
     }
     
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Status getStatus() {
-        return status;
-    }
-
-    public void setStatus(Status status) {
-        this.status = status;
-    }
-
+   
     public String getName() {
         return name;
     }
@@ -132,20 +123,9 @@ public class Event implements Serializable {
         this.comment = comment;
     }
 
-    public ArrayList<Representation> getRepresentations() {
-        return representations;
-    }
 
-    public void setRepresentations(ArrayList<Representation> representations) {
-        this.representations = representations;
-    }
-
-    public ArrayList<Artist> getArtists() {
-        return artists;
-    }
-
-    public void setArtists(ArrayList<Artist> artists) {
-        this.artists = artists;
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public Section getSection() {
@@ -155,27 +135,29 @@ public class Event implements Serializable {
     public void setSection(Section section) {
         this.section = section;
     }
+
+  
+    public Collection <Artist> getArtists() {
+        return artists;
+    }
+
+    public void setArtists(Collection <Artist> artists) {
+        this.artists = artists;
+    }
+
+    public Collection <Representation> getRepresentationsev() {
+        return representationsev;
+    }
+
+    public void setRepresentationsev(Collection <Representation> representationsev) {
+        this.representationsev = representationsev;
+    }
+
+   
     
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
+   
+   
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Event)) {
-            return false;
-        }
-        Event other = (Event) object;
-        return !((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id)));
-    }
-
-    @Override
-    public String toString() {
-        return "entites.Event[ id=" + id + " ]";
-    }
+   
 
 }
