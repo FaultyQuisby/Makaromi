@@ -1,0 +1,4 @@
+event 
+("Concert Retour des Rolling Stones", "http://www.gottahaverockandroll.com/ItemImages/000011/sep2013-340_lg.jpeg", 105, 15/01/2017, 15/02/2017, "Un retour fracassant des rois du rock n roll. Les années passent mais le son reste parfait", "un évènement à ne pas manquer"),
+("Concert parisien des Red Hot Chili Peppers", "http://concertposter.org/2012-June/RHCP-Paris2011-drop.jpg", 90, 26/12/2016, 14/01/2017, "Un groupe de légende, un concert d'exception", "un évènement inoubliable"),
+("Tournée française de The Chainsmokers", "http://www.clubglow.com/blog/wp-content/uploads/2015/08/103115-476ECHO-chainsmokersfzt1-400x276.png", 70, 25/02/2017, 01/04/2017, "Concert", "Une énergie incroyable"),
