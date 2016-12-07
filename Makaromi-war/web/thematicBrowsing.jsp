@@ -45,6 +45,7 @@
     
     <div class="container">
         <h2>Liste des évènements</h2>
+        <h3>Nom de la Rubrique</h3>
         <p>Musée</p>
         <p>Nom de l'évènement : </p>
         <p>Nom de l'artiste de l'évènement : </p>
