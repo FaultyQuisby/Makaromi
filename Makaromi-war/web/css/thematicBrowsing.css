@@ -1,0 +1,190 @@
+html { 
+    background: url("#") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.navbar-inverse {
+    background-color: black !important;
+    border-color: black !important;
+}
+
+.glyphicon-shopping-cart, .monPetitBonhomme, .carotte {
+    color: #1B96FE !important;
+    background-color: black !important;
+}
+
+.carotte {
+    display: inline-block !important;
+    width: 0 !important;
+    height: 0 !important;
+    margin-left: 2px !important;
+    vertical-align: middle !important;
+    border-top: 4px dashed !important;
+    border-top: 4px solid\9 !important;
+    border-right: 4px solid transparent !important;
+    border-left: 4px solid transparent !important;
+}
+
+.login, .password {
+    background-color: black !important;
+    color: white !important;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: fit-content !important;
+}
+
+@media (min-width: 768px){
+    .container {
+        width: 750px;
+        height: 70px;
+    }
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto;
+        height: 70px;
+    }
+}
+
+
+@media (min-width: 768px){
+    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+        margin-right: 0;
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .container-fluid>.navbar-collapse, .container-fluid>.navbar-header, .container>.navbar-collapse, .container>.navbar-header {
+        margin-right: -15px;
+        margin-left: -15px;
+        margin-top: 10px;
+    }
+}
+
+
+@media only screen and (max-width : 768px){
+    .example-8 .navbar-brand {
+        padding: 0px;
+        transform: translateX(-50%);
+        left: 50%;
+        position: absolute;
+    }
+    .example-8 .navbar-brand>img {
+        height: 100%;
+        width: auto;
+        padding: 7px 14px; 
+    }
+}
+
+
+/* EXAMPLE 8 - Center Background */
+.example-8 .navbar-brand {
+    background: url(http://image.noelshack.com/fichiers/2016/48/1480507467-logomakr-2q6gaj.png) center / contain no-repeat !important;
+    width: 200px;
+    transform: translateX(-50%);
+    left: 50%;
+    position: absolute;
+}
+
+.navbar-alignit .navbar-header {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    height: 50px;
+}
+.navbar-alignit .navbar-brand {
+    top: 50%;
+    display: block;
+    position: relative;
+    height: auto;
+    transform: translate(0,-50%);
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+
+
+
+
+.navbar-nav>li>.dropdown-menu {
+    z-index: 9999;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color : #1B96FE !important;
+    background-color: black;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #1B96FE !important;
+    font-size: larger;
+}
+
+body {
+    font-family: 'Archivo Narrow', sans-serif;
+}
+
+
+
+
+
+
+body:not(.example-8) {
+    max-width: 100%;
+}
+
+body, div:not(.navbar-inverse), input, textarea, legend{
+    background-color: black !important;
+    color: white !important;  
+}
+
+legend{
+    color: #1B96FE !important;
+}
+
+input{
+    min-height: 38px;
+    border: none !important;
+}
+textArea{
+    border-color: #1B96FE !important;
+}
+
+#validateButton, #validateButton span, span{
+    background-color: #1B96FE !important;
+    border-color: #1B96FE !important;
+    color: white !important;
+}
+
+#returnButton, #returnButton span{
+    background-color: #1B96FE !important;
+    border-color: #1B96FE;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

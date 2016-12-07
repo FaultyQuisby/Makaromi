@@ -17,6 +17,8 @@
     
         <section>
             <p>Bienvenue dans votre magasin.</p>
+          
+               <a href="thematicBrowsing.jsp">thematic</a>
         </section>
     </body>
 </html>
