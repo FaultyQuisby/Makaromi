@@ -12,7 +12,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <link rel="stylesheet" href="css/menu-connectnok.css" type="text/css"/>
-        <link href="css/thematicBrowsing.css" rel="stylesheet" type="text/css"/>
+      <!--  <link href="css/thematicBrowsing.css" rel="stylesheet" type="text/css"/>-->
         <title>THEMATIC BROWSING</title>
         <c:url var="url" value="IndexController?section=MenuMainController" />
         <c:import url="${url}"  />
@@ -21,9 +21,6 @@
 <body>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Makaromi</a>
-            </div>
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Musée</a></li>
                 <li><a href="#">Sport</a></li>
@@ -49,6 +46,16 @@
     <div class="container">
         <h2>Liste des évènements</h2>
         <p>Musée</p>
+        <p>Nom de l'évènement : </p>
+        <p>Nom de l'artiste de l'évènement : </p>
+        <p>Prenom de l'artiste de l'évènement : </p>
+        <p>Image de l'évènement : </p>
+        <p>Prix de l'évènement : </p>
+        <p>Date de début de l'évènement : </p>
+        <p>Date de fin de l'évènement : </p>
+        <p>Lieu de l'évènement : </p>
+        <p>Synopsis de l'évènement : </p>
+        <p>Commentaire de l'évènement : </p>
         <ul class="pagination">
             <li><a href="#">1</a></li>
             <li class="active"><a href="#">2</a></li>
