@@ -195,5 +195,27 @@ INSERT INTO User([nameUser],[surnameUser],[dateBirthUser],[email],[commentRegist
 ('Jasper','Foley','02/02/1982','facilisis@tinciduntvehicula.edu','Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat','Holmes Barrera','OWF23NEV8XG'),('Brady','Carey','03/05/1995','et.magna.Praesent@pulvinar.org','sed sem egestas blandit. Nam','Tobias Cabrera','VDD32IPU4IL'),('Vladimir','Simpson','19/07/1989','dictum@interdumSedauctor.com','lacus. Quisque purus sapien,','Wesley Thompson','URL57RGR4AG'),('Nero','Park','16/10/1973','In@ullamcorpermagnaSed.co.uk','semper rutrum. Fusce dolor quam, elementum at,','Merrill Reeves','GDV33HIA9KE'),('Reuben','Kent','12/12/1981','mauris.ut.mi@faucibus.org','urna convallis erat, eget tincidunt dui augue','Keith Peck','CQF94WYB2GO'),('Allistair','Rojas','24/04/1954','dolor.sit@vitaemaurissit.ca','ac libero nec ligula consectetuer','Keith Daniel','FJR75AUN6ZN'),('Isaac','Randolph','12/03/1938','natoque@sollicitudinorcisem.net','a,','Justin Wells','IYQ08CQZ1PV'),('Norman','Stewart','15/08/1987','congue.elit@sedfacilisisvitae.net','sed orci lobortis augue scelerisque','Aaron Crawford','WAO99IPV5XH'),('Cruz','Poole','23/11/1994','dignissim.lacus.Aliquam@sagittisNullamvitae.co.uk','pede, nonummy ut,','Holmes Mccullough','XBW22WOT5EX'),('Demetrius','Cox','21/08/1940','fermentum.fermentum@loremac.ca','scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis','Castor Rodriguez','AAA25WAT3FF'),
 ('Patrick','Stone','27/09/1958','scelerisque.sed.sapien@vel.org','condimentum','Hector Gonzales','SUY86NWY2JW'),('Jerome','Webster','08/05/1996','arcu.Sed@neceuismod.edu','semper rutrum. Fusce dolor quam, elementum at, egestas','Jerry Perkins','UFH32NES9WB'),('Jermaine','Salinas','21/06/1978','ac.risus.Morbi@dolorFusce.ca','et nunc. Quisque ornare tortor at risus. Nunc ac sem','Honorato Dixon','EQV62XUS1FZ'),('Shad','Serrano','29/09/1966','lobortis.Class@cursusinhendrerit.net','lectus convallis est, vitae sodales nisi magna sed','Ethan Mason','CUF63YGE9XM'),('Camden','Long','10/10/1969','ut@arcuAliquam.com','velit eu sem. Pellentesque ut ipsum','Hilel Morgan','ZGE61JJS0YS'),('Hasad','Frost','09/03/1977','luctus.lobortis.Class@elementum.com','luctus','Marsden Merrill','ABP67JUO6YF'),('Geoffrey','Colon','22/05/1997','non.lacinia@musProin.net','at pretium aliquet, metus urna convallis erat,','Rudyard Monroe','CHC44PLY3TC'),('Cade','Castro','13/10/1973','libero.at@sedfacilisisvitae.ca','molestie in, tempus eu, ligula. Aenean euismod mauris','Dillon Chambers','USX77OOI6ZV'),('Fritz','Kaufman','11/03/1936','sem@id.edu','consequat purus. Maecenas libero est,','Kibo Cabrera','SEO60ZOK9DO'),('Hashim','Tate','30/04/1955','sit.amet@cursus.com','elit erat vitae','Leo Bailey','UQJ30PJZ0FS'),
 
+INSERT INTO Payment([typePayment],[datePayment],[validationPayment]) VALUES("CB", "25/01/2017", "true"),
+("Cheque", "01/02/2017", "false"),
+("Cheque culture", "03/02/2017", "true"),
+("CB", "06/03/2017", "true"),
+("Cheque", "05/06/2017", "false"),
+("Cheque culture", "11/09/2017", "true"),
+("CB", "25/01/2017", "true"),
+("Cheque", "01/02/2017", "false"),
+("Cheque culture", "01/02/2017", "true"),
+("CB", "25/01/2017", "true"),
+("Cheque", "01/02/2017", "false"),
+("Cheque culture", "01/02/2017", "true"),
+("CB", "25/01/2017", "true"),
+("Cheque", "01/02/2017", "false"),
+("Cheque culture", "01/02/2017", "true"),
+("CB", "25/01/2017", "true"),
+("Cheque", "01/02/2017", "false"),
+("Cheque culture", "01/02/2017", "true"),
+
+
+
+
 </body>
 </html>
