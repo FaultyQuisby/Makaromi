@@ -6,6 +6,10 @@
 package entites;
 
 import java.io.Serializable;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
+import java.util.Locale;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,16 +33,20 @@ public class Ticket implements Serializable {
     @ManyToOne
     private Seat seat;
     
-    private Float sellPrice;
+    private String sellPrice;
+    private float price;
     private Float tax;
     private String ticketHolderLastName;
     private String ticketHolderFirstName;
     private String ticketHolderMail;
+    
+    //@ManyToOne
+    //private Orders order;
 
     public Ticket() {
     }
 
-    public Ticket(Long numberTicket, Pricing pricing, Seat seat, Float sellPrice, Float tax, String ticketHolderLastName, String ticketHolderFirstName, String ticketHolderMail) {
+    public Ticket(Long numberTicket, Pricing pricing, Seat seat, String sellPrice, Float tax, String ticketHolderLastName, String ticketHolderFirstName, String ticketHolderMail) {
         this.numberTicket = numberTicket;
         this.pricing = pricing;
         this.seat = seat;
@@ -73,12 +81,44 @@ public class Ticket implements Serializable {
         this.seat = seat;
     }
 
-    public Float getSellPrice() {
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+    
+    public String getSellPrice() {
+        this.processSellPrice();
         return sellPrice;
     }
 
-    public void setSellPrice(Float sellPrice) {
-        this.sellPrice = sellPrice;
+    public void processSellPrice() {
+        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.FRENCH);
+        otherSymbols.setDecimalSeparator('.');
+        otherSymbols.setGroupingSeparator(',');
+        DecimalFormat df = new DecimalFormat("0.00", otherSymbols);
+        df.setRoundingMode(RoundingMode.HALF_UP);
+        float tempPrice = this.getPrice();
+        
+        if(!(this.getPricing() == null)){
+            switch(this.getPricing().getName()) {
+                case "A" :
+                    tempPrice += ((30 / 100) * tempPrice) + (this.getTax() * tempPrice);
+                    break;
+                case "B":
+                    tempPrice += ((20 / 100) * tempPrice) + (this.getTax() * tempPrice);
+                    break;
+                case "C" :
+                    tempPrice += ((10 / 100) * tempPrice) + (this.getTax() * tempPrice);
+                    break;
+                default:
+                    break;
+            }
+        }
+        
+        this.sellPrice = df.format(tempPrice);
     }
 
     public Float getTax() {
@@ -113,6 +153,13 @@ public class Ticket implements Serializable {
         this.ticketHolderMail = ticketHolderMail;
     }
     
+//    public Orders getOrders() {
+//        return order;
+//    }
+//    
+//    public void setOrders(Orders order) {
+//        this.order = order;
+//    }
     
     
     
@@ -131,10 +178,7 @@ public class Ticket implements Serializable {
             return false;
         }
         Ticket other = (Ticket) object;
-        if ((this.numberTicket == null && other.numberTicket != null) || (this.numberTicket != null && !this.numberTicket.equals(other.numberTicket))) {
-            return false;
-        }
-        return true;
+        return !((this.numberTicket == null && other.numberTicket != null) || (this.numberTicket != null && !this.numberTicket.equals(other.numberTicket)));
     }
 
     @Override

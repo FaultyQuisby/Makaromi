@@ -5,6 +5,9 @@
  */
 package beans;
 
+import entites.Ticket;
+import java.util.Collection;
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -13,11 +16,19 @@ import javax.ejb.Local;
  */
 @Local
 public interface ShoppingCartBeanLocal {
-//    public void initialize(String person) throws TicketException;
-//    public void initialize(String person, String id)
-//         throws TicketException;
-//    public void addBook(String title);
-//    public void removeBook(String title) throws TicketException;
-//    public List<String> getContents();
-//    public void remove();
+
+    public void initialize();
+
+    public void initialize(List<Ticket> content);
+
+    public void addTicket(Ticket t);
+
+    public void removeTicket(Ticket t) throws Exception;
+
+    public Collection<Ticket> getContent();
+
+    public String getCartPrice();
+
+    public void remove();
+    
 }
