@@ -18,7 +18,8 @@ public class Seat implements Serializable {
     @ManyToOne
     private Representation representation;
     
-    
+    @ManyToOne
+    private Category categorySeat;
     
     private String numberSeat;
 
@@ -52,11 +53,15 @@ public class Seat implements Serializable {
         this.numberSeat = numberSeat;
     }
 
-   
+    public Category getCategorySeat() {
+        return categorySeat;
+    }
+
+    public void setCategorySeat(Category categorySeat) {
+        this.categorySeat = categorySeat;
+    }
 
    
-    
-  
 
     @Override
     public String toString() {
@@ -64,6 +69,10 @@ public class Seat implements Serializable {
     }
 
     public void add(Seat se1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getCategory() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

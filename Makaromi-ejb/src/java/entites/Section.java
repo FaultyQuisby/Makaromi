@@ -58,6 +58,10 @@ public class Section implements Serializable {
         return "Section{" + "name=" + name + '}';
     }
 
+    public void add(Section s1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
    
 
    

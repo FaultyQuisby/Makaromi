@@ -33,6 +33,7 @@ public class Representation implements Serializable {
     @ManyToOne
     private Venue myvenue;
     
+    
     @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Seat> messeat;
     

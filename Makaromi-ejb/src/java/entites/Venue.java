@@ -49,6 +49,46 @@ public class Venue implements Serializable {
         return "Venue{" + "name=" + name + '}';
     }
 
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getUrlImg() {
+        return urlImg;
+    }
+
+    public void setUrlImg(String urlImg) {
+        this.urlImg = urlImg;
+    }
+
+    public Collection<Representation> getRepresentationsve() {
+        return representationsve;
+    }
+
+    public void setRepresentationsve(Collection<Representation> representationsve) {
+        this.representationsve = representationsve;
+    }
+
+    public Address getMyadd() {
+        return myadd;
+    }
+
+    public void setMyadd(Address myadd) {
+        this.myadd = myadd;
+    }
+
+    public void add(Venue v1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getAddress() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 
    

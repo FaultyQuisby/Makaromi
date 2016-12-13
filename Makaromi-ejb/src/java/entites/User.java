@@ -30,7 +30,7 @@ public class User implements Serializable {
     private String dateBirth;
     private String emailUser;
     private String commentUser;
-
+    private Address addressUser;
    
     @OneToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Address addFacturation;
@@ -108,6 +108,14 @@ public class User implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Address getAddressUser() {
+        return addressUser;
+    }
+
+    public void setAddressUser(Address addressUser) {
+        this.addressUser = addressUser;
     }
 
    
