@@ -18,6 +18,8 @@ import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.validation.constraints.NotNull;
+import javax.xml.registry.infomodel.User;
+import static org.omg.CORBA.ORB.init;
 
 /**
  *
@@ -45,7 +47,7 @@ public class Orders implements Serializable {
 
     @NotNull
     @ManyToOne
-    private User user;
+    private UserReg user;
     private String ipAddressRegistredUser;
 
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
@@ -53,13 +55,22 @@ public class Orders implements Serializable {
 
     @OneToMany(mappedBy="orders")
     private Collection<Ticket> ticketsOrder;
+    
+    @OneToOne
+    private Address address;
+    
+
 
     public Orders() {
-        init();
+     
+    }
+
+    public Orders(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     public Orders(Status status, Address addressBil, Address addressDel,
-                 User user, String ipAddressRegistredUser, Payment payment,
+                 UserReg user, String ipAddressRegistredUser, Payment payment,
                  Collection<Ticket> ticketsOrder) {
         this();
         this.status = status;
@@ -69,19 +80,7 @@ public class Orders implements Serializable {
         this.ipAddressRegistredUser = ipAddressRegistredUser;
         this.payment = payment;
         this.ticketsOrder = ticketsOrder;
-}
-    
-    public void init() {
-        ticketsOrder = new ArrayList();
-    }
-    
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    }        
 
     public Status getStatus() {
         return status;
@@ -91,6 +90,55 @@ public class Orders implements Serializable {
         this.status = status;
     }
 
+    public Object getAddress() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+//    public Object getAddressBil() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    public Object getAddressDel() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+
+
+
+        
+
+//    public Orders(String string) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    public void add(Orders o1) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//
+//    public Object getStatus() {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//}
+////    
+////    public void init() {
+//        ticketsOrder = new ArrayList();
+//    }
+//    
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public Status getStatus() {
+//        return status;
+//    }
+//
+//    public void setStatus(Status status) {
+//        this.status = status;
+//    }
+//
     public Address getAddressBil() {
         return addressBil;
     }
@@ -107,30 +155,35 @@ public class Orders implements Serializable {
         this.addressDel = addressDel;
     }
 
-    public User getUser() {
-        return user;
+    public Object getTicket() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setUser(User user) {
+
+    public UserReg getUser() {
+        return (UserReg) user;
+    }
+
+    public void setUser(UserReg user) {
         this.user = user;
     }
 
-    public String getIpAddressRegistredUser() {
-        return ipAddressRegistredUser;
-    }
-
-    public void setIpAddressRegistredUser(String ipAddressRegistredUser) {
-        this.ipAddressRegistredUser = ipAddressRegistredUser;
-    }
-
-    public Payment getPayment() {
-        return payment;
-    }
-
-    public void setPayment(Payment payment) {
-        this.payment = payment;
-    }
-
+//    public String getIpAddressRegistredUser() {
+//        return ipAddressRegistredUser;
+//    }
+//
+//    public void setIpAddressRegistredUser(String ipAddressRegistredUser) {
+//        this.ipAddressRegistredUser = ipAddressRegistredUser;
+//    }
+//
+//    public Payment getPayment() {
+//        return payment;
+//    }
+//
+//    public void setPayment(Payment payment) {
+//        this.payment = payment;
+//    }
+//
     public Collection<Ticket> getTicketsOrder() {
         return ticketsOrder;
     }
@@ -139,29 +192,35 @@ public class Orders implements Serializable {
         this.ticketsOrder = ticketsOrder;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
+    public Object getUserReg() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Orders)) {
-            return false;
-        }
-        Orders other = (Orders) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "beans.orderBean[ id=" + id + " ]";
-    }
-    
 }
+//
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (id != null ? id.hashCode() : 0);
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object object) {
+//         TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof Orders)) {
+//            return false;
+//        }
+//        Orders other = (Orders) object;
+//        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+//            return false;
+//        }
+//        return true;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "beans.orderBean[ id=" + id + " ]";
+//    }
+//    
+//}

@@ -5,7 +5,7 @@
  */
 package beans;
 
-import entites.User;
+import entites.UserReg;
 import javax.ejb.Local;
 
 /**
@@ -17,9 +17,9 @@ public interface ManageUserLocal {
 
     
 
-    public User ConnectUser(String login, String password);
+    public UserReg ConnectUser(String login, String password);
 
-    public User findBylogin(String login);
+    public UserReg findBylogin(String login);
 
     public void createUser(String login, String password, String civillite, String firstName, String lastName, String addLivrue);
     

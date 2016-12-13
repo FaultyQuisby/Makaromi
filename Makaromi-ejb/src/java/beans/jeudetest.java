@@ -9,14 +9,16 @@ import entites.Address;
 import entites.Artist;
 import entites.Category;
 import entites.Event;
+import entites.Orders;
 import entites.Payment;
 import entites.Pricing;
 import entites.Representation;
 import entites.Seat;
 import entites.Section;
+import entites.Status;
 import entites.Ticket;
 import entites.Venue;
-import entites.User;
+import entites.UserReg;
 import java.util.GregorianCalendar;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -170,32 +172,32 @@ public class jeudetest implements jeudetestLocal {
 
         ////////////////////////////ticket
         ////////////////////////////user
-        User u1 = new User("Alfonso", "Morse", "17/07/1976", "Quisque.purus.sapien@magnisdis.org", "amet ante. Vivamus non", "Fletcher Stewart", "DQY41KXO1MT");
-        User u2 = new User("Ivor", "Ellison", "15/02/1961", "fermentum.metus.Aenean@dictummiac.edu", "aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet", "Charles Calderon", "SZS94IXT1FV");
-        User u3 = new User("Clayton", "Frazier", "22/05/1977", "metus@risusQuisquelibero.net", "consequat", "Igor Aguirre", "MKC72DCE9QM");
-        User u4 = new User("Cameron", "Ferguson", "19/01/1955", "pellentesque.massa.lobortis@odiosempercursus.com", "leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis,", "Laith Stout", "LXF47GGQ0RY");
-        User u5 = new User("Amir", "Buckley", "23/02/1977", "facilisis.eget.ipsum@risusDonec.net", "ante bibendum ullamcorper. Duis cursus, diam", "Keane Jenkins", "WYI25PIO3LB");
-        User u6 = new User("Hector", "Johnston", "23/04/1954", "Sed.nec.metus@felispurus.net", "diam lorem, auctor quis, tristique ac, eleifend vitae, erat. Vivamus", "Elton Coffey", "VYL79NGF9TI");
-        User u7 = new User("Ivan", "Nicholson", "05/10/1996", "convallis.ante.lectus@nisl.ca", "libero at auctor ullamcorper, nisl arcu", "Bernard Tyson", "WTV91HZB2TB");
-        User u8 = new User("Barrett", "Burt", "12/05/1959", "fringilla.purus@eleifendnunc.com", "In scelerisque scelerisque dui. Suspendisse", "Nissim Jackson", "AFD22JCH8JN");
-        User u9 = new User("Isaiah", "Hoffman", "10/07/1945", "eget.venenatis.a@penatibusetmagnis.edu", "ut, nulla. Cras eu tellus eu augue porttitor interdum.", "Odysseus Valencia", "MMU44UUP9FC");
-        User u10 = new User("Ryan", "Prince", "20/05/1963", "eros@sed.com", "et arcu imperdiet ullamcorper. Duis at lacus. Quisque", "Noah Wilder", "SGR98IAM7SM");
-        User u11 = new User("Herman", "Galloway", "21/12/1963", "urna@magnamalesuada.com", "nec, leo. Morbi neque tellus,", "Roth Grant", "QMX57ONO1PY");
-        User u12 = new User("Fuller", "Turner", "22/06/1982", "quam@Nunclaoreetlectus.ca", "luctus et ultrices posuere cubilia Curae; Phasellus ornare.", "Harlan Kirby", "BOT40EBR5TU");
-        User u13 = new User("Curran", "Coleman", "02/04/1939", "augue.eu.tellus@hendrerit.com", "ac tellus. Suspendisse sed dolor.", "Lance Valentine", "FXK91RUA6RJ");
-        User u14 = new User("Abraham", "Mcguire", "10/10/1946", "vel@volutpat.org", "laoreet,libero", "Hiram Heath", "SFI96TCO0UF");
-        User u15 = new User("William", "Marks", "02/10/1959", "arcu@nec.com", "faucibus leo, in lobortis tellus justo sit amet nulla. Donec", "Garth Weber", "IAO77GAF2CH");
-        User u16 = new User("John", "Gould", "29/07/1997", "nisi.a@Duisami.ca", "egestas nunc sed libero. Proin sed turpis nec mauris", "Tarik Livingston", "KHC56NQP9OY");
-        User u17 = new User("Carson", "Barton", "26/03/1943", "mi.ac.mattis@aliquetnec.org", "nec, leo. Morbi neque", "Eaton Hewitt", "HFQ35UXJ4AN");
-        User u18 = new User("Akeem", "Kaufman", "19/02/1971", "dolor.quam.elementum@metusVivamus.edu", "a, scelerisque sed, sapien. Nunc pulvinar arcu et pede.", "Ethan Brewer", "PGL94JHT1LM");
-        User u19 = new User("Cedric", "Stark", "26/09/1983", "ut@non.org", "Ut sagittis lobortis mauris. Suspendisse aliquet molestie tellus. Aenean egestas", "Harrison Strong", "JWU43ASM7PT");
-        User u20 = new User("Dexter", "Dotson", "24/08/1959", "ultricies.ligula@musProinvel.com", "montes, nascetur", "Derek Swanson", "JVT77DPD9NF");
-        User u21 = new User("Neville", "Bolton", "02/04/1973", "porttitor@tortorNunccommodo.ca", "torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam", "Macon Vargas", "BYF59YYV1JP");
-        User u22 = new User("Isaac", "Nguyen", "27/08/1966", "magna@aliquetdiam.edu", "et magnis dis parturient montes, nascetur", "Barrett Vargas", "ORH17KGC3BI");
-        User u23 = new User("Rooney", "Daugherty", "21/06/1988", "vestibulum@tristiquesenectuset.net", "egestas lacinia. Sed congue, elit sed consequat", "Magee Landry", "UPO70VTD1RO");
-        User u24 = new User("Felix", "Dudley", "21/05/1937", "tristique.aliquet@temporerat.org", "Nullam enim. Sed nulla ante, iaculis", "Zachary Mclaughlin", "JDP32SWN6KD");
-        User u25 = new User("Quinlan", "Shelton", "31/10/1940", "per.conubia@posuere.ca", "tincidunt", "Walter Acosta", "CSP75DQC0NM");
-        User u26 = new User("Brian", "Hoover", "29/10/1950", "justo.Proin@Nullatempor.edu", "a nunc. In at pede. Cras vulputate velit", "Rashad Phillips", "ZFT24GZY8QT");
+        UserReg u1 = new UserReg("Alfonso", "Morse", "17/07/1976", "Quisque.purus.sapien@magnisdis.org", "amet ante. Vivamus non", "Fletcher Stewart", "DQY41KXO1MT");
+        UserReg u2 = new UserReg("Ivor", "Ellison", "15/02/1961", "fermentum.metus.Aenean@dictummiac.edu", "aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet", "Charles Calderon", "SZS94IXT1FV");
+        UserReg u3 = new UserReg("Clayton", "Frazier", "22/05/1977", "metus@risusQuisquelibero.net", "consequat", "Igor Aguirre", "MKC72DCE9QM");
+        UserReg u4 = new UserReg("Cameron", "Ferguson", "19/01/1955", "pellentesque.massa.lobortis@odiosempercursus.com", "leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis,", "Laith Stout", "LXF47GGQ0RY");
+        UserReg u5 = new UserReg("Amir", "Buckley", "23/02/1977", "facilisis.eget.ipsum@risusDonec.net", "ante bibendum ullamcorper. Duis cursus, diam", "Keane Jenkins", "WYI25PIO3LB");
+        UserReg u6 = new UserReg("Hector", "Johnston", "23/04/1954", "Sed.nec.metus@felispurus.net", "diam lorem, auctor quis, tristique ac, eleifend vitae, erat. Vivamus", "Elton Coffey", "VYL79NGF9TI");
+        UserReg u7 = new UserReg("Ivan", "Nicholson", "05/10/1996", "convallis.ante.lectus@nisl.ca", "libero at auctor ullamcorper, nisl arcu", "Bernard Tyson", "WTV91HZB2TB");
+        UserReg u8 = new UserReg("Barrett", "Burt", "12/05/1959", "fringilla.purus@eleifendnunc.com", "In scelerisque scelerisque dui. Suspendisse", "Nissim Jackson", "AFD22JCH8JN");
+        UserReg u9 = new UserReg("Isaiah", "Hoffman", "10/07/1945", "eget.venenatis.a@penatibusetmagnis.edu", "ut, nulla. Cras eu tellus eu augue porttitor interdum.", "Odysseus Valencia", "MMU44UUP9FC");
+        UserReg u10 = new UserReg("Ryan", "Prince", "20/05/1963", "eros@sed.com", "et arcu imperdiet ullamcorper. Duis at lacus. Quisque", "Noah Wilder", "SGR98IAM7SM");
+        UserReg u11 = new UserReg("Herman", "Galloway", "21/12/1963", "urna@magnamalesuada.com", "nec, leo. Morbi neque tellus,", "Roth Grant", "QMX57ONO1PY");
+        UserReg u12 = new UserReg("Fuller", "Turner", "22/06/1982", "quam@Nunclaoreetlectus.ca", "luctus et ultrices posuere cubilia Curae; Phasellus ornare.", "Harlan Kirby", "BOT40EBR5TU");
+        UserReg u13 = new UserReg("Curran", "Coleman", "02/04/1939", "augue.eu.tellus@hendrerit.com", "ac tellus. Suspendisse sed dolor.", "Lance Valentine", "FXK91RUA6RJ");
+        UserReg u14 = new UserReg("Abraham", "Mcguire", "10/10/1946", "vel@volutpat.org", "laoreet,libero", "Hiram Heath", "SFI96TCO0UF");
+        UserReg u15 = new UserReg("William", "Marks", "02/10/1959", "arcu@nec.com", "faucibus leo, in lobortis tellus justo sit amet nulla. Donec", "Garth Weber", "IAO77GAF2CH");
+        UserReg u16 = new UserReg("John", "Gould", "29/07/1997", "nisi.a@Duisami.ca", "egestas nunc sed libero. Proin sed turpis nec mauris", "Tarik Livingston", "KHC56NQP9OY");
+        UserReg u17 = new UserReg("Carson", "Barton", "26/03/1943", "mi.ac.mattis@aliquetnec.org", "nec, leo. Morbi neque", "Eaton Hewitt", "HFQ35UXJ4AN");
+        UserReg u18 = new UserReg("Akeem", "Kaufman", "19/02/1971", "dolor.quam.elementum@metusVivamus.edu", "a, scelerisque sed, sapien. Nunc pulvinar arcu et pede.", "Ethan Brewer", "PGL94JHT1LM");
+        UserReg u19 = new UserReg("Cedric", "Stark", "26/09/1983", "ut@non.org", "Ut sagittis lobortis mauris. Suspendisse aliquet molestie tellus. Aenean egestas", "Harrison Strong", "JWU43ASM7PT");
+        UserReg u20 = new UserReg("Dexter", "Dotson", "24/08/1959", "ultricies.ligula@musProinvel.com", "montes, nascetur", "Derek Swanson", "JVT77DPD9NF");
+        UserReg u21 = new UserReg("Neville", "Bolton", "02/04/1973", "porttitor@tortorNunccommodo.ca", "torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam", "Macon Vargas", "BYF59YYV1JP");
+        UserReg u22 = new UserReg("Isaac", "Nguyen", "27/08/1966", "magna@aliquetdiam.edu", "et magnis dis parturient montes, nascetur", "Barrett Vargas", "ORH17KGC3BI");
+        UserReg u23 = new UserReg("Rooney", "Daugherty", "21/06/1988", "vestibulum@tristiquesenectuset.net", "egestas lacinia. Sed congue, elit sed consequat", "Magee Landry", "UPO70VTD1RO");
+        UserReg u24 = new UserReg("Felix", "Dudley", "21/05/1937", "tristique.aliquet@temporerat.org", "Nullam enim. Sed nulla ante, iaculis", "Zachary Mclaughlin", "JDP32SWN6KD");
+        UserReg u25 = new UserReg("Quinlan", "Shelton", "31/10/1940", "per.conubia@posuere.ca", "tincidunt", "Walter Acosta", "CSP75DQC0NM");
+        UserReg u26 = new UserReg("Brian", "Hoover", "29/10/1950", "justo.Proin@Nullatempor.edu", "a nunc. In at pede. Cras vulputate velit", "Rashad Phillips", "ZFT24GZY8QT");
 
         ///////////////////////////payment
         Payment pa1 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
@@ -274,8 +276,233 @@ public class jeudetest implements jeudetestLocal {
         Ticket t15 = new Ticket(9602, 110, 5.5f, "Cleveland", "Rina", "mollis.Integer.tincidunt@vulputate.edu");
         Ticket t16 = new Ticket(8216, 120, 5.5f, "Tyler", "Rahim", "orci@laciniavitaesodales.edu");
         Ticket t17 = new Ticket(7114, 100, 5.5f, "Burns", "Cleo", "erat@nostra.com");
+        
+        
+        //////////////////////////////////////status
+        Status st1 = new Status("Disponible");
+        Status st2 = new Status("Indisponible");
+        Status st3 = new Status("Réglé");
+        Status st4 = new Status("En cours de règlement");
+        Status st5 = new Status("Disponible");
+        Status st6 = new Status("Validé");
+        Status st7 = new Status("Non validé");
+        Status st8 = new Status("Réservé");
+        Status st9 = new Status("Non réservé");
+        
+        //////////////////////////////////////order
+        Orders o1 = new Orders("");
+        Orders o2 = new Orders("");
+        Orders o3 = new Orders("");
+        Orders o4 = new Orders("");
+        Orders o5 = new Orders("");
+        Orders o6 = new Orders("");
+        Orders o7 = new Orders("");
+        Orders o8 = new Orders("");
+        Orders o9 = new Orders("");
+        Orders o10 = new Orders("");
+        Orders o11= new Orders("");
+        Orders o12 = new Orders("");
+        Orders o13 = new Orders("");
+        Orders o14= new Orders("");
+        Orders o15 = new Orders("");
+        Orders o16= new Orders("");
+        Orders o17 = new Orders("");
+        Orders o18= new Orders("");
+        Orders o19= new Orders("");
+        Orders o20= new Orders("");
+        
+        
+        
+        
 
         ////////////////////////////////////////////////creation 
+        
+        ///////////////////////////////////////////lien status / event
+        st1.getEvents().add(e1);
+        st1.getEvents().add(e2);
+        st1.getEvents().add(e3);
+        st1.getEvents().add(e4);
+        st1.getEvents().add(e5);
+        st1.getEvents().add(e6);
+        st1.getEvents().add(e7);
+        st1.getEvents().add(e8);
+        st1.getEvents().add(e9);
+        st1.getEvents().add(e10);
+        st1.getEvents().add(e11);
+        st1.getEvents().add(e12);
+        st1.getEvents().add(e13);
+        st1.getEvents().add(e14);
+        st2.getEvents().add(e15);
+        st1.getEvents().add(e16);
+        st1.getEvents().add(e17);
+        st1.getEvents().add(e18);
+        st1.getEvents().add(e19);
+        st1.getEvents().add(e20);
+        st2.getEvents().add(e21);
+        st1.getEvents().add(e22);
+        st1.getEvents().add(e23);
+        st2.getEvents().add(e24);
+    
+        ///////////////////////////////////////////lien status / payment        
+        st3.getPayment().add(pa1);
+        st3.getPayment().add(pa2);
+        st4.getPayment().add(pa3);
+        st3.getPayment().add(pa4);
+        st4.getPayment().add(pa5);
+        st3.getPayment().add(pa6);
+        st3.getPayment().add(pa7);
+        st4.getPayment().add(pa8);
+        st3.getPayment().add(pa9);
+        st3.getPayment().add(pa10);
+             
+                
+        ///////////////////////////////////////////lien status / seat
+        st8.getSeat().add(se1);
+        st9.getSeat().add(se2);
+        st9.getSeat().add(se3);
+        st9.getSeat().add(se4);
+        st9.getSeat().add(se5);
+        st9.getSeat().add(se6);
+        st8.getSeat().add(se7);
+        st9.getSeat().add(se8);
+        st9.getSeat().add(se9);
+        st8.getSeat().add(se10);
+        st9.getSeat().add(se11);
+        st9.getSeat().add(se12);
+        st9.getSeat().add(se13);
+        st9.getSeat().add(se14);
+        st9.getSeat().add(se15);
+        st8.getSeat().add(se16);
+        st9.getSeat().add(se17);
+        st9.getSeat().add(se18);
+        st8.getSeat().add(se19);
+        st9.getSeat().add(se20);
+        st9.getSeat().add(se21);
+        st9.getSeat().add(se22);
+        st9.getSeat().add(se23);
+        st9.getSeat().add(se24);
+        st8.getSeat().add(se25);
+        st9.getSeat().add(se26);
+       
+       
+        
+        ///////////////////////////////////////////lien status / order
+        o1.getStatus().add(st6);
+        o2.getStatus().add(st6);
+        o3.getStatus().add(st6);
+        o4.getStatus().add(st6);
+        o5.getStatus().add(st6);
+        o6.getStatus().add(st6);
+        o7.getStatus().add(st6);
+        o8.getStatus().add(st7);
+        o9.getStatus().add(st6);
+        o10.getStatus().add(st6);
+        o11.getStatus().add(st6);
+        o12.getStatus().add(st7);
+        o13.getStatus().add(st6);
+        o14.getStatus().add(st6);
+        o15.getStatus().add(st6);
+        o16.getStatus().add(st6);
+        o17.getStatus().add(st7);
+        o18.getStatus().add(st6);
+        o19.getStatus().add(st6);
+        o20.getStatus().add(st7);
+        
+        
+        //////////////////////////////////////////lien order / payment
+        o1.getStatus().add(pa1);
+        o2.getStatus().add(pa2);
+        o3.getStatus().add(pa3);
+        o4.getStatus().add(pa4);
+        o5.getStatus().add(pa5);
+        o6.getStatus().add(pa6);
+        o7.getStatus().add(pa7);
+        o8.getStatus().add(pa8);
+        o9.getStatus().add(pa9);
+        o10.getStatus().add(pa10);
+        o11.getStatus().add(pa11);
+        o12.getStatus().add(pa12);
+        o13.getStatus().add(pa13);
+        o14.getStatus().add(pa14);
+        o15.getStatus().add(pa15);
+        o16.getStatus().add(pa16);
+        o17.getStatus().add(pa17);
+        o18.getStatus().add(pa18);
+        
+        ///////////////////////////////////////////lien order / adress        
+        o1.getAddressBil().add(ad13);
+        o2.getAddressBil().add(ad14);
+        o3.getAddressBil().add(ad15);
+        o4.getAddressBil().add(ad16);
+        o5.getAddressBil().add(ad17);
+        o6.getAddressBil().add(ad18);
+        o7.getAddressBil().add(ad19);
+        o8.getAddressBil().add(ad20);
+        o9.getAddressBil().add(ad21);
+        o10.getAddressBil().add(ad22);
+        o11.getAddressBil().add(ad23);
+        o12.getAddressBil().add(ad24);
+        o13.getAddressBil().add(ad25);
+        o14.getAddressBil().add(ad26);
+        o15.getAddressBil().add(ad27);
+        o16.getAddressBil().add(ad28);
+  
+        o1.getAddressDel().add(ad13);
+        o2.getAddressDel().add(ad14);
+        o3.getAddressDel().add(ad15);
+        o4.getAddressDel().add(ad16);
+        o5.getAddressDel().add(ad17);
+        o6.getAddressDel().add(ad18);
+        o7.getAddressDel().add(ad19);
+        o8.getAddressDel().add(ad20);
+        o9.getAddressDel().add(ad21);
+        o10.getAddressDel().add(ad22);
+        o11.getAddressDel().add(ad23);
+        o12.getAddressDel().add(ad24);
+        o13.getAddressDel().add(ad25);
+        o14.getAddressDel().add(ad26);
+        o15.getAddressDel().add(ad27);
+        o16.getAddressDel().add(ad28);
+     
+        
+        //////////////////////////////////////////lien order / ticket
+        o1.getTicketsOrder().add(t1);
+        o2.getTicketsOrder().add(t2);
+        o3.getTicketsOrder().add(t3);
+        o4.getTicketsOrder().add(t4);
+        o5.getTicketsOrder().add(t5);
+        o6.getTicketsOrder().add(t6);
+        o7.getTicketsOrder().add(t7);
+        o8.getTicketsOrder().add(t8);
+        o9.getTicketsOrder().add(t9);
+        o10.getTicketsOrder().add(t10);
+        o11.getTicketsOrder().add(t11);
+        o12.getTicketsOrder().add(t12);
+        o13.getTicketsOrder().add(t13);
+        o14.getTicketsOrder().add(t14);
+        o15.getTicketsOrder().add(t15);
+        o16.getTicketsOrder().add(t16);
+        o17.getTicketsOrder().add(t17);
+  
+        
+        ////////////////////////////////////////lien order / user
+        o1.getUser().add(u1);
+        o2.getUser().add(u2);
+        o3.getUser().add(u3);
+        o4.getUser().add(u4);
+        o5.getUser().add(u5);
+        o6.getUser().add(u6);
+        o7.getUser().add(u7);
+        o8.getUser().add(u8);
+        o9.getUser().add(u9);
+        o10.getUser().add(u10);
+        o11.getUser().add(u11);
+        o12.getUser().add(u12);
+        o13.getUser().add(u13);
+        o14.getUser().add(u14);
+        o15.getUser().add(u15);
+        o16.getUser().add(u16);
+        o17.getUser().add(u17);
         
         //////////////////////////////////////////////lien ticket/seat
         t1.getSeat().add(se1);
@@ -382,22 +609,39 @@ public class jeudetest implements jeudetestLocal {
         v12.getMyadd().add(ad12);
         
         ///////////////////////////////////lien user / address
-        u1.getAddressUser().add(ad13);
-        u2.getAddressUser().add(ad14);
-        u3.getAddressUser().add(ad15);
-        u4.getAddressUser().add(ad16);
-        u5.getAddressUser().add(ad17);
-        u6.getAddressUser().add(ad18);
-        u7.getAddressUser().add(ad19);
-        u8.getAddressUser().add(ad20);
-        u9.getAddressUser().add(ad21);
-        u10.getAddressUser().add(ad22);
-        u11.getAddressUser().add(ad23);
-        u12.getAddressUser().add(ad24);
-        u13.getAddressUser().add(ad25);
-        u14.getAddressUser().add(ad26);
-        u15.getAddressUser().add(ad27);
-        u16.getAddressUser().add(ad28);
+        u1.getAddFacturation().add(ad13);
+        u2.getAddFacturation().add(ad14);
+        u3.getAddFacturation().add(ad15);
+        u4.getAddFacturation().add(ad16);
+        u5.getAddFacturation().add(ad17);
+        u6.getAddFacturation().add(ad18);
+        u7.getAddFacturation().add(ad19);
+        u8.getAddFacturation().add(ad20);
+        u9.getAddFacturation().add(ad21);
+        u10.getAddFacturation().add(ad22);
+        u11.getAddFacturation().add(ad23);
+        u12.getAddFacturation().add(ad24);
+        u13.getAddFacturation().add(ad25);
+        u14.getAddFacturation().add(ad26);
+        u15.getAddFacturation().add(ad27);
+        u16.getAddFacturation().add(ad28);
+        
+        u1.getAddLivraison().add(ad13);
+        u2.getAddLivraison().add(ad14);
+        u3.getAddLivraison().add(ad15);
+        u4.getAddLivraison().add(ad16);
+        u5.getAddLivraison().add(ad17);
+        u6.getAddLivraison().add(ad18);
+        u7.getAddLivraison().add(ad19);
+        u8.getAddLivraison().add(ad20);
+        u9.getAddLivraison().add(ad21);
+        u10.getAddLivraison().add(ad22);
+        u11.getAddLivraison().add(ad23);
+        u12.getAddLivraison().add(ad24);
+        u13.getAddLivraison().add(ad25);
+        u14.getAddLivraison().add(ad26);
+        u15.getAddLivraison().add(ad27);
+        u16.getAddLivraison().add(ad28);
         
         ////////////////////////////////////lien section / event
         e1.getSection().add(s1);
@@ -672,6 +916,38 @@ public class jeudetest implements jeudetestLocal {
         em.persist(t15);
         em.persist(t16);
         em.persist(t17);
+        em.persist(o1);
+        em.persist(o2);
+        em.persist(o3);
+        em.persist(o4);
+        em.persist(o5);
+        em.persist(o6);
+        em.persist(o7);
+        em.persist(o8);
+        em.persist(o9);
+        em.persist(o10);
+        em.persist(o11);
+        em.persist(o12);
+        em.persist(o13);
+        em.persist(o14);
+        em.persist(o15);
+        em.persist(o16);
+        em.persist(o17);
+        em.persist(o18);
+        em.persist(o19);
+        em.persist(o20);
+        em.persist(st1);    
+        em.persist(st2);
+        em.persist(st3);
+        em.persist(st4);
+        em.persist(st5);
+        em.persist(st6);
+        em.persist(st7);
+        em.persist(st8);
+        em.persist(st9);
+        
+        
+        
         
         
         

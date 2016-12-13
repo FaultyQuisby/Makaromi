@@ -20,9 +20,10 @@ public class Address implements Serializable {
     private String postalCode;
     private String city;
     
-   
-
-  
+    @OneToOne
+    private Status status;
+    
+    
     public Address() {
     }
 
@@ -68,6 +69,14 @@ public class Address implements Serializable {
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
     @Override

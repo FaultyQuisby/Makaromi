@@ -6,7 +6,7 @@
 package beans;
 
 import entites.Address;
-import entites.User;
+import entites.UserReg;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
@@ -29,15 +29,15 @@ public class ManageUser implements ManageUserLocal {
         Address addFact = new Address();
         addLiv.setStreet(addLivrue);
         addFact.setStreet(addLivrue);
-        User user1 = new User(addLiv,addFact,login, password, civillite, firstName, lastName);
+        UserReg user1 = new UserReg(addLiv,addFact,login, password, civillite, firstName, lastName);
         em.persist(user1);
 
     }
 
     @Override
-    public User ConnectUser(String login, String password) {
+    public UserReg ConnectUser(String login, String password) {
        
-        User user1 = findBylogin(login);
+        UserReg user1 = findBylogin(login);
         if (user1 != null) {
             if (user1.getPassword().equalsIgnoreCase(password)) {
                 return user1;
@@ -48,9 +48,9 @@ public class ManageUser implements ManageUserLocal {
     }
 
     @Override
-    public User findBylogin(String login) {
-        User user1 = null;
-        user1 = em.find(User.class, login);
+    public UserReg findBylogin(String login) {
+        UserReg user1 = null;
+        user1 = em.find(UserReg.class, login);
         return user1;
     }
 

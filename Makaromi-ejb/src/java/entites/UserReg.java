@@ -18,7 +18,7 @@ import javax.persistence.OneToOne;
  */
 @Entity
 @NamedQueries({})
-public class User implements Serializable {
+public class UserReg implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -30,7 +30,7 @@ public class User implements Serializable {
     private String dateBirth;
     private String emailUser;
     private String commentUser;
-    private Address addressUser;
+    
    
     @OneToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Address addFacturation;
@@ -40,10 +40,10 @@ public class User implements Serializable {
 
     
     
-    public User() {
+    public UserReg() {
     }
 
-    public User(String firstName, String lastName, String dateBrith, String emailUser,  String commentUser, String login, String password) {
+    public UserReg(String firstName, String lastName, String dateBrith, String emailUser,  String commentUser, String login, String password) {
         this();
         this.firstName = firstName;
         this.lastName = lastName;
@@ -110,14 +110,33 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public Address getAddressUser() {
-        return addressUser;
+    public void add(Ticket t1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    public void setAddressUser(Address addressUser) {
-        this.addressUser = addressUser;
+    public void add(UserReg u1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-   
+    public Address getAddFacturation() {
+        return addFacturation;
+    }
+
+    public void setAddFacturation(Address addFacturation) {
+        this.addFacturation = addFacturation;
+    }
+
+    public Address getAddLivraison() {
+        return addLivraison;
+    }
+
+    public void setAddLivraison(Address addLivraison) {
+        this.addLivraison = addLivraison;
+    }
+
+
+
+
+      
 
 }
