@@ -104,32 +104,32 @@ public class jeudetest implements jeudetestLocal {
         Venue v17 = new Venue("Bois de Boulogne", "Bois", " ");
 
         ///////////////////////////////////////////representation
-        Representation R1 = new Representation(2000, new GregorianCalendar(2017, 1, 15, 19, 0).getTime());
-        Representation R2 = new Representation(2000, (new GregorianCalendar(2017, 1, 16, 19, 0).getTime());
-        Representation R3 = new Representation(2000, (new GregorianCalendar(2017, 1, 17, 19, 0).getTime());
-        Representation R4 = new Representation(2000, (new GregorianCalendar(2017, 1, 18, 19, 0).getTime());
-        Representation R5 = new Representation(2000, (new GregorianCalendar(2017, 1, 19, 19, 0).getTime());
-        Representation R6 = new Representation(2000, (new GregorianCalendar(2017, 1, 20, 19, 0).getTime());
-        Representation R7 = new Representation(2000, (new GregorianCalendar(2017, 1, 21, 19, 0).getTime());
-        Representation R8 = new Representation(2000, (new GregorianCalendar(2017, 1, 22, 19, 0).getTime());
-        Representation R9 = new Representation(2000, (new GregorianCalendar(2017, 1, 23, 19, 0).getTime());
-        Representation R10 = new Representation(5000, (new GregorianCalendar(2017, 1, 24, 19, 0).getTime());
-        Representation R11 = new Representation(5000, (new GregorianCalendar(2017, 1, 25, 19, 0).getTime());
-        Representation R12 = new Representation(5000, (new GregorianCalendar(2017, 1, 26, 19, 0).getTime());
-        Representation R13 = new Representation(5000, (new GregorianCalendar(2017, 1, 27, 19, 0).getTime());
-        Representation R14 = new Representation(5000, (new GregorianCalendar(2017, 1, 28, 19, 0).getTime());
-        Representation R15 = new Representation(5000, (new GregorianCalendar(2017, 1, 29, 19, 0).getTime());
-        Representation R16 = new Representation(5000, (new GregorianCalendar(2017, 1, 30, 19, 0).getTime());
-        Representation R17 = new Representation(5000, (new GregorianCalendar(2017, 2, 1, 19, 0).getTime());
-        Representation R18 = new Representation(10000, (new GregorianCalendar(2017, 2, 2, 19, 0).getTime());
-        Representation R19 = new Representation(10000, (new GregorianCalendar(2017, 2, 3, 19, 0).getTime());
-        Representation R20 = new Representation(10000, (new GregorianCalendar(2017, 2, 4, 19, 0).getTime());
-        Representation R21 = new Representation(10000, (new GregorianCalendar(2017, 2, 2, 19, 0).getTime());
-        Representation R22 = new Representation(10000, (new GregorianCalendar(2017, 2, 3, 19, 0).getTime());
-        Representation R23 = new Representation(10000, (new GregorianCalendar(2017, 2, 4, 19, 0).getTime());
-        Representation R24 = new Representation(10000, (new GregorianCalendar(2017, 2, 5, 19, 0).getTime());
-        Representation R25 = new Representation(10000, (new GregorianCalendar(2017, 2, 6, 19, 0).getTime());
-        Representation R26 = new Representation(10000, (new GregorianCalendar(2017, 2, 7, 19, 0).getTime());
+        Representation r1 = new Representation(2000, (new GregorianCalendar(2017, 1, 15, 19, 0).getTime()));
+        Representation r2 = new Representation(2000, (new GregorianCalendar(2017, 1, 16, 19, 0).getTime()));
+        Representation r3 = new Representation(2000, (new GregorianCalendar(2017, 1, 17, 19, 0).getTime()));
+        Representation r4 = new Representation(2000, (new GregorianCalendar(2017, 1, 18, 19, 0).getTime()));
+        Representation r5 = new Representation(2000, (new GregorianCalendar(2017, 1, 19, 19, 0).getTime()));
+        Representation r6 = new Representation(2000, (new GregorianCalendar(2017, 1, 20, 19, 0).getTime()));
+        Representation r7 = new Representation(2000, (new GregorianCalendar(2017, 1, 21, 19, 0).getTime()));
+        Representation r8 = new Representation(2000, (new GregorianCalendar(2017, 1, 22, 19, 0).getTime()));
+        Representation r9 = new Representation(2000, (new GregorianCalendar(2017, 1, 23, 19, 0).getTime()));
+        Representation r10 = new Representation(5000, (new GregorianCalendar(2017, 1, 24, 19, 0).getTime()));
+        Representation r11 = new Representation(5000, (new GregorianCalendar(2017, 1, 25, 19, 0).getTime()));
+        Representation r12 = new Representation(5000, (new GregorianCalendar(2017, 1, 26, 19, 0).getTime()));
+        Representation r13 = new Representation(5000, (new GregorianCalendar(2017, 1, 27, 19, 0).getTime()));
+        Representation r14 = new Representation(5000, (new GregorianCalendar(2017, 1, 28, 19, 0).getTime()));
+        Representation r15 = new Representation(5000, (new GregorianCalendar(2017, 1, 29, 19, 0).getTime()));
+        Representation r16 = new Representation(5000, (new GregorianCalendar(2017, 1, 30, 19, 0).getTime()));
+        Representation r17 = new Representation(5000, (new GregorianCalendar(2017, 2, 1, 19, 0).getTime()));
+        Representation r18 = new Representation(10000, (new GregorianCalendar(2017, 2, 2, 19, 0).getTime()));
+        Representation r19 = new Representation(10000, (new GregorianCalendar(2017, 2, 3, 19, 0).getTime()));
+        Representation r20 = new Representation(10000, (new GregorianCalendar(2017, 2, 4, 19, 0).getTime()));
+        Representation r21 = new Representation(10000, (new GregorianCalendar(2017, 2, 2, 19, 0).getTime()));
+        Representation r22 = new Representation(10000, (new GregorianCalendar(2017, 2, 3, 19, 0).getTime()));
+        Representation r23 = new Representation(10000, (new GregorianCalendar(2017, 2, 4, 19, 0).getTime()));
+        Representation r24 = new Representation(10000, (new GregorianCalendar(2017, 2, 5, 19, 0).getTime()));
+        Representation r25 = new Representation(10000, (new GregorianCalendar(2017, 2, 6, 19, 0).getTime()));
+        Representation r26 = new Representation(10000, (new GregorianCalendar(2017, 2, 7, 19, 0).getTime()));
 
         ////////////////////////////////////////address
         Address A1 = new Address("Zac du Cornillon Nord", "93200", "Saint-Denis");
@@ -239,37 +239,96 @@ public class jeudetest implements jeudetestLocal {
         Seat se8 = new Seat("8");
         Seat se9 = new Seat("9");
         Seat se10 = new Seat("10");
-        Seat se11= new Seat("11");
-        Seat se12= new Seat("12");
-        Seat se13= new Seat("13");
-        Seat se14= new Seat("14");
-        Seat se15= new Seat("15");
-        Seat se16= new Seat("16");
-        Seat se17= new Seat("17");
-        Seat se18= new Seat("18");
-        Seat se19= new Seat("19");
-        Seat se20= new Seat("20");
+        Seat se11 = new Seat("11");
+        Seat se12 = new Seat("12");
+        Seat se13 = new Seat("13");
+        Seat se14 = new Seat("14");
+        Seat se15 = new Seat("15");
+        Seat se16 = new Seat("16");
+        Seat se17 = new Seat("17");
+        Seat se18 = new Seat("18");
+        Seat se19 = new Seat("19");
+        Seat se20 = new Seat("20");
         Seat se21 = new Seat("21");
         Seat se22 = new Seat("22");
         Seat se23 = new Seat("23");
-        Seat se24= new Seat("24");
-        Seat se25= new Seat("25");
-        Seat se26= new Seat("26");
+        Seat se24 = new Seat("24");
+        Seat se25 = new Seat("25");
+        Seat se26 = new Seat("26");
 
         ///////////////////////////////////////////ticket
-        Ticket t1 = new Ticket(1141, 75 , 5.5f , "Estrada","Imogene","lorem.ac.risus@accumsaninterdumlibero.ca");
-        Ticket t2 = new Ticket(308, 120, 5.5f ,"Meadows","Ila","Aliquam.erat.volutpat@Cumsociis.co.uk");
-        Ticket t3 = new Ticket(632, 25, 5.5f ,"Ortega","Geraldine","habitant.morbi.tristique@Nullasemper.com");
-        Ticket t4 = new Ticket(811, 30, 5.5f ,"Goodwin","Jena","montes.nascetur.ridiculus@Etiam.com");
-        Ticket t5 = new Ticket(3547,70, 5.5f ,"Spears","Tashya","gravida.molestie.arcu@consequatpurus.com");
-        Ticket t6 = new Ticket(5546, 90, 5.5f ,"Brown","Quyn","ridiculus.mus.Proin@Integervulputate.org");
-        Ticket t7 = new Ticket(7321, 110, 5.5f,"Compton","Aaron","dolor@augueac.edu");
-        Ticket t8 = new Ticket(9, 100, 5.5f ,"Wiley","Vivien","ipsum.dolor.sit@tortorNunc.ca");
-        Ticket t9 = new Ticket(8339,95, 5.5f ,"Knowles","Lydia","ante.Nunc@quam.com");
-        Ticket t10 = new Ticket(406, 80, 5.5f ,"Marquez","Hayden","inceptos.hymenaeos@Loremipsumdolor.com");
+        Ticket t1 = new Ticket(1141, 75, 5.5f, "Estrada", "Imogene", "lorem.ac.risus@accumsaninterdumlibero.ca");
+        Ticket t2 = new Ticket(308, 120, 5.5f, "Meadows", "Ila", "Aliquam.erat.volutpat@Cumsociis.co.uk");
+        Ticket t3 = new Ticket(632, 25, 5.5f, "Ortega", "Geraldine", "habitant.morbi.tristique@Nullasemper.com");
+        Ticket t4 = new Ticket(811, 30, 5.5f, "Goodwin", "Jena", "montes.nascetur.ridiculus@Etiam.com");
+        Ticket t5 = new Ticket(3547, 70, 5.5f, "Spears", "Tashya", "gravida.molestie.arcu@consequatpurus.com");
+        Ticket t6 = new Ticket(5546, 90, 5.5f, "Brown", "Quyn", "ridiculus.mus.Proin@Integervulputate.org");
+        Ticket t7 = new Ticket(7321, 110, 5.5f, "Compton", "Aaron", "dolor@augueac.edu");
+        Ticket t8 = new Ticket(9, 100, 5.5f, "Wiley", "Vivien", "ipsum.dolor.sit@tortorNunc.ca");
+        Ticket t9 = new Ticket(8339, 95, 5.5f, "Knowles", "Lydia", "ante.Nunc@quam.com");
+        Ticket t10 = new Ticket(406, 80, 5.5f, "Marquez", "Hayden", "inceptos.hymenaeos@Loremipsumdolor.com");
+        Ticket t11 = new Ticket(8330, 100, 5.5f, "Serrano", "Cameron", "Quisque.purus.sapien@urnajustofaucibus.com");
+        Ticket t12 = new Ticket(1754, 100, 5.5f, "Lane", "Amos", "Donec.tempor.est@molestie.edu");
+        Ticket t13 = new Ticket(9729, 105, 5.5f, "Adams", "Prescott", "Cras.dolor.dolor@tincidunt.co.uk");
+        Ticket t14 = new Ticket(4426, 200, 5.5f, "Terrell", "Minerva", "consectetuer.cursus@enimEtiamimperdiet.edu");
+        Ticket t15 = new Ticket(9602, 110, 5.5f, "Cleveland", "Rina", "mollis.Integer.tincidunt@vulputate.edu");
+        Ticket t16 = new Ticket(8216, 120, 5.5f, "Tyler", "Rahim", "orci@laciniavitaesodales.edu");
+        Ticket t17 = new Ticket(7114, 100, 5.5f, "Burns", "Cleo", "erat@nostra.com");
+
+        ////////////////////////////////////////////////creation 
         
-     ////////////////////////////////////////////////creation  
-       e1.getRepresentationsev().add(R1);
+        //////////////////////////////////////////////lien ticket/seat
+        t1.getSeat().add(se1);
+        t2.getSeat().add(se2);
+        t3.getSeat().add(se3);
+        t4.getSeat().add(se4);
+        t5.getSeat().add(se5);
+        t6.getSeat().add(se6);
+        t7.getSeat().add(se7);
+        t8.getSeat().add(se8);
+        t9.getSeat().add(se9);
+        t10.getSeat().add(se10);
+        t11.getSeat().add(se11);
+        t12.getSeat().add(se12);
+        t13.getSeat().add(se13);
+        t14.getSeat().add(se14);
+        t15.getSeat().add(se15);
+        t16.getSeat().add(se16);
+        t17.getSeat().add(se17);
+
+        
+        ///////////////////////////////////////////////lien seat/representation
+        se1.getRepresentation().add(r1);
+        se2.getRepresentation().add(r1);
+        se3.getRepresentation().add(r1);
+        se4.getRepresentation().add(r1);
+        se5.getRepresentation().add(r1);
+        se6.getRepresentation().add(r1);
+        se7.getRepresentation().add(r2);
+        se8.getRepresentation().add(r2);
+        se9.getRepresentation().add(r2);
+        se10.getRepresentation().add(r2);
+        se11.getRepresentation().add(r2);
+        se12.getRepresentation().add(r2);
+        se13.getRepresentation().add(r2);
+        se14.getRepresentation().add(r3);
+        se15.getRepresentation().add(r3);
+        se16.getRepresentation().add(r4);
+        se17.getRepresentation().add(r5);
+        
+        .getSeat().add(se1);
+        t1.getSeat().add(se1);
+        t1.getSeat().add(se1);
+        t1.getSeat().add(se1);
+        t1.getSeat().add(se1);
+        t1.getSeat().add(se1);
+        t1.getSeat().add(se1);
+        t1.getSeat().add(se1);
+        t1.getSeat().add(se1);
+        
+        
+        
+        
         e1.getRepresentationsev().add(R2);
         e1.getRepresentationsev().add(R3);
         e1.getRepresentationsev().add(R4);

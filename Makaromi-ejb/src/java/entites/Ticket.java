@@ -165,22 +165,22 @@ public class Ticket implements Serializable {
     
     
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (numberTicket != null ? numberTicket.hashCode() : 0);
-        return hash;
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 0;
+//        hash += (numberTicket != null ? numberTicket.hashCode() : 0);
+//        return hash;
+//    }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Ticket)) {
-            return false;
-        }
-        Ticket other = (Ticket) object;
-        return !((this.numberTicket == null && other.numberTicket != null) || (this.numberTicket != null && !this.numberTicket.equals(other.numberTicket)));
-    }
+//    @Override
+//    public boolean equals(Object object) {
+//        // TODO: Warning - this method won't work in the case the id fields are not set
+//        if (!(object instanceof Ticket)) {
+//            return false;
+//        }
+//        Ticket other = (Ticket) object;
+//        return !((this.numberTicket == null && other.numberTicket != null) || (this.numberTicket != null && !this.numberTicket.equals(other.numberTicket)));
+//    }
 
     @Override
     public String toString() {
