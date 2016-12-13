@@ -32,7 +32,6 @@ public class Event implements Serializable {
     private Collection <Representation> representationsev;
     
     private String imgURL;
-    private float price;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date startDate;
     @Temporal(javax.persistence.TemporalType.DATE)
@@ -41,25 +40,13 @@ public class Event implements Serializable {
     private String comment;
 
     public Event() {
-        this.artists = new ArrayList();
-        this.representationsev = new ArrayList();
-    }
-
-    public Event(Section section, String name) {
-        this.representationsev = new ArrayList();
-        this.artists = new ArrayList();
-        this.section = section;
-        this.name = name;
     }
     
- 
-    public Event( ArrayList<Representation> representations, Section section, String name, String imgURL, float price, Date startDate, Date endDate, String synopsis, String comment) {
-        this.representationsev = new ArrayList();
-        this.artists = new ArrayList();
-        this.section = section;
+    
+    public Event(String name, String imgURL, Date startDate, Date endDate, String synopsis, String comment) {
+        this();
         this.name = name;
         this.imgURL = imgURL;
-        this.price = price;
         this.startDate = startDate;
         this.endDate = endDate;
         this.synopsis = synopsis;
@@ -81,14 +68,6 @@ public class Event implements Serializable {
 
     public void setImgURL(String imgURL) {
         this.imgURL = imgURL;
-    }
-
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
     }
 
     public Date getStartDate() {

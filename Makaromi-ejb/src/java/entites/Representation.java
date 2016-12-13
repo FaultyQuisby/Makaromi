@@ -44,11 +44,10 @@ public class Representation implements Serializable {
         this.myvenue = myvenue;
     }
 
-    public Representation( int maxCapacity, Date rDate, Date rTime) {
+    public Representation( int maxCapacity, Date rDate) {
         
         this.maxCapacity = maxCapacity;
         this.rDate = rDate;
-        this.rTime = rTime;
     }
     
     public Long getId() {

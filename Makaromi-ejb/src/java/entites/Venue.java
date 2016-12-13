@@ -15,6 +15,8 @@ public class Venue implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     private String name;
+    private String type;
+    private String urlImg;
     
     @OneToMany(mappedBy = "myvenue")
     private Collection<Representation> representationsve;
@@ -27,9 +29,11 @@ public class Venue implements Serializable {
         representationsve =new ArrayList();
     }
 
-    public Venue(String name) {
-        representationsve = new ArrayList();
+    public Venue(String name, String type, String urlImg) {
+        this();
         this.name = name;
+        this.type = type;
+        this.urlImg = urlImg;
     }
 
     public String getName() {
