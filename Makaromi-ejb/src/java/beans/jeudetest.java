@@ -7,18 +7,20 @@ package beans;
 
 import entites.Address;
 import entites.Artist;
+import entites.Category;
 import entites.Event;
 import entites.Payment;
 import entites.Pricing;
 import entites.Representation;
+import entites.Seat;
 import entites.Section;
+import entites.Ticket;
 import entites.Venue;
 import entites.User;
 import java.util.GregorianCalendar;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
 
 /**
  *
@@ -150,75 +152,70 @@ public class jeudetest implements jeudetestLocal {
         Address A18 = new Address("5333 Dui. Road", "918850", "Manukau");
         Address A19 = new Address("395-1937 Nascetur St.", "30-051", "Garbsen");
         Address A20 = new Address("Ap #335-387 Dui, Rd.", "74784", "Navadwip");
-        Address A21 = new Address("Ap #190-5326 Odio, Av.","5831","Sint-Joost-ten-Node");
-        Address A22 = new Address("8994 Purus, Road","41117","Piegaro");
-        Address A23 = new Address("P.O. Box 609, 8350 Sem Street","80694", "Drayton Valley");
-        Address A24 = new Address("Ap #254-6553 Pede Avenue","6400","Houtave");
-        Address A25 = new Address("6524 Non, Rd.","3068", "Motta Sant Anastasia");
-        Address A26 = new Address("1715 Nec, Avenue","926691","Eufemia a Maiella");
-        Address A27 = new Address("332-8613 Malesuada Rd.","1234","Freire");
-        Address A28 = new Address("5515 Sapien. Road","37280","Lake Cowichan");
+        Address A21 = new Address("Ap #190-5326 Odio, Av.", "5831", "Sint-Joost-ten-Node");
+        Address A22 = new Address("8994 Purus, Road", "41117", "Piegaro");
+        Address A23 = new Address("P.O. Box 609, 8350 Sem Street", "80694", "Drayton Valley");
+        Address A24 = new Address("Ap #254-6553 Pede Avenue", "6400", "Houtave");
+        Address A25 = new Address("6524 Non, Rd.", "3068", "Motta Sant Anastasia");
+        Address A26 = new Address("1715 Nec, Avenue", "926691", "Eufemia a Maiella");
+        Address A27 = new Address("332-8613 Malesuada Rd.", "1234", "Freire");
+        Address A28 = new Address("5515 Sapien. Road", "37280", "Lake Cowichan");
 
-/////////////////////////////pricing
-        Pricing P1= new Pricing("tarif enfant");
-        Pricing P2= new Pricing("tarif handicapé");
-        Pricing P3= new Pricing("tarif demandeur d'emploi");
-        Pricing P4= new Pricing("tarif réduit");
-        Pricing P5= new Pricing("tarif senior");
+        /////////////////////////////pricing
+        Pricing P1 = new Pricing("tarif enfant");
+        Pricing P2 = new Pricing("tarif handicapé");
+        Pricing P3 = new Pricing("tarif demandeur d'emploi");
+        Pricing P4 = new Pricing("tarif réduit");
+        Pricing P5 = new Pricing("tarif senior");
 
+        ////////////////////////////ticket
+        ////////////////////////////user
+        User U1 = new User("Alfonso", "Morse", "17/07/1976", "Quisque.purus.sapien@magnisdis.org", "amet ante. Vivamus non", "Fletcher Stewart", "DQY41KXO1MT");
+        User U2 = new User("Ivor", "Ellison", "15/02/1961", "fermentum.metus.Aenean@dictummiac.edu", "aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet", "Charles Calderon", "SZS94IXT1FV");
+        User U3 = new User("Clayton", "Frazier", "22/05/1977", "metus@risusQuisquelibero.net", "consequat", "Igor Aguirre", "MKC72DCE9QM");
+        User U4 = new User("Cameron", "Ferguson", "19/01/1955", "pellentesque.massa.lobortis@odiosempercursus.com", "leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis,", "Laith Stout", "LXF47GGQ0RY");
+        User U5 = new User("Amir", "Buckley", "23/02/1977", "facilisis.eget.ipsum@risusDonec.net", "ante bibendum ullamcorper. Duis cursus, diam", "Keane Jenkins", "WYI25PIO3LB");
+        User U6 = new User("Hector", "Johnston", "23/04/1954", "Sed.nec.metus@felispurus.net", "diam lorem, auctor quis, tristique ac, eleifend vitae, erat. Vivamus", "Elton Coffey", "VYL79NGF9TI");
+        User U7 = new User("Ivan", "Nicholson", "05/10/1996", "convallis.ante.lectus@nisl.ca", "libero at auctor ullamcorper, nisl arcu", "Bernard Tyson", "WTV91HZB2TB");
+        User U8 = new User("Barrett", "Burt", "12/05/1959", "fringilla.purus@eleifendnunc.com", "In scelerisque scelerisque dui. Suspendisse", "Nissim Jackson", "AFD22JCH8JN");
+        User U9 = new User("Isaiah", "Hoffman", "10/07/1945", "eget.venenatis.a@penatibusetmagnis.edu", "ut, nulla. Cras eu tellus eu augue porttitor interdum.", "Odysseus Valencia", "MMU44UUP9FC");
+        User U10 = new User("Ryan", "Prince", "20/05/1963", "eros@sed.com", "et arcu imperdiet ullamcorper. Duis at lacus. Quisque", "Noah Wilder", "SGR98IAM7SM");
+        User U11 = new User("Herman", "Galloway", "21/12/1963", "urna@magnamalesuada.com", "nec, leo. Morbi neque tellus,", "Roth Grant", "QMX57ONO1PY");
+        User U12 = new User("Fuller", "Turner", "22/06/1982", "quam@Nunclaoreetlectus.ca", "luctus et ultrices posuere cubilia Curae; Phasellus ornare.", "Harlan Kirby", "BOT40EBR5TU");
+        User U13 = new User("Curran", "Coleman", "02/04/1939", "augue.eu.tellus@hendrerit.com", "ac tellus. Suspendisse sed dolor.", "Lance Valentine", "FXK91RUA6RJ");
+        User U14 = new User("Abraham", "Mcguire", "10/10/1946", "vel@volutpat.org", "laoreet,libero", "Hiram Heath", "SFI96TCO0UF");
+        User U15 = new User("William", "Marks", "02/10/1959", "arcu@nec.com", "faucibus leo, in lobortis tellus justo sit amet nulla. Donec", "Garth Weber", "IAO77GAF2CH");
+        User U16 = new User("John", "Gould", "29/07/1997", "nisi.a@Duisami.ca", "egestas nunc sed libero. Proin sed turpis nec mauris", "Tarik Livingston", "KHC56NQP9OY");
+        User U17 = new User("Carson", "Barton", "26/03/1943", "mi.ac.mattis@aliquetnec.org", "nec, leo. Morbi neque", "Eaton Hewitt", "HFQ35UXJ4AN");
+        User U18 = new User("Akeem", "Kaufman", "19/02/1971", "dolor.quam.elementum@metusVivamus.edu", "a, scelerisque sed, sapien. Nunc pulvinar arcu et pede.", "Ethan Brewer", "PGL94JHT1LM");
+        User U19 = new User("Cedric", "Stark", "26/09/1983", "ut@non.org", "Ut sagittis lobortis mauris. Suspendisse aliquet molestie tellus. Aenean egestas", "Harrison Strong", "JWU43ASM7PT");
+        User U20 = new User("Dexter", "Dotson", "24/08/1959", "ultricies.ligula@musProinvel.com", "montes, nascetur", "Derek Swanson", "JVT77DPD9NF");
+        User U21 = new User("Neville", "Bolton", "02/04/1973", "porttitor@tortorNunccommodo.ca", "torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam", "Macon Vargas", "BYF59YYV1JP");
+        User U22 = new User("Isaac", "Nguyen", "27/08/1966", "magna@aliquetdiam.edu", "et magnis dis parturient montes, nascetur", "Barrett Vargas", "ORH17KGC3BI");
+        User U23 = new User("Rooney", "Daugherty", "21/06/1988", "vestibulum@tristiquesenectuset.net", "egestas lacinia. Sed congue, elit sed consequat", "Magee Landry", "UPO70VTD1RO");
+        User U24 = new User("Felix", "Dudley", "21/05/1937", "tristique.aliquet@temporerat.org", "Nullam enim. Sed nulla ante, iaculis", "Zachary Mclaughlin", "JDP32SWN6KD");
+        User U25 = new User("Quinlan", "Shelton", "31/10/1940", "per.conubia@posuere.ca", "tincidunt", "Walter Acosta", "CSP75DQC0NM");
+        User U26 = new User("Brian", "Hoover", "29/10/1950", "justo.Proin@Nullatempor.edu", "a nunc. In at pede. Cras vulputate velit", "Rashad Phillips", "ZFT24GZY8QT");
 
-////////////////////////////ticket
-
-////////////////////////////user
-User U1 = new User("Alfonso","Morse","17/07/1976","Quisque.purus.sapien@magnisdis.org","amet ante. Vivamus non","Fletcher Stewart","DQY41KXO1MT");
-User U2 = new User("Ivor","Ellison","15/02/1961","fermentum.metus.Aenean@dictummiac.edu","aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet","Charles Calderon","SZS94IXT1FV");
-User U3 = new User("Clayton","Frazier","22/05/1977","metus@risusQuisquelibero.net","consequat","Igor Aguirre","MKC72DCE9QM");
-User U4 = new User("Cameron","Ferguson","19/01/1955","pellentesque.massa.lobortis@odiosempercursus.com","leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis,","Laith Stout","LXF47GGQ0RY");
-User U5 = new User("Amir","Buckley","23/02/1977","facilisis.eget.ipsum@risusDonec.net","ante bibendum ullamcorper. Duis cursus, diam","Keane Jenkins","WYI25PIO3LB");
-User U6 = new User("Hector","Johnston","23/04/1954","Sed.nec.metus@felispurus.net","diam lorem, auctor quis, tristique ac, eleifend vitae, erat. Vivamus","Elton Coffey","VYL79NGF9TI");
-User U7 = new User("Ivan","Nicholson","05/10/1996","convallis.ante.lectus@nisl.ca","libero at auctor ullamcorper, nisl arcu","Bernard Tyson","WTV91HZB2TB");
-User U8 = new User("Barrett","Burt","12/05/1959","fringilla.purus@eleifendnunc.com","In scelerisque scelerisque dui. Suspendisse","Nissim Jackson","AFD22JCH8JN");
-User U9 = new User("Isaiah","Hoffman","10/07/1945","eget.venenatis.a@penatibusetmagnis.edu","ut, nulla. Cras eu tellus eu augue porttitor interdum.",  "Odysseus Valencia","MMU44UUP9FC");
-User U10 = new User("Ryan","Prince","20/05/1963","eros@sed.com","et arcu imperdiet ullamcorper. Duis at lacus. Quisque","Noah Wilder","SGR98IAM7SM");
-User U11 = new User("Herman","Galloway","21/12/1963","urna@magnamalesuada.com","nec, leo. Morbi neque tellus,","Roth Grant","QMX57ONO1PY");      
-User U12 = new User("Fuller","Turner","22/06/1982","quam@Nunclaoreetlectus.ca","luctus et ultrices posuere cubilia Curae; Phasellus ornare.",  "Harlan Kirby","BOT40EBR5TU");
-User U13 = new User("Curran","Coleman","02/04/1939","augue.eu.tellus@hendrerit.com", "ac tellus. Suspendisse sed dolor.","Lance Valentine","FXK91RUA6RJ");
-User U14 = new User("Abraham","Mcguire","10/10/1946","vel@volutpat.org","laoreet,libero", "Hiram Heath","SFI96TCO0UF");
-User U15 = new User("William","Marks","02/10/1959","arcu@nec.com", "faucibus leo, in lobortis tellus justo sit amet nulla. Donec", "Garth Weber","IAO77GAF2CH");
-User U16 = new User("John","Gould","29/07/1997","nisi.a@Duisami.ca", "egestas nunc sed libero. Proin sed turpis nec mauris","Tarik Livingston","KHC56NQP9OY");
-User U17 = new User("Carson","Barton","26/03/1943","mi.ac.mattis@aliquetnec.org","nec, leo. Morbi neque","Eaton Hewitt","HFQ35UXJ4AN");
-User U18 = new User("Akeem","Kaufman","19/02/1971","dolor.quam.elementum@metusVivamus.edu","a, scelerisque sed, sapien. Nunc pulvinar arcu et pede.","Ethan Brewer","PGL94JHT1LM");
-User U19 = new User("Cedric","Stark","26/09/1983","ut@non.org","Ut sagittis lobortis mauris. Suspendisse aliquet molestie tellus. Aenean egestas","Harrison Strong","JWU43ASM7PT");
-User U20 = new User("Dexter","Dotson","24/08/1959","ultricies.ligula@musProinvel.com","montes, nascetur","Derek Swanson","JVT77DPD9NF");
-User U21 = new User("Neville","Bolton","02/04/1973","porttitor@tortorNunccommodo.ca","torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam",  "Macon Vargas","BYF59YYV1JP");
-User U22 = new User("Isaac","Nguyen","27/08/1966","magna@aliquetdiam.edu","et magnis dis parturient montes, nascetur","Barrett Vargas","ORH17KGC3BI");
-User U23 = new User("Rooney","Daugherty","21/06/1988","vestibulum@tristiquesenectuset.net", "egestas lacinia. Sed congue, elit sed consequat", "Magee Landry","UPO70VTD1RO");
-User U24 = new User("Felix","Dudley","21/05/1937","tristique.aliquet@temporerat.org", "Nullam enim. Sed nulla ante, iaculis","Zachary Mclaughlin","JDP32SWN6KD");
-User U25 = new User("Quinlan","Shelton","31/10/1940","per.conubia@posuere.ca","tincidunt",  "Walter Acosta","CSP75DQC0NM");
-User U26 = new User("Brian","Hoover","29/10/1950","justo.Proin@Nullatempor.edu","a nunc. In at pede. Cras vulputate velit","Rashad Phillips","ZFT24GZY8QT");
-
-
-///////////////////////////payment
-Payment Pa1 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
-Payment Pa2 = new Payment("Cheque culture", new GregorianCalendar(2017, 2, 3).getTime(), true);
-Payment Pa3 = new Payment("CB", new GregorianCalendar(2017, 3, 6).getTime(), true);
-Payment Pa4 = new Payment("Cheque", new GregorianCalendar(2017, 6, 5).getTime(), false);
-Payment Pa5 = new Payment("Cheque culture", new GregorianCalendar(2017, 9, 11).getTime(), true);
-Payment Pa6 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
-Payment Pa7 = new Payment("Cheque", new GregorianCalendar(2017, 2, 1).getTime(), false);
-Payment Pa8 = new Payment("Cheque culture", new GregorianCalendar(2017, 2, 2, 19, 0).getTime(), true);
-Payment Pa9 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
-Payment Pa10 = new Payment("Cheque", new GregorianCalendar(2017, 1, 15).getTime(), false);
-Payment Pa11= new Payment("Cheque culture", new GregorianCalendar(2017, 1, 2).getTime(), true);
-Payment Pa12 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
-Payment Pa13= new Payment("Cheque", new GregorianCalendar(2017, 1, 26).getTime(), false);
-Payment Pa14= new Payment("Cheque culture", new GregorianCalendar(2017, 1, 03).getTime(), true);
-Payment Pa15= new Payment("CB", new GregorianCalendar(2017, 4, 22).getTime(), true);
-Payment Pa16= new Payment("Cheque", new GregorianCalendar(2017, 5, 19).getTime(), false);
-Payment Pa17= new Payment("Cheque culture", new GregorianCalendar(2017, 8, 2).getTime(), true);
-Payment Pa18 = new Payment("Cheque", new GregorianCalendar(2017, 2, 1).getTime(), false);
-
-
+        ///////////////////////////payment
+        Payment Pa1 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
+        Payment Pa2 = new Payment("Cheque culture", new GregorianCalendar(2017, 2, 3).getTime(), true);
+        Payment Pa3 = new Payment("CB", new GregorianCalendar(2017, 3, 6).getTime(), true);
+        Payment Pa4 = new Payment("Cheque", new GregorianCalendar(2017, 6, 5).getTime(), false);
+        Payment Pa5 = new Payment("Cheque culture", new GregorianCalendar(2017, 9, 11).getTime(), true);
+        Payment Pa6 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
+        Payment Pa7 = new Payment("Cheque", new GregorianCalendar(2017, 2, 1).getTime(), false);
+        Payment Pa8 = new Payment("Cheque culture", new GregorianCalendar(2017, 2, 2, 19, 0).getTime(), true);
+        Payment Pa9 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
+        Payment Pa10 = new Payment("Cheque", new GregorianCalendar(2017, 1, 15).getTime(), false);
+        Payment Pa11 = new Payment("Cheque culture", new GregorianCalendar(2017, 1, 2).getTime(), true);
+        Payment Pa12 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
+        Payment Pa13 = new Payment("Cheque", new GregorianCalendar(2017, 1, 26).getTime(), false);
+        Payment Pa14 = new Payment("Cheque culture", new GregorianCalendar(2017, 1, 03).getTime(), true);
+        Payment Pa15 = new Payment("CB", new GregorianCalendar(2017, 4, 22).getTime(), true);
+        Payment Pa16 = new Payment("Cheque", new GregorianCalendar(2017, 5, 19).getTime(), false);
+        Payment Pa17 = new Payment("Cheque culture", new GregorianCalendar(2017, 8, 2).getTime(), true);
+        Payment Pa18 = new Payment("Cheque", new GregorianCalendar(2017, 2, 1).getTime(), false);
 
         ///////////////////////////////////////////categorie
         Category c1 = new Category("A");
@@ -232,58 +229,45 @@ Payment Pa18 = new Payment("Cheque", new GregorianCalendar(2017, 2, 1).getTime()
         Category c9 = new Category("Orchestre");
 
         /////////////////////////////////////////////seat
-        INSERT INTO Seat([numberSeat]
-        ) VALUES("1")
-        ,
-("2"),
-("3"),
-("4"),
-("5"),
-("6"),
-("7"),
-("8"),
-("9"),
-("10"),
-("11"),
-("12"),
-("13"),
-("14"),
-("15"),
-("16"),
-("17"),
-("18"),
-("19"),
-("20"),
-("21"),
-("22"),
-("23"),
-("24"),
-("25"),
-("26"),
-("27"),
-("28"),
-("29"),
-("30"),
-("31"),
-("32"),
-("33"),
-("34"),
-("35"),
-("36"),
-("37"),
-("38"),
-("39"),
-("40"),
-("41"),
-("42"),
-("43"),
-("44"),
-("45"),
-("46"),
-("47"),
-("48"),
-("49"),
-       
+        Seat se1 = new Seat("1");
+        Seat se2 = new Seat("2");
+        Seat se3 = new Seat("3");
+        Seat se4 = new Seat("4");
+        Seat se5 = new Seat("5");
+        Seat se6 = new Seat("6");
+        Seat se7 = new Seat("7");
+        Seat se8 = new Seat("8");
+        Seat se9 = new Seat("9");
+        Seat se10 = new Seat("10");
+        Seat se11= new Seat("11");
+        Seat se12= new Seat("12");
+        Seat se13= new Seat("13");
+        Seat se14= new Seat("14");
+        Seat se15= new Seat("15");
+        Seat se16= new Seat("16");
+        Seat se17= new Seat("17");
+        Seat se18= new Seat("18");
+        Seat se19= new Seat("19");
+        Seat se20= new Seat("20");
+        Seat se21 = new Seat("21");
+        Seat se22 = new Seat("22");
+        Seat se23 = new Seat("23");
+        Seat se24= new Seat("24");
+        Seat se25= new Seat("25");
+        Seat se26= new Seat("26");
+
+        ///////////////////////////////////////////ticket
+        Ticket t1 = new Ticket(1141, 75 , 5.5f , "Estrada","Imogene","lorem.ac.risus@accumsaninterdumlibero.ca");
+        Ticket t2 = new Ticket(308, 120, 5.5f ,"Meadows","Ila","Aliquam.erat.volutpat@Cumsociis.co.uk");
+        Ticket t3 = new Ticket(632, 25, 5.5f ,"Ortega","Geraldine","habitant.morbi.tristique@Nullasemper.com");
+        Ticket t4 = new Ticket(811, 30, 5.5f ,"Goodwin","Jena","montes.nascetur.ridiculus@Etiam.com");
+        Ticket t5 = new Ticket(3547,70, 5.5f ,"Spears","Tashya","gravida.molestie.arcu@consequatpurus.com");
+        Ticket t6 = new Ticket(5546, 90, 5.5f ,"Brown","Quyn","ridiculus.mus.Proin@Integervulputate.org");
+        Ticket t7 = new Ticket(7321, 110, 5.5f,"Compton","Aaron","dolor@augueac.edu");
+        Ticket t8 = new Ticket(9, 100, 5.5f ,"Wiley","Vivien","ipsum.dolor.sit@tortorNunc.ca");
+        Ticket t9 = new Ticket(8339,95, 5.5f ,"Knowles","Lydia","ante.Nunc@quam.com");
+        Ticket t10 = new Ticket(406, 80, 5.5f ,"Marquez","Hayden","inceptos.hymenaeos@Loremipsumdolor.com");
+        
      ////////////////////////////////////////////////creation  
        e1.getRepresentationsev().add(R1);
         e1.getRepresentationsev().add(R2);

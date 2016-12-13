@@ -26,7 +26,7 @@ public class Ticket implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long numberTicket;
+    private int numberTicket;
     
     @ManyToOne
     private Pricing pricing;
@@ -34,7 +34,7 @@ public class Ticket implements Serializable {
     @OneToOne
     private Seat seat;
     
-    private String sellPrice;
+    private int sellPrice;
     private float price;
     private Float tax;
     private String ticketHolderLastName;
@@ -47,7 +47,7 @@ public class Ticket implements Serializable {
     public Ticket() {
     }
 
-    public Ticket(Long numberTicket, String sellPrice, Float tax, String ticketHolderLastName, String ticketHolderFirstName, String ticketHolderMail) {
+    public Ticket(int numberTicket, int sellPrice, Float tax, String ticketHolderLastName, String ticketHolderFirstName, String ticketHolderMail) {
         this.numberTicket = numberTicket;
         this.pricing = pricing;
         this.seat = seat;
@@ -58,11 +58,11 @@ public class Ticket implements Serializable {
         this.ticketHolderMail = ticketHolderMail;
     }
 
-    public Long getNumberTicket() {
+    public int getNumberTicket() {
         return numberTicket;
     }
 
-    public void setNumberTicket(Long numberTicket) {
+    public void setNumberTicket(int numberTicket) {
         this.numberTicket = numberTicket;
     }
 
@@ -90,37 +90,37 @@ public class Ticket implements Serializable {
         this.price = price;
     }
     
-    public String getSellPrice() {
-        this.processSellPrice();
-        return sellPrice;
-    }
+//    public int getSellPrice() {
+//        this.processSellPrice();
+//        return sellPrice;
+//    }
 
-    public void processSellPrice() {
-        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.FRENCH);
-        otherSymbols.setDecimalSeparator('.');
-        otherSymbols.setGroupingSeparator(',');
-        DecimalFormat df = new DecimalFormat("0.00", otherSymbols);
-        df.setRoundingMode(RoundingMode.HALF_UP);
-        float tempPrice = this.getPrice();
-        
-        if(!(this.getPricing() == null)){
-            switch(this.getPricing().getName()) {
-                case "A" :
-                    tempPrice += ((30 / 100) * tempPrice) + (this.getTax() * tempPrice);
-                    break;
-                case "B":
-                    tempPrice += ((20 / 100) * tempPrice) + (this.getTax() * tempPrice);
-                    break;
-                case "C" :
-                    tempPrice += ((10 / 100) * tempPrice) + (this.getTax() * tempPrice);
-                    break;
-                default:
-                    break;
-            }
-        }
-        
-        this.sellPrice = df.format(tempPrice);
-    }
+//    public void processSellPrice() {
+//        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.FRENCH);
+//        otherSymbols.setDecimalSeparator('.');
+//        otherSymbols.setGroupingSeparator(',');
+//        DecimalFormat df = new DecimalFormat("0.00", otherSymbols);
+//        df.setRoundingMode(RoundingMode.HALF_UP);
+//        float tempPrice = this.getPrice();
+//        
+//        if(!(this.getPricing() == null)){
+//            switch(this.getPricing().getName()) {
+//                case "A" :
+//                    tempPrice += ((30 / 100) * tempPrice) + (this.getTax() * tempPrice);
+//                    break;
+//                case "B":
+//                    tempPrice += ((20 / 100) * tempPrice) + (this.getTax() * tempPrice);
+//                    break;
+//                case "C" :
+//                    tempPrice += ((10 / 100) * tempPrice) + (this.getTax() * tempPrice);
+//                    break;
+//                default:
+//                    break;
+//            }
+//        }
+//        
+//        this.sellPrice = df.format(tempPrice);
+//    }
 
     public Float getTax() {
         return tax;

@@ -41,14 +41,16 @@ public class Payment implements Serializable {
     private Date datePayment;
     
     private Boolean validationPayment;
+    
+   
 
     public Payment() {
     }
 
-    public Payment(Status status, Orders order, String typePayment) {
-        this.status = status;
-        this.order = order;
+    public Payment(String typePayment, Date datePayment, Boolean validationPayment) {
         this.typePayment = typePayment;
+        this.datePayment = datePayment;
+        this.validationPayment = validationPayment;
     }
     
     public Long getId() {

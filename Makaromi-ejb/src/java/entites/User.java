@@ -110,12 +110,6 @@ public class User implements Serializable {
         this.password = password;
     }
 
-    public String getCivillite() {
-        return civillite;
-    }
-
-    public void setCivillite(String civillite) {
-        this.civillite = civillite;
-    }
+   
 
 }

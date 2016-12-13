@@ -20,18 +20,14 @@ public class Seat implements Serializable {
     
     
     
-    private int number;
-    private String seatMapUrl;
+    private String numberSeat;
+
     
     public Seat() {
     }
 
-    public Seat(Representation representation,  int number, String seatMapUrl) {
-       
-        this.representation = representation;
-       
-        this.number = number;
-        this.seatMapUrl = seatMapUrl;
+    public Seat(String numberSeat) {       
+        this.numberSeat = numberSeat;
     }
     
     public Long getId() {
@@ -48,21 +44,15 @@ public class Seat implements Serializable {
         this.representation = representation;
     }
 
-    public int getNumber() {
-        return number;
+    public String getNumberSeat() {
+        return numberSeat;
     }
 
-    public void setNumber(int number) {
-        this.number = number;
+    public void setNumber(String numberSeat) {
+        this.numberSeat = numberSeat;
     }
 
-    public String getSeatMapUrl() {
-        return seatMapUrl;
-    }
-
-    public void setSeatMapUrl(String seatMapUrl) {
-        this.seatMapUrl = seatMapUrl;
-    }
+   
 
    
     
