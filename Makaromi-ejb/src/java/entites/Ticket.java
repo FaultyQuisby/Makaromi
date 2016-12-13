@@ -90,6 +90,7 @@ public class Ticket implements Serializable {
         this.price = price;
     }
     
+    
 //    public int getSellPrice() {
 //        this.processSellPrice();
 //        return sellPrice;
