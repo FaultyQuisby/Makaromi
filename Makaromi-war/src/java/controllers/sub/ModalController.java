@@ -17,7 +17,17 @@ public class ModalController implements Serializable, sousControleur{
 
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
-        return "/WEB-INF/jsp/menusub/modal.jsp";
+        System.out.println("est rentré dans le modal controller !");
+        System.out.println("------------------------" + request.getParameter("modalAction").toString());    
+        
+        if(request.getParameter("modalAction").equalsIgnoreCase("viewcart")){
+            System.out.println("hey there you made it fucking moron !");
+            return "/WEB-INF/jsp/shoppingCart.jsp";
+        }
+        else{
+            System.out.println("hey there, you made it !");
+            return "/WEB-INF/jsp/shoppingCart.jsp";
+        }
     }
     
 }

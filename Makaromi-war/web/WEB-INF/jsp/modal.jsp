@@ -14,10 +14,6 @@
 
         
         
-        <c:url var="url" value="IndexController?section=ShoppingCartController" />
-        <c:import url="${url}"  />
-        
-        
     </div>
 </div>
 

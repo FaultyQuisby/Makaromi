@@ -22,14 +22,8 @@
     </head>
 
     <body>
-        <script>
-            $("#myModal").on("show.bs.modal", function (e) {
-                var link = $(e.relatedTarget);
-                $(this).find(".modal-body").load(link.attr("href"));
-            });
-        </script>
         <jsp:useBean class="beans.ShoppingCartBean" id="cart" scope="session" />
-                <div class="panel panel-info modal-content">
+                <div class="panel panel-info">
                     <div class="panel-heading modal-header">
                         <div class="panel-title">
                             <div class="row">
