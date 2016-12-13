@@ -30,11 +30,14 @@ public class Representation implements Serializable {
     @Temporal(javax.persistence.TemporalType.TIME)
     private Date rTime;
     
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToOne
     private Venue myvenue;
     
     @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Seat> messeat;
+    
+    @ManyToOne
+    private Event event;
     
     
     public Representation() {
@@ -136,5 +139,27 @@ public class Representation implements Serializable {
     public void setMesseat(Collection<Seat> messeat) {
         this.messeat = messeat;
     }
+
+    public void add(Representation r1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
+    public Object getVenue() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public Object getMyVenue() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    
 
 }

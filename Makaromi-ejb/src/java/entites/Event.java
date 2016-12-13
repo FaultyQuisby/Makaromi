@@ -38,6 +38,9 @@ public class Event implements Serializable {
     private Date endDate;
     private String synopsis;
     private String comment;
+    
+  
+    
 
     public Event() {
     }
@@ -130,6 +133,14 @@ public class Event implements Serializable {
 
     public void setRepresentationsev(Collection <Representation> representationsev) {
         this.representationsev = representationsev;
+    }
+
+    public void add(Event e1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void add(Event e1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
    

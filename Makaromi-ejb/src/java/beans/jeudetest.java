@@ -316,6 +316,42 @@ public class jeudetest implements jeudetestLocal {
         se16.getRepresentation().add(r4);
         se17.getRepresentation().add(r5);
         
+        
+        ////////////////////////////////////////lien representation/event
+        r1.getEvent().add(e1);
+        r2.getEvent().add(e1);
+        r3.getEvent().add(e1);
+        r4.getEvent().add(e1);
+        r5.getEvent().add(e2);
+        r6.getEvent().add(e2);
+        r7.getEvent().add(e2);
+        r8.getEvent().add(e3);
+        r9.getEvent().add(e3);
+        r10.getEvent().add(e3);
+        r11.getEvent().add(e4);
+        r12.getEvent().add(e4);
+        r13.getEvent().add(e5);
+        r14.getEvent().add(e5);
+        r15.getEvent().add(e5);
+        r16.getEvent().add(e5);
+        r17.getEvent().add(e6);
+        r18.getEvent().add(e6);
+        r19.getEvent().add(e6);
+        r20.getEvent().add(e6);
+        r21.getEvent().add(e6);
+        r22.getEvent().add(e6);
+        r23.getEvent().add(e7);
+        r24.getEvent().add(e7);
+        
+        
+        /////////////////////////////////lien representation/venue
+        r1.getMyVenue().add(v1);
+        
+        
+        
+        
+        
+        
         .getSeat().add(se1);
         t1.getSeat().add(se1);
         t1.getSeat().add(se1);
