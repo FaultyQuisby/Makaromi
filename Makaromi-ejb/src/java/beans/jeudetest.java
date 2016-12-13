@@ -8,6 +8,7 @@ package beans;
 import entites.Address;
 import entites.Artist;
 import entites.Event;
+import entites.Payment;
 import entites.Pricing;
 import entites.Representation;
 import entites.Section;
@@ -198,26 +199,24 @@ User U26 = new User("Brian","Hoover","29/10/1950","justo.Proin@Nullatempor.edu",
 
 
 ///////////////////////////payment
-INSERT INTO Payment([typePayment],[datePayment],[validationPayment
-        ]) VALUES("CB", "25/01/2017", "true")
-        ,
-("Cheque", "01/02/2017", "false"),
-("Cheque culture", "03/02/2017", "true"),
-("CB", "06/03/2017", "true"),
-("Cheque", "05/06/2017", "false"),
-("Cheque culture", "11/09/2017", "true"),
-("CB", "25/01/2017", "true"),
-("Cheque", "01/02/2017", "false"),
-("Cheque culture", "01/02/2017", "true"),
-("CB", "25/01/2017", "true"),
-("Cheque", "01/02/2017", "false"),
-("Cheque culture", "01/02/2017", "true"),
-("CB", "25/01/2017", "true"),
-("Cheque", "01/02/2017", "false"),
-("Cheque culture", "01/02/2017", "true"),
-("CB", "25/01/2017", "true"),
-("Cheque", "01/02/2017", "false"),
-("Cheque culture", "01/02/2017", "true"),
+Payment Pa1 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
+Payment Pa2 = new Payment("Cheque culture", new GregorianCalendar(2017, 2, 3).getTime(), true);
+Payment Pa3 = new Payment("CB", new GregorianCalendar(2017, 3, 6).getTime(), true);
+Payment Pa4 = new Payment("Cheque", new GregorianCalendar(2017, 6, 5).getTime(), false);
+Payment Pa5 = new Payment("Cheque culture", new GregorianCalendar(2017, 9, 11).getTime(), true);
+Payment Pa6 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
+Payment Pa7 = new Payment("Cheque", new GregorianCalendar(2017, 2, 1).getTime(), false);
+Payment Pa8 = new Payment("Cheque culture", new GregorianCalendar(2017, 2, 2, 19, 0).getTime(), true);
+Payment Pa9 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
+Payment Pa10 = new Payment("Cheque", new GregorianCalendar(2017, 1, 15).getTime(), false);
+Payment Pa11= new Payment("Cheque culture", new GregorianCalendar(2017, 1, 2).getTime(), true);
+Payment Pa12 = new Payment("CB", new GregorianCalendar(2017, 1, 25).getTime(), true);
+Payment Pa13= new Payment("Cheque", new GregorianCalendar(2017, 1, 26).getTime(), false);
+Payment Pa14= new Payment("Cheque culture", new GregorianCalendar(2017, 1, 03).getTime(), true);
+Payment Pa15= new Payment("CB", new GregorianCalendar(2017, 4, 22).getTime(), true);
+Payment Pa16= new Payment("Cheque", new GregorianCalendar(2017, 5, 19).getTime(), false);
+Payment Pa17= new Payment("Cheque culture", new GregorianCalendar(2017, 8, 2).getTime(), true);
+Payment Pa18 = new Payment("Cheque", new GregorianCalendar(2017, 2, 1).getTime(), false);
 
 
 
