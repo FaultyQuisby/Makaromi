@@ -29,8 +29,6 @@
             });
         </script>
         <jsp:useBean class="beans.ShoppingCartBean" id="cart" scope="session" />
-        <div class="modal fade" id="cartModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
-            <div class="modal-dialog modal-lg">
                 <div class="panel panel-info modal-content">
                     <div class="panel-heading modal-header">
                         <div class="panel-title">
@@ -39,7 +37,7 @@
                                     <h5 class="modal-title"><span class="glyphicon glyphicon-shopping-cart"></span> Panier d'achats</h5>
                                 </div>
                                 <div class="col-xs-6">
-                                    <button type="button" class="btn btn-primary btn-sm btn-block" onclick="window.location.href = '/Hiboukili'" type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                                    <button type="button" class="btn btn-primary btn-sm btn-block" onclick="window.location.href = '/Makaromi-war'" type="button" class="close" data-dismiss="modal" aria-hidden="true">
                                         <span class="glyphicon glyphicon-share-alt"></span> Continuer les achats
                                     </button>
                                 </div>
@@ -48,7 +46,7 @@
                     </div>
                     <div class="panel-body modal-body">
                         <c:choose>
-                            <c:when test="${cart.list().size() == 0}">
+                            <c:when test="${cart.content == 0}">
                                 <div class="row">
                                     <div class="col-xs-2">
                                     </div>
@@ -69,7 +67,7 @@
                                 <hr>
                             </c:when>
                             <c:otherwise>
-                                <c:forEach items="${ cart.list() }" var="e">
+                                <c:forEach items="${ cart.content }" var="e">
                                     <div class="row">
                                         <div class="col-xs-2"><img class="img-responsive" src="http://placehold.it/100x70">
                                         </div>
@@ -128,7 +126,7 @@
                                 </c:url>
 
                                 <c:choose>
-                                    <c:when test="${cart.list().size() == 0}">
+                                    <c:when test="${cart.content == 0}">
                                         <button type="button" disabled class="btn btn-success btn-block" href="#" style="margin-bottom:4px; white-space: normal;">
                                             Valider
                                         </button>
@@ -143,7 +141,5 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
     </body>
 </html>

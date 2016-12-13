@@ -10,15 +10,18 @@
         <link rel="stylesheet" href="css/home.css" type="text/css">
         <link rel="stylesheet" href="css/menu-connectnok.css" type="text/css"/>
     </head>
-<body>
-       
-   <c:url var="url" value="IndexController?section=MenuMainController" />
-   <c:import url="${url}"  />
-    
+    <body>
+
+        <c:url var="url" value="IndexController?section=MenuMainController" />
+        <c:import url="${url}"  />
+
         <section>
             <p>Bienvenue dans votre magasin.</p>
-          
-               <a href="thematicBrowsing.jsp">thematic</a>
+
+            <a href="thematicBrowsing.jsp">thematic</a>
         </section>
+        
+        <c:url var="modal" value="WEB-INF/jsp/modal.jsp" />
+        <c:import url="${modal}" />
     </body>
 </html>

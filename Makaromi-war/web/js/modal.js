@@ -11,7 +11,7 @@ $(function () {
     // attach modal-container bootstrap attributes to links with .modal-link class.
     // when a link is clicked with these attributes, bootstrap will display the href content in a modal dialog.
     $('body').on('click', '.modal-link', function (e) {
-        alert("boy");
+        //alert("boy");
         e.preventDefault();
         $(this).attr('data-target', '#modal-container');
         $(this).attr('data-toggle', 'modal');

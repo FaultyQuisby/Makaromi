@@ -22,11 +22,6 @@ public class ShoppingCartBean implements ShoppingCartBeanLocal {
     }
 
     @Override
-    public void initialize(List<Ticket> content) {
-        this.content = content;
-    }
-
-    @Override
     public void addTicket(Ticket t) {
         content.add(t);
     }
@@ -37,6 +32,11 @@ public class ShoppingCartBean implements ShoppingCartBeanLocal {
         if (result == false) {
             throw new Exception("this ticket is not in cart.");
         }
+    }
+    
+    @Override
+    public void setContent(List<Ticket> content) {
+        this.content = content;
     }
 
     @Override

@@ -19,7 +19,7 @@ public interface ShoppingCartBeanLocal {
 
     public void initialize();
 
-    public void initialize(List<Ticket> content);
+    public void setContent(List<Ticket> content);
 
     public void addTicket(Ticket t);
 
