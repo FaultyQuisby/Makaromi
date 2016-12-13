@@ -15,6 +15,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 
 /**
  *
@@ -30,7 +31,7 @@ public class Ticket implements Serializable {
     @ManyToOne
     private Pricing pricing;
     
-    @ManyToOne
+    @OneToOne
     private Seat seat;
     
     private String sellPrice;
@@ -46,7 +47,7 @@ public class Ticket implements Serializable {
     public Ticket() {
     }
 
-    public Ticket(Long numberTicket, Pricing pricing, Seat seat, String sellPrice, Float tax, String ticketHolderLastName, String ticketHolderFirstName, String ticketHolderMail) {
+    public Ticket(Long numberTicket, String sellPrice, Float tax, String ticketHolderLastName, String ticketHolderFirstName, String ticketHolderMail) {
         this.numberTicket = numberTicket;
         this.pricing = pricing;
         this.seat = seat;

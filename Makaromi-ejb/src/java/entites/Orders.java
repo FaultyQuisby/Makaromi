@@ -45,7 +45,7 @@ public class Orders implements Serializable {
 
     @NotNull
     @ManyToOne
-    private UserReg user;
+    private User user;
     private String ipAddressRegistredUser;
 
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
@@ -59,7 +59,7 @@ public class Orders implements Serializable {
     }
 
     public Orders(Status status, Address addressBil, Address addressDel,
-                 UserReg user, String ipAddressRegistredUser, Payment payment,
+                 User user, String ipAddressRegistredUser, Payment payment,
                  Collection<Ticket> ticketsOrder) {
         this();
         this.status = status;
@@ -107,11 +107,11 @@ public class Orders implements Serializable {
         this.addressDel = addressDel;
     }
 
-    public UserReg getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(UserReg user) {
+    public void setUser(User user) {
         this.user = user;
     }
 

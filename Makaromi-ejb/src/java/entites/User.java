@@ -8,12 +8,8 @@ package entites;
 import java.io.Serializable;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
-import javax.persistence.NamedQuery;
 import javax.persistence.OneToOne;
 
 /**
@@ -22,17 +18,18 @@ import javax.persistence.OneToOne;
  */
 @Entity
 @NamedQueries({})
-public class UserReg implements Serializable {
+public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
     private String login;
-
     private String password;
-    private String civillite;
     private String firstName;
     private String lastName;
+    private String dateBirth;
+    private String emailUser;
+    private String commentUser;
 
    
     @OneToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
@@ -43,21 +40,46 @@ public class UserReg implements Serializable {
 
     
     
-    public UserReg() {
+    public User() {
     }
 
-    public UserReg(Address addLiv,Address addFact, String login, String password, String civillite, String firstName, String lastName) {
-        this.addLivraison = addLiv;
-        this.addFacturation= addFact;
-        this.login = login;
-        this.password = password;
-        this.civillite = civillite;
+    public User(String firstName, String lastName, String dateBrith, String emailUser,  String commentUser, String login, String password) {
+        this();
         this.firstName = firstName;
         this.lastName = lastName;
+        this.dateBirth = dateBirth;
+        this.emailUser = emailUser;
+        this.commentUser = commentUser;
+        this.login = login;
+        this.password = password;
     }
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public String getDateBirth() {
+        return dateBirth;
+    }
+
+    public void setDateBirth(String dateBirth) {
+        this.dateBirth = dateBirth;
+    }
+
+    public String getEmailUser() {
+        return emailUser;
+    }
+
+    public void setEmailUser(String emailUser) {
+        this.emailUser = emailUser;
+    }
+
+    public String getCommentUser() {
+        return commentUser;
+    }
+
+    public void setCommentUser(String commentUser) {
+        this.commentUser = commentUser;
     }
 
     public void setFirstName(String firstName) {

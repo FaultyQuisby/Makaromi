@@ -5,15 +5,19 @@
  */
 package beans;
 
+import entites.Address;
 import entites.Artist;
 import entites.Event;
+import entites.Pricing;
 import entites.Representation;
 import entites.Section;
 import entites.Venue;
+import entites.User;
 import java.util.GregorianCalendar;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+
 
 /**
  *
@@ -62,11 +66,11 @@ public class jeudetest implements jeudetestLocal {
         Event e8 = new Event("Finale coupe de la ligue", "http://www.francebillet.com/static/0/visuel/600/347/FINALE-COUPE-DE-LA-LIGUE-2017_3476961719077401827.jpg?1478605101000", (new GregorianCalendar(2017, 3, 3).getTime()), (new GregorianCalendar(2017, 3, 3).getTime()), "A lyon une tribune sera réservée au familles et comprendra une offre de restauration, l'organisation d'une multitude d'animations, des services dédiés et de nombreuses surprises !", " ");
         Event e9 = new Event("Mondial de hockey 2017", "http://www.francebillet.com/static/0/visuel/grand/348/MONDIAL-HOCKEY-2017_3489202436012305251.jpg?1479996593000", (new GregorianCalendar(2017, 2, 15).getTime()), (new GregorianCalendar(2017, 2, 30).getTime()), "La Finlande et la Biélorussie ouvriront les festivités à Paris, juste avant la rencontre de la soirée qui opposera les champions du monde en titre, le Canada, à la République Tchèque. L'équipe de France viendra clôturer la 2ème journée de rencontres avec son premier match contre la Norvège dans un remake du match du dernier Tournoi de Qualification Olympique. ", " ");
         Event e10 = new Event("Hergé", "http://www.francebillet.com/static/0/visuel/600/340/HERGE--2016-2017_3400616965982293754.jpg?1469697808000", (new GregorianCalendar(2017, 1, 1).getTime()), (new GregorianCalendar(2017, 1, 15).getTime()), "On ne présente plus la carrière de Georges Remi, dit Hergé, auteur belge de bande dessinée principalement connu pour Les Aventures de Tintin. Souvent considéré comme « le père de la bande dessinée européenne », il est l?un des premiers auteurs francophones à reprendre le style américain de la bande dessinée à bulles. ", " ");
-        Event e11 = new Event("Rembrandt intime", "http://www.francebillet.com/static/0/visuel/300/338/REMBRANDT-INTIME_3384978728407846685.jpg?1467807653000", (new GregorianCalendar(2017, 12, 26).getTime()), (new GregorianCalendar(2017, 1, 28).getTime()), "L'exposition est conçue autour des trois chefs-d??uvre du Musée Jacquemart-André : les Pèlerins d?Emmaüs (1629), le Portrait de la princesse Amalia von Solms (1632), et le Portrait du Docteur Arnold Tholinx (1656). ", " ");
-        Event e12 = new Event("Bouchardon (1698-1762)Une idée du beau", "http://www.francebillet.com/static/0/visuel/600/341/LOUVRE_3415892777709555559.jpg?1471532134000", (new GregorianCalendar(2017, 3, 25).getTime()), (new GregorianCalendar(2017, 4, 1).getTime()), "Edme Bouchardon fut considéré de son temps comme un artiste d?exception. Présentant près de 270 oeuvres et organisée avec le Getty Museum à Los Angeles, cette exposition sera la première monographie d?envergure réalisée autour de son oeuvre et l'occasion de souligner qu'il fut l'un des principaux protagonistes du néoclassicisme.", "une exposition du musée du Louvres");
-        Event e13 = new Event("MAGRITTE LA TRAHISON DES IMAGES", "http://www.francebillet.com/static/0/visuel/600/341/MAGRITTE---CENTRE-POMPIDOU_3417696887323044936.jpg?1471871647000", (new GregorianCalendar(2016, 9, 25).getTime()), (new GregorianCalendar(2017, 8, 31).getTime()), "Exposition «Magritte, La trahison des images» pose un nouveau regard sur l'oeuvre, le rapport à l?image et à la peinture de l?artiste belge René Magritte", "Magritte au centre pompidou !");
+        Event e11 = new Event("Rembrandt intime", "http://www.francebillet.com/static/0/visuel/300/338/REMBRANDT-INTIME_3384978728407846685.jpg?1467807653000", (new GregorianCalendar(2017, 12, 26).getTime()), (new GregorianCalendar(2017, 1, 28).getTime()), "L'exposition est conçue autour des trois chefs-d'oeuvre du Musée Jacquemart-André : les Pèlerins d'Emmaüs (1629), le Portrait de la princesse Amalia von Solms (1632), et le Portrait du Docteur Arnold Tholinx (1656). ", " ");
+        Event e12 = new Event("Bouchardon (1698-1762)Une idée du beau", "http://www.francebillet.com/static/0/visuel/600/341/LOUVRE_3415892777709555559.jpg?1471532134000", (new GregorianCalendar(2017, 3, 25).getTime()), (new GregorianCalendar(2017, 4, 1).getTime()), "Edme Bouchardon fut considéré de son temps comme un artiste d'exception. Présentant près de 270 oeuvres et organisée avec le Getty Museum à Los Angeles, cette exposition sera la première monographie d?envergure réalisée autour de son oeuvre et l'occasion de souligner qu'il fut l'un des principaux protagonistes du néoclassicisme.", "une exposition du musée du Louvres");
+        Event e13 = new Event("MAGRITTE LA TRAHISON DES IMAGES", "http://www.francebillet.com/static/0/visuel/600/341/MAGRITTE---CENTRE-POMPIDOU_3417696887323044936.jpg?1471871647000", (new GregorianCalendar(2016, 9, 25).getTime()), (new GregorianCalendar(2017, 8, 31).getTime()), "Exposition «Magritte, La trahison des images» pose un nouveau regard sur l'oeuvre, le rapport à l'image et à la peinture de l'artiste belge René Magritte", "Magritte au centre pompidou !");
         Event e14 = new Event("Norman sur scène", "http://www.francebillet.com/static/0/visuel/600/334/NORMAN-AU-ZENITH_3342081312054718028.jpg?1462952162000", (new GregorianCalendar(2016, 9, 15).getTime()), (new GregorianCalendar(2017, 2, 15).getTime()), "Norman, de « Norman fait des vidéos », arrive enfin sur scène avec son tout premier one-man show. Cette nouvelle aventure scénique est une suite logique pour ce pionner du « web man show » qui a déjà réussi en quelques années à réunir plusieurs millions de fans, en postant des vidéos qu?il filme lui-même depuis sa chambre. ", "un évènement à ne pas manquer");
-        Event e15 = new Event("Romeo et Juliette", "http://www.francebillet.com/static/0/visuel/grand/230/WILLIAM-SHAKESPEARE_2309502666313431296.jpg?1342617736000", (new GregorianCalendar(2016, 12, 26).getTime()), (new GregorianCalendar(2017, 1, 14).getTime()), "Pièce légendaire du répertoire, Roméo et Juliette est devenue, au fil du temps et des multiples adaptations dont elle a été l?objet, l?incarnation de l?histoire d?amour absolue. Or sous les couches de sédiments accumulés se cache un soleil noir fait de déliquescence politique, de haines familiales, de personnages complexes et insulaires, bien éloigné de la lecture romantique dans laquelle on l'a cantonnée.", " ");
+        Event e15 = new Event("Romeo et Juliette", "http://www.francebillet.com/static/0/visuel/grand/230/WILLIAM-SHAKESPEARE_2309502666313431296.jpg?1342617736000", (new GregorianCalendar(2016, 12, 26).getTime()), (new GregorianCalendar(2017, 1, 14).getTime()), "Pièce légendaire du répertoire, Roméo et Juliette est devenue, au fil du temps et des multiples adaptations dont elle a été l'objet, l?incarnation de l'histoire d'amour absolue. Or sous les couches de sédiments accumulés se cache un soleil noir fait de déliquescence politique, de haines familiales, de personnages complexes et insulaires, bien éloigné de la lecture romantique dans laquelle on l'a cantonnée.", " ");
         Event e16 = new Event("Les femmes savantes", "http://www.francebillet.com/static/0/visuel/600/329/SAVANTES_3295969886362179914.jpg?1457444342000", (new GregorianCalendar(2017, 2, 25).getTime()), (new GregorianCalendar(2017, 1, 4).getTime()), "Une comédie de moeurs jubilatoire au coeur d'une famille bourgeoise menée par trois femmes savantes, excessives et fiévreuses, repoussant les limites de la raison, entraînent toute la maisonnée dans le vertige de leur orgueil, mais, malgré leurs débordements, leurs ridicules, et leurs folies, infiniment attendrissantes. Catherine Hiegel réunit une distribution prestigieuse, 30 ans après l'avoir mis en scène avec la Comédie Française, au Théâtre de la Porte Saint-Martin et apporte un regard neuf sur ce grand classique du répertoire.", "Une énergie incroyable");
         Event e17 = new Event("Richard III", "http://www.francebillet.com/static/0/visuel/600/347/RICHARD-III-JPG_3476596840506551705.jpg?1478507639000", (new GregorianCalendar(2017, 3, 25).getTime()), (new GregorianCalendar(2017, 1, 5).getTime()), "A leur naissance, des personnages comme Richard III semblent être de même constitution que nous. Aussi chaque mot que le tyran prononce sur le plateau peut-il trouver son accord avec les sentiments du public, en éveillant les pulsions inavouées de chacun.", " ");
         Event e18 = new Event("Madame Bovary", "http://www.francebillet.com/static/0/visuel/600/344/MADAME-BOVARY_3449184254722259952.jpg?1475425174000", (new GregorianCalendar(2017, 6, 6).getTime()), (new GregorianCalendar(2017, 7, 7).getTime()), "Une pièce qui donne chair à la sensibilité, l'ironie et la force poétique de l'écriture de Flaubert, qui nous parle de nous, hommes et femmes d'aujourd'hui. Sur scène quatre chaises, à portée de main quelques instruments. Ce pourrait être la place d'un village, un coin de campagne ou la dernière table d'un banquet de noces sous les arbres au fond du verger.", " ");
@@ -134,7 +138,6 @@ public class jeudetest implements jeudetestLocal {
         Address A7 = new Address("boulevard de la bastille", "75012", "paris");
         Address A8 = new Address("rue de l'ouest", "25065", "lyon");
         Address A9 = new Address("P.O. Box 727, 6257 Cursus Road", "33006", "Prince Albert");
-        Address A9 = new Address("Ap #475-6304 Donec Street", "O6N 2VN", "Pietraroja");
         Address A10 = new Address("P.O. Box 576, 5805 Arcu. Rd.", "39-200", "Aurora");
         Address A11 = new Address("Ap #979-195 Velit Road", "5443", "Norfolk County");
         Address A12 = new Address("9571 Magna Av.", "77277", "Red Deer");
@@ -156,417 +159,42 @@ public class jeudetest implements jeudetestLocal {
         Address A28 = new Address("5515 Sapien. Road","37280","Lake Cowichan");
 
 /////////////////////////////pricing
-INSERT INTO Pricing([namePricing]
-        ) VALUES("tarif enfant")
-        ,("tarif handicapé"),("tarif demandeur d'emploi"),("tarif réduit"),("tarif senior"),
+        Pricing P1= new Pricing("tarif enfant");
+        Pricing P2= new Pricing("tarif handicapé");
+        Pricing P3= new Pricing("tarif demandeur d'emploi");
+        Pricing P4= new Pricing("tarif réduit");
+        Pricing P5= new Pricing("tarif senior");
 
 
 ////////////////////////////ticket
 
 ////////////////////////////user
-INSERT INTO User([nameUser],[surnameUser],[dateBirthUser],[email],[commentRegisteredUser],[loginUser],[password
-        ]) VALUES('Alfonso','Morse','17/07/1976','Quisque.purus.sapien@magnisdis.org'
-        , 
-         
-         
-         
-        'amet ante. Vivamus non',  'Fletcher Stewart','DQY41KXO1MT'),('Ivor','Ellison','15/02/1961','fermentum.metus.Aenean@dictummiac.edu'
-        , 
-         
-          
-         
-         'aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet'
-        ,  'Charles Calderon','SZS94IXT1FV'),('Clayton','Frazier','22/05/1977','metus@risusQuisquelibero.net','consequat'
-        ,  'Igor Aguirre','MKC72DCE9QM'),('Cameron','Ferguson','19/01/1955','pellentesque.massa.lobortis@odiosempercursus.com'
-        ,  'leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis,'
-        ,  'Laith Stout','LXF47GGQ0RY'),('Amir','Buckley','23/02/1977','facilisis.eget.ipsum@risusDonec.net'
-        , 
-         
-         
-         
-         
-         
-        'ante bibendum ullamcorper. Duis cursus, diam',  'Keane Jenkins','WYI25PIO3LB'),('Hector','Johnston','23/04/1954','Sed.nec.metus@felispurus.net'
-        , 
-          
-         'diam lorem, auctor quis, tristique ac, eleifend vitae, erat. Vivamus'
-        ,  'Elton Coffey','VYL79NGF9TI'),('Ivan','Nicholson','05/10/1996','convallis.ante.lectus@nisl.ca'
-        , 
-         
-          
-         
-         'libero at auctor ullamcorper, nisl arcu'
-        ,  'Bernard Tyson','WTV91HZB2TB'),('Barrett','Burt','12/05/1959','fringilla.purus@eleifendnunc.com'
-        , 
-          
-         'In scelerisque scelerisque dui. Suspendisse'
-        ,  'Nissim Jackson','AFD22JCH8JN'),('Isaiah','Hoffman','10/07/1945','eget.venenatis.a@penatibusetmagnis.edu','ut, nulla. Cras eu tellus eu augue porttitor interdum.'
-        ,  'Odysseus Valencia','MMU44UUP9FC'),('Ryan','Prince','20/05/1963','eros@sed.com'
-        , 
-         
-          
-         
-         'et arcu imperdiet ullamcorper. Duis at lacus. Quisque'
-        ,  'Noah Wilder','SGR98IAM7SM'),
-('Herman','Galloway','21/12/1963','urna@magnamalesuada.com','nec, leo. Morbi neque tellus,'
-        ,  'Roth Grant','QMX57ONO1PY'),('Abraham','Mcguire','10/10/1946','vel@volutpat.org','laoreet, libero'
-        ,  'Hiram Heath','SFI96TCO0UF'),('Fuller','Turner','22/06/1982','quam@Nunclaoreetlectus.ca'
-        , 
-         
-         
-         
-         
-         
-         
-         
-        'luctus et ultrices posuere cubilia Curae; Phasellus ornare.',  'Harlan Kirby','BOT40EBR5TU'),('Curran','Coleman','02/04/1939','augue.eu.tellus@hendrerit.com'
-        , 
-          
-         'ac tellus. Suspendisse sed dolor.'
-        ,  'Lance Valentine','FXK91RUA6RJ'),('William','Marks','02/10/1959','arcu@nec.com'
-        , 
-         
-         
-         
-          
-         
-         
-         
-         'faucibus leo, in lobortis tellus justo sit amet nulla. Donec'
-        ,  'Garth Weber','IAO77GAF2CH'),('John','Gould','29/07/1997','nisi.a@Duisami.ca'
-        , 
-         
-         
-          
-         
-         
-         'egestas nunc sed libero. Proin sed turpis nec mauris'
-        ,  'Tarik Livingston','KHC56NQP9OY'),('Carson','Barton','26/03/1943','mi.ac.mattis@aliquetnec.org','nec, leo. Morbi neque'
-        ,  'Eaton Hewitt','HFQ35UXJ4AN'),('Isaac','Nguyen','27/08/1966','magna@aliquetdiam.edu'
-        , 
-          
-         'et magnis dis parturient montes, nascetur'
-        ,  'Barrett Vargas','ORH17KGC3BI'),('Akeem','Kaufman','19/02/1971','dolor.quam.elementum@metusVivamus.edu','a, scelerisque sed, sapien. Nunc pulvinar arcu et pede.'
-        ,  'Ethan Brewer','PGL94JHT1LM'),('Cedric','Stark','26/09/1983','ut@non.org'
-        , 
-         
-         
-         
-         
-         
-         
-         
-         
-         
-        'Ut sagittis lobortis mauris. Suspendisse aliquet molestie tellus. Aenean egestas',  'Harrison Strong','JWU43ASM7PT'),('Dexter','Dotson','24/08/1959','ultricies.ligula@musProinvel.com','montes, nascetur'
-        ,  'Derek Swanson','JVT77DPD9NF'),('Neville','Bolton','02/04/1973','porttitor@tortorNunccommodo.ca'
-        , 
-         
-         
-         
-          
-         
-         
-         
-         'torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam'
-        ,  'Macon Vargas','BYF59YYV1JP'),('Rooney','Daugherty','21/06/1988','vestibulum@tristiquesenectuset.net'
-        , 
-         
-         
-         
-         
-         
-         
-         
-        'egestas lacinia. Sed congue, elit sed consequat',  'Magee Landry','UPO70VTD1RO'),('Felix','Dudley','21/05/1937','tristique.aliquet@temporerat.org'
-        , 
-          
-         'Nullam enim. Sed nulla ante, iaculis'
-        ,  'Zachary Mclaughlin','JDP32SWN6KD'),('Quinlan','Shelton','31/10/1940','per.conubia@posuere.ca','tincidunt'
-        ,  'Walter Acosta','CSP75DQC0NM'),('Brian','Hoover','29/10/1950','justo.Proin@Nullatempor.edu'
-        , 
-         
-          
-         'a nunc. In at pede. Cras vulputate velit'
-        ,  'Rashad Phillips','ZFT24GZY8QT'),('Evan','Davidson','08/03/1997','egestas@tinciduntduiaugue.co.uk','elementum, lorem ut aliquam iaculis, lacus pede sagittis augue,'
-        ,  'Henry Battle','GZU64ZWN2VI'),('Alec','Perry','26/08/1994','nunc@eu.org','ligula. Aenean'
-        ,  'Cody Nixon','FDA27WDO9KT'),('Neil','Bruce','21/02/1973','tellus.Phasellus@montesnasceturridiculus.com'
-        ,  'Sed nunc est, mollis non, cursus non, egestas a,'
-        ,  'Xanthus Battle','ELY20NVZ5DH'),('Connor','Norris','15/04/1970','tempor@egetvarius.ca'
-        ,  'Morbi neque tellus, imperdiet non, vestibulum nec, euismod in,'
-        ,  'Micah Turner','LEE19IEA9EG'),
-('Joel','Miranda','10/10/1997','mi@lobortisaugue.co.uk','eget, volutpat ornare,'
-        ,  'Hyatt Walters','IYR94UUV3QL'),('Rahim','James','17/03/1973','id.magna@egestaslacinia.org','velit'
-        ,  'Kaseem Norman','HXA79DOX5JG'),('Davis','Watkins','17/02/1963','rhoncus.Nullam.velit@nonjusto.ca'
-        , 
-         
-        'dis parturient',  'Hop Schultz','GVL76RZB3KZ'),('Damon','Pierce','16/01/1970','magnis.dis.parturient@perinceptoshymenaeos.org','at, velit. Cras lorem'
-        ,  'Oleg Dennis','VKJ72RLP4WV'),('Isaiah','Jones','20/02/1997','sit@enimNunc.co.uk'
-        , 
-         
-         
-         
-         
-         
-        'nisi nibh lacinia orci, consectetuer',  'Shad Tyler','HTN58PNO8CE'),('Chester','Lancaster','11/03/1990','aliquet@eleifendnec.edu'
-        , 
-         
-         
-          
-         
-         
-         'Proin vel arcu eu odio tristique pharetra. Quisque ac libero'
-        ,  'Evan Adkins','PRN18KJX4XD'),('Prescott','Walsh','14/11/1968','hendrerit.id.ante@metusAenean.co.uk'
-        , 
-          
-         'aliquam eu, accumsan sed, facilisis vitae,'
-        ,  'Kieran Leblanc','IKH02ZHX4RP'),('Nero','Mason','19/07/1990','ullamcorper.viverra@auctorMaurisvel.org'
-        , 
-         
-         
-         
-         
-         
-         
-         
-        'primis in faucibus orci luctus et ultrices posuere',  'Ezekiel Atkinson','VIN35QAR3OG'),('Tiger','Clay','07/10/1935','suscipit.nonummy.Fusce@ut.co.uk'
-        , 
-         
-         
-          
-         
-         
-         'enim. Etiam imperdiet dictum magna. Ut tincidunt orci quis lectus.'
-        ,  'Judah Morris','MBT62HSW7XY'),('Flynn','Williams','19/08/1988','sem.consequat@egetmagna.edu','Nulla'
-        ,  'Jason Sears','CRM04ZHN3WC'),
-('Clinton','Ramos','11/05/1941','Morbi@euturpis.edu'
-        , 
-         
-        'nibh. Quisque nonummy',  'Ian Henry','ADZ95HWR7MS'),('Keefe','York','17/08/1947','Mauris.blandit.enim@purussapien.edu','at, libero. Morbi accumsan laoreet ipsum.'
-        ,  'Davis Brooks','DVQ21WAJ6WO'),('Scott','Gill','19/06/1987','a.mi.fringilla@inhendreritconsectetuer.com'
-        , 
-         
-         
-         
-         
-         
-        'Phasellus nulla. Integer vulputate, risus',  'Fuller Garner','MTE64YZN1SR'),('Armando','Kelly','19/01/1946','et.rutrum.eu@velit.com'
-        ,  'eleifend. Cras sed leo. Cras'
-        ,  'Brent Love','GXE29EXY2KI'),('Carl','Keith','26/01/1950','lobortis.augue@Aenean.ca'
-        , 
-          
-         'cursus in, hendrerit consectetuer,'
-        ,  'Brent Goodman','RGQ92PGD3VS'),('Barrett','Whitfield','06/11/1957','mollis.Integer@lobortisultrices.com'
-        , 
-         
-         
-         
-        'tristique neque venenatis lacus.',  'Aidan Baldwin','PHA65ZIT2OC'),('Colin','Hinton','14/04/1978','imperdiet.dictum@pharetrafelis.net','ac, feugiat non, lobortis'
-        ,  'Igor Hoffman','MNN70BSR1LD'),('Lee','Kelley','24/12/1983','Morbi@lacuspede.com'
-        , 
-         
-          
-         
-         'Donec luctus aliquet odio. Etiam ligula tortor, dictum'
-        ,  'Nigel Lynn','NRG94FBT7IU'),('Wallace','Daniels','26/09/1964','tempor.bibendum@sociisnatoque.net'
-        , 
-         
-         
-          
-         
-         
-         'egestas lacinia. Sed congue, elit sed consequat auctor, nunc nulla'
-        ,  'Zeus Chase','ZAN52QHM2BU'),('Nash','Dennis','28/03/1986','a.felis.ullamcorper@musProin.edu'
-        ,  'tellus faucibus leo, in lobortis tellus justo sit'
-        ,  'Shad Acevedo','EKQ41EEW3JT'),
-('Joel','Holt','17/11/1963','metus@gravida.ca','ipsum'
-        ,  'Joel Collier','VMQ62WLX2SE'),('Cody','Rowland','01/12/1937','pharetra.nibh@diam.com','Cras'
-        ,  'Chester Paul','JSR24HMA0CN'),('Dylan','Marsh','13/05/1947','est.arcu.ac@sagittis.edu'
-        , 
-          
-         'dictum eu, eleifend nec,'
-        ,  'Darius Calhoun','ROU66WMR1VY'),('Bradley','Boyd','24/09/1948','Donec@fermentumconvallis.com'
-        ,  'nisi. Cum sociis natoque'
-        ,  'Kadeem Vazquez','OAY40PJT0GE'),('Erich','Luna','07/02/1973','Integer.id@nibh.co.uk'
-        , 
-         
-         
-         
-        'Quisque tincidunt pede ac',  'Elvis Jarvis','PRC16WST1DY'),('Jared','Gallagher','14/04/1944','elementum@Integersemelit.net'
-        , 
-         
-         
-         
-        'nunc interdum feugiat. Sed nec',  'Phelan Henderson','GGH40EQN0OX'),('Jasper','Keller','14/01/1959','quis.turpis.vitae@purus.edu'
-        , 
-         
-         
-          
-         
-         
-         'dapibus gravida. Aliquam tincidunt, nunc ac mattis ornare, lectus ante'
-        ,  'Rogan Baldwin','MEK05VHJ8BG'),('Buckminster','Berg','11/09/1979','mauris.a.nunc@magnisdis.co.uk'
-        , 
-         
-        'quis turpis',  'Jerry Pollard','WGH32ACH5RA'),('Nolan','Brewer','20/02/1989','orci.luctus.et@nonquam.edu'
-        , 
-         
-          
-         
-         'eu erat semper rutrum. Fusce dolor quam, elementum at,'
-        ,  'Vaughan Atkins','ISN27WAE6FU'),('Magee','Waters','08/10/1966','mauris.ipsum.porta@felisadipiscingfringilla.ca'
-        ,  'sapien. Cras dolor dolor,'
-        ,  'Harrison Cleveland','CGV61GBL7QG'),
-('Clayton','William','18/10/1937','scelerisque.mollis@DonecfringillaDonec.org'
-        , 
-         
-          
-         
-         'dictum. Phasellus in felis. Nulla tempor augue ac ipsum.'
-        ,  'Lawrence Alvarado','RIT39KWQ8LD'),('Bradley','Richmond','17/01/1984','ultrices@magna.org'
-        , 
-         
-          
-         
-         'Quisque imperdiet, erat nonummy ultricies ornare, elit elit'
-        ,  'Lyle Dodson','XVA68ULB0HI'),('Declan','Kennedy','30/11/1948','amet.faucibus.ut@semNulla.ca'
-        ,  'Nullam ut nisi'
-        ,  'Beck Orr','VRP78BJP0SS'),('Yasir','Pennington','25/09/1987','lobortis.nisi.nibh@Phasellusvitaemauris.co.uk'
-        ,  'Maecenas mi felis,'
-        ,  'Michael Kelley','TZX44YOI3GS'),('Guy','Mcgee','28/09/1994','venenatis@placeratvelit.co.uk'
-        ,  'elit fermentum risus, at fringilla purus'
-        ,  'Theodore Barrett','HLV12JUR1BR'),('Alec','Griffith','09/02/1960','at.pede@velarcuCurabitur.co.uk'
-        , 
-         
-        'Suspendisse tristique',  'Chaim Hooper','AED88LDA7HA'),('Ryan','Peters','30/04/1958','ut.erat.Sed@ametrisusDonec.net','non'
-        ,  'Uriel Michael','MNV47SJU4CJ'),('Rudyard','Mcdaniel','16/10/1962','amet.ornare.lectus@non.edu'
-        , 
-         
-         
-         
-         
-         
-        'eget tincidunt dui augue eu tellus.',  'Dale William','SCZ63XRA1YN'),('Aaron','Waller','10/09/1952','nec.tellus.Nunc@massaSuspendisseeleifend.com'
-        , 
-         
-         
-          
-         
-         
-         'Donec sollicitudin adipiscing ligula. Aenean gravida nunc sed pede.'
-        ,  'Nathan Chaney','YTC67KUU0ZT'),('Austin','Vaughan','09/10/1977','enim@Intinciduntcongue.edu'
-        , 
-          
-         'euismod et, commodo at, libero. Morbi accumsan laoreet ipsum. Curabitur'
-        ,  'Sebastian Good','BKQ85TCG4PP'),
-('Stephen','Dickson','01/08/1984','metus.In.lorem@sociis.co.uk','aliquam'
-        ,  'Wylie Singleton','XFH89JZR7RB'),('Allen','Barton','01/04/1951','faucibus@Vestibulum.org'
-        , 
-         
-         
-         
-        'egestas. Aliquam nec enim. Nunc ut',  'Macaulay Mejia','LDJ11KNL4LO'),('Reed','Dawson','07/07/1984','amet@purusMaecenaslibero.edu','felis, adipiscing fringilla, porttitor vulputate, posuere vulputate, lacus. Cras'
-        ,  'August Salinas','FJN57LRA3WC'),('Fuller','Keith','24/05/1943','torquent.per@esttemporbibendum.edu','montes, nascetur ridiculus'
-        ,  'Hunter Anthony','LUY00PDA3CK'),('Fritz','Alford','18/01/1936','semper.pretium@eueleifend.edu'
-        , 
-         
-         
-         
-         
-         
-        'orci quis lectus. Nullam suscipit,',  'David Oneil','BQV00UMA9RG'),('Daquan','Hopper','27/04/1982','Nam.porttitor.scelerisque@nulla.com'
-        , 
-         
-          
-         
-         'sodales. Mauris blandit enim consequat purus. Maecenas libero est, congue'
-        ,  'Harding Talley','GPK73CZU1FT'),('Alec','Bird','02/02/1994','Curae@nonegestasa.com'
-        , 
-         
-         
-         
-         
-         
-        'tempor lorem, eget mollis lectus',  'Baxter Gallagher','QNS91LUW4SE'),('Axel','Burns','08/04/1958','eget.massa@ipsumsodales.co.uk'
-        , 
-         
-          
-         
-         'eu augue porttitor interdum. Sed auctor odio'
-        ,  'Drew Greene','RHK72WYU2VA'),('Scott','Edwards','22/07/1970','Duis@nequepellentesquemassa.co.uk'
-        ,  'rhoncus. Proin nisl sem, consequat nec, mollis vitae, posuere at,'
-        ,  'Ulysses Cohen','JVL00DME0MZ'),('Warren','Mcpherson','14/10/1992','viverra.Maecenas@elitafeugiat.ca','non, sollicitudin a, malesuada'
-        ,  'Scott Phelps','WFU01FJQ1IU'),
-('Jasper','Foley','02/02/1982','facilisis@tinciduntvehicula.edu'
-        , 
-         
-         
-         
-         
-         
-         
-         
-        'Aliquam vulputate ullamcorper magna. Sed eu eros. Nam consequat',  'Holmes Barrera','OWF23NEV8XG'),('Brady','Carey','03/05/1995','et.magna.Praesent@pulvinar.org'
-        , 
-          
-         'sed sem egestas blandit. Nam'
-        ,  'Tobias Cabrera','VDD32IPU4IL'),('Vladimir','Simpson','19/07/1989','dictum@interdumSedauctor.com'
-        ,  'lacus. Quisque purus sapien,'
-        ,  'Wesley Thompson','URL57RGR4AG'),('Nero','Park','16/10/1973','In@ullamcorpermagnaSed.co.uk'
-        , 
-          
-         'semper rutrum. Fusce dolor quam, elementum at,'
-        ,  'Merrill Reeves','GDV33HIA9KE'),('Reuben','Kent','12/12/1981','mauris.ut.mi@faucibus.org'
-        ,  'urna convallis erat, eget tincidunt dui augue'
-        ,  'Keith Peck','CQF94WYB2GO'),('Allistair','Rojas','24/04/1954','dolor.sit@vitaemaurissit.ca'
-        , 
-          
-         'ac libero nec ligula consectetuer'
-        ,  'Keith Daniel','FJR75AUN6ZN'),('Isaac','Randolph','12/03/1938','natoque@sollicitudinorcisem.net','a,'
-        ,  'Justin Wells','IYQ08CQZ1PV'),('Norman','Stewart','15/08/1987','congue.elit@sedfacilisisvitae.net'
-        , 
-          
-         'sed orci lobortis augue scelerisque'
-        ,  'Aaron Crawford','WAO99IPV5XH'),('Cruz','Poole','23/11/1994','dignissim.lacus.Aliquam@sagittisNullamvitae.co.uk','pede, nonummy ut,'
-        ,  'Holmes Mccullough','XBW22WOT5EX'),('Demetrius','Cox','21/08/1940','fermentum.fermentum@loremac.ca'
-        , 
-          
-         'scelerisque mollis. Phasellus libero mauris, aliquam eu, accumsan sed, facilisis'
-        ,  'Castor Rodriguez','AAA25WAT3FF'),
-('Patrick','Stone','27/09/1958','scelerisque.sed.sapien@vel.org','condimentum'
-        ,  'Hector Gonzales','SUY86NWY2JW'),('Jerome','Webster','08/05/1996','arcu.Sed@neceuismod.edu'
-        , 
-          
-         'semper rutrum. Fusce dolor quam, elementum at, egestas'
-        ,  'Jerry Perkins','UFH32NES9WB'),('Jermaine','Salinas','21/06/1978','ac.risus.Morbi@dolorFusce.ca'
-        , 
-         
-         
-          
-         
-         
-         'et nunc. Quisque ornare tortor at risus. Nunc ac sem'
-        ,  'Honorato Dixon','EQV62XUS1FZ'),('Shad','Serrano','29/09/1966','lobortis.Class@cursusinhendrerit.net'
-        ,  'lectus convallis est, vitae sodales nisi magna sed'
-        ,  'Ethan Mason','CUF63YGE9XM'),('Camden','Long','10/10/1969','ut@arcuAliquam.com'
-        , 
-          
-         'velit eu sem. Pellentesque ut ipsum'
-        ,  'Hilel Morgan','ZGE61JJS0YS'),('Hasad','Frost','09/03/1977','luctus.lobortis.Class@elementum.com','luctus'
-        ,  'Marsden Merrill','ABP67JUO6YF'),('Geoffrey','Colon','22/05/1997','non.lacinia@musProin.net'
-        ,  'at pretium aliquet, metus urna convallis erat,'
-        ,  'Rudyard Monroe','CHC44PLY3TC'),('Cade','Castro','13/10/1973','libero.at@sedfacilisisvitae.ca'
-        , 
-          
-         'molestie in, tempus eu, ligula. Aenean euismod mauris'
-        ,  'Dillon Chambers','USX77OOI6ZV'),('Fritz','Kaufman','11/03/1936','sem@id.edu'
-        , 
-          
-         'consequat purus. Maecenas libero est,'
-        ,  'Kibo Cabrera','SEO60ZOK9DO'),('Hashim','Tate','30/04/1955','sit.amet@cursus.com'
-        ,  'elit erat vitae'
-        ,  'Leo Bailey','UQJ30PJZ0FS'
-        ),
+User U1 = new User("Alfonso","Morse","17/07/1976","Quisque.purus.sapien@magnisdis.org","amet ante. Vivamus non","Fletcher Stewart","DQY41KXO1MT");
+User U2 = new User("Ivor","Ellison","15/02/1961","fermentum.metus.Aenean@dictummiac.edu","aliquet. Phasellus fermentum convallis ligula. Donec luctus aliquet","Charles Calderon","SZS94IXT1FV");
+User U3 = new User("Clayton","Frazier","22/05/1977","metus@risusQuisquelibero.net","consequat","Igor Aguirre","MKC72DCE9QM");
+User U4 = new User("Cameron","Ferguson","19/01/1955","pellentesque.massa.lobortis@odiosempercursus.com","leo. Vivamus nibh dolor, nonummy ac, feugiat non, lobortis quis,","Laith Stout","LXF47GGQ0RY");
+User U5 = new User("Amir","Buckley","23/02/1977","facilisis.eget.ipsum@risusDonec.net","ante bibendum ullamcorper. Duis cursus, diam","Keane Jenkins","WYI25PIO3LB");
+User U6 = new User("Hector","Johnston","23/04/1954","Sed.nec.metus@felispurus.net","diam lorem, auctor quis, tristique ac, eleifend vitae, erat. Vivamus","Elton Coffey","VYL79NGF9TI");
+User U7 = new User("Ivan","Nicholson","05/10/1996","convallis.ante.lectus@nisl.ca","libero at auctor ullamcorper, nisl arcu","Bernard Tyson","WTV91HZB2TB");
+User U8 = new User("Barrett","Burt","12/05/1959","fringilla.purus@eleifendnunc.com","In scelerisque scelerisque dui. Suspendisse","Nissim Jackson","AFD22JCH8JN");
+User U9 = new User("Isaiah","Hoffman","10/07/1945","eget.venenatis.a@penatibusetmagnis.edu","ut, nulla. Cras eu tellus eu augue porttitor interdum.",  "Odysseus Valencia","MMU44UUP9FC");
+User U10 = new User("Ryan","Prince","20/05/1963","eros@sed.com","et arcu imperdiet ullamcorper. Duis at lacus. Quisque","Noah Wilder","SGR98IAM7SM");
+User U11 = new User("Herman","Galloway","21/12/1963","urna@magnamalesuada.com","nec, leo. Morbi neque tellus,","Roth Grant","QMX57ONO1PY");      
+User U12 = new User("Fuller","Turner","22/06/1982","quam@Nunclaoreetlectus.ca","luctus et ultrices posuere cubilia Curae; Phasellus ornare.",  "Harlan Kirby","BOT40EBR5TU");
+User U13 = new User("Curran","Coleman","02/04/1939","augue.eu.tellus@hendrerit.com", "ac tellus. Suspendisse sed dolor.","Lance Valentine","FXK91RUA6RJ");
+User U14 = new User("Abraham","Mcguire","10/10/1946","vel@volutpat.org","laoreet,libero", "Hiram Heath","SFI96TCO0UF");
+User U15 = new User("William","Marks","02/10/1959","arcu@nec.com", "faucibus leo, in lobortis tellus justo sit amet nulla. Donec", "Garth Weber","IAO77GAF2CH");
+User U16 = new User("John","Gould","29/07/1997","nisi.a@Duisami.ca", "egestas nunc sed libero. Proin sed turpis nec mauris","Tarik Livingston","KHC56NQP9OY");
+User U17 = new User("Carson","Barton","26/03/1943","mi.ac.mattis@aliquetnec.org","nec, leo. Morbi neque","Eaton Hewitt","HFQ35UXJ4AN");
+User U18 = new User("Akeem","Kaufman","19/02/1971","dolor.quam.elementum@metusVivamus.edu","a, scelerisque sed, sapien. Nunc pulvinar arcu et pede.","Ethan Brewer","PGL94JHT1LM");
+User U19 = new User("Cedric","Stark","26/09/1983","ut@non.org","Ut sagittis lobortis mauris. Suspendisse aliquet molestie tellus. Aenean egestas","Harrison Strong","JWU43ASM7PT");
+User U20 = new User("Dexter","Dotson","24/08/1959","ultricies.ligula@musProinvel.com","montes, nascetur","Derek Swanson","JVT77DPD9NF");
+User U21 = new User("Neville","Bolton","02/04/1973","porttitor@tortorNunccommodo.ca","torquent per conubia nostra, per inceptos hymenaeos. Mauris ut quam",  "Macon Vargas","BYF59YYV1JP");
+User U22 = new User("Isaac","Nguyen","27/08/1966","magna@aliquetdiam.edu","et magnis dis parturient montes, nascetur","Barrett Vargas","ORH17KGC3BI");
+User U23 = new User("Rooney","Daugherty","21/06/1988","vestibulum@tristiquesenectuset.net", "egestas lacinia. Sed congue, elit sed consequat", "Magee Landry","UPO70VTD1RO");
+User U24 = new User("Felix","Dudley","21/05/1937","tristique.aliquet@temporerat.org", "Nullam enim. Sed nulla ante, iaculis","Zachary Mclaughlin","JDP32SWN6KD");
+User U25 = new User("Quinlan","Shelton","31/10/1940","per.conubia@posuere.ca","tincidunt",  "Walter Acosta","CSP75DQC0NM");
+User U26 = new User("Brian","Hoover","29/10/1950","justo.Proin@Nullatempor.edu","a nunc. In at pede. Cras vulputate velit","Rashad Phillips","ZFT24GZY8QT");
 
 
 ///////////////////////////payment

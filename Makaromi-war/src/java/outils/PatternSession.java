@@ -2,7 +2,7 @@ package outils;
 
 
 import beans.ShoppingCartBeanLocal;
-import entites.UserReg;
+import entites.User;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -14,7 +14,7 @@ import javax.naming.NamingException;
 public class PatternSession implements Serializable {
     
     
-    private UserReg user;
+    private User user;
     private boolean isconnect;
     private String ipClient;
     private int nbConnexion;
@@ -44,11 +44,11 @@ public class PatternSession implements Serializable {
         this.nbConnexion = nbConnexion;
     }
 
-    public UserReg getUser() {
+    public User getUser() {
         return user;
     }
 
-    public void setUser(UserReg user) {
+    public void setUser(User user) {
         this.user = user;
     }
 

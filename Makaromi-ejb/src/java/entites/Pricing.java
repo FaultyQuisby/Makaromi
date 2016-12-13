@@ -18,8 +18,8 @@ public class Pricing implements Serializable {
     public Pricing() {
     }
 
-    public Pricing(Long id, String name) {
-        this.id = id;
+    public Pricing(String name) {
+        this();
         this.name = name;
     }
 
