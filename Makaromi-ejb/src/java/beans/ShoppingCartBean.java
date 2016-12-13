@@ -44,26 +44,26 @@ public class ShoppingCartBean implements ShoppingCartBeanLocal {
         return content;
     }
 
-    @Override
-    public String getCartPrice() {
-        Float prixTotal = 0F;
-        if (!(this.getContent().isEmpty())) {
-            for (Ticket t : this.getContent()) {
-                if (t.getSellPrice() != null) {
-                    prixTotal += (Float.parseFloat(t.getSellPrice()));
-                }
-            }
-        }
-
-        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.FRENCH);
-        otherSymbols.setDecimalSeparator('.');
-        otherSymbols.setGroupingSeparator(',');
-        DecimalFormat df = new DecimalFormat("0.00", otherSymbols);
-        df.setRoundingMode(RoundingMode.HALF_UP);
-
-        //System.out.println(df.format(prixTotal));
-        return df.format(prixTotal);
-    }
+//    @Override
+//    public String getCartPrice() {
+//        Float prixTotal = 0F;
+//        if (!(this.getContent().isEmpty())) {
+//            for (Ticket t : this.getContent()) {
+//                if (t.getSellPrice() != null) {
+//                    prixTotal += (Float.parseFloat(t.getSellPrice()));
+//                }
+//            }
+//        }
+//
+//        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.FRENCH);
+//        otherSymbols.setDecimalSeparator('.');
+//        otherSymbols.setGroupingSeparator(',');
+//        DecimalFormat df = new DecimalFormat("0.00", otherSymbols);
+//        df.setRoundingMode(RoundingMode.HALF_UP);
+//
+//        //System.out.println(df.format(prixTotal));
+//        return df.format(prixTotal);
+//    }
 
    
     @Remove

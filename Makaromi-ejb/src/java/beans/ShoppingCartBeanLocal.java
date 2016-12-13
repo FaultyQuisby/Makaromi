@@ -27,7 +27,7 @@ public interface ShoppingCartBeanLocal {
 
     public Collection<Ticket> getContent();
 
-    public String getCartPrice();
+//    public String getCartPrice();
 
     public void remove();
     
