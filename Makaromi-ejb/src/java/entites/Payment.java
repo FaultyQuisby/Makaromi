@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entites;
 
 import java.io.Serializable;
@@ -16,31 +11,28 @@ import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.validation.constraints.NotNull;
 
-/**
- *
- * @author cdi308
- */
 @Entity
 public class Payment implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    
-    @NotNull
-    @ManyToOne
-    private Status status;
-    
-    @NotNull
-    @OneToOne
-    private Orders order;
-    
+       
     private String typePayment;
     
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date datePayment;
     
     private Boolean validationPayment;
+    
+    
+    @NotNull
+    @OneToOne
+    private Orders order;
+    
+     @NotNull
+    @ManyToOne
+    private Status status;
     
    
 

@@ -21,39 +21,42 @@ public class Representation implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
- 
     private int maxCapacity;
+    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date rDate;
+    
     @Temporal(javax.persistence.TemporalType.TIME)
     private Date rTime;
     
     @ManyToOne
     private Venue myvenue;
     
-    
     @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Seat> messeat;
     
     @ManyToOne
-    private Event event;
-    
+    private Event event;    
     
     public Representation() {
     }
-   
-    public Representation(Venue myvenue) {
-        this.myvenue = myvenue;
-    }
-
+    
     public Representation( int maxCapacity, Date rDate) {
-        
         this.maxCapacity = maxCapacity;
         this.rDate = rDate;
     }
     
+   
+    public void add(Representation r1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getMaxCapacity() {
@@ -62,49 +65,6 @@ public class Representation implements Serializable {
 
     public void setMaxCapacity(int maxCapacity) {
         this.maxCapacity = maxCapacity;
-    }
-
-    public Date getDate() {
-        return rDate;
-    }
-
-    public void setDate(Date rDate) {
-        this.rDate = rDate;
-    }
-
-    public Date getTime() {
-        return rTime;
-    }
-
-    public void setTime(Date rTime) {
-        this.rTime = rTime;
-    }
-
-   
-    
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Representation)) {
-            return false;
-        }
-        Representation other = (Representation) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public String toString() {
-        return "entites.Representation[ id=" + id + " ]";
     }
 
     public Date getrDate() {
@@ -139,10 +99,6 @@ public class Representation implements Serializable {
         this.messeat = messeat;
     }
 
-    public void add(Representation r1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
     public Event getEvent() {
         return event;
     }
@@ -151,14 +107,28 @@ public class Representation implements Serializable {
         this.event = event;
     }
 
-    public Object getVenue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public int hashCode() {
+        int hash = 0;
+        hash += (id != null ? id.hashCode() : 0);
+        return hash;
     }
 
-    public Object getMyVenue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public boolean equals(Object object) {
+        // TODO: Warning - this method won't work in the case the id fields are not set
+        if (!(object instanceof Representation)) {
+            return false;
+        }
+        Representation other = (Representation) object;
+        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
+            return false;
+        }
+        return true;
     }
 
-    
-
+    @Override
+    public String toString() {
+        return "entites.Representation[ id=" + id + " ]";
+    }
 }

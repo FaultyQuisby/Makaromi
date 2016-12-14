@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package beans;
 
 import entites.Address;
@@ -24,10 +19,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-/**
- *
- * @author cdi310
- */
 @Stateless
 public class jeudetest implements jeudetestLocal {
 
@@ -376,7 +367,7 @@ public class jeudetest implements jeudetestLocal {
         se24.getStatus().add(st8);
         se25.getStatus().add(st8);
         se26.getStatus().add(st8);
-        
+
         ///////////////////////////////////////////lien status / order
         o1.getStatus().add(st6);
         o2.getStatus().add(st6);
@@ -675,8 +666,7 @@ public class jeudetest implements jeudetestLocal {
         s3.getEvent().add(e21);
         s4.getEvent().add(e22);
         s4.getEvent().add(e23);
-        
-        
+
         ////////////////////////////////////lien artist / event
         a1.getEvents().add(e1);
         a2.getEvents().add(e1);
