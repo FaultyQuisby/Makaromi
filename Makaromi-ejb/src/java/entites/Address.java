@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.criteria.Order;
 
 
 @Entity
@@ -21,8 +22,8 @@ public class Address implements Serializable {
     private String city;
     
     @OneToOne
-    private Status status;
-    
+    private Orders orders;
+   
     
     public Address() {
     }
@@ -71,13 +72,14 @@ public class Address implements Serializable {
         this.city = city;
     }
 
-    public Status getStatus() {
-        return status;
+    public Orders getOrders() {
+        return orders;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setOrders(Orders orders) {
+        this.orders = orders;
     }
+
 
     @Override
     public String toString() {
