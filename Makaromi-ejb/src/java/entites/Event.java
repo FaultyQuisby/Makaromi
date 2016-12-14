@@ -38,9 +38,11 @@ public class Event implements Serializable {
     private Date endDate;
     private String synopsis;
     private String comment;
-    private Status status;
-  
     
+    @ManyToOne
+    private Status status;
+    
+  
 
     public Event() {
     }

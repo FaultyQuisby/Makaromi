@@ -652,6 +652,31 @@ public class jeudetest implements jeudetestLocal {
         e22.getSection().add(s4);
         e23.getSection().add(s4);
 
+        s1.getEvent().add(e1);
+        s1.getEvent().add(e2);
+        s1.getEvent().add(e3);
+        s1.getEvent().add(e4);
+        s1.getEvent().add(e5);
+        s7.getEvent().add(e6);
+        s7.getEvent().add(e7);
+        s7.getEvent().add(e8);
+        s7.getEvent().add(e9);
+        s6.getEvent().add(e10);
+        s6.getEvent().add(e11);
+        s6.getEvent().add(e12);
+        s6.getEvent().add(e13);
+        s2.getEvent().add(e14);
+        s2.getEvent().add(e15);
+        s2.getEvent().add(e16);
+        s2.getEvent().add(e17);
+        s2.getEvent().add(e18);
+        s3.getEvent().add(e19);
+        s3.getEvent().add(e20);
+        s3.getEvent().add(e21);
+        s4.getEvent().add(e22);
+        s4.getEvent().add(e23);
+        
+        
         ////////////////////////////////////lien artist / event
         a1.getEvents().add(e1);
         a2.getEvents().add(e1);
