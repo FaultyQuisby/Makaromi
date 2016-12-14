@@ -21,10 +21,7 @@ public class Address implements Serializable {
     private String postalCode;
     private String city;
     
-    @OneToOne
-    private Orders orders;
    
-    
     public Address() {
     }
 
@@ -72,13 +69,7 @@ public class Address implements Serializable {
         this.city = city;
     }
 
-    public Orders getOrders() {
-        return orders;
-    }
-
-    public void setOrders(Orders orders) {
-        this.orders = orders;
-    }
+   
 
 
     @Override
