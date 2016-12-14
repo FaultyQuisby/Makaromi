@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entites;
 
 import java.io.Serializable;
@@ -12,10 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.OneToOne;
 
-/**
- *
- * @author cdi310
- */
+
 @Entity
 @NamedQueries({})
 public class UserReg implements Serializable {
@@ -23,13 +15,14 @@ public class UserReg implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private String login;
-    private String password;
+   
     private String firstName;
     private String lastName;
     private String dateBirth;
     private String emailUser;
     private String commentUser;
+    private String login;
+    private String password;
     
    
     @OneToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
@@ -37,8 +30,6 @@ public class UserReg implements Serializable {
     
     @OneToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Address addLivraison;
-
-    
     
     public UserReg() {
     }
@@ -53,10 +44,29 @@ public class UserReg implements Serializable {
         this.login = login;
         this.password = password;
     }
+  
+    public void add(Ticket t1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
+    public void add(UserReg u1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
     public String getFirstName() {
         return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public String getDateBirth() {
@@ -83,18 +93,6 @@ public class UserReg implements Serializable {
         this.commentUser = commentUser;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getLogin() {
         return login;
     }
@@ -111,7 +109,6 @@ public class UserReg implements Serializable {
         this.password = password;
     }
 
-
     public Address getAddFacturation() {
         return addFacturation;
     }
@@ -127,16 +124,5 @@ public class UserReg implements Serializable {
     public void setAddLivraison(Address addLivraison) {
         this.addLivraison = addLivraison;
     }
- public void add(Ticket t1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void add(UserReg u1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-
-
-      
 
 }
