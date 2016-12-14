@@ -17,7 +17,16 @@ public class Event implements Serializable {
 
     
     @Id
+    private Long id;
+    
     private String name;
+    private String imgURL;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date startDate;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date endDate;
+    private String synopsis;
+    private String comment;
    
     @ManyToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Section section;
@@ -28,18 +37,9 @@ public class Event implements Serializable {
     @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection <Representation> representationsev;
     
-    private String imgURL;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date startDate;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date endDate;
-    private String synopsis;
-    private String comment;
-    
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Status status;
     
-  
 
     public Event() {
     }
@@ -102,11 +102,6 @@ public class Event implements Serializable {
 
     public void setComment(String comment) {
         this.comment = comment;
-    }
-
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
     }
 
     public Section getSection() {
