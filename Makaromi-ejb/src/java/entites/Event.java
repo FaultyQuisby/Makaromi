@@ -38,7 +38,7 @@ public class Event implements Serializable {
     private Date endDate;
     private String synopsis;
     private String comment;
-    
+    private Status status;
   
     
 
@@ -135,6 +135,14 @@ public class Event implements Serializable {
         this.representationsev = representationsev;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
     public void add(Event e1) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
@@ -142,6 +150,8 @@ public class Event implements Serializable {
     public void add(Payment pa2) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+   
 
    
    

@@ -276,8 +276,7 @@ public class jeudetest implements jeudetestLocal {
         Ticket t15 = new Ticket(9602, 110, 5.5f, "Cleveland", "Rina", "mollis.Integer.tincidunt@vulputate.edu");
         Ticket t16 = new Ticket(8216, 120, 5.5f, "Tyler", "Rahim", "orci@laciniavitaesodales.edu");
         Ticket t17 = new Ticket(7114, 100, 5.5f, "Burns", "Cleo", "erat@nostra.com");
-        
-        
+
         //////////////////////////////////////status
         Status st1 = new Status("Disponible");
         Status st2 = new Status("Indisponible");
@@ -288,7 +287,7 @@ public class jeudetest implements jeudetestLocal {
         Status st7 = new Status("Non validé");
         Status st8 = new Status("Réservé");
         Status st9 = new Status("Non réservé");
-        
+
         //////////////////////////////////////order
         Orders o1 = new Orders("");
         Orders o2 = new Orders("");
@@ -300,91 +299,83 @@ public class jeudetest implements jeudetestLocal {
         Orders o8 = new Orders("");
         Orders o9 = new Orders("");
         Orders o10 = new Orders("");
-        Orders o11= new Orders("");
+        Orders o11 = new Orders("");
         Orders o12 = new Orders("");
         Orders o13 = new Orders("");
-        Orders o14= new Orders("");
+        Orders o14 = new Orders("");
         Orders o15 = new Orders("");
-        Orders o16= new Orders("");
+        Orders o16 = new Orders("");
         Orders o17 = new Orders("");
-        Orders o18= new Orders("");
-        Orders o19= new Orders("");
-        Orders o20= new Orders("");
-        
-        
-        
-        
+        Orders o18 = new Orders("");
+        Orders o19 = new Orders("");
+        Orders o20 = new Orders("");
 
         ////////////////////////////////////////////////creation 
-        
         ///////////////////////////////////////////lien status / event
-        st1.getEvents().add(e1);
-        st1.getEvents().add(e2);
-        st1.getEvents().add(e3);
-        st1.getEvents().add(e4);
-        st1.getEvents().add(e5);
-        st1.getEvents().add(e6);
-        st1.getEvents().add(e7);
-        st1.getEvents().add(e8);
-        st1.getEvents().add(e9);
-        st1.getEvents().add(e10);
-        st1.getEvents().add(e11);
-        st1.getEvents().add(e12);
-        st1.getEvents().add(e13);
-        st1.getEvents().add(e14);
-        st2.getEvents().add(e15);
-        st1.getEvents().add(e16);
-        st1.getEvents().add(e17);
-        st1.getEvents().add(e18);
-        st1.getEvents().add(e19);
-        st1.getEvents().add(e20);
-        st2.getEvents().add(e21);
-        st1.getEvents().add(e22);
-        st1.getEvents().add(e23);
-        st2.getEvents().add(e24);
-    
+        e1.getStatus().add(st1);
+        e2.getStatus().add(st2);
+        e3.getStatus().add(st1);
+        e4.getStatus().add(st1);
+        e5.getStatus().add(st1);
+        e6.getStatus().add(st1);
+        e7.getStatus().add(st1);
+        e8.getStatus().add(st1);
+        e9.getStatus().add(st1);
+        e10.getStatus().add(st1);
+        e11.getStatus().add(st1);
+        e12.getStatus().add(st2);
+        e13.getStatus().add(st1);
+        e14.getStatus().add(st1);
+        e15.getStatus().add(st1);
+        e16.getStatus().add(st1);
+        e17.getStatus().add(st2);
+        e18.getStatus().add(st1);
+        e19.getStatus().add(st1);
+        e20.getStatus().add(st2);
+        e21.getStatus().add(st1);
+        e22.getStatus().add(st1);
+        e23.getStatus().add(st2);
+        e24.getStatus().add(st1);
+
         ///////////////////////////////////////////lien status / payment        
-        st3.getPayment().add(pa1);
-        st3.getPayment().add(pa2);
-        st4.getPayment().add(pa3);
-        st3.getPayment().add(pa4);
-        st4.getPayment().add(pa5);
-        st3.getPayment().add(pa6);
-        st3.getPayment().add(pa7);
-        st4.getPayment().add(pa8);
-        st3.getPayment().add(pa9);
-        st3.getPayment().add(pa10);
-             
-                
+        pa1.getStatus().add(st3);
+        pa2.getStatus().add(st4);
+        pa3.getStatus().add(st3);
+        pa4.getStatus().add(st3);
+        pa5.getStatus().add(st3);
+        pa6.getStatus().add(st3);
+        pa7.getStatus().add(st4);
+        pa8.getStatus().add(st3);
+        pa9.getStatus().add(st3);
+        pa10.getStatus().add(st3);
+
         ///////////////////////////////////////////lien status / seat
-        st8.getSeat().add(se1);
-        st9.getSeat().add(se2);
-        st9.getSeat().add(se3);
-        st9.getSeat().add(se4);
-        st9.getSeat().add(se5);
-        st9.getSeat().add(se6);
-        st8.getSeat().add(se7);
-        st9.getSeat().add(se8);
-        st9.getSeat().add(se9);
-        st8.getSeat().add(se10);
-        st9.getSeat().add(se11);
-        st9.getSeat().add(se12);
-        st9.getSeat().add(se13);
-        st9.getSeat().add(se14);
-        st9.getSeat().add(se15);
-        st8.getSeat().add(se16);
-        st9.getSeat().add(se17);
-        st9.getSeat().add(se18);
-        st8.getSeat().add(se19);
-        st9.getSeat().add(se20);
-        st9.getSeat().add(se21);
-        st9.getSeat().add(se22);
-        st9.getSeat().add(se23);
-        st9.getSeat().add(se24);
-        st8.getSeat().add(se25);
-        st9.getSeat().add(se26);
-       
-       
+        se1.getStatus().add(st8);
+        se2.getStatus().add(st8);
+        se3.getStatus().add(st9);
+        se4.getStatus().add(st8);
+        se5.getStatus().add(st8);
+        se6.getStatus().add(st8);
+        se7.getStatus().add(st9);
+        se8.getStatus().add(st8);
+        se9.getStatus().add(st8);
+        se10.getStatus().add(st8);
+        se11.getStatus().add(st9);
+        se12.getStatus().add(st8);
+        se13.getStatus().add(st8);
+        se14.getStatus().add(st8);
+        se15.getStatus().add(st9);
+        se16.getStatus().add(st8);
+        se17.getStatus().add(st8);
+        se18.getStatus().add(st8);
+        se19.getStatus().add(st9);
+        se20.getStatus().add(st8);
+        se21.getStatus().add(st8);
+        se22.getStatus().add(st8);
+        se23.getStatus().add(st9);
+        se24.getStatus().add(st8);
+        se25.getStatus().add(st8);
+        se26.getStatus().add(st8);
         
         ///////////////////////////////////////////lien status / order
         o1.getStatus().add(st6);
@@ -407,8 +398,7 @@ public class jeudetest implements jeudetestLocal {
         o18.getStatus().add(st6);
         o19.getStatus().add(st6);
         o20.getStatus().add(st7);
-        
-        
+
         //////////////////////////////////////////lien order / payment
         o1.getStatus().add(pa1);
         o2.getStatus().add(pa2);
@@ -428,7 +418,7 @@ public class jeudetest implements jeudetestLocal {
         o16.getStatus().add(pa16);
         o17.getStatus().add(pa17);
         o18.getStatus().add(pa18);
-        
+
         ///////////////////////////////////////////lien order / adress        
         o1.getAddressBil().add(ad13);
         o2.getAddressBil().add(ad14);
@@ -446,7 +436,7 @@ public class jeudetest implements jeudetestLocal {
         o14.getAddressBil().add(ad26);
         o15.getAddressBil().add(ad27);
         o16.getAddressBil().add(ad28);
-  
+
         o1.getAddressDel().add(ad13);
         o2.getAddressDel().add(ad14);
         o3.getAddressDel().add(ad15);
@@ -463,8 +453,7 @@ public class jeudetest implements jeudetestLocal {
         o14.getAddressDel().add(ad26);
         o15.getAddressDel().add(ad27);
         o16.getAddressDel().add(ad28);
-     
-        
+
         //////////////////////////////////////////lien order / ticket
         o1.getTicketsOrder().add(t1);
         o2.getTicketsOrder().add(t2);
@@ -483,8 +472,7 @@ public class jeudetest implements jeudetestLocal {
         o15.getTicketsOrder().add(t15);
         o16.getTicketsOrder().add(t16);
         o17.getTicketsOrder().add(t17);
-  
-        
+
         ////////////////////////////////////////lien order / user
         o1.getUser().add(u1);
         o2.getUser().add(u2);
@@ -503,7 +491,7 @@ public class jeudetest implements jeudetestLocal {
         o15.getUser().add(u15);
         o16.getUser().add(u16);
         o17.getUser().add(u17);
-        
+
         //////////////////////////////////////////////lien ticket/seat
         t1.getSeat().add(se1);
         t2.getSeat().add(se2);
@@ -523,7 +511,6 @@ public class jeudetest implements jeudetestLocal {
         t16.getSeat().add(se16);
         t17.getSeat().add(se17);
 
-        
         ///////////////////////////////////////////////lien seat/representation
         se1.getRepresentation().add(r1);
         se2.getRepresentation().add(r1);
@@ -542,8 +529,7 @@ public class jeudetest implements jeudetestLocal {
         se15.getRepresentation().add(r3);
         se16.getRepresentation().add(r4);
         se17.getRepresentation().add(r5);
-        
-        
+
         ////////////////////////////////////////lien representation/event
         r1.getEvent().add(e1);
         r2.getEvent().add(e1);
@@ -569,8 +555,7 @@ public class jeudetest implements jeudetestLocal {
         r22.getEvent().add(e6);
         r23.getEvent().add(e7);
         r24.getEvent().add(e7);
-        
-        
+
         /////////////////////////////////lien representation/venue
         r1.getMyvenue().add(v1);
         r2.getMyvenue().add(v1);
@@ -592,8 +577,7 @@ public class jeudetest implements jeudetestLocal {
         r18.getMyvenue().add(v6);
         r19.getMyvenue().add(v6);
         r20.getMyvenue().add(v6);
-        
-        
+
         ////////////////////////////////////lien venue/adress
         v1.getMyadd().add(ad1);
         v2.getMyadd().add(ad2);
@@ -607,7 +591,7 @@ public class jeudetest implements jeudetestLocal {
         v10.getMyadd().add(ad10);
         v11.getMyadd().add(ad11);
         v12.getMyadd().add(ad12);
-        
+
         ///////////////////////////////////lien user / address
         u1.getAddFacturation().add(ad13);
         u2.getAddFacturation().add(ad14);
@@ -625,7 +609,7 @@ public class jeudetest implements jeudetestLocal {
         u14.getAddFacturation().add(ad26);
         u15.getAddFacturation().add(ad27);
         u16.getAddFacturation().add(ad28);
-        
+
         u1.getAddLivraison().add(ad13);
         u2.getAddLivraison().add(ad14);
         u3.getAddLivraison().add(ad15);
@@ -642,7 +626,7 @@ public class jeudetest implements jeudetestLocal {
         u14.getAddLivraison().add(ad26);
         u15.getAddLivraison().add(ad27);
         u16.getAddLivraison().add(ad28);
-        
+
         ////////////////////////////////////lien section / event
         e1.getSection().add(s1);
         e2.getSection().add(s1);
@@ -667,7 +651,7 @@ public class jeudetest implements jeudetestLocal {
         e21.getSection().add(s3);
         e22.getSection().add(s4);
         e23.getSection().add(s4);
-        
+
         ////////////////////////////////////lien artist / event
         a1.getEvents().add(e1);
         a2.getEvents().add(e1);
@@ -682,8 +666,7 @@ public class jeudetest implements jeudetestLocal {
         a11.getEvents().add(e3);
         a12.getEvents().add(e4);
         a13.getEvents().add(e5);
-        
-        
+
         //////////////////////////////////lien seat / category
         se1.getCategorySeat().add(c1);
         se2.getCategorySeat().add(c1);
@@ -711,8 +694,7 @@ public class jeudetest implements jeudetestLocal {
         se24.getCategorySeat().add(c9);
         se25.getCategorySeat().add(c9);
         se26.getCategorySeat().add(c9);
-        
-        
+
         ////////////////////////////////////lien ticket / pricing
         t1.getPricing().add(p1);
         t2.getPricing().add(p2);
@@ -723,8 +705,6 @@ public class jeudetest implements jeudetestLocal {
         t7.getPricing().add(p2);
         t8.getPricing().add(p3);
         t9.getPricing().add(p4);
-        
-      
 
         em.persist(e1);
         em.persist(e2);
@@ -936,7 +916,7 @@ public class jeudetest implements jeudetestLocal {
         em.persist(o18);
         em.persist(o19);
         em.persist(o20);
-        em.persist(st1);    
+        em.persist(st1);
         em.persist(st2);
         em.persist(st3);
         em.persist(st4);
@@ -945,19 +925,6 @@ public class jeudetest implements jeudetestLocal {
         em.persist(st7);
         em.persist(st8);
         em.persist(st9);
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
 
     }
 }

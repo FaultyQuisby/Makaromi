@@ -22,6 +22,9 @@ public class Seat implements Serializable {
     private Category categorySeat;
     
     private String numberSeat;
+    
+    @ManyToOne
+    private Status status;
 
     
     public Seat() {
@@ -59,6 +62,14 @@ public class Seat implements Serializable {
 
     public void setCategorySeat(Category categorySeat) {
         this.categorySeat = categorySeat;
+    }
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
     }
 
    

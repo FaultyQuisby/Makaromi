@@ -24,14 +24,9 @@ public class ManageUser implements ManageUserLocal {
     private EntityManager em;
 
     @Override
-    public void createUser(String login, String password, String civillite, String firstName, String lastName,String addLivrue) {
-        Address addLiv = new Address();
-        Address addFact = new Address();
-        addLiv.setStreet(addLivrue);
-        addFact.setStreet(addLivrue);
-        UserReg user1 = new UserReg(addLiv,addFact,login, password, civillite, firstName, lastName);
+    public void createUser(String firstName, String lastName, String dateBrith, String emailUser,  String commentUser, String login, String password) {
+        UserReg user1 = new UserReg(firstName, lastName,dateBrith, emailUser,  commentUser, login, password);
         em.persist(user1);
-
     }
 
     @Override

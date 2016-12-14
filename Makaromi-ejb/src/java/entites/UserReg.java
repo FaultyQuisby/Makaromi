@@ -54,6 +54,7 @@ public class UserReg implements Serializable {
         this.password = password;
     }
 
+
     public String getFirstName() {
         return firstName;
     }
@@ -110,13 +111,6 @@ public class UserReg implements Serializable {
         this.password = password;
     }
 
-    public void add(Ticket t1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void add(UserReg u1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public Address getAddFacturation() {
         return addFacturation;
@@ -133,7 +127,13 @@ public class UserReg implements Serializable {
     public void setAddLivraison(Address addLivraison) {
         this.addLivraison = addLivraison;
     }
+ public void add(Ticket t1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
+    public void add(UserReg u1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 
 
