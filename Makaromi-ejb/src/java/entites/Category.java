@@ -1,6 +1,7 @@
 package entites;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,7 +17,7 @@ public class Category implements Serializable {
     
     private String name;
     
-    @OneToMany
+    @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Seat seat;
     
     public Category() {
