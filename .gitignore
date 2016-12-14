@@ -46,3 +46,6 @@ Makaromi-ejb/dist/Makaromi-ejb.jar
 Makaromi-ejb/nbproject/private/private.xml
 Makaromi-war/nbproject/private/private.xml
 Makaromi-ejb/src/conf/persistence.xml
+*.jar
+*.jar
+*.jar

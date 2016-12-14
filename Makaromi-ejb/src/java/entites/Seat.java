@@ -37,8 +37,6 @@ public class Seat implements Serializable {
         return id;
     }
 
-   
-
     public Representation getRepresentation() {
         return representation;
     }
@@ -70,8 +68,6 @@ public class Seat implements Serializable {
     public void setStatus(Status status) {
         this.status = status;
     }
-
-   
 
     @Override
     public String toString() {

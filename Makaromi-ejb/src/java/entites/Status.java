@@ -16,7 +16,7 @@ public class Status implements Serializable {
     private Long id;
     
     @OneToMany
-    private Event Events;
+    private Event Event;
 
     private String name;
 
@@ -56,12 +56,12 @@ public class Status implements Serializable {
         this.name = name;
     }
 
-    public Event getEvents() {
-        return Events;
+    public Event getEvent() {
+        return Event;
     }
 
-    public void setEvents(Event Events) {
-        this.Events = Events;
+    public void setEvent(Event Event) {
+        this.Event = Event;
     }
 
     public Payment getPayment() {
@@ -103,7 +103,6 @@ public class Status implements Serializable {
         hash += (id != null ? id.hashCode() : 0);
         return hash;
     }
-
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
@@ -116,23 +115,10 @@ public class Status implements Serializable {
         }
         return true;
     }
-
     @Override
     public String toString() {
         return "entites.Status[ id=" + id + " ]";
     }
-//
-//    public Object getEvents() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    public Object getPayment() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    public Object getSeat() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
 
     public void add(Status st6) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.

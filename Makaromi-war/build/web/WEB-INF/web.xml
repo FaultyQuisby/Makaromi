@@ -43,6 +43,10 @@
             <param-name>ModalController</param-name>
             <param-value>controllers.sub.ModalController</param-value>
         </init-param>
+        <init-param>
+            <param-name>jeutestcontroller</param-name>
+            <param-value>controllers.sub.jeutestcontroller</param-value>
+        </init-param>
     </servlet>
     <servlet-mapping>
         <servlet-name>IndexController</servlet-name>

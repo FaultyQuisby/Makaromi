@@ -14,11 +14,15 @@
 
         <c:url var="url" value="IndexController?section=MenuMainController" />
         <c:import url="${url}"  />
+        <c:url var="url" value="IndexController?section=jeutestcontroller" />
+       
 
         <section>
             <p>Bienvenue dans votre magasin.</p>
 
             <a href="thematicBrowsing.jsp">thematic</a>
+            <a href="IndexController?section=jeutestcontroller">jeu de test</a>
+            
         </section>
         
         <c:url var="modal" value="WEB-INF/jsp/modal.jsp" />
