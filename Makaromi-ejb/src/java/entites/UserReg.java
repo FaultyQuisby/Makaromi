@@ -33,7 +33,9 @@ public class UserReg implements Serializable {
     private String civillite;
     private String firstName;
     private String lastName;
-
+    private String dateBirth;
+    private String emailUser;
+    private String commentUser;
    
     @OneToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Address addFacturation;
@@ -46,15 +48,18 @@ public class UserReg implements Serializable {
     public UserReg() {
     }
 
-    public UserReg(Address addLiv,Address addFact, String login, String password, String civillite, String firstName, String lastName) {
-        this.addLivraison = addLiv;
-        this.addFacturation= addFact;
-        this.login = login;
-        this.password = password;
+    public UserReg(Address addLiv,Address addFac,String civillite,String firstName, String lastName, String dateBirth, String emailUser, String login, String password) {
+        this.addFacturation = addFac;
+        this.addLivraison =addLiv;
         this.civillite = civillite;
         this.firstName = firstName;
         this.lastName = lastName;
+        this.dateBirth = dateBirth;
+        this.emailUser = emailUser;
+        this.login = login;
+        this.password = password;
     }
+  
 
     public String getFirstName() {
         return firstName;
@@ -94,6 +99,46 @@ public class UserReg implements Serializable {
 
     public void setCivillite(String civillite) {
         this.civillite = civillite;
+    }
+
+    public String getDateBirth() {
+        return dateBirth;
+    }
+
+    public void setDateBirth(String dateBirth) {
+        this.dateBirth = dateBirth;
+    }
+
+    public String getEmailUser() {
+        return emailUser;
+    }
+
+    public void setEmailUser(String emailUser) {
+        this.emailUser = emailUser;
+    }
+
+    public String getCommentUser() {
+        return commentUser;
+    }
+
+    public void setCommentUser(String commentUser) {
+        this.commentUser = commentUser;
+    }
+
+    public Address getAddFacturation() {
+        return addFacturation;
+    }
+
+    public void setAddFacturation(Address addFacturation) {
+        this.addFacturation = addFacturation;
+    }
+
+    public Address getAddLivraison() {
+        return addLivraison;
+    }
+
+    public void setAddLivraison(Address addLivraison) {
+        this.addLivraison = addLivraison;
     }
 
 }

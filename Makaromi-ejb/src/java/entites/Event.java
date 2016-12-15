@@ -21,7 +21,16 @@ public class Event implements Serializable {
     
     @Id
     private String name;
-   
+    
+    private String imgURL;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date startDate;
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date endDate;
+    private String synopsis;
+    private String comment;
+    
+    ////////////////////////////////////////////////////////////////////////////
     @ManyToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Section section;
     
@@ -30,16 +39,7 @@ public class Event implements Serializable {
     
     @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection <Representation> representationsev;
-    
-    private String imgURL;
-    private float price;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date startDate;
-    @Temporal(javax.persistence.TemporalType.DATE)
-    private Date endDate;
-    private String synopsis;
-    private String comment;
-
+    ////////////////////////////////////////////////////////////////////////////
     public Event() {
         this.artists = new ArrayList();
         this.representationsev = new ArrayList();
@@ -53,19 +53,17 @@ public class Event implements Serializable {
     }
     
  
-    public Event( ArrayList<Representation> representations, Section section, String name, String imgURL, float price, Date startDate, Date endDate, String synopsis, String comment) {
+    public Event(String name, String imgURL,  Date startDate, Date endDate, String synopsis, String comment) {
+        
         this.representationsev = new ArrayList();
         this.artists = new ArrayList();
-        this.section = section;
         this.name = name;
         this.imgURL = imgURL;
-        this.price = price;
         this.startDate = startDate;
         this.endDate = endDate;
         this.synopsis = synopsis;
         this.comment = comment;
     }
-    
    
     public String getName() {
         return name;
@@ -83,13 +81,6 @@ public class Event implements Serializable {
         this.imgURL = imgURL;
     }
 
-    public float getPrice() {
-        return price;
-    }
-
-    public void setPrice(float price) {
-        this.price = price;
-    }
 
     public Date getStartDate() {
         return startDate;

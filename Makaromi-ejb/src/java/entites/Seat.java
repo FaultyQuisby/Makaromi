@@ -1,6 +1,7 @@
 package entites;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,23 +16,22 @@ public class Seat implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Representation representation;
     
-    
-    
-    private int number;
-    private String seatMapUrl;
-    
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Ticket myTicket;
+            
+    private String number;
+    private String categorie;
+   
     public Seat() {
     }
 
-    public Seat(Representation representation,  int number, String seatMapUrl) {
+    public Seat(Representation representation,  String number) {
        
         this.representation = representation;
-       
-        this.number = number;
-        this.seatMapUrl = seatMapUrl;
+        this.number = number;   
     }
     
     public Long getId() {
@@ -48,29 +48,42 @@ public class Seat implements Serializable {
         this.representation = representation;
     }
 
-    public int getNumber() {
+    public Ticket getMyTicket() {
+        return myTicket;
+    }
+
+    public void setMyTicket(Ticket myTicket) {
+        this.myTicket = myTicket;
+    }
+
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
-    public String getSeatMapUrl() {
-        return seatMapUrl;
+    public String getCategorie() {
+        return categorie;
     }
 
-    public void setSeatMapUrl(String seatMapUrl) {
-        this.seatMapUrl = seatMapUrl;
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
     }
 
+    @Override
+    public String toString() {
+        return "Seat{" + "representation=" + representation + ", myTicket=" + myTicket + ", number=" + number + ", categorie=" + categorie + '}';
+    }
+
+   
+
+   
    
     
   
 
-    @Override
-    public String toString() {
-        return "entites.Seat[ id=" + id + " ]";
-    }
+   
 
 }

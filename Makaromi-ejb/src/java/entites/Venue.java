@@ -15,6 +15,7 @@ public class Venue implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     private String name;
+    private String type;
     
     @OneToMany(mappedBy = "myvenue")
     private Collection<Representation> representationsve;
@@ -22,14 +23,25 @@ public class Venue implements Serializable {
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Address myadd;
     
+    private String seatMapUrl;//plan des places
+    
+    
     
     public Venue() {
-        representationsve =new ArrayList();
+        representationsve = new ArrayList();
     }
 
     public Venue(String name) {
         representationsve = new ArrayList();
         this.name = name;
+    }
+
+    public Venue(String name,String type, String MapUrl, Address myadd) {
+        representationsve = new ArrayList();
+        this.seatMapUrl = MapUrl;
+        this.name = name;
+        this.myadd = myadd;
+        this.type= type;
     }
 
     public String getName() {
@@ -40,10 +52,32 @@ public class Venue implements Serializable {
         this.name = name;
     }
 
-    @Override
-    public String toString() {
-        return "Venue{" + "name=" + name + '}';
+   
+    public Collection<Representation> getRepresentationsve() {
+        return representationsve;
     }
+
+    public void setRepresentationsve(Collection<Representation> representationsve) {
+        this.representationsve = representationsve;
+    }
+
+    public Address getMyadd() {
+        return myadd;
+    }
+
+    public void setMyadd(Address myadd) {
+        this.myadd = myadd;
+    }
+
+    public String getSeatMapUrl() {
+        return seatMapUrl;
+    }
+
+    public void setSeatMapUrl(String seatMapUrl) {
+        this.seatMapUrl = seatMapUrl;
+    }
+
+   
 
     
 

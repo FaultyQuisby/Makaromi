@@ -21,6 +21,8 @@ public interface ManageUserLocal {
 
     public UserReg findBylogin(String login);
 
-    public void createUser(String login, String password, String civillite, String firstName, String lastName, String addLivrue);
+    public void createUser(String civilite,String firstName, String lastName, String dateBirth, String emailUser, String login, String password,
+            String street, String postalCode, String city);
+
     
 }

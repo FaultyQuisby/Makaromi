@@ -1,9 +1,9 @@
 package outils;
 
 
+import beans.ShoppingCartBeanLocal;
 import entites.UserReg;
 import java.io.Serializable;
-import java.util.Collection;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -18,10 +18,11 @@ public class PatternSession implements Serializable {
     private boolean isconnect;
     private String ipClient;
     private int nbConnexion;
+    private ShoppingCartBeanLocal shoppingCartBean;
 
     public PatternSession() {
     init();   
-    //gestionPanier = lookupGestionPanierLocal();
+    shoppingCartBean = lookupShoppingCartBeanLocal();
     }
     private void init(){
         isconnect=false;
@@ -51,28 +52,28 @@ public class PatternSession implements Serializable {
         this.user = user;
     }
 
- /*   public GestionPanierLocal getGestionPanier() {
-        return gestionPanier;
+    public ShoppingCartBeanLocal getShoppingCartBean() {
+        return shoppingCartBean;
     }
 
-    public Collection<LigneCommande> getMaListe() {
-        return maListe;
-    }
+//    public Collection<LigneCommande> getMaListe() {
+//        return maListe;
+//    }
+//
+//    public void setMaListe(Collection<LigneCommande> maListe) {
+//        this.maListe = maListe;
+//    }
 
-    public void setMaListe(Collection<LigneCommande> maListe) {
-        this.maListe = maListe;
-    }
-
-    private GestionPanierLocal lookupGestionPanierLocal() {
+    private ShoppingCartBeanLocal lookupShoppingCartBeanLocal() {
         try {
             Context c = new InitialContext();
-            return (GestionPanierLocal) c.lookup("java:global/magasin-v02/magasin-v02-ejb/GestionPanier!metiers.GestionPanierLocal");
+            return (ShoppingCartBeanLocal) c.lookup("java:global/Makaromi/Makaromi-ejb/ShoppingCartBean!beans.ShoppingCartBeanLocal");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
         }
     }
-   */
+   
 
     public boolean isIsconnect() {
         return isconnect;

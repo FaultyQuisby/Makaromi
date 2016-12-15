@@ -39,7 +39,7 @@ public class Artist implements Serializable {
         this.firstName = firstName;
     }
 
-    public Artist(List<Event> events, String lastName, String firstName, String type, String comment) {
+    public Artist(String lastName, String firstName, String type, String comment) {
         events = new ArrayList(); 
         this.events = events;
         this.lastName = lastName;

@@ -1,84 +1,74 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package beans;
 
+import entites.Ticket;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Locale;
 import javax.ejb.Remove;
 import javax.ejb.Stateful;
 
-/**
- *
- * @author cdi306
- */
 @Stateful
 public class ShoppingCartBean implements ShoppingCartBeanLocal {
 
-    String customerName;
-    String customerId;
-    List<String> contents;
+    List<Ticket> content;
 
-//    public void initialize(String person) throws TicketException {
-//        if (person == null) {
-//            throw new TicketException("Null person not allowed.");
-//        } else {
-//            customerName = person;
-//        }
-//
-//        customerId = "0";
-//        contents = new ArrayList<String>();
-//    }
-
-//    public void initialize(String person, String id)
-//                 throws TicketException {
-//        if (person == null) {
-//            throw new TicketException("Null person not allowed.");
-//        } else {
-//
-//            customerName = person;
-//        }
-//
-//        IdVerifier idChecker = new IdVerifier();
-//
-//        if (idChecker.validate(id)) {
-//            customerId = id;
-//        } else {
-//            throw new TicketException("Invalid id: " + id);
-//        }
-//
-//        contents = new ArrayList<String>();
-//    }
-
-    public void addTicket(String title) {
-        contents.add(title);
+    @Override
+    public void initialize() {
+        content = new ArrayList<>();
     }
 
-//    public void removeTicket(String title) throws TicketException {
-//        boolean result = contents.remove(title);
-//        if (result == false) {
-//            throw new TicketException(title + " not in cart.");
-//        }
-//    }
-
-    public List<String> getContents() {
-        return contents;
+    @Override
+    public void addTicket(Ticket t) {
+        content.add(t);
     }
 
+    @Override
+    public void removeTicket(Ticket t) throws Exception {
+        boolean result = content.remove(t);
+        if (result == false) {
+            throw new Exception("this ticket is not in cart.");
+        }
+    }
+    
+    @Override
+    public void setContent(List<Ticket> content) {
+        this.content = content;
+    }
+
+    @Override
+    public Collection<Ticket> getContent() {
+        return content;
+    }
+
+//    @Override
+//    public String getCartPrice() {
+//        Float prixTotal = 0F;
+//        if (!(this.getContent().isEmpty())) {
+//            for (Ticket t : this.getContent()) {
+//                if (t.getSellPrice() != null) {
+//                    prixTotal += (Float.parseFloat(t.getSellPrice()));
+//                }
+//            }
+//        }
+//
+//        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.FRENCH);
+//        otherSymbols.setDecimalSeparator('.');
+//        otherSymbols.setGroupingSeparator(',');
+//        DecimalFormat df = new DecimalFormat("0.00", otherSymbols);
+//        df.setRoundingMode(RoundingMode.HALF_UP);
+//
+//        //System.out.println(df.format(prixTotal));
+//        return df.format(prixTotal);
+//    }
+
+   
     @Remove
+    @Override
     public void remove() {
-        contents = null;
+        content = null;
     }
-
-//    @Override
-//    public void addBook(String title) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    @Override
-//    public void removeBook(String title) /*throws TicketException*/ {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
 }
