@@ -50,8 +50,4 @@ public class Pricing implements Serializable {
     
    
 
-    public void add(Pricing p1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 }

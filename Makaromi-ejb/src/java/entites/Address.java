@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 
 @Entity
@@ -12,18 +13,22 @@ public class Address implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;    
+    private Long id;
+    
     
     private String street;
     private String postalCode;
     private String city;
     
    
+
+  
     public Address() {
     }
 
     public Address(String street, String postalCode, String city) {
 
+      
         this.street = street;
         this.postalCode = postalCode;
         this.city = city;
@@ -33,6 +38,9 @@ public class Address implements Serializable {
         return id;
     }
 
+    
+
+   
 
     public String getStreet() {
         return street;
@@ -58,16 +66,9 @@ public class Address implements Serializable {
         this.city = city;
     }
 
-   
-
-
     @Override
     public String toString() {
         return ""+ id;
-    }
-
-    public Object add(Address ad1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

@@ -3,6 +3,7 @@ package entites;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -30,11 +31,9 @@ public class Venue implements Serializable {
         representationsve = new ArrayList();
     }
 
-    public Venue(String name, String type, String urlImg) {
-        this();
+    public Venue(String name) {
+        representationsve = new ArrayList();
         this.name = name;
-        this.type = type;
-        this.urlImg = urlImg;
     }
 
     public Venue(String name,String type, String MapUrl, Address myadd) {
@@ -78,24 +77,12 @@ public class Venue implements Serializable {
         this.seatMapUrl = seatMapUrl;
     }
 
-    public void setRepresentationsve(Collection<Representation> representationsve) {
-        this.representationsve = representationsve;
-    }
+   
 
-    public Address getMyadd() {
-        return myadd;
-    }
+    
 
-    public void setMyadd(Address myadd) {
-        this.myadd = myadd;
-    }
+   
 
-    public void add(Venue v1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public Object getAddress() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
 }
