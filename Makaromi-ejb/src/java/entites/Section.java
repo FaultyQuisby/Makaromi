@@ -3,9 +3,8 @@ package entites;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 
 @Entity
 public class Section implements Serializable {
@@ -14,6 +13,8 @@ public class Section implements Serializable {
     @Id
     private String name;
 
+    @ManyToMany
+    private Event event;
     
     public Section() {
     }
@@ -30,6 +31,15 @@ public class Section implements Serializable {
     public void setName(String name) {
         this.name = name;
     }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+    
 
     @Override
     public int hashCode() {
@@ -58,7 +68,11 @@ public class Section implements Serializable {
         return "Section{" + "name=" + name + '}';
     }
 
-   
+    public void add(Section s1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+  
 
    
 }

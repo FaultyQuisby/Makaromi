@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package entites;
 
 import java.io.Serializable;
@@ -14,14 +9,11 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
-/**
- *
- * @author cdi308
- */
 @Entity
 public class Ticket implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long numberTicket;
     
@@ -30,7 +22,7 @@ public class Ticket implements Serializable {
     private String ticketHolderLastName;
     private String ticketHolderFirstName;
     private String ticketHolderMail;
-    
+
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Seat mySeat;
             
@@ -44,7 +36,7 @@ public class Ticket implements Serializable {
         this.ticketHolderMail = ticketHolderMail;
     }
 
-    public Long getNumberTicket() {
+    public int getNumberTicket() {
         return numberTicket;
     }
 
@@ -52,9 +44,42 @@ public class Ticket implements Serializable {
         return sellPrice;
     }
 
-    public void setSellPrice(Float sellPrice) {
-        this.sellPrice = sellPrice;
+    public void setPrice(float price) {
+        this.price = price;
     }
+    
+    
+//    public int getSellPrice() {
+//        this.processSellPrice();
+//        return sellPrice;
+//    }
+
+//    public void processSellPrice() {
+//        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.FRENCH);
+//        otherSymbols.setDecimalSeparator('.');
+//        otherSymbols.setGroupingSeparator(',');
+//        DecimalFormat df = new DecimalFormat("0.00", otherSymbols);
+//        df.setRoundingMode(RoundingMode.HALF_UP);
+//        float tempPrice = this.getPrice();
+//        
+//        if(!(this.getPricing() == null)){
+//            switch(this.getPricing().getName()) {
+//                case "A" :
+//                    tempPrice += ((30 / 100) * tempPrice) + (this.getTax() * tempPrice);
+//                    break;
+//                case "B":
+//                    tempPrice += ((20 / 100) * tempPrice) + (this.getTax() * tempPrice);
+//                    break;
+//                case "C" :
+//                    tempPrice += ((10 / 100) * tempPrice) + (this.getTax() * tempPrice);
+//                    break;
+//                default:
+//                    break;
+//            }
+//        }
+//        
+//        this.sellPrice = df.format(tempPrice);
+//    }
 
     public String getTicketHolderLastName() {
         return ticketHolderLastName;
@@ -80,9 +105,13 @@ public class Ticket implements Serializable {
         this.ticketHolderMail = ticketHolderMail;
     }
     
+//    public Orders getOrders() {
+//        return order;
+//    }
+//    
+//    public void setOrders(Orders order) {
+//        this.order = order;
+//    }
     
     
-    
-
-  
 }

@@ -1,13 +1,10 @@
 package entites;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -20,6 +17,8 @@ public class Event implements Serializable {
 
     
     @Id
+    private Long id;
+    
     private String name;
     
     private String imgURL;
@@ -40,18 +39,10 @@ public class Event implements Serializable {
     @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection <Representation> representationsev;
     ////////////////////////////////////////////////////////////////////////////
+
     public Event() {
-        this.artists = new ArrayList();
-        this.representationsev = new ArrayList();
     }
 
-    public Event(Section section, String name) {
-        this.representationsev = new ArrayList();
-        this.artists = new ArrayList();
-        this.section = section;
-        this.name = name;
-    }
-    
  
     public Event(String name, String imgURL,  Date startDate, Date endDate, String synopsis, String comment) {
         
@@ -80,7 +71,6 @@ public class Event implements Serializable {
     public void setImgURL(String imgURL) {
         this.imgURL = imgURL;
     }
-
 
     public Date getStartDate() {
         return startDate;
@@ -114,11 +104,6 @@ public class Event implements Serializable {
         this.comment = comment;
     }
 
-
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
-
     public Section getSection() {
         return section;
     }
@@ -144,6 +129,25 @@ public class Event implements Serializable {
         this.representationsev = representationsev;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus(Status status) {
+        this.status = status;
+    }
+
+    public void add(Event e1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public void add(Payment pa2) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
+
+   
    
     
    

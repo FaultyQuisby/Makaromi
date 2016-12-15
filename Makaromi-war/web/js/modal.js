@@ -27,10 +27,6 @@ $(function () {
         });
     });
 
-
-
-
-
     // Attach listener to .modal-close-btn's so that when the button is pressed the modal dialog disappears
     $('body').on('click', '.modal-close-btn', function () {
         $('#modal-container').modal('hide');

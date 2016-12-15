@@ -1,15 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package beans;
 
 import entites.Address;
 import entites.Artist;
+import entites.Category;
 import entites.Event;
 import entites.Pricing;
 import entites.Representation;
+import entites.Seat;
 import entites.Section;
 import entites.UserReg;
 import entites.Venue;
@@ -20,10 +17,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-/**
- *
- * @author cdi310
- */
 @Stateless
 public class jeudetest implements jeudetestLocal {
  
@@ -35,6 +28,7 @@ public class jeudetest implements jeudetestLocal {
    public String createbd(){
        
        System.out.println("creatbd execute-------------------------------------->");
+
         Address ad1 = new Address("Zac du Cornillon Nord", "93200", "Saint-Denis");
         Address ad2 = new Address("Boulevard de Bercy", "75012", "PARIS");
         Address ad3 = new Address("bd serurier", "75019", "paris");

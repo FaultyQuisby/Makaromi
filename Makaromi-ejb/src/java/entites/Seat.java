@@ -7,7 +7,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 
 @Entity
 public class Seat implements Serializable {
@@ -18,7 +17,7 @@ public class Seat implements Serializable {
     
     @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Representation representation;
-    
+
     @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Ticket myTicket;
             
@@ -37,8 +36,6 @@ public class Seat implements Serializable {
     public Long getId() {
         return id;
     }
-
-   
 
     public Representation getRepresentation() {
         return representation;
@@ -77,13 +74,12 @@ public class Seat implements Serializable {
         return "Seat{" + "representation=" + representation + ", myTicket=" + myTicket + ", number=" + number + ", categorie=" + categorie + '}';
     }
 
-   
+    public void add(Seat se1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
-   
-   
-    
-  
-
-   
+    public Object getCategory() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

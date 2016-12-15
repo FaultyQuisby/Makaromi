@@ -27,6 +27,7 @@ public class ManageUser implements ManageUserLocal {
         Address adLiv = new Address(street, postalCode, city);
         Address adFac = new Address(street, postalCode, city);
         UserReg user1 = new UserReg(adLiv,adFac,civilite,firstName, lastName,dateBirth, emailUser, login, password);
+
         em.persist(user1);
     }
 

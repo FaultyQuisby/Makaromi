@@ -1,7 +1,6 @@
 package entites;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import javax.persistence.CascadeType;
@@ -11,7 +10,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 
 
@@ -23,14 +21,15 @@ public class Representation implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
- 
     private int maxCapacity;
+    
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date rDate;
+    
     @Temporal(javax.persistence.TemporalType.TIME)
     private Date rTime;
     
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToOne
     private Venue myvenue;
     
     @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
@@ -41,11 +40,11 @@ public class Representation implements Serializable {
      
     private Float tax;
     
-    
     public Representation() {
         this.messeat= new ArrayList();
         this.tarifs = new ArrayList();
     }
+
    
     public Representation(Venue myvenue) {
         this.messeat= new ArrayList();
@@ -58,11 +57,19 @@ public class Representation implements Serializable {
         tarifs = new ArrayList();
         this.maxCapacity = maxCapacity;
         this.rDate = rDate;
-        this.rTime = rTime;
     }
     
+   
+    public void add(Representation r1) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public int getMaxCapacity() {
@@ -73,24 +80,46 @@ public class Representation implements Serializable {
         this.maxCapacity = maxCapacity;
     }
 
-    public Date getDate() {
+    public Date getrDate() {
         return rDate;
     }
 
-    public void setDate(Date rDate) {
+    public void setrDate(Date rDate) {
         this.rDate = rDate;
     }
 
-    public Date getTime() {
+    public Date getrTime() {
         return rTime;
     }
 
-    public void setTime(Date rTime) {
+    public void setrTime(Date rTime) {
         this.rTime = rTime;
     }
 
-   
-    
+    public Venue getMyvenue() {
+        return myvenue;
+    }
+
+    public void setMyvenue(Venue myvenue) {
+        this.myvenue = myvenue;
+    }
+
+    public Collection<Seat> getMesseat() {
+        return messeat;
+    }
+
+    public void setMesseat(Collection<Seat> messeat) {
+        this.messeat = messeat;
+    }
+
+    public Event getEvent() {
+        return event;
+    }
+
+    public void setEvent(Event event) {
+        this.event = event;
+    }
+
     @Override
     public int hashCode() {
         int hash = 0;
@@ -115,6 +144,7 @@ public class Representation implements Serializable {
     public String toString() {
         return "entites.Representation[ id=" + id + " ]";
     }
+
 
     public Date getrDate() {
         return rDate;
@@ -163,5 +193,4 @@ public class Representation implements Serializable {
     public void setTax(Float tax) {
         this.tax = tax;
     }
-
 }

@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -34,14 +33,17 @@ public class Artist implements Serializable {
     }
 
     public Artist(String lastName, String firstName) {
-        events = new ArrayList(); 
+        //events = new ArrayList(); 
+        this();
         this.lastName = lastName;
         this.firstName = firstName;
     }
 
     public Artist(String lastName, String firstName, String type, String comment) {
+
         events = new ArrayList(); 
         this.events = events;
+
         this.lastName = lastName;
         this.firstName = firstName;
         this.type = type;
