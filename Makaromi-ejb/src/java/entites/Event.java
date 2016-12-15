@@ -20,6 +20,7 @@ public class Event implements Serializable {
     private Long id;
     
     private String name;
+    
     private String imgURL;
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date startDate;
@@ -27,7 +28,8 @@ public class Event implements Serializable {
     private Date endDate;
     private String synopsis;
     private String comment;
-   
+    
+    ////////////////////////////////////////////////////////////////////////////
     @ManyToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Section section;
     
@@ -36,17 +38,16 @@ public class Event implements Serializable {
     
     @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection <Representation> representationsev;
-    
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
-    private Status status;
-    
+    ////////////////////////////////////////////////////////////////////////////
 
     public Event() {
     }
-    
-    
-    public Event(String name, String imgURL, Date startDate, Date endDate, String synopsis, String comment) {
-        this();
+
+ 
+    public Event(String name, String imgURL,  Date startDate, Date endDate, String synopsis, String comment) {
+        
+        this.representationsev = new ArrayList();
+        this.artists = new ArrayList();
         this.name = name;
         this.imgURL = imgURL;
         this.startDate = startDate;
@@ -54,7 +55,6 @@ public class Event implements Serializable {
         this.synopsis = synopsis;
         this.comment = comment;
     }
-    
    
     public String getName() {
         return name;

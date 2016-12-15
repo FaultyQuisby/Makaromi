@@ -14,6 +14,6 @@ import javax.ejb.Local;
 @Local
 public interface jeudetestLocal {
 
-    public void createbd();
+    public String createbd();
     
 }

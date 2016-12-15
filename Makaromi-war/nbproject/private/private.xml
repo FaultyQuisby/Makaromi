@@ -2,11 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="cours">
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/createAccount.jsp</file>
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/src/java/controllers/sub/CreateAccountController.java</file>
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/manageAccount.jsp</file>
-        </group>
         <group>
             <file>file:/C:/Users/cdi316/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/jeu%20de%20test.jsp</file>
             <file>file:/C:/Users/cdi316/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/home.jsp</file>
@@ -16,5 +11,6 @@
             <file>file:/C:/Users/cdi316/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/calendrier.jsp</file>
             <file>file:/C:/Users/cdi316/Documents/GitHub/Makaromi/Makaromi-war/web/thematicBrowsing.jsp</file>
         </group>
+        <group name="cours"/>
     </open-files>
 </project-private>

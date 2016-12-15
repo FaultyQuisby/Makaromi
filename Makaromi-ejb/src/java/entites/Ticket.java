@@ -1,6 +1,7 @@
 package entites;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,35 +13,24 @@ import javax.persistence.OneToOne;
 public class Ticket implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int Id;
-    private int numberTicket;
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long numberTicket;
     
-    @ManyToOne
-    private Pricing pricing;
-    
-    @OneToOne
-    private Seat seat;
-    
-    private int sellPrice;
-    private float price;
-    private Float tax;
+ 
+    private Float sellPrice;
     private String ticketHolderLastName;
     private String ticketHolderFirstName;
     private String ticketHolderMail;
-    
-    //@ManyToOne
-    //private Orders order;
 
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Seat mySeat;
+            
     public Ticket() {
     }
 
-    public Ticket(int numberTicket, int sellPrice, Float tax, String ticketHolderLastName, String ticketHolderFirstName, String ticketHolderMail) {
-        this.numberTicket = numberTicket;
-        this.pricing = pricing;
-        this.seat = seat;
+    public Ticket(Pricing pricing, Float sellPrice, String ticketHolderLastName, String ticketHolderFirstName, String ticketHolderMail) {
         this.sellPrice = sellPrice;
-        this.tax = tax;
         this.ticketHolderLastName = ticketHolderLastName;
         this.ticketHolderFirstName = ticketHolderFirstName;
         this.ticketHolderMail = ticketHolderMail;
@@ -50,28 +40,8 @@ public class Ticket implements Serializable {
         return numberTicket;
     }
 
-    public void setNumberTicket(int numberTicket) {
-        this.numberTicket = numberTicket;
-    }
-
-    public Pricing getPricing() {
-        return pricing;
-    }
-
-    public void setPricing(Pricing pricing) {
-        this.pricing = pricing;
-    }
-
-    public Seat getSeat() {
-        return seat;
-    }
-
-    public void setSeat(Seat seat) {
-        this.seat = seat;
-    }
-
-    public float getPrice() {
-        return price;
+    public Float getSellPrice() {
+        return sellPrice;
     }
 
     public void setPrice(float price) {
@@ -111,14 +81,6 @@ public class Ticket implements Serializable {
 //        this.sellPrice = df.format(tempPrice);
 //    }
 
-    public Float getTax() {
-        return tax;
-    }
-
-    public void setTax(Float tax) {
-        this.tax = tax;
-    }
-
     public String getTicketHolderLastName() {
         return ticketHolderLastName;
     }
@@ -151,29 +113,5 @@ public class Ticket implements Serializable {
 //        this.order = order;
 //    }
     
-    
-    
-
-//    @Override
-//    public int hashCode() {
-//        int hash = 0;
-//        hash += (numberTicket != null ? numberTicket.hashCode() : 0);
-//        return hash;
-//    }
-
-//    @Override
-//    public boolean equals(Object object) {
-//        // TODO: Warning - this method won't work in the case the id fields are not set
-//        if (!(object instanceof Ticket)) {
-//            return false;
-//        }
-//        Ticket other = (Ticket) object;
-//        return !((this.numberTicket == null && other.numberTicket != null) || (this.numberTicket != null && !this.numberTicket.equals(other.numberTicket)));
-//    }
-
-    @Override
-    public String toString() {
-        return "beans.TicketBean[ numberTicket=" + numberTicket + " ]";
-    }
     
 }

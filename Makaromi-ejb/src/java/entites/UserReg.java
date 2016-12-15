@@ -21,9 +21,6 @@ public class UserReg implements Serializable {
     private String dateBirth;
     private String emailUser;
     private String commentUser;
-    private String login;
-    private String password;
-    
    
     @OneToOne (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Address addFacturation;
@@ -34,24 +31,18 @@ public class UserReg implements Serializable {
     public UserReg() {
     }
 
-    public UserReg(String firstName, String lastName, String dateBirth, String emailUser,  String commentUser, String login, String password) {
-        this();
+    public UserReg(Address addLiv,Address addFac,String civillite,String firstName, String lastName, String dateBirth, String emailUser, String login, String password) {
+        this.addFacturation = addFac;
+        this.addLivraison =addLiv;
+        this.civillite = civillite;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dateBirth = dateBirth;
         this.emailUser = emailUser;
-        this.commentUser = commentUser;
         this.login = login;
         this.password = password;
     }
   
-    public void add(Ticket t1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public void add(UserReg u1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public String getFirstName() {
         return firstName;
@@ -107,6 +98,46 @@ public class UserReg implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Address getAddFacturation() {
+        return addFacturation;
+    }
+
+    public void setAddFacturation(Address addFacturation) {
+        this.addFacturation = addFacturation;
+    }
+
+    public Address getAddLivraison() {
+        return addLivraison;
+    }
+
+    public void setAddLivraison(Address addLivraison) {
+        this.addLivraison = addLivraison;
+    }
+
+    public String getDateBirth() {
+        return dateBirth;
+    }
+
+    public void setDateBirth(String dateBirth) {
+        this.dateBirth = dateBirth;
+    }
+
+    public String getEmailUser() {
+        return emailUser;
+    }
+
+    public void setEmailUser(String emailUser) {
+        this.emailUser = emailUser;
+    }
+
+    public String getCommentUser() {
+        return commentUser;
+    }
+
+    public void setCommentUser(String commentUser) {
+        this.commentUser = commentUser;
     }
 
     public Address getAddFacturation() {

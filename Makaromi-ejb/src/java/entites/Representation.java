@@ -35,13 +35,26 @@ public class Representation implements Serializable {
     @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Collection<Seat> messeat;
     
-    @ManyToOne
-    private Event event;    
+    @OneToMany (cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Collection<Pricing> tarifs;
+     
+    private Float tax;
     
     public Representation() {
+        this.messeat= new ArrayList();
+        this.tarifs = new ArrayList();
     }
-    
-    public Representation( int maxCapacity, Date rDate) {
+
+   
+    public Representation(Venue myvenue) {
+        this.messeat= new ArrayList();
+        tarifs = new ArrayList();
+        this.myvenue = myvenue;
+    }
+
+    public Representation( int maxCapacity, Date rDate, Date rTime) {
+        this.messeat= new ArrayList();
+        tarifs = new ArrayList();
         this.maxCapacity = maxCapacity;
         this.rDate = rDate;
     }
@@ -130,5 +143,54 @@ public class Representation implements Serializable {
     @Override
     public String toString() {
         return "entites.Representation[ id=" + id + " ]";
+    }
+
+
+    public Date getrDate() {
+        return rDate;
+    }
+
+    public void setrDate(Date rDate) {
+        this.rDate = rDate;
+    }
+
+    public Date getrTime() {
+        return rTime;
+    }
+
+    public void setrTime(Date rTime) {
+        this.rTime = rTime;
+    }
+
+    public Venue getMyvenue() {
+        return myvenue;
+    }
+
+    public void setMyvenue(Venue myvenue) {
+        this.myvenue = myvenue;
+    }
+
+    public Collection<Seat> getMesseat() {
+        return messeat;
+    }
+
+    public void setMesseat(Collection<Seat> messeat) {
+        this.messeat = messeat;
+    }
+
+    public Collection<Pricing> getTarifs() {
+        return tarifs;
+    }
+
+    public void setTarifs(Collection<Pricing> Tarifs) {
+        this.tarifs = Tarifs;
+    }
+
+    public Float getTax() {
+        return tax;
+    }
+
+    public void setTax(Float tax) {
+        this.tax = tax;
     }
 }

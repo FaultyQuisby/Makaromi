@@ -1,4 +1,4 @@
-/* 
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -26,11 +26,7 @@ $(function () {
             $(this).find(".modal-content").load(e.relatedTarget.toString() + "IndexController?section=ModalController&modalAction=viewcart");
         });
     });
-    
-    
-    
-    
-    
+
     // Attach listener to .modal-close-btn's so that when the button is pressed the modal dialog disappears
     $('body').on('click', '.modal-close-btn', function () {
         $('#modal-container').modal('hide');

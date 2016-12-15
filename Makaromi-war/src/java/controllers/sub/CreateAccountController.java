@@ -32,9 +32,11 @@ public class CreateAccountController implements Serializable, sousControleur {
         PatternSession patternSession = (PatternSession) session.getAttribute("patternSession");
 
         if (request.getParameter("DCreate") != null) {
-            monUser.createUser(request.getParameter("login"), request.getParameter("passeword"),
-                    request.getParameter("firstName"), request.getParameter("lastName"), request.getParameter("dateBirth"),
-                    request.getParameter("emailUser"), request.getParameter("commentUser"));
+           
+           //String civilite,String firstName, String lastName, String dateBirth, String emailUser,String commentUser, String login, String password,
+           // String street, String postalCode, String city
+            monUser.createUser(request.getParameter("civilite"), request.getParameter("nom"), request.getParameter("prenom"),request.getParameter("naissance"),
+            request.getParameter("mail"),request.getParameter("login"), request.getParameter("pwd"),request.getParameter("street"),request.getParameter("postalcode"),request.getParameter("city"));
             patternSession.setIsconnect(true);
             if (patternSession.isIsconnect()) {
 

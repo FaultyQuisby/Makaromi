@@ -2,13 +2,26 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="cours">
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-ejb/src/java/beans/ManageUser.java</file>
-            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-ejb/src/java/entites/User.java</file>
-        </group>
         <group>
             <file>file:/C:/Users/cdi316/Documents/GitHub/Makaromi/Makaromi-ejb/src/java/entites/Artist.java</file>
             <file>file:/C:/Users/cdi316/Documents/GitHub/Makaromi/Makaromi-ejb/src/java/beans/jeudetest.java</file>
+        </group>
+        <group name="cours">
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/entites/UserReg.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/entites/Ticket.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/entites/Address.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/beans/jeudetest.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/beans/jeudetestLocal.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/beans/ShoppingCartBeanOld.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/beans/ShoppingCartBeanLocal.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/beans/ShoppingCartBean.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/beans/ManageUserLocal.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/beans/ManageOrderLocal.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/beans/ManageOrder.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/entites/Event.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/entites/Status.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/entites/Section.java</file>
+            <file>file:/C:/Users/cdi310/Desktop/Makaromi/Makaromi-ejb/src/java/beans/ManageUser.java</file>
         </group>
     </open-files>
 </project-private>

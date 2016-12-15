@@ -1,6 +1,7 @@
 package entites;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,23 +15,22 @@ public class Seat implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     private Representation representation;
-    
-    @ManyToOne
-    private Category categorySeat;
-    
-    private String numberSeat;
-    
-    @ManyToOne
-    private Status status;
 
-    
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private Ticket myTicket;
+            
+    private String number;
+    private String categorie;
+   
     public Seat() {
     }
 
-    public Seat(String numberSeat) {       
-        this.numberSeat = numberSeat;
+    public Seat(Representation representation,  String number) {
+       
+        this.representation = representation;
+        this.number = number;   
     }
     
     public Long getId() {
@@ -45,33 +45,33 @@ public class Seat implements Serializable {
         this.representation = representation;
     }
 
-    public String getNumberSeat() {
-        return numberSeat;
+    public Ticket getMyTicket() {
+        return myTicket;
     }
 
-    public void setNumber(String numberSeat) {
-        this.numberSeat = numberSeat;
+    public void setMyTicket(Ticket myTicket) {
+        this.myTicket = myTicket;
     }
 
-    public Category getCategorySeat() {
-        return categorySeat;
+    public String getNumber() {
+        return number;
     }
 
-    public void setCategorySeat(Category categorySeat) {
-        this.categorySeat = categorySeat;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
-    public Status getStatus() {
-        return status;
+    public String getCategorie() {
+        return categorie;
     }
 
-    public void setStatus(Status status) {
-        this.status = status;
+    public void setCategorie(String categorie) {
+        this.categorie = categorie;
     }
 
     @Override
     public String toString() {
-        return "entites.Seat[ id=" + id + " ]";
+        return "Seat{" + "representation=" + representation + ", myTicket=" + myTicket + ", number=" + number + ", categorie=" + categorie + '}';
     }
 
     public void add(Seat se1) {

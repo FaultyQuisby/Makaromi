@@ -3,10 +3,22 @@
   <persistence-unit name="Makaromi-ejbPU" transaction-type="JTA">
     <jta-data-source>jdbc/makaromi</jta-data-source>
     <class>entites.Address</class>
+
+    <class>entites.Artist</class>
+    <class>entites.Section</class>
+    <class>entites.Event</class>
+    <class>entites.Seat</class>
+    <class>entites.Venue</class>
+    <class>entites.Category</class>
+    <class>entites.Pricing</class>
+    <class>entites.Representation</class>
+    <class>entites.Status</class>
+    <class>entites.Ticket</class>
     <class>entites.UserReg</class>
+
     <exclude-unlisted-classes>true</exclude-unlisted-classes>
     <properties>
-      <property name="javax.persistence.schema-generation.database.action" value="create"/>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
     </properties>
   </persistence-unit>
 </persistence>

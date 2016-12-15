@@ -7,11 +7,9 @@ package beans;
 
 import entites.Address;
 import entites.UserReg;
-import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 
 /**
  *
@@ -24,8 +22,12 @@ public class ManageUser implements ManageUserLocal {
     private EntityManager em;
 
     @Override
-    public void createUser(String firstName, String lastName, String dateBirth, String emailUser,  String commentUser, String login, String password) {
-        UserReg user1 = new UserReg(firstName, lastName,dateBirth, emailUser,  commentUser, login, password);
+    public void createUser(String civilite,String firstName, String lastName, String dateBirth, String emailUser, String login, String password,
+        String street, String postalCode, String city) {
+        Address adLiv = new Address(street, postalCode, city);
+        Address adFac = new Address(street, postalCode, city);
+        UserReg user1 = new UserReg(adLiv,adFac,civilite,firstName, lastName,dateBirth, emailUser, login, password);
+
         em.persist(user1);
     }
 
