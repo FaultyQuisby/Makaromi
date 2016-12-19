@@ -83,7 +83,7 @@ public class jeudetest implements jeudetestLocal {
         Section s6 = new Section("Musée");
         Section s7 = new Section("Sport");
        //////////////////////////////////////////acteur
-       Artist a1 = new Artist("Mick", "Jagger", "Chanteur Rolling Stones", "");
+        Artist a1 = new Artist("Mick", "Jagger", "Chanteur Rolling Stones", "");
         Artist a2 = new Artist("Keith", "Richards", "Guitariste Rolling Stones", "");
         Artist a3 = new Artist("Charlie", "Watts", "Batteur Rolling Stones", "");
         Artist a4 = new Artist("Ron", "Wood", "Guitariste Rolling Stones", "");
