@@ -28,6 +28,9 @@
         
           <c:forEach items="${mesevent}" var="e">
                 <li><a href="IndexController?section=SectionController=${e.name}">${e.name}</a></li>
+                <c:forEach items ="${e.artists}" var ="a">
+                ${a.lastName}
+                </c:forEach>
           </c:forEach>
         
         

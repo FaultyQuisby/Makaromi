@@ -243,6 +243,22 @@ public class jeudetest implements jeudetestLocal {
        e7.getArtists().add(a3);
        e8.getArtists().add(a2);
        e9.getArtists().add(a1);
+       
+//       
+//       a1.getEvents().add(e1);
+//        a2.getEvents().add(e1);
+//        a3.getEvents().add(e1);
+//        a4.getEvents().add(e1);
+//        a5.getEvents().add(e2);
+//        a6.getEvents().add(e2);
+//        a7.getEvents().add(e2);
+//        a8.getEvents().add(e3);
+//        a9.getEvents().add(e3);
+//        a10.getEvents().add(e3);
+//        a11.getEvents().add(e3);
+//        a12.getEvents().add(e4);
+//        a13.getEvents().add(e5);
+
        ///////////////////////////////////////////////////////affectation de la section a l'evenement
        e1.setSection(s1);
        e2.setSection(s1);
