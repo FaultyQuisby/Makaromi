@@ -98,7 +98,7 @@ public class jeudetest implements jeudetestLocal {
         Artist a13 = new Artist("Sting", "", "", "");
       ///////////////////////////////////////////evenement
         Event e1 = new Event("Concert Retour des Rolling Stones", "images/event1RollingStones.jpeg", (new GregorianCalendar(2017, 1, 15).getTime()), (new GregorianCalendar(2017, 2, 15).getTime()), "Un retour fracassant des rois du rock n roll.", "un évènement à ne pas manquer");
-        Event e2 = new Event("Concert parisien des Red Hot Chili Peppers", "images/event2RedHor.jpg", (new GregorianCalendar(2016, 12, 26).getTime()), (new GregorianCalendar(2017, 1, 14).getTime()), "Un groupe de légende.", "un évènement inoubliable");
+        Event e2 = new Event("Concert parisien des Red Hot Chili Peppers", "images/event2RedHot.jpg", (new GregorianCalendar(2016, 12, 26).getTime()), (new GregorianCalendar(2017, 1, 14).getTime()), "Un groupe de légende.", "un évènement inoubliable");
         Event e3 = new Event("Tournée française de The Chainsmokers", "images/event3Chainsmokers.png", (new GregorianCalendar(2017, 2, 25).getTime()), (new GregorianCalendar(2017, 4, 1).getTime()), "Concert", "Une énergie incroyable");
         Event e4 = new Event("Tournée exceptionnelle de Beyonce", "images/event4Beyonce.jpg", (new GregorianCalendar(2017, 3, 25).getTime()), (new GregorianCalendar(2017, 5, 1).getTime()), "Tournée de concerts de la seule, l'unique QUEEN B", "Beyonce en forme olympique");
         Event e5 = new Event("Concert unique de Sting", "images/event5Sting.jpg", (new GregorianCalendar(2017, 6, 1).getTime()), (new GregorianCalendar(2017, 1, 7).getTime()), "Sting incroyable", "Le grand Sting en concert avec plein de duo et trio surprises");
