@@ -23,7 +23,7 @@ $(function () {
     $('body').on('click', '#viewCartButton', function (e) {
         e.preventDefault();
         $("#modal-container").on("show.bs.modal", function (e) {
-            $(this).find(".modal-content").load(e.relatedTarget.toString() + "IndexController?section=ModalController&modalAction=viewcart");
+            $(this).find(".modal-content").load("http://localhost:8080/Makaromi-war/IndexController?section=ModalController&modalAction=viewcart");
         });
     });
     
@@ -31,14 +31,14 @@ $(function () {
     $('body').on('click', '#pickDateTimeButton', function (e) {
         e.preventDefault();
         $("#modal-container").on("show.bs.modal", function (e) {
-            $(this).find(".modal-content").load(e.relatedTarget.toString() + "IndexController?section=ModalController&modalAction=editdate");
+            $(this).find(".modal-content").load("http://localhost:8080/Makaromi-war/IndexController?section=ModalController&modalAction=editdate");
         });
     });
     
     // ce qu'il faut faire avec le lien special ID : dateOK
     $('body').on('click', '#dateOK', function (e) {
         e.preventDefault();
-        $(".modal-content").load(window.location.href.toString() + "IndexController?section=ModalController&modalAction=pickseat");
+        $(".modal-content").load("http://localhost:8080/Makaromi-war/IndexController?section=ModalController&modalAction=pickseat");
     });
 
     // Attach listener to .modal-close-btn's so that when the button is pressed the modal dialog disappears

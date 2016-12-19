@@ -8,8 +8,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<script src="js/modal.js" type="text/javascript"></script>
-<link href="css/home.css" rel="stylesheet" type="text/css"/>
 <div id="modal-container" class="modal fade" tabindex="-1" role="dialog">
     <div class="modal-content">
 
