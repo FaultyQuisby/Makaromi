@@ -16,7 +16,5 @@ import javax.persistence.PersistenceContext;
 @Stateless
 public class ManageOrder implements ManageOrderLocal {
 
-    @PersistenceContext(unitName = "Makaromi-ejbPU")
-    private EntityManager em;
-
+ 
 }

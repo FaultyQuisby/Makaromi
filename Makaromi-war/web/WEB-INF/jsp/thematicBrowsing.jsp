@@ -27,24 +27,17 @@
             <h3>${rubrique}</h3>
 
             <c:forEach items="${mesevent}" var="e">
-                <a href="IndexController?section=SectionController=${e.imgURL}"><p>${e.imgURL}</p><br></a>
-               <p>${e.name}</p><br></a>
+               <p>${e.imgURL}</p><br>
+               <p>${e.name}</p><br>
                 <p>Artiste(s) de l'évènement : </p><br>
                 <c:forEach items ="${e.artists}" var ="a">
                     <p>Type d'artiste : ${a.type}</p><br>
                     <p>Nom de l'artiste : ${a.firstName} ${a.lastName}</p><br>            
                 </c:forEach>
-                    <p>Date de début de l'évènement : ${e.startDate}</p><br></a>
-                    <p>Date de fin de l'évènement : ${e.endDate}</p><br></a>
+                    <p>Date de début de l'évènement : ${e.startDate}</p><br>
+                    <p>Date de fin de l'évènement : ${e.endDate}</p><br>
+                    <a href="IndexController?section=SectionController&event=${e.name}">Détail</a>
             </c:forEach>
-
-            <ul class="pagination">
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-            </ul>
         </div>
     </body>
 </html>
