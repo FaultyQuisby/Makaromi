@@ -245,21 +245,35 @@ public class jeudetest implements jeudetestLocal {
        ///////////////////////////////////////////////////////affectation de la section a l'evenement
        e1.setSection(s1);
        e2.setSection(s1);
-       e3.setSection(s1);
-       
+       e3.setSection(s1);       
        e4.setSection(s1);
        e5.setSection(s1);
-       e6.setSection(s5);
-       e7.setSection(s5);
-       e8.setSection(s5);
-       e9.setSection(s5);
        
-       e4.setSection(s2);
-       e5.setSection(s2);
-       e6.setSection(s2);
-       e7.setSection(s2);
-       e8.setSection(s2);
-       e9.setSection(s2);
+       e6.setSection(s7);
+       e7.setSection(s7);
+       e8.setSection(s7);
+       e9.setSection(s7);
+       
+       e10.setSection(s6);
+       e11.setSection(s6);
+       e12.setSection(s6);
+       e13.setSection(s6);
+       
+       e14.setSection(s2);
+       e15.setSection(s2);
+       e16.setSection(s2);
+       e17.setSection(s2);
+       e18.setSection(s2);
+       
+       e19.setSection(s3);
+       e20.setSection(s3);
+       e21.setSection(s3);
+       
+       e22.setSection(s4);
+       e23.setSection(s4);
+       e24.setSection(s4);
+      
+       
        
        ///////////////////////////////////////////////////////persist evenement et user
        em.persist(e1);
