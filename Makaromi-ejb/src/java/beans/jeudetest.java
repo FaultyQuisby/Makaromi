@@ -273,6 +273,7 @@ public class jeudetest implements jeudetestLocal {
        e22.setSection(s4);
        e23.setSection(s4);
        e24.setSection(s4);
+       
       
 
        ///////////////////////////////////////////////////////persist evenement et user
@@ -287,6 +288,14 @@ public class jeudetest implements jeudetestLocal {
        em.persist(e8);
        em.persist(e9);
        
+        em.persist(s1);
+        em.persist(s2);
+        em.persist(s3);
+        em.persist(s4);
+        em.persist(s5);
+        em.persist(s6);
+        em.persist(s7);
+        
        em.persist(u1);
        em.persist(u2);
        em.persist(u3);
