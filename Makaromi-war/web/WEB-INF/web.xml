@@ -44,6 +44,10 @@
             <param-value>controllers.sub.ModalController</param-value>
         </init-param>
         <init-param>
+            <param-name>SelectEventDateController</param-name>
+            <param-value>controllers.sub.SelectEventDateController</param-value>
+        </init-param>
+        <init-param>
             <param-name>jeutestcontroller</param-name>
             <param-value>controllers.sub.jeutestcontroller</param-value>
         </init-param>
