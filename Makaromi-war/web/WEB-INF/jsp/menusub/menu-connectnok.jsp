@@ -19,6 +19,7 @@
         </div>
         <div class="row connect_button">
             <input class="btn btn-primary" id="leBouttonOK" type="submit" name="DConnect" value="Ok" />
+            <a href="IndexController" onclick="modifierDiv01();return false"><font color="white">ok</font></a>
         </div>
         <div class="row error_msg">
             <font color="red">${msg}<br> </font>
