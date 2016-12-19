@@ -24,6 +24,12 @@ public class ModalController implements Serializable, sousControleur{
             System.out.println("hey there you made it fucking moron !");
             return "/WEB-INF/jsp/shoppingCart.jsp";
         }
+        else if(request.getParameter("modalAction").equalsIgnoreCase("editdate")){
+            return "/WEB-INF/jsp/eventDateSelection.jsp";
+        }
+        else if(request.getParameter("modalAction").equalsIgnoreCase("pickseat")){
+            return "/WEB-INF/jsp/seatSelection.jsp";
+        }
         else{
             System.out.println("hey there, you made it !");
             return "/WEB-INF/jsp/shoppingCart.jsp";

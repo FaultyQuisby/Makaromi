@@ -1,10 +1,9 @@
 package controllers.sub;
 
-import java.io.Serializable;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class SelectEventDateController implements Serializable, sousControleur {
+public class SelectEventDateController implements sousControleur {
 
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {

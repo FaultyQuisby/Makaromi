@@ -22,6 +22,7 @@
 
             <a href="thematicBrowsing.jsp">thematic</a>
             <a href="IndexController?section=jeutestcontroller">jeu de test</a>
+            <br> <a href="" class="modal-link" id="pickDateTimeButton" >selection d'un event (faux bouton provisoire)</a>
             
         </section>
         

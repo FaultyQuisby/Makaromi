@@ -26,6 +26,20 @@ $(function () {
             $(this).find(".modal-content").load(e.relatedTarget.toString() + "IndexController?section=ModalController&modalAction=viewcart");
         });
     });
+    
+    // ce qu'il faut faire avec le lien special ID : pickDateTimeButton
+    $('body').on('click', '#pickDateTimeButton', function (e) {
+        e.preventDefault();
+        $("#modal-container").on("show.bs.modal", function (e) {
+            $(this).find(".modal-content").load(e.relatedTarget.toString() + "IndexController?section=ModalController&modalAction=editdate");
+        });
+    });
+    
+    // ce qu'il faut faire avec le lien special ID : dateOK
+    $('body').on('click', '#dateOK', function (e) {
+        e.preventDefault();
+        $(".modal-content").load(window.location.href.toString() + "IndexController?section=ModalController&modalAction=pickseat");
+    });
 
     // Attach listener to .modal-close-btn's so that when the button is pressed the modal dialog disappears
     $('body').on('click', '.modal-close-btn', function () {
