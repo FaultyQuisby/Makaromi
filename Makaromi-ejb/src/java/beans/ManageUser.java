@@ -5,16 +5,14 @@
  */
 package beans;
 
+
+import javax.ejb.Local;
 import entites.Address;
 import entites.UserReg;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-/**
- *
- * @author cdi310
- */
 @Stateless
 public class ManageUser implements ManageUserLocal {
 

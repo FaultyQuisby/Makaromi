@@ -5,7 +5,6 @@
  */
 package controllers.sub;
 
-import beans.ManageUser;
 import beans.ManageUserLocal;
 import java.io.Serializable;
 import java.util.logging.Level;
@@ -35,8 +34,8 @@ public class CreateAccountController implements Serializable, sousControleur {
            
            //String civilite,String firstName, String lastName, String dateBirth, String emailUser,String commentUser, String login, String password,
            // String street, String postalCode, String city
-            monUser.createUser(request.getParameter("civilite"), request.getParameter("nom"), request.getParameter("prenom"),request.getParameter("naissance"),
-            request.getParameter("mail"),request.getParameter("login"), request.getParameter("pwd"),request.getParameter("street"),request.getParameter("postalcode"),request.getParameter("city"));
+            monUser.createUser(request.getParameter("civilite"),request.getParameter("prenom"), request.getParameter("nom"), request.getParameter("naissance"),
+            request.getParameter("email"),request.getParameter("login"),request.getParameter("password"),request.getParameter("adresse"), request.getParameter("codePostal"),request.getParameter("ville"));
             patternSession.setIsconnect(true);
             if (patternSession.isIsconnect()) {
 
