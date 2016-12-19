@@ -11,6 +11,15 @@
             <file>file:/C:/Users/cdi316/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/calendrier.jsp</file>
             <file>file:/C:/Users/cdi316/Documents/GitHub/Makaromi/Makaromi-war/web/thematicBrowsing.jsp</file>
         </group>
-        <group name="cours"/>
+        <group name="cours">
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/menusub/menu-connectnok.jsp</file>
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/src/java/controllers/sub/MenuConnectGest.java</file>
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/menusub/menu-connectok.jsp</file>
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/menusub/menu-panier.jsp</file>
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/menuMain.jsp</file>
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/js/menuajx.js</file>
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/web/WEB-INF/jsp/createAccount.jsp</file>
+            <file>file:/C:/Users/cdi310/Documents/GitHub/Makaromi/Makaromi-war/src/java/controllers/sub/CreateAccountController.java</file>
+        </group>
     </open-files>
 </project-private>

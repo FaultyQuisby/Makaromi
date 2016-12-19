@@ -18,11 +18,11 @@
             <span class="password">Password :</span> <input type="password" id="password" name="password" required />
         </div>
         <div class="row connect_button">
-            <input class="btn btn-primary" id="leBouttonOK" type="submit" name="DConnect" value="Ok" />
+            <!--<input class="btn btn-primary" id="leBouttonOK" type="submit" name="DConnect" value="Ok" />-->
             <a href="IndexController" onclick="modifierDiv01();return false"><font color="white">ok</font></a>
         </div>
         <div class="row error_msg">
-            <font color="red">${msg}<br> </font>
+            <font color="red">${msg}<br></font>
         </div>
         <div class="row accountCr_button">
             <a id="creationCompte"href="IndexController?section=CreateAccountController"><strong>Création de compte</strong></a>

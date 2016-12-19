@@ -28,8 +28,27 @@
                         </li>
                     </ul>
                 </div>
-                <!--/.nav-collapse -->
+               <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <c:forEach items="${mesRubriques}" var="r">
+                <li><a href="IndexController?section=SectionController&th= ${r.name}">${r.name}</a></li>
+                </c:forEach>
+            </ul>
+            <form class="navbar-form navbar-left">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Rechercher">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav>                  
             </div>
             <!--/.container-fluid -->
-        </nav>
+  </nav>
+  
 <script src="js/menuajx.js" type="text/javascript"></script>
