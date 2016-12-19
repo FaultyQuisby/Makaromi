@@ -5,8 +5,10 @@
  */
 package controllers.sub;
 
+import beans.ManageSectionLocal;
 import beans.ManageUserLocal;
 import java.io.Serializable;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
@@ -24,17 +26,35 @@ import javax.servlet.http.HttpServletResponse;
  */
 
 public class SectionController implements Serializable,sousControleur {
-    private ManageUserLocal lookupManageUserLocal() {
+    ManageSectionLocal mesSection = lookupManageSectionLocal();
+    @Override
+    public String executer(HttpServletRequest request, HttpServletResponse response) {
+       
+        if(request.getParameter("th")!= null){
+           String rubrique = request.getParameter("th");
+           List le = mesSection.mesEventparRubrique(rubrique.trim());
+           request.setAttribute("mesevent",le);
+           System.out.println("liste dans sous controller est egale a------->"+le);
+            
+        }
+            
+           
+        
+        
+        
+        
+        
+        return "/WEB-INF/jsp/thematicBrowsing.jsp";
+    } 
+   
+    
+    private ManageSectionLocal lookupManageSectionLocal() {
         try {
             Context c = new InitialContext();
-            return (ManageUserLocal) c.lookup("java:global/Makaromi/Makaromi-ejb/ManageUser!beans.ManageUserLocal");
+            return (ManageSectionLocal) c.lookup("java:global/Makaromi/Makaromi-ejb/ManageSection!beans.ManageSectionLocal");
         } catch (NamingException ne) {
             Logger.getLogger(getClass().getName()).log(Level.SEVERE, "exception caught", ne);
             throw new RuntimeException(ne);
         }
     }
-    @Override
-    public String executer(HttpServletRequest request, HttpServletResponse response) {
-        return "/WEB-INF/jsp/menu.jsp";
-    } 
 }

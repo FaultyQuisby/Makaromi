@@ -32,7 +32,7 @@
         <div class="container-fluid">
             <ul class="nav navbar-nav">
                 <c:forEach items="${mesRubriques}" var="r">
-                <li><a href="IndexController?section=SectionController&th= ${r.name}">${r.name}</a></li>
+                <li><a href="IndexController?section=SectionController&th=${r.name}">${r.name}</a></li>
                 </c:forEach>
             </ul>
             <form class="navbar-form navbar-left">

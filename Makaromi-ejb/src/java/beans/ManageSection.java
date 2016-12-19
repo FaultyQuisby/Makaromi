@@ -34,7 +34,16 @@ public class ManageSection implements ManageSectionLocal {
         return ls;
     }
     
-    
+    @Override
+    public List mesEventparRubrique(String rubrique){
+         String req04 = "select e from Event e"
+                + " where e.section.name = :paramRubrique";
+        Query qr04 = em.createQuery(req04);
+        qr04.setParameter("paramRubrique", rubrique);
+        List<Event> le = qr04.getResultList();
+        System.out.println("le------------------------------------>"+le);
+        return le;
+    }
     
   
 }

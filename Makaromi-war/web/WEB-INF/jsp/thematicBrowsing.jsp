@@ -1,4 +1,5 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -14,38 +15,23 @@
         <link rel="stylesheet" href="css/menu-connectnok.css" type="text/css"/>
       <!--  <link href="css/thematicBrowsing.css" rel="stylesheet" type="text/css"/>-->
         <title>THEMATIC BROWSING</title>
-        <c:url var="url" value="IndexController?section=MenuMainController" />
-        <c:import url="${url}"  />
+       
 
     </head>
 <body>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Musée</a></li>
-                <li><a href="#">Sport</a></li>
-                <li><a href="#">Musique</a></li>
-                <li><a href="#">Théâtre</a></li>
-                <li><a href="#">Parc</a></li>
-                <li><a href="#">Festival</a></li>
-                <li><a href="#">Promotion</a></li>        
-            </ul>
-            <form class="navbar-form navbar-left">
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Rechercher">
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit">
-                            <i class="glyphicon glyphicon-search"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </nav>
+   <c:url var="url" value="IndexController?section=MenuMainController" />
+   <c:import url="${url}"  />
     
     <div class="container">
-        <h2>Liste des évènements</h2>
-        <h3>Nom de la Rubrique</h3>
+        <h2>Liste des évènements</h2>    
+        <h3>${rubrique}</h3>
+        
+          <c:forEach items="${mesevent}" var="e">
+                <li><a href="IndexController?section=SectionController=${e.name}">${e.name}</a></li>
+          </c:forEach>
+        
+        
+        
         <p>Musée</p>
         <p>Nom de l'évènement : </p>
         <p>Nom de l'artiste de l'évènement : </p>

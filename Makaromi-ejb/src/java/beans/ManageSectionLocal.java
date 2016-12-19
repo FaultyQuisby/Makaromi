@@ -15,4 +15,5 @@ import javax.ejb.Local;
 @Local
 public interface ManageSectionLocal {
    public List mesRubriques(); 
+   public List mesEventparRubrique(String rubrique);
 }
