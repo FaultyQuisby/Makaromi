@@ -234,30 +234,23 @@ public class jeudetest implements jeudetestLocal {
        e10.getRepresentationsev().add(r9);
       
       //////////////////////////////////////////////////////// 
+       e1.getArtists().add(a1);
+       e1.getArtists().add(a2);
        e1.getArtists().add(a3);
-       e2.getArtists().add(a2);
-       e3.getArtists().add(a1);
-       e4.getArtists().add(a3);
-       e5.getArtists().add(a2);
-       e6.getArtists().add(a1);
-       e7.getArtists().add(a3);
-       e8.getArtists().add(a2);
-       e9.getArtists().add(a1);
+       e1.getArtists().add(a4);
        
-//       
-//       a1.getEvents().add(e1);
-//        a2.getEvents().add(e1);
-//        a3.getEvents().add(e1);
-//        a4.getEvents().add(e1);
-//        a5.getEvents().add(e2);
-//        a6.getEvents().add(e2);
-//        a7.getEvents().add(e2);
-//        a8.getEvents().add(e3);
-//        a9.getEvents().add(e3);
-//        a10.getEvents().add(e3);
-//        a11.getEvents().add(e3);
-//        a12.getEvents().add(e4);
-//        a13.getEvents().add(e5);
+       e2.getArtists().add(a5);
+       e2.getArtists().add(a6);
+       e2.getArtists().add(a7);
+       
+       e3.getArtists().add(a8);
+       e3.getArtists().add(a9);
+       e3.getArtists().add(a10);
+       e3.getArtists().add(a11);
+       
+       e4.getArtists().add(a12);
+       e5.getArtists().add(a13);
+       
 
        ///////////////////////////////////////////////////////affectation de la section a l'evenement
        e1.setSection(s1);
