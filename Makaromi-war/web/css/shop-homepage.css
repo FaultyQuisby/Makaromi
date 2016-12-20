@@ -8,12 +8,14 @@ and open the template in the editor.
     Author     : CDI316
 */
 
-body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
-}
+/*body {
+    padding-top: 70px;  Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. 
+}*/
 
 .slide-image {
-    width: 100%;
+    max-height: 300px;
+    max-width: 300px;
+    margin: 0 auto;
 }
 
 .carousel-holder {
@@ -26,7 +28,6 @@ body {
 }
 
 .caption {
-    height: 130px;
     overflow: hidden;
 }
 

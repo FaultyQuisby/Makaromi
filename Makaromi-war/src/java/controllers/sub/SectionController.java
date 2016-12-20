@@ -44,7 +44,7 @@ public class SectionController implements Serializable,sousControleur {
         
         
         
-        return "/WEB-INF/jsp/thematicBrowsing.jsp";
+        return "/WEB-INF/jsp/bootstrapThematicBrowsing.jsp";
     } 
    
     
