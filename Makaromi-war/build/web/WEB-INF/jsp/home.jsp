@@ -1,10 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<html>
+<!DOCTYPE html>
+<html id="home">
+    <c:url var="url" value="IndexController?section=MenuMainController" />
+    <c:import url="${url}"  />
     <body>
 
-        <c:url var="url" value="IndexController?section=MenuMainController" />
-        <c:import url="${url}"  />
+        
         <c:url var="url" value="IndexController?section=jeutestcontroller" />
        
 

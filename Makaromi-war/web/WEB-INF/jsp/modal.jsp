@@ -9,10 +9,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <div id="modal-container" class="modal fade" tabindex="-1" role="dialog">
-    <div class="modal-content">
-
-        
-        
+    <div class="modal-content">   
     </div>
 </div>
 

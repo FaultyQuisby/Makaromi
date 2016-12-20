@@ -9,17 +9,6 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Shopping Cart</title>
-
-
-        <!-- import de bootstrap -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="css/main.css">
-
-    </head>
 
     <body>
         <jsp:useBean class="beans.ShoppingCartBean" id="cart" scope="session" />

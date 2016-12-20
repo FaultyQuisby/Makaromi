@@ -7,19 +7,23 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Event Date and Time Picker</title>
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
-        <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
-        <script src="js/vendor/jquery-1.11.2.min.js" type="text/javascript"></script>
-        <script src="js/vendor/bootstrap.min.js" type="text/javascript"></script>
-        <script src="js/vendor/collapse.js" type="text/javascript"></script>
-        <script src="js/vendor/transition.js" type="text/javascript"></script>
-        <script src="js/vendor/moment-with-locales.js" type="text/javascript"></script>
-        <script src="js/vendor/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
-        <script src="js/modal.js" type="text/javascript"></script>
-    </head>
+<!--    <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+            <title>Event Date and Time Picker</title>
+            <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"/>
+            <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" type="text/css"/>
+            <script src="js/vendor/jquery-1.11.2.min.js" type="text/javascript"></script>
+            <script src="js/vendor/bootstrap.min.js" type="text/javascript"></script>
+            <script src="js/vendor/collapse.js" type="text/javascript"></script>
+            <script src="js/vendor/transition.js" type="text/javascript"></script>
+            <script src="js/vendor/moment-with-locales.js" type="text/javascript"></script>
+            <script src="js/vendor/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+            <script src="js/modal.js" type="text/javascript"></script>
+        </head> 
+-->
+<head>
+    <script src="js/vendor/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
+</head>
     <body>
         <div class="container">
             <div class="row">

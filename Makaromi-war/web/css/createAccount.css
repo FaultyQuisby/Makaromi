@@ -1,4 +1,4 @@
-html { 
+#createAccount { 
     background: url("#") no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -129,7 +129,7 @@ html {
     font-size: larger;
 }
 
-body {
+#createAccount body {
     font-family: 'Archivo Narrow', sans-serif;
 }
 
@@ -138,28 +138,28 @@ body {
 
 
 
-body:not(.example-8) {
+#createAccount body:not(.example-8) {
     max-width: 100%;
 }
 
-body, div:not(.navbar-inverse), input, textarea, legend{
+#createAccount body, #createAccount div:not(.navbar-inverse), #createAccount input, #createAccount textarea,  #createAccount legend{
     background-color: black !important;
     color: white !important;  
 }
 
-legend{
+#createAccount legend{
     color: #1B96FE !important;
 }
 
-input{
+#createAccount input{
     min-height: 38px;
     border: none !important;
 }
-textArea{
+#createAccount textArea{
     border-color: #1B96FE !important;
 }
 
-#validateButton, #validateButton span, span{
+#validateButton, #validateButton span, #createAccount span{
     background-color: #1B96FE !important;
     border-color: #1B96FE !important;
     color: white !important;
