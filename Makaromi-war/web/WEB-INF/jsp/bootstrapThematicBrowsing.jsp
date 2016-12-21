@@ -75,36 +75,38 @@
                                     </c:forEach> 
                                     <fmt:formatDate value="${e.startDate}" var="debutDate" type="date" dateStyle="full"/>
                                     <strong><p>Début : ${debutDate}</p>
-                                    <fmt:formatDate value="${e.startDate}" var="finDate" type="date" dateStyle="full"/>
-                                    <p>Fin : ${finDate}</p></strong>
+                                        <fmt:formatDate value="${e.startDate}" var="finDate" type="date" dateStyle="full"/>
+                                        <p>Fin : ${finDate}</p></strong>
                                 </div>
                             </div>
-                                <a href="detailsPage.jsp" id="details">Voir le détail</a><br><br>  
+                            <a href="detailsPage.jsp" id="details">Voir le détail</a><br>
+                            <br>  
+                            <br>
                         </div>
                     </div>
                 </c:forEach>
-               
 
 
-<!-- Footer -->
-<div class="container">        
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                </ul>
-            </div>
-        </div>
-    </footer>
 
-</div>
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
+                <!-- Footer -->
+                <div class="container">        
+                    <footer>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <ul class="pagination">
+                                    <li><a href="#">1</a></li>
+                                    <li class="active"><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </footer>
 
-</body>
-</html>
+                </div>
+                <script src="js/jquery.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+
+                </body>
+                </html>

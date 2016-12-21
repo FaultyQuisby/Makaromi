@@ -40,12 +40,14 @@
                             <img src="${imgEvent}"/>
                         </td>
                         <td>
-                            <strong>${nameEvent}</strong><br/>                     
-                            ${dateStart} ${dateEnd}<br/>
-                            ${synopsisEvent} <br/>
-                            ${commentEvent} <br/>
-                            ${dateRepresentation} <br/>
-                            ${timeRepresentation} <br/>
+                            <strong>${nameEvent}</strong>                   
+                            <fmt:formatDate value="${e.startDate}" var="debutDate" type="date" dateStyle="full"/>${dateStart} 
+                            <fmt:formatDate value="${e.startDate}" var="finDate" type="date" dateStyle="full"/>${dateEnd}
+                            ${synopsisEvent}
+                            ${commentEvent}
+                            <c:forEach items="¤${e.representationsev}">
+                            <fmt:formatDate value="${e.representationDate}" var="debutDate" pattern="dd/MM/YYYY HH" dateStyle="full"/>${dateRepresentation} ${timeRepresentation}
+                            </c:forEach>
                             ${typeVenue} <br/>
                             ${nameVenue} <br/>
                             ${street} ${postCode} ${city}<br/>
@@ -53,9 +55,6 @@
 
                         </td>
                     <tr>
-                        <td>
-                            <a href="Maestro?section=panier&add=${isbnouv}"><p><img src="/Nextlib/images/boutonAjouter.png" /></p></a>
-                        </td>
                     </tr>
                     <tr>
                         <td>
