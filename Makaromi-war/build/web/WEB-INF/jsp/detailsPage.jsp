@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
-
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,88 +27,67 @@
             <c:import url="${url}"  />
         </header>
 
-            <div class="row">
-                <section>
-                  <tbody>
-                      <tr><td>
-                       <a href="IndexController?section=SectionController=${e.imgURL}"></a> 
-                       <strong><th>${nameEvent}</th></strong> 
-                      </td></tr>                              
-                      <tr>
-                        <td>
-                            <img src="${imgEvent}"/>
-                        </td>
-                        <td>
-                            <strong>${nameEvent}</strong>                   
-                            <fmt:formatDate value="${e.startDate}" var="debutDate" type="date" dateStyle="full"/>${dateStart} 
-                            <fmt:formatDate value="${e.startDate}" var="finDate" type="date" dateStyle="full"/>${dateEnd}
-                            ${synopsisEvent}
-                            ${commentEvent}
-                            <c:forEach items="¤${e.representationsev}">
-                            <fmt:formatDate value="${e.representationDate}" var="debutDate" pattern="dd/MM/YYYY HH" dateStyle="full"/>${dateRepresentation} ${timeRepresentation}
-                            </c:forEach>
-                            ${typeVenue} <br/>
-                            ${nameVenue} <br/>
-                            ${street} ${postCode} ${city}<br/>
-                            ${mapVenue} <br/>
-
-                        </td>
-                    <tr>
-                    </tr>
-                    <tr>
-                        <td>
-                            <a href="SectionController?thematicBrowsing=retour=ok"><p>Retour</p></a>
-                        </td>
-                    </tr>
-            </table>
-        </section>
-
-                <c:forEach items="${mesevent}" var="e">
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <a href="IndexController?section=SectionController=${e.imgURL}"></a> 
-                            <img src="${e.imgURL}" height="150px" width="320px">
-                            <div class="caption">                                
-                                <h3>${e.name}</h3><br>                                  
-                                <div id="texteEvent">                                   
-                                    <c:forEach items ="${e.artists}" var ="a">
-                                        <p>${a.type} ${a.firstName} ${a.lastName}</p>           
-                                    </c:forEach> 
-                                    <fmt:formatDate value="${e.startDate}" var="debutDate" type="date" dateStyle="full"/>
-                                    <strong><p>Début : ${debutDate}</p>
-                                    <fmt:formatDate value="${e.startDate}" var="finDate" type="date" dateStyle="full"/>
-                                    <p>Fin : ${finDate}</p></strong>
-                                </div>
-                            </div>
-                                <a href="" id="details">Voir le détail</a><br>  
-                        </div>
-                    </div>
-                </c:forEach>
-               
-
-
-<!-- Footer -->
-<div class="container">        
-    <footer>
-        <div class="row">
-            <div class="col-lg-12">
-                <ul class="pagination">
-                    <li><a href="#">1</a></li>
-                    <li class="active"><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                </ul>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail"> 
+                <div class="row">
+                    <section>
+                        <tbody>
+                            <tr><td>
+                                    <a href="IndexController?section=SectionController=${e.imgURL}"></a> 
+                                    <strong><th>${nameEvent}</th></strong> 
+                                </td></tr>                              
+                            <tr>
+                                <td id="imageDetailsPage">
+                                    <img src="${imgEvent}"/>
+                                </td>
+                                <td>
+                                    <strong>${nameEvent}</strong>                   
+                                    <fmt:formatDate value="${e.startDate}" var="debutDate" type="date" dateStyle="full"/>${dateStart} 
+                                    <fmt:formatDate value="${e.startDate}" var="finDate" type="date" dateStyle="full"/>${dateEnd}
+                                    ${synopsisEvent}
+                                    ${commentEvent}
+                                    <c:forEach items="${e.representationsev}">
+                                        <fmt:formatDate value="${e.representationDate}" var="debutDate" pattern="dd/MM/YYYY HH" dateStyle="full"/>${dateRepresentation} ${timeRepresentation}
+                                    </c:forEach>
+                                    <c:forEach items="¤${r.myvenue}"><!--Attention ici on va recuperer la venue depuis la representation-->
+                                        ${typeVenue} <br/>
+                                        ${nameVenue} <br/>
+                                    </c:forEach>
+                                    <c:forEach items="${myadd}"><!--Attention ici on va recuperer l'adresse depuis la venue et la venue depuis la representation-->
+                                        ${street} ${postCode} ${city}<br/>
+                                        ${mapVenue} <br/>
+                                    </c:forEach>
+                                </td>                        
+                            <tr>
+                                <td>
+                                    <a href="SectionController?thematicBrowsing=retour=ok"><p>Retour</p></a>
+                                </td>
+                            </tr>
+                            </table>
+                    </section>
+                </div>
             </div>
         </div>
-    </footer>
 
-</div>
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-</body>
+        <!-- Footer -->
+        <div class="container">        
+            <footer>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <ul class="pagination">
+                            <li><a href="#">1</a></li>
+                            <li class="active"><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
 </html>
 
- 
-      
+
