@@ -11,16 +11,16 @@ and open the template in the editor.
 /*body {
     padding-top: 70px;  ReqSuired padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. 
 }*/
-#texteEvent{
+/*#texteEvent{
     color:black;
     font-family: Arial, sans-serif;
     text-decoration: none;
     font-size: small;
     
-}
+}*/
 .slide-image {
-    max-height: 300px;
-    max-width: 300px;
+    max-height: 400px;
+    max-width: 400px;
     margin: 0 auto;
 }
 
@@ -39,7 +39,7 @@ and open the template in the editor.
     font-family: Arial, sans-serif;
     text-decoration: none;
     font-size: small;
-    line-height: 10px;
+    line-height: 15px;
 }
 
 .caption h4 {
@@ -58,6 +58,9 @@ and open the template in the editor.
 
 .thumbnail {
     padding: 0;
+    display: inline-block !important;
+    position : relative !important;
+     
 }
 
 .thumbnail .caption-full {
@@ -67,4 +70,24 @@ and open the template in the editor.
 
 footer {
     margin: 50px 0;
+}
+
+h3{
+    color: graytext !important;
+}
+body{
+    background-color: black !important;
+}
+.col-md-9{
+    margin-left: 150px;
+}
+.col-lg-12{
+    margin-left:290px;
+}
+h2{
+    color:white;
+}
+#details{
+    text-decoration: underline !important;
+    margin-left: 35% !important;
 }

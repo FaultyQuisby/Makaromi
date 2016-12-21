@@ -1,3 +1,4 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
@@ -26,26 +27,6 @@
             <c:url var="url" value="IndexController?section=MenuMainController" />
             <c:import url="${url}"  />
         </header>
-
-        <!-- <div class="container">
-             <h2>Liste des évènements</h2> 
-        ${patternSession}
-        <h3>${rubrique}</h3>
-
-        <c:forEach items="${mesevent}" var="e">
-            <a href="IndexController?section=SectionController=${e.imgURL}"><p>${e.imgURL}</p><br></a>
-            <p>${e.name}</p><br></a>
-            <p>Artiste(s) de l'évènement : </p><br>
-            <c:forEach items ="${e.artists}" var ="a">
-                <p>Type d'artiste : ${a.type}</p><br>
-                <p>Nom de l'artiste : ${a.firstName} ${a.lastName}</p><br>            
-            </c:forEach>
-            <p>Date de début de l'évènement : ${e.startDate}</p><br></a>
-            <p>Date de fin de l'évènement : ${e.endDate}</p><br></a>
-        </c:forEach>
-
-
-    </div>-->
 
         <div class="col-md-9">
             <div class="row carousel-holder">
@@ -90,41 +71,19 @@
                                 <h3>${e.name}</h3><br>                                  
                                 <div id="texteEvent">                                   
                                     <c:forEach items ="${e.artists}" var ="a">
-                                        <p>${a.type} ${a.firstName} ${a.lastName}</p><br>            
+                                        <p>${a.type} ${a.firstName} ${a.lastName}</p>           
                                     </c:forEach> 
-                                    <strong><p>Début : ${e.startDate}</p><br>
-                                    <p>Fin : ${e.endDate}</p><br></strong>
+                                    <fmt:formatDate value="${e.startDate}" var="debutDate" type="date" dateStyle="full"/>
+                                    <strong><p>Début : ${debutDate}</p>
+                                    <fmt:formatDate value="${e.startDate}" var="finDate" type="date" dateStyle="full"/>
+                                    <p>Fin : ${finDate}</p></strong>
                                 </div>
-                            </div>                        </div>
+                            </div>
+                                <a href="detailsPage.jsp" id="details">Voir le détail</a><br><br>  
+                        </div>
                     </div>
                 </c:forEach>
-
-                <!--<div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$84.99</h4>
-                            <h4><a href="#">Fourth Product</a>
-                            </h4>
-                            <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">6 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>-->
-            </div>
-        </div>
-    </div>
-</div>
-<!-- /.container -->
+               
 
 
 <!-- Footer -->
