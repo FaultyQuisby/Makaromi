@@ -31,39 +31,43 @@
             <div class="thumbnail"> 
                 <div class="row">
                     <section>
-                        <tbody>
-                            <tr><td>
-                                    <a href="IndexController?section=SectionController=${e.imgURL}"></a> 
-                                    <strong><th>${nameEvent}</th></strong> 
-                                </td></tr>                              
-                            <tr>
-                                <td id="imageDetailsPage">
-                                    <img src="${imgEvent}"/>
-                                </td>
-                                <td>
-                                    <strong>${nameEvent}</strong>                   
-                                    <fmt:formatDate value="${e.startDate}" var="debutDate" type="date" dateStyle="full"/>${dateStart} 
-                                    <fmt:formatDate value="${e.startDate}" var="finDate" type="date" dateStyle="full"/>${dateEnd}
-                                    ${synopsisEvent}
-                                    ${commentEvent}
-                                    <c:forEach items="${e.representationsev}">
-                                        <fmt:formatDate value="${e.representationDate}" var="debutDate" pattern="dd/MM/YYYY HH" dateStyle="full"/>${dateRepresentation} ${timeRepresentation}
-                                    </c:forEach>
-                                    <c:forEach items="¤${r.myvenue}"><!--Attention ici on va recuperer la venue depuis la representation-->
-                                        ${typeVenue} <br/>
-                                        ${nameVenue} <br/>
-                                    </c:forEach>
-                                    <c:forEach items="${myadd}"><!--Attention ici on va recuperer l'adresse depuis la venue et la venue depuis la representation-->
-                                        ${street} ${postCode} ${city}<br/>
-                                        ${mapVenue} <br/>
-                                    </c:forEach>
-                                </td>                        
-                            <tr>
-                                <td>
-                                    <a href="SectionController?thematicBrowsing=retour=ok"><p>Retour</p></a>
-                                </td>
-                            </tr>
-                            </table>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <a href="IndexController?section=SectionController=${e.imgURL}"></a> 
+                                        <strong><th>${nameEvent}</th></strong> 
+                                    </td>
+                                </tr>                              
+                                <tr>
+                                    <td id="imageDetailsPage">
+                                        <img src="${imgEvent}"/>
+                                    </td>
+                                    <td>
+                                        <strong>${nameEvent}</strong>                   
+                                        <fmt:formatDate value="${e.startDate}" var="debutDate" type="date" dateStyle="full"/>${dateStart} 
+                                        <fmt:formatDate value="${e.startDate}" var="finDate" type="date" dateStyle="full"/>${dateEnd}
+                                        ${synopsisEvent}
+                                        ${commentEvent}
+                                        <c:forEach items="${e.representationsev}">
+                                            <fmt:formatDate value="${e.representationDate}" var="debutDate" pattern="dd/MM/YYYY HH" dateStyle="full"/>${dateRepresentation} ${timeRepresentation}
+                                        </c:forEach>
+                                        <c:forEach items="¤${r.myvenue}"><!--Attention ici on va recuperer la venue depuis la representation-->
+                                            ${typeVenue} <br/>
+                                            ${nameVenue} <br/>
+                                        </c:forEach>
+                                        <c:forEach items="${myadd}"><!--Attention ici on va recuperer l'adresse depuis la venue et la venue depuis la representation-->
+                                            ${street} ${postCode} ${city}<br/>
+                                            ${mapVenue} <br/>
+                                        </c:forEach>
+                                    </td>                        
+                                <tr>
+                                    <td>
+                                        <a href="SectionController?thematicBrowsing=retour=ok"><p>Retour</p></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </section>
                 </div>
             </div>
