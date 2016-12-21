@@ -29,23 +29,23 @@
 
         <!-- <div class="container">
              <h2>Liste des évènements</h2> 
-             ${patternSession}
-             <h3>${rubrique}</h3>
- 
-             <c:forEach items="${mesevent}" var="e">
-                 <a href="IndexController?section=SectionController=${e.imgURL}"><p>${e.imgURL}</p><br></a>
-                 <p>${e.name}</p><br></a>
-                 <p>Artiste(s) de l'évènement : </p><br>
-                 <c:forEach items ="${e.artists}" var ="a">
-                     <p>Type d'artiste : ${a.type}</p><br>
-                     <p>Nom de l'artiste : ${a.firstName} ${a.lastName}</p><br>            
-                 </c:forEach>
-                 <p>Date de début de l'évènement : ${e.startDate}</p><br></a>
-                 <p>Date de fin de l'évènement : ${e.endDate}</p><br></a>
-             </c:forEach>
- 
- 
-         </div>-->
+        ${patternSession}
+        <h3>${rubrique}</h3>
+
+        <c:forEach items="${mesevent}" var="e">
+            <a href="IndexController?section=SectionController=${e.imgURL}"><p>${e.imgURL}</p><br></a>
+            <p>${e.name}</p><br></a>
+            <p>Artiste(s) de l'évènement : </p><br>
+            <c:forEach items ="${e.artists}" var ="a">
+                <p>Type d'artiste : ${a.type}</p><br>
+                <p>Nom de l'artiste : ${a.firstName} ${a.lastName}</p><br>            
+            </c:forEach>
+            <p>Date de début de l'évènement : ${e.startDate}</p><br></a>
+            <p>Date de fin de l'évènement : ${e.endDate}</p><br></a>
+        </c:forEach>
+
+
+    </div>-->
 
         <div class="col-md-9">
             <div class="row carousel-holder">
@@ -84,71 +84,22 @@
                 <c:forEach items="${mesevent}" var="e">
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <a href="IndexController?section=SectionController=${e.imgURL}">
-                                <img src="${e.imgURL}" height="150px" width="320px">
-                                <div class="caption">                                
-                                    <h4>${e.name}
-                                    </h4>
-                                    <p>Artiste(s) de l'évènement : </p><br>
+                            <a href="IndexController?section=SectionController=${e.imgURL}"></a> 
+                            <img src="${e.imgURL}" height="150px" width="320px">
+                            <div class="caption">                                
+                                <h3>${e.name}</h3><br>                                  
+                                <div id="texteEvent">                                   
                                     <c:forEach items ="${e.artists}" var ="a">
-                                        <p>Type d'artiste : ${a.type}</p><br>
-                                        <p>Nom de l'artiste : ${a.firstName} ${a.lastName}</p><br>            
+                                        <p>${a.type} ${a.firstName} ${a.lastName}</p><br>            
                                     </c:forEach> 
-                                    <p>Date de début de l'évènement : ${e.startDate}</p><br>
-                                    <p>Date de fin de l'évènement : ${e.endDate}</p><br>
-                                    </a>
-                                </div>                           
-                        </div>
+                                    <strong><p>Début : ${e.startDate}</p><br>
+                                    <p>Fin : ${e.endDate}</p><br></strong>
+                                </div>
+                            </div>                        </div>
                     </div>
                 </c:forEach>
 
-
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$64.99</h4>
-                            <h4><a href="#">Second Product</a>
-                            </h4>
-                            <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">12 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$74.99</h4>
-                            <h4><a href="#">Third Product</a>
-                            </h4>
-                            <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">31 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
+                <!--<div class="col-sm-4 col-lg-4 col-md-4">
                     <div class="thumbnail">
                         <img src="http://placehold.it/320x150" alt="">
                         <div class="caption">
@@ -168,37 +119,10 @@
                             </p>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-sm-4 col-lg-4 col-md-4">
-                    <div class="thumbnail">
-                        <img src="http://placehold.it/320x150" alt="">
-                        <div class="caption">
-                            <h4 class="pull-right">$94.99</h4>
-                            <h4><a href="#">Fifth Product</a>
-                            </h4>
-                            <p>This is a short description. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </div>
-                        <div class="ratings">
-                            <p class="pull-right">18 reviews</p>
-                            <p>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star"></span>
-                                <span class="glyphicon glyphicon-star-empty"></span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-
+                </div>-->
             </div>
-
         </div>
-
     </div>
-
 </div>
 <!-- /.container -->
 

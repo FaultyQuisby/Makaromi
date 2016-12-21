@@ -9,9 +9,15 @@ and open the template in the editor.
 */
 
 /*body {
-    padding-top: 70px;  Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. 
+    padding-top: 70px;  ReqSuired padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. 
 }*/
-
+#texteEvent{
+    color:black;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    font-size: small;
+    
+}
 .slide-image {
     max-height: 300px;
     max-width: 300px;
@@ -29,6 +35,11 @@ and open the template in the editor.
 
 .caption {
     overflow: hidden;
+    color:black;
+    font-family: Arial, sans-serif;
+    text-decoration: none;
+    font-size: small;
+    line-height: 10px;
 }
 
 .caption h4 {
