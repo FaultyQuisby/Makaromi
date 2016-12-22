@@ -35,7 +35,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <a href="IndexController?section=SectionController=${event.name}"></a> 
+                                        <a href="IndexController?section=SectionController=${myevent.name}"></a> 
                                         <strong><th>${myevent.name}</th></strong> 
                                     </td>
                                 </tr>                              
@@ -45,7 +45,7 @@
                                     </td>
                                     <td>
                                         <c:forEach items= "mesRepresentations" var = "r">
-                                            ${r.maxCapacity} 
+                                            ${myevent.r.maxCapacity} 
                                         </c:forEach>    
                                     </td>
                                 </tr>    
