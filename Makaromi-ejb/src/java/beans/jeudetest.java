@@ -458,6 +458,8 @@ public class jeudetest implements jeudetestLocal {
                 + " join e.representationsev r where r.myvenue.name = :paramvenu";
         Query qr031 = em.createQuery(req031);
         qr031.setParameter("paramvenu", "Stade de France");
+        qr031.setMaxResults(3);
+        qr031.setFirstResult(0);
         List<Event> ls = qr031.getResultList();
         for(Event e : ls){
             mess = mess+"<br>"+e.getName();

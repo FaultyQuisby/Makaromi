@@ -5,6 +5,7 @@
  */
 package beans;
 
+import entites.Event;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -14,6 +15,18 @@ import javax.ejb.Local;
  */
 @Local
 public interface ManageSectionLocal {
-   public List mesRubriques(); 
-   public List mesEventparRubrique(String rubrique);
+
+    public List mesRubriques();
+
+   
+
+    public List mesEventparRubrique(String rubrique, int page);
+
+    public int nbpageEvent(String rubrique);
+
+    public Event eventByName(String event);
+
+    
+
+    public List mesRepresentationByEvent(String event);
 }

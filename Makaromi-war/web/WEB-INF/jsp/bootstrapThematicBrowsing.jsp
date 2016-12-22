@@ -74,12 +74,12 @@
                                         <p>${a.type} ${a.firstName} ${a.lastName}</p>           
                                     </c:forEach> 
                                     <fmt:formatDate value="${e.startDate}" var="debutDate" type="date" dateStyle="full"/>
-                                    <strong><p>Début : ${debutDate}</p>
+                                    <strong>Début : ${debutDate}
                                         <fmt:formatDate value="${e.startDate}" var="finDate" type="date" dateStyle="full"/>
-                                        <p>Fin : ${finDate}</p></strong>
+                                        Fin : ${finDate}</strong>
                                 </div>
                             </div>
-                            <a href="detailsPage.jsp" id="details">Voir le détail</a><br>
+                            <a href="IndexController?section=DetailsPageController&event=${e.name}" id="details">Voir le détail</a><br>
                             <br>  
                             <br>
                         </div>
@@ -94,19 +94,18 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <ul class="pagination">
-                                    <li><a href="#">1</a></li>
-                                    <li class="active"><a href="#">2</a></li>
-                                    <li><a href="#">3</a></li>
-                                    <li><a href="#">4</a></li>
-                                    <li><a href="#">5</a></li>
+                                      <c:forEach begin="1" end="${nombredePages}" var="i">
+                                                <li><a href="IndexController?section=SectionController&pageDemandee=${i}&th=${th}">${i}</a></li>
+                                      </c:forEach>
                                 </ul>
                             </div>
                         </div>
                     </footer>
-
                 </div>
                 <script src="js/jquery.js"></script>
                 <script src="js/bootstrap.min.js"></script>
 
                 </body>
                 </html>
+
+      

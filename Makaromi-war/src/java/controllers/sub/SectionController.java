@@ -31,11 +31,25 @@ public class SectionController implements Serializable,sousControleur {
     public String executer(HttpServletRequest request, HttpServletResponse response) {
        
         if(request.getParameter("th")!= null){
-           String rubrique = request.getParameter("th");
-           List le = mesSection.mesEventparRubrique(rubrique.trim());
+            List le=null;
+            String rubrique = request.getParameter("th");
+           
+           
+           
+           int nbPages = mesSection.nbpageEvent(rubrique);
+           request.setAttribute("nombredePages",nbPages);
+           System.out.println("----------------------------------->nbpage = "+nbPages);
+           request.setAttribute("th",rubrique);
+
+           if (request.getParameter("pageDemandee")!= null){
+                le = mesSection.mesEventparRubrique(rubrique.trim(),Integer.valueOf(request.getParameter("pageDemandee")));
+           }else{
+                le = mesSection.mesEventparRubrique(rubrique.trim(),1);
+           }
            request.setAttribute("mesevent",le);
+           request.setAttribute("th",rubrique);
            System.out.println("liste dans sous controller est egale a------->"+le);
-            
+    
         }
             
            

@@ -35,15 +35,52 @@ public class ManageSection implements ManageSectionLocal {
     }
     
     @Override
-    public List mesEventparRubrique(String rubrique){
-         String req04 = "select e from Event e"
+    public List mesEventparRubrique(String rubrique,int page){
+        
+        
+        String req04 = "select e from Event e"
                 + " where e.section.name = :paramRubrique";
         Query qr04 = em.createQuery(req04);
         qr04.setParameter("paramRubrique", rubrique);
+        qr04.setFirstResult((page-1)*3+0);
+        qr04.setMaxResults ((page-1)*3+3);
         List<Event> le = qr04.getResultList();
         System.out.println("le------------------------------------>"+le);
         return le;
     }
     
+    @Override
+    public int nbpageEvent(String rubrique){
+        String req04 = "select e from Event e"
+                + " where e.section.name = :paramRubrique";
+        Query qr04 = em.createQuery(req04);
+        qr04.setParameter("paramRubrique", rubrique);
+        List<Event> le = qr04.getResultList();
+        int nb = le.size()/3;  
+        if (le.size()%3 > 0){
+            nb=nb+1;
+        }
+        System.out.println("max result page = "+nb+" maxsize "+le.size());
+        return nb;
+    }
+    
+    @Override
+    public Event eventByName (String event){
+        String req05 = "select e from Event e "
+                + "where e.name = :paramEvent";
+        Query qr05 = em.createQuery(req05);
+        qr05.setParameter("paramEvent", event);
+        Event myevent = (Event)qr05.getSingleResult();        
+        return myevent;
+    }
+     
+    @Override
+    public List mesRepresentationByEvent(String event){
+        String req055 = "select e.representationsev from Event e where e.name = :paramEvent";
+        Query qr055 = em.createQuery(req055);
+        qr055.setParameter("paramEvent", event);
+        List<Section> ls = qr055.getResultList();
+        return ls;
+    }
   
 }
