@@ -44,8 +44,20 @@
                                         <img src="${myevent.imgURL}"/>
                                     </td>
                                     <td>
+                                        <div id="texteEvent">                                   
+                                    <c:forEach items ="${myevent.artists}" var ="a">
+                                        <p>${a.type} ${a.firstName} ${a.lastName}</p>           
+                                    </c:forEach> 
+                                    <fmt:formatDate value="${myevent.startDate}" var="debutDate" type="date" dateStyle="full"/>
+                                    <strong>Début : ${debutDate}
+                                        <fmt:formatDate value="${myevent.endDate}" var="finDate" type="date" dateStyle="full"/>
+                                        Fin : ${finDate}</strong>
+                                    </td>
+                                    <td>
                                         <c:forEach items= "mesRepresentations" var = "r">
-                                            ${myevent.r.maxCapacity} 
+                                            <fmt:formatNumber value="${myevent.representationsev.maxCapacity}" var="maxCapacityVenue" type="number"/>${myevent.representationsev.maxCapacity}
+                                           <fmt:formatDate value="${myevent.representationsev.rDate}" var="dateRepresentation" type="date" dateStyle="full"/>${myevent.representationsev.rDate}
+                                           <fmt:formatDate value="${myevent.representationsev.rTime} " var="heureRepresentation" type="date" dateStyle="full"/>${myevent.representationsev.rTime}                                            
                                         </c:forEach>    
                                     </td>
                                 </tr>    

@@ -35,7 +35,7 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <a href="IndexController?section=SectionController=${myevent.name}"></a> 
+                                        <a href="IndexController?section=SectionController=${myevent.representationsev.venue}"></a> 
                                         <strong><th>${myevent.name}</th></strong> 
                                     </td>
                                 </tr>                              
@@ -45,20 +45,19 @@
                                     </td>
                                     <td>
                                         <div id="texteEvent">                                   
-                                    <c:forEach items ="${myevent.artists}" var ="a">
-                                        <p>${a.type} ${a.firstName} ${a.lastName}</p>           
-                                    </c:forEach> 
-                                    <fmt:formatDate value="${myevent.startDate}" var="debutDate" type="date" dateStyle="full"/>
-                                    <strong>Début : ${debutDate}
-                                        <fmt:formatDate value="${myevent.endDate}" var="finDate" type="date" dateStyle="full"/>
-                                        Fin : ${finDate}</strong>
-                                    </td>
-                                    <td>
-                                        <c:forEach items= "mesRepresentations" var = "r">
-                                            <fmt:formatNumber value="${myevent.representationsev.maxCapacity}" var="maxCapacityVenue" type="number"/>${myevent.representationsev.maxCapacity}
-                                           <fmt:formatDate value="${myevent.representationsev.rDate}" var="dateRepresentation" type="date" dateStyle="full"/>${myevent.representationsev.rDate}
-                                           <fmt:formatDate value="${myevent.representationsev.rTime} " var="heureRepresentation" type="date" dateStyle="full"/>${myevent.representationsev.rTime}                                            
-                                        </c:forEach>    
+                                            <c:forEach items ="${myevent.artists}" var ="a">
+                                                <p>${a.type} ${a.firstName} ${a.lastName}</p>           
+                                            </c:forEach> 
+                               
+                                        <fmt:formatNumber value="${myevent.representationsev.maxCapacity}" var="maxCapacityVenue" type="number"/>${myevent.representationsev.maxCapacity}
+                                        <fmt:formatDate value="${myevent.representationsev.rDate}" var="dateRepresentation" type="date" dateStyle="full"/>${myevent.representationsev.rDate}
+                                        ${myevent.representationsev.myvenue.seatMapUrl}
+                                        ${myevent.representationsev.myvenue.name}
+                                        ${myevent.representationsev.myvenue.type}
+                                        ${myevent.representationsev.myvenue.myadd.street}
+                                        ${myevent.representationsev.myvenue.myadd.postalCode}
+                                        ${myevent.representationsev.myvenue.myadd.city}
+
                                     </td>
                                 </tr>    
 

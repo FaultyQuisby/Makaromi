@@ -75,7 +75,7 @@
                                     </c:forEach> 
                                     <fmt:formatDate value="${e.startDate}" var="debutDate" type="date" dateStyle="full"/>
                                     <strong>Début : ${debutDate}
-                                        <fmt:formatDate value="${e.startDate}" var="finDate" type="date" dateStyle="full"/>
+                                        <fmt:formatDate value="${e.endDate}" var="finDate" type="date" dateStyle="full"/>
                                         Fin : ${finDate}</strong>
                                 </div>
                             </div>
