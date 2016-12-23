@@ -74,9 +74,9 @@
                                         <p>${a.type} ${a.firstName} ${a.lastName}</p>           
                                     </c:forEach> 
                                     <fmt:formatDate value="${e.startDate}" var="debutDate" type="date" dateStyle="full"/>
-                                    <strong>Début : ${debutDate}
-                                        <fmt:formatDate value="${e.endDate}" var="finDate" type="date" dateStyle="full"/>
-                                        Fin : ${finDate}</strong>
+                                    <p><strong>Début : ${debutDate}</strong></p>
+                                     <fmt:formatDate value="${e.endDate}" var="finDate" type="date" dateStyle="full"/>
+                                     <p><strong>Fin : ${finDate}</strong></p>
                                 </div>
                             </div>
                             <a href="IndexController?section=DetailsPageController&event=${e.name}" id="details">Voir le détail</a><br>

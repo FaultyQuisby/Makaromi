@@ -14,11 +14,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="js/vendor/jquery-1.11.2.min.js" type="text/javascript"></script>
-        <script src="js/vendor/bootstrap.min.js" type="text/javascript"></script>
-        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-        <link rel="stylesheet" href="css/home.css" type="text/css">
-        <link rel="stylesheet" href="css/menu-connectnok.css" type="text/css"/>
-        <link rel="stylesheet" href="css/shop-homepage.css"type="text/css" />
+        <script src="js/vendor/bootstrap.min.js" type="text/javascript"></script>        
+        <link rel="stylesheet" href="css/menu-connectnok.css" type="text/css"/> 
+        <link rel="stylesheet" href="css/detailsPage.css" type="text/css"/>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../css/shop-homepage.css" rel="stylesheet" type="text/css"/>
     </head>
 
     <body>
@@ -26,42 +26,42 @@
             <c:url var="url" value="IndexController?section=MenuMainController" />
             <c:import url="${url}"  />
         </header>
-
         <div class="col-sm-4 col-lg-4 col-md-4">
-            <div class="thumbnail"> 
-                <div class="row">
+            <div class="thumbnail">
+
+                <a href="IndexController?section=SectionController=${myevent.name}"></a> 
+                <div class="detailspage">
+                    <h1><th>${myevent.name}</th></h1> 
                     <section>
                         <table>
                             <tbody>
                                 <tr>
                                     <td>
-                                        <a href="IndexController?section=SectionController=${myevent.name}"></a> 
-                                        <strong><th>${myevent.name}</th></strong> 
-                                    </td>
-                                </tr>                              
-                                <tr>
-                                    <td id="imageDetailsPage">
-                                        <img src="${myevent.imgURL}"/>
+                                        <div>
+                                            <img width="300px" src="${myevent.imgURL}"/>
+                                        </div>
                                     </td>
                                     <td>
-                                        <div id="texteEvent">                                   
-                                    <c:forEach items ="${myevent.artists}" var ="a">
-                                        <p>${a.type} ${a.firstName} ${a.lastName}</p>           
-                                    </c:forEach> 
-                                    <fmt:formatDate value="${myevent.startDate}" var="debutDate" type="date" dateStyle="full"/>
-                                    <strong>Début : ${debutDate}
-                                        <fmt:formatDate value="${myevent.endDate}" var="finDate" type="date" dateStyle="full"/>
-                                        Fin : ${finDate}</strong>
-                                    </td>
-                                    <td>
-                                        <c:forEach items= "mesRepresentations" var = "r">
-                                            <fmt:formatNumber value="${myevent.representationsev.maxCapacity}" var="maxCapacityVenue" type="number"/>${myevent.representationsev.maxCapacity}
-                                           <fmt:formatDate value="${myevent.representationsev.rDate}" var="dateRepresentation" type="date" dateStyle="full"/>${myevent.representationsev.rDate}
-                                           <fmt:formatDate value="${myevent.representationsev.rTime} " var="heureRepresentation" type="date" dateStyle="full"/>${myevent.representationsev.rTime}                                            
-                                        </c:forEach>    
-                                    </td>
-                                </tr>    
+                                        <div id="texteDetailsPage">                                   
+                                            <c:forEach items ="${myevent.artists}" var ="a">
+                                                <h5>${a.type} ${a.firstName} ${a.lastName}</h5>           
+                                            </c:forEach> <br>
+                                            <fmt:formatDate value="${myevent.startDate}" var="debutDate" type="date" dateStyle="full"/>
+                                            <p><strong>Début : ${debutDate}</strong></p>
+                                            <fmt:formatDate value="${myevent.endDate}" var="finDate" type="date" dateStyle="full"/>
+                                            <p><strong>Fin : ${finDate}</strong></p><br>
 
+                                            <c:forEach items= "${myevent.representationsev}" var = "r">
+                                                <p><fmt:formatNumber value="${r.maxCapacity}" var="maxCapacityVenue" type="number"/>Nombre maximal de personnes : ${maxCapacityVenue} personnes</p>                                        
+                                                <p id="representation"><fmt:formatDate value="${r.rDate}" var="dateRepresentation" type="both" dateStyle="full"/>Représentation du ${dateRepresentation}</p><br>                                     
+                                            </c:forEach>                                              
+                                        </div>
+                                    </td>
+                                </tr>
+
+                                </div>
+                                </div>
+                                </div>
                                 </body>
                                 </html>
 

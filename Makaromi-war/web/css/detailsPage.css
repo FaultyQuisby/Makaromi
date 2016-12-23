@@ -1,0 +1,20 @@
+#texteDetailsPage{
+    margin-left: 50px !important;
+    color: black !important;
+    font-family: Arial, sans-serif !important;
+    font-size: 12px !important;
+}
+body{
+    background-color: black !important;
+}
+.thumbnail{
+    width: 950px !important;
+    margin-left: 250px !important;
+}
+.detailspage{
+    margin-left: 150px !important;
+}
+#representation{
+    text-decoration: underline !important;
+    color:grey !important;
+}

@@ -72,23 +72,6 @@ public class Representation implements Serializable {
     public void setMaxCapacity(int maxCapacity) {
         this.maxCapacity = maxCapacity;
     }
-
-    public Date getDate() {
-        return rDate;
-    }
-
-    public void setDate(Date rDate) {
-        this.rDate = rDate;
-    }
-
-    public Date getTime() {
-        return rTime;
-    }
-
-    public void setTime(Date rTime) {
-        this.rTime = rTime;
-    }
-
    
     
     @Override
