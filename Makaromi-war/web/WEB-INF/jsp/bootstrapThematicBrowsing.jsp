@@ -79,7 +79,9 @@
                                      <p><strong>Fin : ${finDate}</strong></p>
                                 </div>
                             </div>
+                               
                             <a href="IndexController?section=DetailsPageController&event=${e.name}" id="details">Voir le détail</a><br>
+                            
                             <br>  
                             <br>
                         </div>

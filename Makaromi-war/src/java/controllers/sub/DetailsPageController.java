@@ -24,34 +24,30 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author cdi306
  */
+public class DetailsPageController implements Serializable, sousControleur {
 
-public class DetailsPageController implements Serializable,sousControleur {
-    
     ManageSectionLocal manageSection = lookupManageSectionLocal();
-  
-    
-    
+
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
-        
-        
-        if (request.getParameter("event")!=null){
-           
-           request.setAttribute("myevent",manageSection.eventByName(request.getParameter("event")));
-           request.setAttribute("mesRepresentations",manageSection.mesRepresentationByEvent(request.getParameter("event")));
-        
+
+        String url="/WEB-INF/jsp/detailsPage.jsp";
+
+        if (request.getParameter("event") != null) {
+            request.setAttribute("myevent", manageSection.eventByName(request.getParameter("event")));
+            request.setAttribute("mesRepresentations", manageSection.mesRepresentationByEvent(request.getParameter("event")));
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        return "/WEB-INF/jsp/detailsPage.jsp";
-    } 
+
+        if (request.getParameter("th") != null) {                    
+            request.setAttribute("th", request.getParameter("th"));
+            url = "/WEB-INF/jsp/bootstrapThematicBrowsing.jsp";
+        }
+
+        if (request.getParameter("retour") != null) {
+            url = "/WEB-INF/jsp/bootstrapThematicBrowsing.jsp";            
+        }
+        return url;
+    }
 
     private ManageSectionLocal lookupManageSectionLocal() {
         try {

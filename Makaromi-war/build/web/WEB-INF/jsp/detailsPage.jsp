@@ -50,14 +50,29 @@
                                             <p><strong>Début : ${debutDate}</strong></p>
                                             <fmt:formatDate value="${myevent.endDate}" var="finDate" type="date" dateStyle="full"/>
                                             <p><strong>Fin : ${finDate}</strong></p><br>
+                                            <p>----------------------------------------------------------------------------------------------------</p><br/>         
 
-                                            <c:forEach items= "${myevent.representationsev}" var = "r">
-                                                <p><fmt:formatNumber value="${r.maxCapacity}" var="maxCapacityVenue" type="number"/>Nombre maximal de personnes : ${maxCapacityVenue} personnes</p>                                        
-                                                <p id="representation"><fmt:formatDate value="${r.rDate}" var="dateRepresentation" type="both" dateStyle="full"/>Représentation du ${dateRepresentation}</p><br>                                     
-                                            </c:forEach>                                              
-                                        </div>
+                                            <c:forEach items= "${myevent.representationsev}" var = "r">                                                                                    
+                                                <p id="representation"><fmt:formatDate value="${r.rDate}" var="dateRepresentation" type="both" dateStyle="full"/>Représentation du ${dateRepresentation} heures</p> 
+                                                <p id="boutonCommander"><strong>Commander</strong></p>
+                                                <p>----------------------------------------------------------------------------------------------------</p><br/>                                                
+                                            </c:forEach>
+                                            <c:choose>
+                                                <c:when test="${empty myevent.representationsev}">
+                                                    <p id="boutonCommander"><strong>Commander</strong></p>   
+                                                </c:when>
+                                            </c:choose>
+                                        </div>                                             
                                     </td>
                                 </tr>
+                                <tr><td><br></td></tr>
+                                <tr>
+                                    <td></td>
+                                    <td>                                          
+                                        <a href="IndexController?section=SectionController" id="boutonRetour"><strong>Retour</strong></a>
+                                    </td>                                            
+                                </tr>
+                                <tr><td><br></td></tr>
 
                                 </div>
                                 </div>

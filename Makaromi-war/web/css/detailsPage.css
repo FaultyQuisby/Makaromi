@@ -18,3 +18,27 @@ body{
     text-decoration: underline !important;
     color:grey !important;
 }
+#boutonCommander{
+    color:#777 !important;
+    font-size: 13px !important;
+    font-style: italic !important;
+    text-align: center !important;
+}
+#boutonCommander :hover{
+text-decoration: underline !important;
+}
+#representation{
+    text-decoration: none !important;
+    font-size:12px !important;
+    color:black !important;
+    text-align: center !important;
+}
+#boutonRetour{
+    text-align:center !important;
+    text-decoration:none !important;
+    color:black !important; 
+    font-size:16px !important;
+}
+#boutonRetour :hover{
+    text-decoration:underline !important;
+}
