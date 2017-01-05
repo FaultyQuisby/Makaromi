@@ -17,5 +17,6 @@
     .modal-content {
         width: 600px !important;
         margin: 30px auto !important;
+        overflow-y: auto;
     }
 </style>

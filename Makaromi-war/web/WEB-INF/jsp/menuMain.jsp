@@ -19,7 +19,7 @@
     <script src="js/vendor/collapse.js" type="text/javascript"></script>
     <script src="js/vendor/transition.js" type="text/javascript"></script>
     <script src="js/vendor/moment-with-locales.js" type="text/javascript"></script>
-    
+    <script src="js/vendor/bootstrap-datetimepicker.min.js" type="text/javascript"></script>
     
     <link href="css/seatSelection.css" rel="stylesheet" type="text/css"/>
     <link href="css/jquery.seat-charts.css" rel="stylesheet" type="text/css"/>

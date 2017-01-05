@@ -15,11 +15,11 @@
         <div class="demo">
             <div class="container">
                 <div id="seat-map">
-                    <div class="front">Carriage 1</div>
+                    <div class="front">Plan de salle</div>
                     <div id="seat-info"></div>
                 </div>
                 <div class="booking-details">
-                    <h3> Seat selection information:</h3>
+                    <h3> &nbsp Seat selection information:</h3>
                     <ul id="selected-seats"></ul>
                     <p>Tickets Num: <span id="counter"></span></p>
                     <p>Total: $<span id="total">0</span></p>
