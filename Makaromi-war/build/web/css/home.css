@@ -108,3 +108,20 @@
 #home body {
     font-family: 'Archivo Narrow', sans-serif;
 }
+
+.bandeauBienvenue{
+    background-color: black !important;
+    color:white !important;
+    text-align: center !important;
+    text-decoration: none !important; 
+    font-family: Arial !important;
+}
+.bandeauBienvenue h1{
+    font-size:60px !important;
+}
+.bandeauBienvenue p{
+    font-size: 40px !important;
+}
+#imgMakaromi{
+    width: 500px !important;
+}
