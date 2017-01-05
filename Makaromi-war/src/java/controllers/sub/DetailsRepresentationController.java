@@ -11,6 +11,20 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import beans.ManageSectionLocal;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Serializable;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,7 +33,13 @@ import javax.servlet.http.HttpServletResponse;
 public class DetailsRepresentationController implements Serializable, sousControleur {    
 
     ManageSectionLocal manageSection = lookupManageSectionLocal();
-
+    
+    /**
+     *
+     * @param request
+     * @param response
+     * @return
+     */
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
 
