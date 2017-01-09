@@ -66,40 +66,31 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <a href="IndexController?section=SectionController=${myevent.representationsev.venue}"></a> 
-                                        <strong>${myevent.name}</strong> 
-                                    </td>
+                                        <a href="IndexController?section=SectionController=${rep.id}"></a> 
+                                    </td>      
+                                            <td>
+                                                <img src="${rep.myvenue.seatMapUrl}" id="imgVenue"
+                                            </td>
+                                            <td>
+                                                <div id="venue">
+                                                    <fmt:formatDate value="${rep.rDate}" var="dateRepresentation" type="date" dateStyle="full"/>
+                                                    <h3>${dateRepresentation}</h3><br>
+                                                    Lieu : <strong>${rep.myvenue.name}</strong><br>
+                                                    Adresse: <br>
+                                                    ${rep.myvenue.myadd.street}<br>
+                                                    ${rep.myvenue.myadd.postalCode}<br>
+                                                    ${rep.myvenue.myadd.city}<br>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                            <tr>
+                                                <td>
+                                                    <div id="carte" style="width:100%; height:100%">carte</div>
+                                                </td>
+                                            </tr>
 
-                                </tr>                              
-                                <tr>
 
-                                    <td id="imageDetailsPage">
-                                        <img src="${myevent.imgURL}"/>
-                                    </td>
 
-                                    <td>
-                                        <div id="texteEvent">    
-
-                                            <c:forEach items ="${myevent.artists}" var ="a">
-                                                <p>${a.type} ${a.firstName} ${a.lastName}</p>           
-                                            </c:forEach> 
-
-                                            <fmt:formatNumber value="${myevent.representationsev.maxCapacity}" var="maxCapacityVenue" type="number"/>${myevent.representationsev.maxCapacity}
-                                            <fmt:formatDate value="${myevent.representationsev.rDate}" var="dateRepresentation" type="date" dateStyle="full"/>${myevent.representationsev.rDate}
-                                            ${myevent.representationsev.myvenue.seatMapUrl}
-                                            ${myevent.representationsev.myvenue.name}
-                                            ${myevent.representationsev.myvenue.type}
-                                            ${myevent.representationsev.myvenue.myadd.street}
-                                            ${myevent.representationsev.myvenue.myadd.postalCode}
-                                            ${myevent.representationsev.myvenue.myadd.city}
-
-                                            <div id="carte" style="width:100%; height:100%"></div>
-
-                                    </td>
-                                    <td>
-                                       ${rep.id} 
-                                   </td>
-                                </tr>
                             </tbody>
                         </table>
                     </section>

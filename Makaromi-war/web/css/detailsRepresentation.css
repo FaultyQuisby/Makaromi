@@ -1,4 +1,18 @@
 body{
     background-color: black !important;
     color:white !important;
+   }
+.thumbnail{
+    width: 950px !important;
+    margin-left: 250px !important;
+}
+#imgVenue{
+    width: 500px !important;    
+}
+#venue{
+    margin-left: 100px !important;
+    text-decoration: none !important;
+    font-size:12px !important;
+    color:black !important;
+    text-align: right !important;
 }
