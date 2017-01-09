@@ -6,8 +6,9 @@ body{
     margin-left: 250px !important;
 }
 #imgVenue{
-    width: 500px !important;    
+    width: 400px !important;    
     float : left !important;
+    margin-left: 50px !important;
 }
 #venue{
     float:right !important;   
@@ -15,10 +16,12 @@ body{
     font-size:12px !important;
     color:black !important;
     text-align: right !important;
+  
 }
 #googleMap{
     text-align: center !important;
-    margin-left: 50px !important;
+    margin-left: 500px !important;
+    background-size: 600px !important; 
 }
 #boutonCommander{
     color:#777 !important;
@@ -28,4 +31,7 @@ body{
 }
 #boutonCommander :hover{
 text-decoration: underline !important;
+}
+iframe{
+    margin-left: 50px !important;
 }

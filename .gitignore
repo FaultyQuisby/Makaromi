@@ -49,3 +49,5 @@ Makaromi-ejb/src/conf/persistence.xml
 *.jar
 *.jar
 *.jar
+Makaromi-ejb/dist/Makaromi-ejb.jar
+Makaromi-ejb/src/conf/persistence.xml
