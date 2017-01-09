@@ -1,36 +1,44 @@
 package controllers.sub;
 
 import beans.ManageSectionLocal;
+import entites.Representation;
 import java.io.Serializable;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-import javax.servlet.annotation.WebServlet;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "DetailsRepresentationController", urlPatterns = {"/DetailsRepresentationController"})
-public class DetailsRepresentationController implements Serializable, sousControleur {    
+
+public class DetailsRepresentationController implements sousControleur {    
 
     ManageSectionLocal manageSection = lookupManageSectionLocal();
     
-    /**
-     *
-     * @param request
-     * @param response
-     * @return
-     */
+   
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
 
         String url="/WEB-INF/jsp/detailsRepresentation.jsp";    
-
+         
+        if(request.getParameter("idRep") != null){
+             Representation rep = manageSection.representationById(Integer.valueOf(request.getParameter("idRep")));
+             request.setAttribute("rep",rep);
+             System.out.println("------------------>demande de representation "+rep);
+         }
+        
+        
+        
+        
+        
         if (request.getParameter("retour") != null) {
             url = "/WEB-INF/jsp/detailsPage.jsp";            
         }
+        
+        
         return url;
     }
 

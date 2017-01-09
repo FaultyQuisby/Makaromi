@@ -152,31 +152,31 @@ public class jeudetest implements jeudetestLocal {
         
       ///////////////////////////////////////////representation
         Representation r1 = new Representation(2000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()),(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()));
-        Representation r2 = new Representation(2000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 16, 19, 0).getTime()));
+        Representation r2 = new Representation(2000,(new GregorianCalendar(2017, 1, 16, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 16, 19, 0).getTime()));
         Representation r3 = new Representation(2000, (new GregorianCalendar(2017, 1, 15, 19, 0).getTime()),(new GregorianCalendar(2017, 1, 17, 19, 0).getTime()));
-        Representation r4 = new Representation(2000, (new GregorianCalendar(2017, 1, 15, 19, 0).getTime()),(new GregorianCalendar(2017, 1, 18, 19, 0).getTime()));
-        Representation r5 = new Representation(2000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 19, 19, 0).getTime()));
-        Representation r6 = new Representation(2000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 20, 19, 0).getTime()));
-        Representation r7 = new Representation(2000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 21, 19, 0).getTime()));
+        Representation r4 = new Representation(2000, (new GregorianCalendar(2017, 1, 17, 19, 0).getTime()),(new GregorianCalendar(2017, 1, 18, 19, 0).getTime()));
+        Representation r5 = new Representation(2000,(new GregorianCalendar(2017, 1, 19, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 19, 19, 0).getTime()));
+        Representation r6 = new Representation(2000,(new GregorianCalendar(2017, 1, 20, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 20, 19, 0).getTime()));
+        Representation r7 = new Representation(2000,(new GregorianCalendar(2017, 1, 21, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 21, 19, 0).getTime()));
         Representation r8 = new Representation(2000, (new GregorianCalendar(2017, 1, 15, 19, 0).getTime()),(new GregorianCalendar(2017, 1, 22, 19, 0).getTime()));
-        Representation r9 = new Representation(2000, (new GregorianCalendar(2017, 1, 15, 19, 0).getTime()),(new GregorianCalendar(2017, 1, 23, 19, 0).getTime()));
+        Representation r9 = new Representation(2000, (new GregorianCalendar(2017, 1, 22, 19, 0).getTime()),(new GregorianCalendar(2017, 1, 23, 19, 0).getTime()));
         Representation r10 = new Representation(5000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 24, 19, 0).getTime()));
-        Representation r11 = new Representation(5000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 25, 19, 0).getTime()));
-        Representation r12 = new Representation(5000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 26, 19, 0).getTime()));
+        Representation r11 = new Representation(5000,(new GregorianCalendar(2017, 1, 24, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 25, 19, 0).getTime()));
+        Representation r12 = new Representation(5000,(new GregorianCalendar(2017, 1, 26, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 26, 19, 0).getTime()));
         Representation r13 = new Representation(5000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 27, 19, 0).getTime()));
-        Representation r14 = new Representation(5000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 28, 19, 0).getTime()));
+        Representation r14 = new Representation(5000,(new GregorianCalendar(2017, 1, 27, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 28, 19, 0).getTime()));
         Representation r15 = new Representation(5000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 29, 19, 0).getTime()));
-        Representation r16 = new Representation(5000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 30, 19, 0).getTime()));
+        Representation r16 = new Representation(5000,(new GregorianCalendar(2017, 1, 29, 19, 0).getTime()), (new GregorianCalendar(2017, 1, 30, 19, 0).getTime()));
         Representation r17 = new Representation(5000, (new GregorianCalendar(2017, 1, 15, 19, 0).getTime()),(new GregorianCalendar(2017, 2, 1, 19, 0).getTime()));
-        Representation r18 = new Representation(10000, (new GregorianCalendar(2017, 1, 15, 19, 0).getTime()),(new GregorianCalendar(2017, 2, 2, 19, 0).getTime()));
-        Representation r19 = new Representation(10000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 2, 3, 19, 0).getTime()));
-        Representation r20 = new Representation(10000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 2, 4, 19, 0).getTime()));
-        Representation r21 = new Representation(10000, (new GregorianCalendar(2017, 1, 15, 19, 0).getTime()),(new GregorianCalendar(2017, 2, 2, 19, 0).getTime()));
-        Representation r22 = new Representation(10000, (new GregorianCalendar(2017, 1, 15, 19, 0).getTime()),(new GregorianCalendar(2017, 2, 3, 19, 0).getTime()));
-        Representation r23 = new Representation(10000, (new GregorianCalendar(2017, 1, 15, 19, 0).getTime()),(new GregorianCalendar(2017, 2, 4, 19, 0).getTime()));
-        Representation r24 = new Representation(10000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 2, 5, 19, 0).getTime()));
-        Representation r25 = new Representation(10000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 2, 6, 19, 0).getTime()));
-        Representation r26 = new Representation(10000,(new GregorianCalendar(2017, 1, 15, 19, 0).getTime()), (new GregorianCalendar(2017, 2, 7, 19, 0).getTime()));
+        Representation r18 = new Representation(10000, (new GregorianCalendar(2017, 2, 1, 19, 0).getTime()),(new GregorianCalendar(2017, 2, 2, 19, 0).getTime()));
+        Representation r19 = new Representation(10000,(new GregorianCalendar(2017, 2, 3, 19, 0).getTime()), (new GregorianCalendar(2017, 2, 3, 19, 0).getTime()));
+        Representation r20 = new Representation(10000,(new GregorianCalendar(2017, 2, 4, 19, 0).getTime()), (new GregorianCalendar(2017, 2, 4, 19, 0).getTime()));
+        Representation r21 = new Representation(10000, (new GregorianCalendar(2017, 2, 2, 19, 0).getTime()),(new GregorianCalendar(2017, 2, 2, 19, 0).getTime()));
+        Representation r22 = new Representation(10000, (new GregorianCalendar(2017, 2, 3, 19, 0).getTime()),(new GregorianCalendar(2017, 2, 3, 19, 0).getTime()));
+        Representation r23 = new Representation(10000, (new GregorianCalendar(2017, 2, 4, 19, 0).getTime()),(new GregorianCalendar(2017, 2, 4, 19, 0).getTime()));
+        Representation r24 = new Representation(10000,(new GregorianCalendar(2017, 2, 5, 19, 0).getTime()), (new GregorianCalendar(2017, 2, 5, 19, 0).getTime()));
+        Representation r25 = new Representation(10000,(new GregorianCalendar(2017, 2, 6, 19, 0).getTime()), (new GregorianCalendar(2017, 2, 6, 19, 0).getTime()));
+        Representation r26 = new Representation(10000,(new GregorianCalendar(2017, 2, 7, 19, 0).getTime()), (new GregorianCalendar(2017, 2, 7, 19, 0).getTime()));
       
 /////////////////////////////////////////////////ad tarif representation
        r1.getTarifs().add(p3);

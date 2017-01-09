@@ -20,7 +20,7 @@
             <param-value>controllers.sub.CreateAccountController</param-value>
         </init-param>
         <init-param>
-            <param-name>DetailsRepresentation.Controller</param-name>
+            <param-name>DetailsRepresentationController</param-name>
             <param-value>controllers.sub.DetailsRepresentationController</param-value>
         </init-param>
         <init-param>

@@ -6,6 +6,7 @@
 package beans;
 
 import entites.Event;
+import entites.Representation;
 import java.util.List;
 import javax.ejb.Local;
 
@@ -29,4 +30,6 @@ public interface ManageSectionLocal {
     
 
     public List mesRepresentationByEvent(String event);
+
+    public Representation representationById(int idRep);
 }

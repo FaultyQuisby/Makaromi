@@ -6,6 +6,7 @@
 package beans;
 
 import entites.Event;
+import entites.Representation;
 import entites.Section;
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +82,16 @@ public class ManageSection implements ManageSectionLocal {
         qr055.setParameter("paramEvent", event);
         List<Section> ls = qr055.getResultList();
         return ls;
+    }
+    
+    @Override
+    public Representation representationById (int idRep){
+        String req05 = "select r from Representation r "
+                + "where r.id = :paramrep";
+        Query qr05 = em.createQuery(req05);
+        qr05.setParameter("paramrep", idRep);
+        Representation myRep = (Representation)qr05.getSingleResult();        
+        return myRep;
     }
   
 }

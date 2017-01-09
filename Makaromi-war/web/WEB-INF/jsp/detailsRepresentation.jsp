@@ -96,6 +96,9 @@
                                             <div id="carte" style="width:100%; height:100%"></div>
 
                                     </td>
+                                    <td>
+                                       ${rep.id} 
+                                   </td>
                                 </tr>
                             </tbody>
                         </table>

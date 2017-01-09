@@ -54,7 +54,7 @@
 
                                             <c:forEach items= "${myevent.representationsev}" var = "r">                                                                                    
                                                 <p id="representation"><fmt:formatDate value="${r.rDate}" var="dateRepresentation" type="both" dateStyle="full"/>Représentation du ${dateRepresentation} heures</p> 
-                                                <p id="boutonCommander"><a href="IndexController?section=DetailsRepresentationController&event=${e.name}"><strong>Détail de la représentation</a></strong></p>
+                                                <p id="boutonCommander"><a href="IndexController?section=DetailsRepresentationController&idRep=${r.id}"><strong>Détail de la représentation</a></strong></p>
                                                 <p>----------------------------------------------------------------------------------------------------</p><br/>                                                
                                             </c:forEach>
                                             <c:choose>
