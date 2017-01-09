@@ -1,6 +1,5 @@
 body{
-    background-color: black !important;
-    color:white !important;
+    background-color: black !important;    
    }
 .thumbnail{
     width: 950px !important;
@@ -8,11 +7,25 @@ body{
 }
 #imgVenue{
     width: 500px !important;    
+    float : left !important;
 }
 #venue{
-    margin-left: 100px !important;
+    float:right !important;   
     text-decoration: none !important;
     font-size:12px !important;
     color:black !important;
     text-align: right !important;
+}
+#googleMap{
+    text-align: center !important;
+    margin-left: 50px !important;
+}
+#boutonCommander{
+    color:#777 !important;
+    font-size: 13px !important;
+    font-style: italic !important;
+    text-align: center !important;
+}
+#boutonCommander :hover{
+text-decoration: underline !important;
 }
