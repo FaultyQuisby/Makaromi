@@ -30,8 +30,10 @@ public class SectionController implements Serializable,sousControleur {
     @Override
     public String executer(HttpServletRequest request, HttpServletResponse response) {
        
+        
+        
         if(request.getParameter("th")!= null){
-            List le=null;
+            List le = null;
             String rubrique = request.getParameter("th");
            
            
@@ -46,16 +48,14 @@ public class SectionController implements Serializable,sousControleur {
            }else{
                 le = mesSection.mesEventparRubrique(rubrique.trim(),1);
            }
+           
            request.setAttribute("mesevent",le);
            request.setAttribute("th",rubrique);
+           
            System.out.println("liste dans sous controller est egale a------->"+le);
     
         }
             
-           
-        
-        
-        
         
         
         return "/WEB-INF/jsp/bootstrapThematicBrowsing.jsp";

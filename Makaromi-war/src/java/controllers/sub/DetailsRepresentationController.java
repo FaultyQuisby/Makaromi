@@ -31,11 +31,17 @@ public class DetailsRepresentationController implements sousControleur {
          }
         
         
-        
+         //////////////////////////////////////////////////////////suivie page origine
+        if (request.getParameter("originev") != null) {                    
+            request.setAttribute("originev", request.getParameter("originev"));
+           
+        }
         
         
         if (request.getParameter("retour") != null) {
-            url = "/WEB-INF/jsp/detailsPage.jsp";            
+            url = "/IndexController?section=DetailsPageController&event="+request.getParameter("originev"); 
+            System.out.println("------------------------------>je rentre dans retour de drc");
+            request.setAttribute("retour", null);
         }
         
         

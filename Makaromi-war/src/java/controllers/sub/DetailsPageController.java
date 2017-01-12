@@ -36,14 +36,18 @@ public class DetailsPageController implements Serializable, sousControleur {
         if (request.getParameter("event") != null) {
             request.setAttribute("myevent", manageSection.eventByName(request.getParameter("event")));
             request.setAttribute("mesRepresentations", manageSection.mesRepresentationByEvent(request.getParameter("event")));
+            System.out.println("----------------------------------------------> je rentre dans dpc");
+                    
         }
-
-        if (request.getParameter("th") != null) {                    
-            request.setAttribute("th", request.getParameter("th"));
-            url = "/WEB-INF/jsp/bootstrapThematicBrowsing.jsp";
+           //////////////////////////////////////////////////////////suivie page origine
+        if (request.getParameter("origineth") != null) {                    
+            request.setAttribute("origineth", request.getParameter("origineth"));
+           
         }
-
+           /////////////////////////////////////////////////////////retour 
         if (request.getParameter("retour") != null) {
+            String origineth = request.getParameter("origineth");
+            request.setAttribute("th",request.getParameter("origineth"));
             url = "/WEB-INF/jsp/bootstrapThematicBrowsing.jsp";            
         }
         return url;
